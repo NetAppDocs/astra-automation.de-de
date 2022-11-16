@@ -1,0 +1,1 @@
+Sitemap: https://docs.netapp.com/de-de/astra-automation/sitemap.xml
