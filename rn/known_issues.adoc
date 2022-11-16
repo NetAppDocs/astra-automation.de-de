@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: rn/known_issues.html 
+keywords: known issues, issues, bugs, fixes 
+summary: Sie sollten alle bekannten Probleme für die aktuelle Version im Zusammenhang mit der Astra Control REST API überprüfen. Die bekannten Probleme identifizieren Probleme, die die erfolgreiche Verwendung des Produkts verhindern könnten. 
+---
+= Bekannte Probleme
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie sollten alle bekannten Probleme für die aktuelle Version im Zusammenhang mit der Astra Control REST API überprüfen. Die bekannten Probleme identifizieren Probleme, die die erfolgreiche Verwendung des Produkts verhindern könnten.
+
+
+NOTE: Es gibt keine neuen Probleme, die mit der Version 22.08 der Astra Control REST API bekannt sind. Die unten beschriebenen Probleme wurden in vorherigen Versionen entdeckt und gelten noch für die aktuelle Version.
+
+
+
+== Es werden nicht alle Speichergeräte in einem Back-End-Speicher-Node erkannt
+
+Wenn ein REST-API-Aufruf zum Abrufen der in einem Storage-Node definierten Speichergeräte ausruft, werden nur die Astra Data Store-Geräte erkannt. Es werden nicht alle Geräte zurückgegeben.
+
+
+
+== Astra Data Store Storage-Backend in Unbekanntem Zustand
+
+Das Backend des Astra Data Store Storage ist im System `Unknown` Geben Sie den Status an, nachdem Sie einen API-Aufruf zum Abrufen des Storage-Back-End veranlasst haben. In diesem Fall ist das Storage Backend tatsächlich noch verfügbar und kann kommuniziert werden. Eine Komponente innerhalb des Speicher-Backend ist jedoch wahrscheinlich in einem ungesunden Zustand und muss wieder in einen gesunden Zustand versetzt werden, damit das Storage-Backend als angezeigt wird `Available`.

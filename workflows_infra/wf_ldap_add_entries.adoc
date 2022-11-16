@@ -1,0 +1,334 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_ldap_add_entries.html 
+keywords:  
+summary:  
+---
+= Fügen Sie LDAP-Einträge zum Astra hinzu
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Nachdem LDAP als Authentifizierungsanbieter für Astra Control Center konfiguriert wurde, können Sie die LDAP-Benutzer auswählen, die Astra mit den LDAP-Anmeldedaten authentifizieren soll. Jeder Benutzer muss eine Rolle im Astra haben, bevor er über die Astra Control REST API auf den Astra zugreifen kann.
+
+Es gibt zwei Möglichkeiten, Astra für die Zuweisung von Rollen zu konfigurieren. Wählen Sie den für Ihre Umgebung geeigneten aus.
+
+* link:../workflows_infra/wf_ldap_add_entries.html#add-and-bind-an-individual-user["Hinzufügen und Binden eines einzelnen Benutzers"]
+* link:../workflows_infra/wf_ldap_add_entries.html#add-and-bind-a-group["Fügen Sie eine Gruppe hinzu und binden Sie sie"]
+
+
+
+NOTE: Die LDAP-Anmeldedaten bestehen in Form eines Benutzernamens als E-Mail-Adresse und des zugehörigen LDAP-Passworts.
+
+
+
+== Hinzufügen und Binden eines einzelnen Benutzers
+
+Sie können jedem Astra-Benutzer eine Rolle zuweisen, die nach der LDAP-Authentifizierung verwendet wird. Dies ist angemessen, wenn es eine kleine Anzahl von Benutzern gibt und jeder über unterschiedliche administrative Merkmale verfügt.
+
+
+
+=== 1. Fügen Sie einen Benutzer hinzu
+
+Führen Sie den folgenden REST-API-Aufruf durch, um einen Benutzer zu Astra hinzuzufügen und anzugeben, dass LDAP der Authentifizierungsanbieter ist.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| POST | /Account/{Account_id}/Core/v1/users 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type" :  "application/astra-user",
+  "version" : "1.1",
+  "authID" : "cn=JohnDoe,ou=users,ou=astra,dc=example,dc=com",
+  "authProvider" : "ldap",
+  "firstName" : "John",
+  "lastName" : "Doe",
+  "email" : "john.doe@example.com"
+}
+----
+Beachten Sie folgende Informationen zu den Eingabeparametern:
+
+* Die folgenden Parameter sind erforderlich:
++
+** `authProvider`
+** `authID`
+** `email`
+
+
+* `authID` Ist der Distinguished Name (DN) des Benutzers in LDAP
+* `email` Muss für alle in Astra definierten Benutzer eindeutig sein
+
+
+Wenn der `email` Der Wert ist nicht eindeutig, es tritt ein Fehler auf und ein HTTP-Statuscode 409 wird in der Antwort zurückgegeben.
+
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/astra-user+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Beispiel für JSON-Antwort
+
+[source, json]
+----
+{
+  "metadata": {
+    "creationTimestamp": "2022-07-21T17:44:18Z",
+    "modificationTimestamp": "2022-07-21T17:44:18Z",
+    "createdBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "labels": []
+  },
+  "type": "application/astra-user",
+  "version": "1.2",
+  "id": "a7b5e674-a1b1-48f6-9729-6a571426d49f",
+  "authProvider": "ldap",
+  "authID": "cn=JohnDoe,ou=users,ou=astra,dc=example,dc=com",
+  "firstName": "John",
+  "lastName": "Doe",
+  "companyName": "",
+  "email": "john.doe@example.com",
+  "postalAddress": {
+    "addressCountry": "",
+    "addressLocality": "",
+    "addressRegion": "",
+    "streetAddress1": "",
+    "streetAddress2": "",
+    "postalCode": ""
+  },
+  "state": "active",
+  "sendWelcomeEmail": "false",
+  "isEnabled": "true",
+  "isInviteAccepted": "true",
+  "enableTimestamp": "2022-07-21T17:44:18Z",
+  "lastActTimestamp": ""
+}
+----
+
+
+=== 2. Fügen Sie eine Rollenbindung für den Benutzer hinzu
+
+Führen Sie den folgenden REST-API-Aufruf durch, um den Benutzer an eine bestimmte Rolle zu binden. Sie müssen die UUID des Benutzers im vorherigen Schritt erstellen lassen.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| POST | /Account/{Account_id}/Core/v1/roleBindungen 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type": "application/astra-roleBinding",
+  "version": "1.1",
+  "accountID": "{account_id}",
+  "userID": "a7b5e674-a1b1-48f6-9729-6a571426d49f",
+  "role": "member",
+  "roleConstraints": ["*"]
+}
+----
+Beachten Sie folgende Informationen zu den Eingabeparametern:
+
+* Der oben verwendete Wert für `roleConstraint` Ist die einzige Option, die für die aktuelle Version von Astra verfügbar ist. Er zeigt an, dass der Benutzer nicht auf eine begrenzte Anzahl von Namespaces beschränkt ist und alle darauf zugreifen können.
+
+
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Beispiel für JSON-Antwort
+
+[source, json]
+----
+{
+  "metadata": {
+    "creationTimestamp": "2022-07-21T18:08:24Z",
+    "modificationTimestamp": "2022-07-21T18:08:24Z",
+    "createdBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "labels": []
+  },
+  "type": "application/astra-roleBinding",
+  "principalType": "user",
+  "version": "1.1",
+  "id": "b02c7e4d-d483-40d1-aaff-e1f900312114",
+  "userID": "a7b5e674-a1b1-48f6-9729-6a571426d49f",
+  "groupID": "00000000-0000-0000-0000-000000000000",
+  "accountID": "d0fdbfa7-be32-4a71-b59d-13d95b42329a",
+  "role": "member",
+  "roleConstraints": ["*"]
+}
+----
+Beachten Sie folgende Hinweise zu den Antwortparametern:
+
+* Der Wert `user` Für das `principalType` Feld gibt an, dass die Rollenbindung für einen Benutzer hinzugefügt wurde (keine Gruppe).
+
+
+
+
+== Fügen Sie eine Gruppe hinzu und binden Sie sie
+
+Sie können einer Astra-Gruppe eine Rolle zuweisen, die nach der LDAP-Authentifizierung verwendet wird. Dies ist angemessen, wenn es eine große Anzahl von Benutzern gibt und jeder über ähnliche administrative Merkmale verfügt.
+
+
+
+=== 1. Fügen Sie eine Gruppe hinzu
+
+Führen Sie den folgenden REST-API-Aufruf durch, um eine Gruppe zu Astra hinzuzufügen und anzugeben, dass LDAP der Authentifizierungsanbieter ist.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| POST | /Account/{Account_id}/Core/v1/groups 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type": "application/astra-group",
+  "version": "1.0",
+  "name": "Engineering",
+  "authProvider": "ldap",
+  "authID": "CN=Engineering,OU=groups,OU=astra,DC=example,DC=com"
+}
+----
+Beachten Sie folgende Informationen zu den Eingabeparametern:
+
+* Die folgenden Parameter sind erforderlich:
++
+** `authProvider`
+** `authID`
+
+
+
+
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/groups' --header 'Content-Type: application/astra-group+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Beispiel für JSON-Antwort
+
+[source, json]
+----
+{
+  "type": "application/astra-group",
+  "version": "1.0",
+  "id": "8b5b54da-ae53-497a-963d-1fc89990525b",
+  "name": "Engineering",
+  "authProvider": "ldap",
+  "authID": "CN=Engineering,OU=groups,OU=astra,DC=example,DC=com",
+  "metadata": {
+    "creationTimestamp": "2022-07-21T18:42:52Z",
+    "modificationTimestamp": "2022-07-21T18:42:52Z",
+    "createdBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "labels": []
+  }
+}
+----
+
+
+=== 2. Fügen Sie eine Rollenbindung für die Gruppe hinzu
+
+Führen Sie den folgenden REST-API-Aufruf durch, um die Gruppe an eine bestimmte Rolle zu binden. Sie müssen die UUID der Gruppe im vorherigen Schritt erstellen lassen. Benutzer, die Mitglieder der Gruppe sind, können sich bei Astra anmelden, nachdem LDAP die Authentifizierung durchgeführt hat.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| POST | /Account/{Account_id}/Core/v1/roleBindungen 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type": "application/astra-roleBinding",
+  "version": "1.1",
+  "accountID": "{account_id}",
+  "groupID": "8b5b54da-ae53-497a-963d-1fc89990525b",
+  "role": "viewer",
+  "roleConstraints": ["*"]
+}
+----
+Beachten Sie folgende Informationen zu den Eingabeparametern:
+
+* Der oben verwendete Wert für `roleConstraint` Ist die einzige Option, die für die aktuelle Version von Astra verfügbar ist. Er gibt an, dass der Benutzer nicht auf bestimmte Namespaces beschränkt ist und alle darauf zugreifen können.
+
+
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Beispiel für JSON-Antwort
+
+[source, json]
+----
+{
+  "metadata": {
+    "creationTimestamp": "2022-07-21T18:59:43Z",
+    "modificationTimestamp": "2022-07-21T18:59:43Z",
+    "createdBy": "527329f2-662c-41c0-ada9-2f428f14c137",
+    "labels": []
+  },
+  "type": "application/astra-roleBinding",
+  "principalType": "group",
+  "version": "1.1",
+  "id": "2f91b06d-315e-41d8-ae18-7df7c08fbb77",
+  "userID": "00000000-0000-0000-0000-000000000000",
+  "groupID": "8b5b54da-ae53-497a-963d-1fc89990525b",
+  "accountID": "d0fdbfa7-be32-4a71-b59d-13d95b42329a",
+  "role": "viewer",
+  "roleConstraints": ["*"]
+}
+----
+Beachten Sie folgende Hinweise zu den Antwortparametern:
+
+* Der Wert `group` Für das `principalType` Feld gibt an, dass die Rollenbindung für eine Gruppe hinzugefügt wurde (kein Benutzer).
+

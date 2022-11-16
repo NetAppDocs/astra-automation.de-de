@@ -1,0 +1,177 @@
+---
+sidebar: sidebar 
+permalink: rn/whats_new.html 
+keywords: whats new, enhancements, new features 
+summary: NetApp aktualisiert regelmäßig die Astra Control REST API und bietet Ihnen neue Funktionen, Verbesserungen und Fehlerbehebungen. 
+---
+= Was ist neu mit der Astra Control REST API
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp aktualisiert regelmäßig die Astra Control REST API und bietet Ihnen neue Funktionen, Verbesserungen und Fehlerbehebungen.
+
+
+
+== August 10 2022 (22.08)
+
+Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie erweiterte Sicherheits- und Administrationsfunktionen.
+
+
+
+=== Neue und verbesserte Astra-Ressourcen
+
+Es wurden drei neue Ressourcen-Typen hinzugefügt: *Zertifikat*, *Gruppe* und *AppMirror*. Darüber hinaus wurden die Versionen verschiedener vorhandener Ressourcen aktualisiert.
+
+
+
+=== LDAP-Authentifizierung
+
+Optional können Sie Astra Control Center so konfigurieren, dass sie sich in einen LDAP-Server integrieren lassen, um ausgewählte Astra-Benutzer zu authentifizieren. Siehe link:../workflows_infra/ldap_prepare.html["LDAP-Konfiguration"] Finden Sie weitere Informationen.
+
+
+
+=== Verbesserter Execution Hook
+
+Die Astra Control 21.12 Version bietet zusätzliche Unterstützung für die Testdurchführung. Zusätzlich zu den vorhandenen Hooks für die vor- und NachSnapshot-Ausführung können Sie nun mit der Version 22.08 die folgenden Testausführungshaken konfigurieren:
+
+* Vor dem Backup
+* Nach dem Backup
+* Nach dem Wiederherstellen
+
+
+Astra Control ermöglicht jetzt auch die Verwendung desselben Skripts für mehrere Testausführungshaken.
+
+
+
+=== Applikationsreplizierung mit SnapMirror
+
+Daten und Applikationsänderungen lassen sich nun mithilfe der NetApp SnapMirror Technologie auf Clustern replizieren. Diese Verbesserung kann auch zur Verbesserung Ihrer Business Continuity- und Recovery-Funktionen eingesetzt werden.
+
+.Verwandte Informationen
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center: Was ist neu"^]
+* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service: Was ist neu"^]
+
+
+
+
+== 26. April 2022 (22.04)
+
+Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie erweiterte Sicherheits- und Administrationsfunktionen.
+
+
+
+=== Neue und verbesserte Astra-Ressourcen
+
+Es wurden zwei neue Ressourcen-Typen hinzugefügt: *Paket* und *Upgrade*. Außerdem wurden die Versionen verschiedener vorhandener Ressourcen aktualisiert.
+
+
+
+=== Erweiterte RBAC mit Namespace-Granularität
+
+Wenn Sie eine Rolle einem zugeordneten Benutzer zuweisen, können Sie die Namespaces beschränken, auf die der Benutzer Zugriff hat. Siehe * Role Binding API* Referenz und link:../additional/rbac.html["RBAC-Sicherheit"] Finden Sie weitere Informationen.
+
+
+
+=== Entfernen des Buckets
+
+Sie können einen Eimer entfernen, wenn er nicht mehr benötigt wird oder nicht ordnungsgemäß funktioniert.
+
+
+
+=== Unterstützung von Cloud Volumes ONTAP
+
+Cloud Volumes ONTAP wird nun als Storage Back-End unterstützt.
+
+
+
+=== Zusätzliche Produktverbesserungen
+
+Die beiden Astra Control-Produktimplementierungen sind mit einigen zusätzlichen Verbesserungen vertraut:
+
+* Generischer Eingang für Astra Control Center
+* Privates Cluster in AKS
+* Unterstützung für Kubernetes 1.22
+* Unterstützung des VMware Tanzu Portfolios
+
+
+Sehen Sie sich die Seite *Was ist neu* auf den Dokumentationsseite des Astra Control Centers und des Astra Control Service an.
+
+.Verwandte Informationen
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center: Was ist neu"^]
+* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service: Was ist neu"^]
+
+
+
+
+== Bis 14. Dezember 2021 (21.12)
+
+Dieses Release enthält eine Erweiterung der REST API sowie eine Änderung der Dokumentationsstruktur, um die Entwicklung von Astra Control durch zukünftige Release-Updates besser zu unterstützen.
+
+
+
+=== Separate Dokumentation für Astra Automation für jede Version von Astra Control
+
+Jede Version von Astra Control verfügt über eine eigene REST-API, die auf die Funktionen der spezifischen Version zugeschnitten wurde. Die Dokumentation für jede Version der Astra Control REST API ist jetzt auf einer eigenen dedizierten Website zusammen mit dem zugehörigen GitHub Content Repository verfügbar. Die Hauptdoktorandseite https://docs.netapp.com/us-en/astra-automation/["Astra Control Automation"^] Enthält immer die Dokumentation für die aktuellste Version. Siehe link:../aa-earlier-versions.html["Frühere Versionen der Dokumentation Astra Control Automation"] Weitere Informationen zu vorherigen Releases.
+
+
+
+=== Erweiterung der REST-Ressourcentypen
+
+Die Anzahl DER REST-Ressourcentypen hat sich mit Schwerpunkt auf Ausführungs-Hooks und Storage-Back-Ends weiter erweitert. Die neuen Ressourcen umfassen: Konto, Testsuite, Hook Source, Execution Hook Override, Cluster Node, Managed Storage Back-End, Namespace, Storage-Gerät und Storage-Node. Siehe link:../endpoints/resources.html["Ressourcen"] Finden Sie weitere Informationen.
+
+
+
+=== NetApp Astra Control Python SDK
+
+NetApp Astra Control Python SDK ist ein Open-Source-Paket, mit dem sich der Automatisierungscode für Ihre Astra Control Umgebung leichter entwickeln lässt. Der Kern ist das Astra SDK, das eine Reihe von Klassen umfasst, um die Komplexität der REST API Aufrufe zu abstrahieren. Es gibt auch ein Toolkit-Skript zur Ausführung spezifischer administrativer Aufgaben durch Zusammenfassung und Abstrahierung der Python-Klassen. Siehe link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] Finden Sie weitere Informationen.
+
+
+
+== August 5 2021 (21.08)
+
+Diese Version umfasst die Einführung eines neuen Astra Implementierungsmodells und eine wesentliche Erweiterung der REST-API.
+
+
+
+=== Astra Control Center-Implementierungsmodell
+
+Neben dem vorhandenen Astra Control Service, der als Public Cloud-Service bereitgestellt wird, umfasst diese Version auch das On-Premises-Implementierungsmodell von Astra Control Center. Sie können Astra Control Center an Ihrem Standort installieren und so Ihre lokale Kubernetes-Umgebung managen. Die beiden Astra Control Implementierungsmodelle nutzen dieselbe REST-API, wobei in der Dokumentation nur geringfügige Unterschiede zu berücksichtigen sind.
+
+
+
+=== Erweiterung der REST-Ressourcentypen
+
+Die Zahl der Ressourcen, auf die über die Astra Control REST-API zugegriffen werden kann, ist enorm erweitert. Viele der neuen Ressourcen bilden die Grundlage für das On-Premises Astra Control Center-Angebot. Die neuen Ressourcen umfassen: ASUP, Berechtigung, Funktion, Lizenz, Einstellung, Abonnement, Bucket, Cloud, Cluster, gemanagtes Cluster, Back-End-Storage und Storage-Klasse. Siehe link:../endpoints/resources.html["Ressourcen"] Finden Sie weitere Informationen.
+
+
+
+=== Zusätzliche Endpunkte unterstützen eine Astra Implementierung
+
+Neben den erweiterten REST-Ressourcen stehen noch mehrere weitere neue API-Endpunkte zur Unterstützung einer Astra Control Implementierung zur Verfügung.
+
+OpenAPI-Unterstützung:: Die OpenAPI-Endpunkte bieten Zugriff auf das aktuelle OpenAPI JSON-Dokument und andere zugehörige Ressourcen.
+Unterstützung von OpenMetrics:: Die OpenMetrics-Endpunkte bieten über die OpenMetrics-Ressource Zugriff auf Kontokennzahlen.
+
+
+
+
+== 15. April 2021 (21.04)
+
+Diese Version umfasst die folgenden neuen Funktionen und Verbesserungen.
+
+
+
+=== Einführung DER REST API
+
+Die Astra Control REST API ist für den Astra Control Service verfügbar. Das System wurde auf Basis VON REST-Technologien und aktuellen Best Practices erstellt. Die API ist die Grundlage für die Automatisierung Ihrer Astra-Implementierungen und umfasst die folgenden Funktionen und Vorteile.
+
+Ressourcen:: Es sind vierzehn REST-Ressourcen verfügbar.
+Zugriff auf API-Token:: Der Zugriff auf DIE REST-API wird über ein API-Zugriffstoken bereitgestellt, das Sie über die Astra Web-Benutzeroberfläche generieren können. Das API-Token bietet sicheren Zugriff auf die API.
+Unterstützung für Sammlungen:: Es gibt eine umfangreiche Reihe von Abfrageparametern, die für den Zugriff auf die Ressourcen-Sammlungen verwendet werden können. Einige der unterstützten Vorgänge umfassen Filtern, Sortieren und Paginieren.
+

@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: rest-core/resources_collections.html 
+keywords: resources, instances, collections, uuid, uuidv4, state 
+summary: DIE Rest-API von Astra Control bietet Zugriff auf Ressourceninstanzen und Ressourcensammlungen. 
+---
+= Ressourcen und Sammlungen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+DIE Rest-API von Astra Control bietet Zugriff auf Ressourceninstanzen und Ressourcensammlungen.
+
+
+NOTE: Konzeptionell ist eine REST *Ressource* ähnlich wie ein *Objekt* wie mit den objektorientierten Programmiersprachen und -Systemen definiert. Manchmal werden diese Begriffe synonym verwendet. Aber im Allgemeinen wird „Ressource“ bevorzugt, wenn sie im Kontext der externen REST API verwendet wird, während „Objekt“ für die entsprechenden zustandsorientierte Instanz Daten verwendet wird, die auf dem Server gespeichert sind.
+
+
+
+== Eigenschaften der Astra-Ressourcen
+
+Die Astra Control REST API entspricht den Prinzipien des RESTful Designs. Jede Astra-Ressourceninstanz wird auf Basis eines klar definierten Ressourcentyps erstellt. Eine Reihe von Ressourceninstanzen desselben Typs wird als *Sammlung* bezeichnet. Die API-Aufrufe wirken sich auf einzelne Ressourcen oder Ressourcensammlungen aus.
+
+Die in der Astra Control REST API enthaltenen Ressourcentypen weisen folgende Merkmale auf:
+
+* Jeder Ressourcentyp wird mit einem Schema definiert (in der Regel in JSON)
+* Jedes Ressourcenschema enthält den Ressourcentyp und die -Version
+* Ressourcentypen sind global eindeutig
+
+
+Die über die Astra Control REST-API verfügbaren Ressourceinstanzen weisen folgende Merkmale auf:
+
+* Ressourceninstanzen werden auf Basis eines einzelnen Ressourcentyps erstellt
+* Der Ressourcentyp wird mit dem Wert Medientyp angezeigt
+* Instanzen bestehen aus statusorientierten Daten, die vom Astra-Service gewartet werden
+* Auf jede Instanz kann über eine eindeutige und langlebige URL zugegriffen werden
+* In Fällen, in denen eine Ressourceninstanz mehr als eine Darstellung haben kann, können verschiedene Medientypen verwendet werden, um die gewünschte Darstellung anzufordern
+
+
+Die Ressourcensammlungen, die über die ASTRA Control REST-API verfügbar sind, weisen folgende Merkmale auf:
+
+* Der Satz von Ressourceninstanzen eines einzelnen Ressourcentyps wird als Sammlung bezeichnet
+* Ressourcensammlungen haben eine einzigartige und langlebige URL
+
+
+Jeder Ressourceninstanz wird bei der Erstellung eine Kennung zugewiesen. Diese Kennung ist ein 128-Bit UUIDv4-Wert. Die zugewiesenen UUUIDv4-Werte sind global eindeutig und unveränderbar. Nachdem ein API-Aufruf ausgegeben wurde, der eine neue Instanz erstellt, wird eine URL mit der zugehörigen id an den Anrufer in A zurückgegeben `Location` Kopfzeile der HTTP-Antwort. Sie können die Kennung extrahieren und bei nachfolgenden Anrufen verwenden, wenn Sie sich auf die Ressourceninstanz beziehen.
+
+
+NOTE: Die Ressourcen-ID ist der primäre Schlüssel, der für Sammlungen verwendet wird.
+
+
+
+== Gemeinsame Struktur für Astra-Ressourcen
+
+Jede Astra Control-Ressource ist mit einer gemeinsamen Struktur definiert.
+
+Jede Astra-Ressource enthält die in der folgenden Tabelle aufgeführten Schlüsselwerte.
+
+[cols="15,85"]
+|===
+| Taste | Beschreibung 
+
+
+| Typ | Ein global eindeutiger Ressourcentyp, der als *Ressourcentyp* bezeichnet wird. 
+
+
+| Version | Eine Version-ID, die als *Resource-Version* bezeichnet wird. 
+
+
+| id | Ein global eindeutiger Bezeichner, der als *Resource Identifier* bezeichnet wird. 
+
+
+| Metadaten | Ein JSON-Objekt mit verschiedenen Informationen, einschließlich Benutzer- und Systemetiketten. 
+|===
+Das JSON-Metadatenobjekt, das in jeder Astra-Ressource enthalten ist, enthält die in der folgenden Tabelle aufgeführten Schlüsselwerte.
+
+[cols="15,85"]
+|===
+| Taste | Beschreibung 
+
+
+| Etiketten | JSON-Array mit Client-angegebenen Beschriftungen, die der Ressource zugeordnet sind. 
+
+
+| CreationZeitstempel | JSON-Zeichenfolge mit einem Zeitstempel, der angibt, wann die Ressource erstellt wurde. 
+
+
+| Änderungszeitstempel | JSON-Zeichenfolge mit einem ISO-8601-formatierten Zeitstempel, der angibt, wann die Ressource zuletzt geändert wurde. 
+
+
+| Erstellt von | JSON-Zeichenfolge mit der UUUIDv4-Kennung der Benutzer-id, die die Ressource erstellt hat. Wenn die Ressource von einer internen Systemkomponente erstellt wurde und der Erstellungseinheit keine UUID zugeordnet ist, wird die *Null* UUID verwendet. 
+|===
+Ausgewählte Ressourcen A `state` Wert, der zur Orchestrierung von Lifecycle-Übergängen und zur Steuerung des Zugriffs eingesetzt wird.

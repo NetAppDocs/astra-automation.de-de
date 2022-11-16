@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: additional/revoke_token.html 
+keywords: token, revoke token 
+summary: Sie können ein API-Token an der Astra-Webschnittstelle widerrufen, wenn es nicht mehr benötigt wird. 
+---
+= Ein API-Token widerrufen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können ein API-Token an der Astra-Webschnittstelle widerrufen, wenn es nicht mehr benötigt wird.
+
+Sie benötigen ein Astra-Konto. Sie sollten auch die Token identifizieren, die Sie widerrufen möchten.
+
+Nachdem ein Token entzogen wurde, ist es sofort und dauerhaft unbrauchbar.
+
+.Schritte
+. Melden Sie sich mit Ihren Anmeldedaten im Astra an.
++
+Rufen Sie die folgende Website für den Astra Control Service auf: https://astra.netapp.io/["https://astra.netapp.io"^]
+
+. Klicken Sie auf das Figurensymbol oben rechts auf der Seite und wählen Sie *API Access*.
+. Wählen Sie das Token oder die Token aus, die Sie widerrufen möchten.
+. Klicken Sie im Dropdown-Feld *Aktionen* auf *Token aufheben*.
+

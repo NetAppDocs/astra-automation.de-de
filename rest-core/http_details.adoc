@@ -1,0 +1,166 @@
+---
+sidebar: sidebar 
+permalink: rest-core/http_details.html 
+keywords: http, http details, uri, json 
+summary: Die Astra Control REST-API verwendet HTTP und zugehörige Parameter, um auf die Ressourceinstanzen und -Sammlungen zu reagieren. 
+---
+= HTTP-Details
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die Astra Control REST-API verwendet HTTP und zugehörige Parameter, um auf die Ressourceinstanzen und -Sammlungen zu reagieren. Einzelheiten zur HTTP-Implementierung finden Sie unten.
+
+
+
+== API-Transaktionen und das CRUD-Modell
+
+Die Astra Control REST API implementiert ein transaktionsorientiertes Modell mit klar definierten Abläufen und Zustandsübergängen.
+
+Jeder REST-API-Aufruf erfolgt als HTTP-Anfrage an den Astra-Service. Jede Anforderung generiert eine entsprechende Antwort zurück an den Client. Dieses Request-Response-Paar kann als API-Transaktion betrachtet werden.
+
+Auf Grundlage des *CRUD*-Modells kann auf alle über die Astra Control REST API verfügbaren Ressourcen und Sammlungen zugegriffen werden. Es gibt vier Vorgänge, von denen jede einer einzigen HTTP-Methode zugeordnet wird. Dazu gehören:
+
+* Erstellen
+* Lesen
+* Aktualisierung
+* Löschen
+
+
+Bei einigen der Astra-Ressourcen wird nur ein Teil dieser Vorgänge unterstützt. Sie sollten die überprüfen link:../reference/api_reference.html["API-Referenz"] Weitere Informationen zu einem bestimmten API-Aufruf.
+
+
+
+== HTTP-Methoden
+
+Die von der API unterstützten HTTP-Methoden oder Verben werden in der folgenden Tabelle dargestellt.
+
+[cols="15,15,70"]
+|===
+| Methode | CRUD | Beschreibung 
+
+
+| GET | Lesen | Ruft Objekteigenschaften für eine Ressourceninstanz oder -Sammlung ab. Dies wird als *list*-Operation bei Verwendung mit einer Sammlung betrachtet. 
+
+
+| POST | Erstellen | Erstellt eine neue Ressourceninstanz basierend auf den Eingabeparametern. Die langfristige URL wird in A zurückgegeben `Location` Kopfzeile der Antwort. 
+
+
+| PUT | Aktualisierung | Aktualisiert eine gesamte Ressourceninstanz mit dem mitgelieferten JSON Request Body. Wichtige Werte, die nicht vom Benutzer änderbar sind, bleiben erhalten. 
+
+
+| Löschen | Löschen | Löscht eine vorhandene Ressourceninstanz. 
+|===
+
+
+== Header für Anfragen und Antworten
+
+Die folgende Tabelle fasst die HTTP-Header zusammen, die mit der Astra Control REST API verwendet werden.
+
+
+NOTE: Siehe https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232"^] Und https://www.rfc-editor.org/rfc/rfc7233.txt["RFC 7233"^] Finden Sie weitere Informationen.
+
+[cols="30,15,55"]
+|===
+| Kopfzeile | Typ | Nutzungshinweise 
+
+
+| Akzeptieren | Anfrage | Wenn der Wert „*/*“ ist oder nicht angegeben wird, `application/json` Wird in der Kopfzeile der Inhaltstyp-Antwort zurückgegeben. Wenn der Wert auf den Astra Resource Media Type gesetzt ist, wird derselbe Medientyp in der Kopfzeile des Inhaltstyps zurückgegeben. 
+
+
+| Autorisierung | Anfrage | Träger-Token mit dem API-Schlüssel für den Benutzer. 
+
+
+| Inhaltstyp | Antwort | Wird basierend auf dem zurückgegeben `Accept` Kopfzeile der Anfrage. 
+
+
+| Etag | Antwort | Im Lieferumfang eines erfolgreichen RFC 7232-Standards enthalten. Der Wert ist eine hexadezimale Darstellung des MD5-Werts für die gesamte JSON-Ressource. 
+
+
+| If-Match | Anfrage | Ein Precondition Request Header, wie in Abschnitt 3.1 RFC 7232 beschrieben und unterstützt *PUT* Anforderungen. 
+
+
+| Wenn-Geändert-Seit | Anfrage | Ein Precondition Request Header, wie in Abschnitt 3.4 RFC 7232 beschrieben und unterstützt *PUT* Anforderungen. 
+
+
+| Wenn-Unmodified-Since | Anfrage | Ein Precondition Request Header, wie in Abschnitt 3.4 RFC 7232 beschrieben und unterstützt *PUT* Anforderungen. 
+
+
+| Standort | Antwort | Enthält die vollständige URL der neu erstellten Ressource. 
+|===
+
+
+== Abfrageparameter
+
+Die folgenden Abfrageparameter stehen zur Verwendung mit Ressourcensammlungen zur Verfügung. Siehe link:../additional/working_with_collections.html["Arbeiten mit Sammlungen"] Finden Sie weitere Informationen.
+
+[cols="20,80"]
+|===
+| Abfrageparameter | Beschreibung 
+
+
+| Einschließlich | Enthält die Felder, die beim Lesen einer Sammlung zurückgegeben werden sollen. 
+
+
+| Filtern | Gibt die Felder an, die für die Rückgabe einer Ressource beim Lesen einer Sammlung übereinstimmen müssen. 
+
+
+| Orderby | Bestimmt die Reihenfolge der beim Lesen einer Sammlung zurückgegebenen Ressourcen. 
+
+
+| Grenze | Begrenzt die maximale Anzahl an Ressourcen, die beim Lesen einer Sammlung zurückgegeben werden. 
+
+
+| überspringen | Legt fest, wie viele Ressourcen beim Lesen einer Sammlung weitergehen und überspringen sollen. 
+
+
+| Zählen | Gibt an, ob die Gesamtzahl der Ressourcen im Metadatenobjekt zurückgegeben werden soll. 
+|===
+
+
+== HTTP-Statuscodes
+
+Im Folgenden werden die HTTP-Statuscodes beschrieben, die von der REST-API von Astra Control verwendet werden.
+
+
+NOTE: Die Astra Control REST API nutzt auch den *Problemdetails für HTTP APIs* Standard. Siehe link:diagnostics_support.html["Diagnose und Support"] Finden Sie weitere Informationen.
+
+[cols="15,20,65"]
+|===
+| Codieren | Bedeutung | Beschreibung 
+
+
+| 200 | OK | Zeigt Erfolg für Anrufe an, die keine neue Ressourceninstanz erstellen. 
+
+
+| 201 | Erstellt | Ein Objekt wurde erfolgreich erstellt, und die Kopfzeile für die Standortantwort enthält die eindeutige Kennung für das Objekt. 
+
+
+| 204 | Kein Inhalt | Die Anfrage war erfolgreich, obwohl kein Inhalt zurückgegeben wurde. 
+
+
+| 400 | Schlechte Anfrage | Die Eingabe der Anfrage ist nicht erkannt oder nicht angemessen. 
+
+
+| 401 | Nicht Autorisiert | Der Benutzer ist nicht autorisiert und muss authentieren. 
+
+
+| 403 | Verboten | Der Zugriff wird aufgrund eines Autorisierungsfehlers verweigert. 
+
+
+| 404 | Nicht gefunden | Die Ressource, auf die in diesem Antrag verwiesen wird, ist nicht vorhanden. 
+
+
+| 409 | Konflikt | Der Versuch, ein Objekt zu erstellen, ist fehlgeschlagen, weil das Objekt bereits vorhanden ist. 
+
+
+| 500 | Interner Fehler | Ein allgemeiner interner Fehler ist auf dem Server aufgetreten. 
+
+
+| 503 | Service nicht verfügbar | Der Dienst ist aus irgendeinem Grund nicht bereit, die Anfrage zu bearbeiten. 
+|===

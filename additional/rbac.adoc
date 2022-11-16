@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: additional/rbac.html 
+keywords: rbac, roles, namespace granularity 
+summary: 'Die Astra REST API unterstützt die rollenbasierte Zugriffssteuerung (RBAC), um den Zugriff auf Systemfunktionen zu gewähren und einzuschränken.' 
+---
+= RBAC-Sicherheit
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die Astra REST API unterstützt die rollenbasierte Zugriffssteuerung (RBAC), um den Zugriff auf Systemfunktionen zu gewähren und einzuschränken.
+
+
+
+== Astra Rollen
+
+Jeder Astra-Benutzer wird einer einzigen Rolle zugewiesen, die die Aktionen bestimmt, die durchgeführt werden können. Die Rollen sind in einer Hierarchie angeordnet, wie in der folgenden Tabelle beschrieben.
+
+[cols="15,85"]
+|===
+| Rolle | Beschreibung 
+
+
+| Eigentümer | Hat alle Berechtigungen der Admin-Rolle und kann auch Astra-Konten löschen. 
+
+
+| Admin | Verfügt über alle Berechtigungen der Mitgliedsrolle und kann Benutzer auch dazu einladen, einem Konto beizutreten. 
+
+
+| Mitglied | Kunden können ihre Astra-Applikations- und Computing-Ressourcen vollständig managen. 
+
+
+| Prüfer | Beschränkt auf die Anzeige von Ressourcen. 
+|===
+
+
+== Erweiterte RBAC mit Namespace-Granularität
+
+
+NOTE: Diese Funktion wurde mit Version 22.04 des Astra REST API eingeführt.
+
+Wenn eine Rollenbindung für einen bestimmten Benutzer festgelegt wird, kann eine Einschränkung angewendet werden, um die Namespaces zu begrenzen, auf die der Benutzer Zugriff hat. Diese Bedingung kann auf verschiedene Weise definiert werden, wie in der nachstehenden Tabelle beschrieben. Siehe Parameter `roleContraints` In der Role Binding API für weitere Informationen.
+
+[cols="20,80"]
+|===
+| Namespaces | Beschreibung 
+
+
+| Alle | Der Benutzer kann über den Platzhalterparameter „*“ auf alle Namespaces zugreifen. Dies ist der Standardwert, um die Abwärtskompatibilität beizubehalten. 
+
+
+| Keine | Die Bedingungsliste wird angegeben, obwohl sie leer ist. Dies bedeutet, dass der Benutzer keinen Zugriff auf einen Namespace hat. 
+
+
+| Namespace-Liste | Die UUID eines Namespace enthält, die den Benutzer auf den Single Namespace beschränkt. Eine kommagetrennte Liste kann auch verwendet werden, um den Zugriff auf mehrere Namespaces zu ermöglichen. 
+
+
+| Etikett | Ein Etikett wird angegeben und der Zugriff ist allen übereinstimmenden Namespaces erlaubt. 
+|===

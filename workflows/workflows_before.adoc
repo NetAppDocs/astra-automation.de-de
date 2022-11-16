@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: workflows/workflows_before.html 
+keywords: workflows, management workflows, preparation 
+summary: Diese Workflows können als Teil der Verwaltung der Applikationen in einem von Astra gemanagten Cluster verwendet werden. 
+---
+= Bevor Sie beginnen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Diese Workflows können als Teil der Verwaltung der Applikationen in einem von Astra gemanagten Cluster verwendet werden.
+
+
+NOTE: Diese Workflows können jederzeit von NetApp erweitert und ergänzt werden, sodass Sie sie in regelmäßigen Abständen prüfen sollten.
+
+
+
+== Allgemeine Vorbereitung
+
+Bevor Sie einen Astra-Workflow verwenden, sollten Sie unbedingt lesen link:../get-started/prepare_to_use_workflows.html["Die Nutzung der Workflows wird vorbereitet"].
+
+
+
+== Workflow-Kategorien
+
+Die Management-Workflows sind in verschiedene Kategorien unterteilt, um die Suche nach den gewünschten zu erleichtern.
+
+[cols="25,75"]
+|===
+| Kategorie | Beschreibung 
+
+
+| Applikationskontrolle | Mithilfe dieser Workflows können Sie verwaltete und nicht gemanagte Applikationen steuern. Sie können die Apps auflisten sowie eine verwaltete App erstellen und entfernen. 
+
+
+| Applikationssicherung | Mithilfe dieser Workflows können gemanagte Applikationen durch Snapshots und Backups gesichert werden. 
+
+
+| Klonen und Wiederherstellen von Applikationen | In diesen Workflows wird beschrieben, wie Sie gemanagte Applikationen klonen und wiederherstellen. 
+
+
+| Unterstützung | Es stehen mehrere Workflows zur Verfügung, um Ihre Applikationen zu debuggen und zu unterstützen sowie die allgemeine Kubernetes-Umgebung. 
+|===
+
+
+== Weitere Überlegungen
+
+Bei der Verwendung der Management-Workflows müssen einige zusätzliche Aspekte berücksichtigt werden.
+
+
+
+=== Klonen einer Applikation
+
+Beim Klonen einer Applikation müssen einige Aspekte berücksichtigt werden. Die unten beschriebenen Parameter sind Teil des JSON-Eingangs.
+
+Quell-Cluster-ID:: Der Wert von `sourceClusterID` Identifiziert immer das Cluster, auf dem die ursprüngliche App installiert ist.
+Cluster-ID:: Der Wert von `clusterID` Identifiziert das Cluster, auf dem die neue App installiert werden soll.
++
+--
+* Beim Klonen innerhalb desselben Clusters `clusterID` Und `sourceClusterID` Gleicher Wert.
+* Beim Klonen über Cluster unterscheiden sich die beiden Werte und `clusterID` Sollte die ID des Ziel-Clusters sein.
+
+
+--
+Namespaces:: Der `namespace` Der Wert muss sich von der ursprünglichen Quell-App unterscheiden. Außerdem kann der Namespace für den Klon nicht vorhanden sein und Astra wird ihn erstellen.
+Backups und Snapshots:: Optional können Sie eine Applikation aus einem vorhandenen Backup oder Snapshot mit der klonen `backupID` Oder `snapshotID` Parameter. Wenn Sie keine Backup oder Momentaufnahme zur Verfügung stellen, wird Astra zuerst eine Sicherung der Anwendung erstellen und dann aus dem Backup klonen.
+
+
+
+
+==== Wiederherstellen einer Anwendung
+
+Folgende Punkte sind bei der Wiederherstellung einer Applikation zu beachten.
+
+* Das Wiederherstellen einer Applikation ähnelt dem Klonvorgang.
+* Beim Wiederherstellen einer Anwendung müssen Sie entweder ein Backup oder einen Snapshot bereitstellen.
+

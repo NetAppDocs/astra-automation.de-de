@@ -1,0 +1,12 @@
+---
+section: additional
+title: Weitere Nutzungsüberlegungen
+entries:
+- title: RBAC-Sicherheit
+  url: "/additional/rbac.html"
+- title: Arbeit mit Sammlungen
+  url: "/additional/work_with_collections.html"
+- title: Diagnose
+  url: "/additional/diagnostics_support.html"
+- title: Ein API-Token widerrufen
+  url: "/additional/revoke_token.html"

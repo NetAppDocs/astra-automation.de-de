@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_clouds.html 
+keywords:  
+summary: Sie können die definierten Clouds mit einem spezifischen Astra Konto auflisten. 
+---
+= Clouds auflisten
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können die definierten Clouds mit einem spezifischen Astra Konto auflisten.
+
+
+
+=== 1. Die Wolken auflisten
+
+Führen Sie den folgenden REST-API-Aufruf durch, um die Clouds aufzulisten.
+
+[cols="25,75"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| GET | /Account/{Account_id}/Topology/v1/Clouds 
+|===
+
+
+===== Curl-Beispiel: Alle Daten aus allen Clouds zurückgeben
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----

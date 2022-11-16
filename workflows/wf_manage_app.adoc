@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_manage_app.html 
+keywords:  
+summary:  
+---
+= Eine App verwalten
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können eine gemanagte Applikation auf Basis einer Applikation erstellen, die Astra in einem bestimmten Namespace bereits bekannt ist. Wenn eine Applikation mit Astra verwaltet oder definiert wird, können Sie sie durch Backups und Snapshots schützen.
+
+
+
+=== 1. Wählen Sie den Namespace
+
+Führen Sie den Workflow aus link:../workflows/wf_list_namespaces.html["Listen Sie die Namespaces auf"] Und wählen Sie den Namespace aus.
+
+
+
+=== 2. Wählen Sie den Cluster
+
+Führen Sie den Workflow aus link:../workflows_infra/wf_list_clusters.html["Listen Sie die Cluster auf"] Und wählen Sie den Cluster aus.
+
+
+
+=== 3. Die Anwendung verwalten
+
+Führen Sie den folgenden REST-API-Aufruf durch, um die Anwendung zu verwalten.
+
+[cols="25,75"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| POST | /Account/{Account_id}/k8s/v2/Apps 
+|===
+
+
+===== Zusätzliche Eingabeparameter
+
+Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.
+
+[cols="25,10,10,55"]
+|===
+| Parameter | Typ | Erforderlich | Beschreibung 
+
+
+| JSON | Text | Ja. | Stellt die Parameter bereit, die zur Identifizierung der zu verwaltenden Anwendung erforderlich sind. Siehe das folgende Beispiel. 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "clusterID": "7ce83fba-6aa1-4e0c-a194-26e714f5eb46",
+  "name": "subtext",
+  "namespaceScopedResources": [{"namespace": "kube-matrix"}],
+  "type": "application/astra-app",
+  "version": "2.0"
+}
+----
+
+
+===== Curl Beispiel: Eine App verwalten
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'  --data @JSONinput
+----

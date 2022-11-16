@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_snapshots.html 
+keywords:  
+summary: Sie können die Snapshots auflisten, die für eine bestimmte Anwendung erstellt wurden. 
+---
+= Listen Sie die Snapshots auf
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können die Snapshots auflisten, die für eine bestimmte Anwendung erstellt wurden.
+
+
+
+=== Bevor Sie beginnen
+
+Sie müssen über die ID der App verfügen, für die Sie die Snapshots auflisten möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
+
+
+
+=== 1. Listen Sie die Snapshots auf
+
+Führen Sie den folgenden REST-API-Aufruf durch, um die Snapshots aufzulisten.
+
+[cols="25,75"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| GET | /Accounts/{Account_id}/k8s/v1/Apps/{App_id}/appSnaps 
+|===
+
+
+===== Zusätzliche Eingabeparameter
+
+Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.
+
+[cols="15,10,10,65"]
+|===
+| Parameter | Typ | Erforderlich | Beschreibung 
+
+
+| App-id | Pfad | Ja. | Identifiziert die Anwendung, die die aufgeführten Snapshots besitzt. 
+
+
+| Zählen | Abfrage | Nein | Wenn `count=true` Die Anzahl der Snapshots wird im Metadatenabschnitt der Antwort berücksichtigt. 
+|===
+
+
+===== Curl Beispiel: Gibt alle Schnappschüsse für die App zurück
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Curl Beispiel: Gibt alle Snapshots für die App und die Zählung zurück
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps?count=true' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Beispiel für eine JSON-Ausgabe
+
+[source, json]
+----
+{
+    "items": [
+        {
+            "type": "application/astra-appSnap",
+            "version": "1.1",
+            "id": "1ce34da4-bb0a-4926-b925-4a5d85dda8c2",
+            "hookState": "success",
+            "metadata": {
+                "createdBy": "a530e865-23e8-4e2e-8020-e92c419a3867",
+                "creationTimestamp": "2022-10-30T22:44:20Z",
+                "modificationTimestamp": "2022-10-30T22:44:20Z",
+                "labels": []
+            },
+            "snapshotAppAsset": "0ebfe3f8-40ed-4bdc-88c4-2144fbda85a0",
+            "snapshotCreationTimestamp": "2022-10-30T22:44:33Z",
+            "name": "snapshot-david-1",
+            "state": "completed",
+            "stateUnready": []
+        }
+    ],
+    "metadata": {}
+}
+----

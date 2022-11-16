@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: information/additional_resources.html 
+keywords: addition resources, additional information, astra family, cloud, netapp cloud, netapp support 
+summary: Auf weitere Ressourcen erhalten Sie Zugriff. Dort erhalten Sie weitere Informationen zu NetApp Cloud Services und Support sowie ZU allgemeinen REST- und Cloud-Konzepten. 
+---
+= Weitere Ressourcen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Auf weitere Ressourcen erhalten Sie Zugriff. Dort erhalten Sie weitere Informationen zu NetApp Cloud Services und Support sowie ZU allgemeinen REST- und Cloud-Konzepten.
+
+
+
+== Astra
+
+* https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center-Dokumentation"^]
++
+Dokumentation für die aktuelle Version der Astra Control Center-Software, die beim Kunden vor Ort eingesetzt wird.
+
+* https://docs.netapp.com/us-en/astra-control-service/["Dokumentation des Astra Control Service"^]
++
+Dokumentation für die aktuelle Version der Astra Control Service-Software, die in der Public Cloud verfügbar ist.
+
+* https://docs.netapp.com/us-en/astra-data-store/["Astra Data Store-Dokumentation"^]
++
+Dokumentation für die aktuelle Version der Astra Data Store-Software beim Kunden vor Ort.
+
+* https://docs.netapp.com/us-en/trident/["Astra Trident-Dokumentation"^]
++
+Dokumentation für die aktuelle Version der Astra Trident Software, einem Open-Source-Storage-Orchestrator von NetApp.
+
+* https://docs.netapp.com/us-en/astra-family/["Dokumentation der Astra-Familie"^]
++
+Zentraler Standort für den Zugriff auf die gesamte Astra Dokumentation für On-Premises- und Public-Cloud-Implementierungen.
+
+
+
+
+
+== NetApp Cloud-Ressourcen
+
+* https://cloud.netapp.com/["NetApp Cloud-Lösungen"^]
++
+Zentraler Standort für NetApp Cloud Lösungen.
+
+* https://services.cloud.netapp.com/redirect-to-login?startOnSignup=false["NetApp Cloud Central Konsole"^]
++
+NetApp Cloud Central Service-Konsole mit Anmeldung.
+
+* https://mysupport.netapp.com/["NetApp Support"^]
++
+Sie erhalten Zugriff auf Tools für die Fehlerbehebung, Dokumentation und technische Support-Unterstützung.
+
+
+
+
+
+== REST- und Cloud-Konzepte
+
+* PhD https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["Dissertation"^] Von Roy Fielding
++
+In dieser Publikation wurde das MODELL DER REST-Anwendungsentwicklung eingeführt und etabliert.
+
+* https://auth0.com/["Auth0"^]
++
+Dies ist der Authentifizierungs- und Autorisierungsplattform-Service, der vom Astra-Service für den Webzugriff genutzt wird.
+
+* https://www.rfc-editor.org/["RFC-Editor"^]
++
+Maßgebliche Quelle für Web- und Internet-Standards wird als Sammlung von eindeutig nummerierten RFC-Dokumenten gepflegt.
+
+

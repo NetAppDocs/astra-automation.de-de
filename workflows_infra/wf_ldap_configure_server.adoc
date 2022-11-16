@@ -1,0 +1,415 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_ldap_configure_server.html 
+keywords:  
+summary:  
+---
+= Konfigurieren Sie Astra für die Verwendung eines LDAP-Servers
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie müssen einen LDAP-Server auswählen und Astra so konfigurieren, dass der Server als Authentifizierungsanbieter verwendet wird. Die Konfigurationsaufgabe besteht aus den unten beschriebenen Schritten. Jeder Schritt umfasst einen einzelnen REST-API-Aufruf.
+
+
+
+=== 1. Fügen Sie ein CA-Zertifikat hinzu
+
+Führen Sie den folgenden REST-API-Aufruf durch, um ein CA-Zertifikat zu Astra hinzuzufügen.
+
+
+NOTE: Dieser Schritt ist optional und nur erforderlich, wenn Astra und LDAP über einen sicheren Kanal über LDAPS kommunizieren möchten.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| POST | /Account/{Account_id}/Core/v1/certificates 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type": "application/astra-certificate",
+  "version": "1.0",
+  "certUse": "rootCA",
+  "cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMyVEN",
+  "isSelfSigned": "true"
+}
+----
+Beachten Sie folgende Informationen zu den Eingabeparametern:
+
+* `cert` Ist ein JSON-String mit einem base64-kodierten PKCS-11-Zertifikat (PEM-codiert).
+* `isSelfSigned` Sollte auf eingestellt sein `true` Wenn das Zertifikat selbst signiert ist. Die Standardeinstellung lautet `false`.
+
+
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/certificates' --header 'Content-Type: application/astra-certificate+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Beispiel für JSON-Antwort
+
+[source, json]
+----
+{
+  "type": "application/astra-certificate",
+  "version": "1.0",
+  "id": "a5212e7e-402b-4cff-bba0-63f3c6505199",
+  "certUse": "rootCA",
+  "cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMyVEN",
+  "cn": "adldap.example.com",
+  "expiryTimestamp": "2023-07-08T20:22:07Z",
+  "isSelfSigned": "true",
+  "trustState": "trusted",
+  "trustStateTransitions": [
+  {
+    "from": "untrusted",
+    "to": [
+      "trusted",
+      "expired"
+    ]
+  },
+  {
+    "from": "trusted",
+    "to": [
+      "untrusted",
+      "expired"
+    ]
+  },
+  {
+    "from": "expired",
+    "to": [
+     "untrusted",
+     "trusted"
+    ]
+  }
+  ],
+  "trustStateDesired": "trusted",
+  "trustStateDetails": [],
+  "metadata": {
+    "creationTimestamp": "2022-07-21T04:16:06Z",
+    "modificationTimestamp": "2022-07-21T04:16:06Z",
+    "createdBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "modifiedBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "labels": []
+    }
+}
+----
+
+
+=== 2. Fügen Sie die Bindungsanmeldeinformationen hinzu
+
+Führen Sie den folgenden REST-API-Aufruf durch, um die Bindungsanmeldeinformationen hinzuzufügen.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| POST | /Account/{Account_id}/Core/v1/Credentials 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "name": "ldapBindCredential",
+  "type": "application/astra-credential",
+  "version": "1.1",
+  "keyStore": {
+    "bindDn": "dWlkPWFkbWluLG91PXN5c3RlbQ==",
+    "password": "cGFzc3dvcmQ="
+  }
+}
+----
+Beachten Sie folgende Informationen zu den Eingabeparametern:
+
+*  `bindDn` Und `password` Sind die base64-kodierten Bindungsanmeldeinformationen des LDAP-Admin-Benutzers, der eine Verbindung herstellen und das LDAP-Verzeichnis durchsuchen kann. `bindDn` Ist die E-Mail-Adresse des LDAP-Benutzers.
+
+
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Content-Type: application/astra-credential+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Beispiel für JSON-Antwort
+
+[source, json]
+----
+{
+    "type": "application/astra-credential",
+    "version": "1.1",
+    "id": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+    "name": "ldapBindCredential",
+    "metadata": {
+        "creationTimestamp": "2022-07-21T06:53:11Z",
+        "modificationTimestamp": "2022-07-21T06:53:11Z",
+        "createdBy": "527329f2-662c-41c0-ada9-2f428f14c137"
+    }
+}
+----
+Beachten Sie die folgenden Antwortparameter:
+
+* Der `id` Der Anmeldedaten werden in nachfolgenden Workflow-Schritten verwendet.
+
+
+
+
+=== 3. Abrufen der UUID der LDAP-Einstellung
+
+Führen Sie den folgenden REST-API-Aufruf aus, um die UUID von abzurufen `astra.account.ldap` Die Einstellung ist im Astra Control Center enthalten.
+
+
+NOTE: Das folgende Curl-Beispiel verwendet einen Abfrageparameter, um die Einstellensammlung zu filtern. Sie können stattdessen den Filter entfernen, um alle Einstellungen zu erhalten und dann nach zu suchen `astra.account.ldap`.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| GET | /Account/{Account_id}/Core/v1/settings 
+|===
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings?filter=name%20eq%20'astra.account.ldap'&include=name,id' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Beispiel für JSON-Antwort
+
+[source, json]
+----
+{
+  "items": [
+    ["astra.account.ldap",
+    "12072b56-e939-45ec-974d-2dd83b7815df"
+    ]
+  ],
+  "metadata": {}
+}
+----
+
+
+=== 4. Aktualisieren Sie die LDAP-Einstellung
+
+Führen Sie den folgenden REST-API-Aufruf durch, um die LDAP-Einstellung zu aktualisieren und die Konfiguration abzuschließen. Verwenden Sie die `id` Wert aus dem vorherigen API-Aufruf für das `<SETTING_ID>` Wert im URL-Pfad unten.
+
+
+NOTE: Sie können zuerst eine ANFRAGE FÜR DIE spezifische Einstellung ausstellen, um das configSchema zu sehen. Hier erhalten Sie weitere Informationen zu den erforderlichen Feldern in der Konfiguration.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| PUT | /Account/{Account_id}/Core/v1/settings/{setting_id} 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.0",
+  "desiredConfig": {
+    "connectionHost": "myldap.example.com",
+    "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+    "groupBaseDN": "OU=groups,OU=astra,DC=example,DC=com",
+    "isEnabled": "true",
+    "port": 686,
+    "secureMode": "LDAPS",
+    "userBaseDN": "OU=users,OU=astra,DC=example,dc=com",
+    "userSearchFilter": "((objectClass=User))",
+    "vendor": "Active Directory"
+    }
+}
+----
+Beachten Sie folgende Informationen zu den Eingabeparametern:
+
+* `isEnabled` Sollte auf eingestellt sein `true` Oder es kann ein Fehler auftreten.
+* `credentialId` Ist die id der zuvor erstellten Bindungsanmeldeinformationen.
+* `secureMode` Sollte auf eingestellt sein `LDAP` Oder `LDAPS` Basierend auf Ihrer Konfiguration im vorherigen Schritt.
+* Als Anbieter wird nur „Active Directory“ unterstützt.
+
+
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+Wenn der Anruf erfolgreich ist, wird die HTTP 204-Antwort zurückgegeben.
+
+
+
+=== 5. Abrufen der LDAP-Einstellung
+
+Sie können optional den folgenden REST-API-Aufruf durchführen, um die LDAP-Einstellungen abzurufen und die Aktualisierung zu bestätigen.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| GET | /Account/{Account_id}/Core/v1/settings/{setting_id} 
+|===
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Beispiel für JSON-Antwort
+
+[source, json]
+----
+{
+  "items": [
+  {
+    "type": "application/astra-setting",
+    "version": "1.0",
+    "metadata": {
+      "creationTimestamp": "2022-06-17T21:16:31Z",
+      "modificationTimestamp": "2022-07-21T07:12:20Z",
+      "labels": [],
+      "createdBy": "system",
+      "modifiedBy": "00000000-0000-0000-0000-000000000000"
+    },
+    "id": "12072b56-e939-45ec-974d-2dd83b7815df",
+    "name": "astra.account.ldap",
+    "desiredConfig": {
+      "connectionHost": "10.193.61.88",
+      "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+      "groupBaseDN": "ou=groups,ou=astra,dc=example,dc=com",
+      "isEnabled": "true",
+      "port": 686,
+      "secureMode": "LDAPS",
+      "userBaseDN": "ou=users,ou=astra,dc=example,dc=com",
+      "userSearchFilter": "((objectClass=User))",
+      "vendor": "Active Directory"
+    },
+    "currentConfig": {
+      "connectionHost": "10.193.160.209",
+      "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+      "groupBaseDN": "ou=groups,ou=astra,dc=example,dc=com",
+      "isEnabled": "true",
+      "port": 686,
+      "secureMode": "LDAPS",
+      "userBaseDN": "ou=users,ou=astra,dc=example,dc=com",
+      "userSearchFilter": "((objectClass=User))",
+      "vendor": "Active Directory"
+    },
+    "configSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "astra.account.ldap",
+      "type": "object",
+      "properties": {
+        "connectionHost": {
+          "type": "string",
+          "description": "The hostname or IP address of your LDAP server."
+        },
+        "credentialId": {
+          "type": "string",
+          "description": "The credential ID for LDAP account."
+        },
+        "groupBaseDN": {
+          "type": "string",
+          "description": "The base DN of the tree used to start the group search. The system searches the subtree from the specified location."
+        },
+        "groupSearchCustomFilter": {
+          "type": "string",
+          "description": "Type of search that controls the default group search filter used."
+        },
+        "isEnabled": {
+          "type": "string",
+          "description": "This property determines if this setting is enabled or not."
+        },
+        "port": {
+          "type": "integer",
+          "description": "The port on which the LDAP server is running."
+        },
+        "secureMode": {
+          "type": "string",
+          "description": "The secure mode LDAPS or LDAP."
+        },
+        "userBaseDN": {
+          "type": "string",
+          "description": "The base DN of the tree used to start the user search. The system searches the subtree from the specified location."
+        },
+        "userSearchFilter": {
+          "type": "string",
+          "description": "The filter used to search for users according a search criteria."
+        },
+        "vendor": {
+          "type": "string",
+          "description": "The LDAP provider you are using.",
+          "enum": ["Active Directory"]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "connectionHost",
+        "secureMode",
+        "credentialId",
+        "userBaseDN",
+        "userSearchFilter",
+        "groupBaseDN",
+        "vendor",
+        "isEnabled"
+      ]
+      },
+      "state": "valid",
+    }
+  ],
+  "metadata": {}
+}
+----
+Suchen Sie das `state` Feld in der Antwort, die einen der Werte in der unten stehenden Tabelle enthält.
+
+[cols="1,4"]
+|===
+| Bundesland | Beschreibung 
+
+
+| Ausstehend | Die Konfiguration ist noch aktiv und noch nicht abgeschlossen. 
+
+
+| Gültig | Die Konfiguration wurde erfolgreich abgeschlossen und `currentConfig` In der Antwort Matches `desiredConfig`. 
+
+
+| Fehler | Die LDAP-Konfiguration ist fehlgeschlagen. 
+|===

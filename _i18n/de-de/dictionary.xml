@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="c03785645670327afbef79672d54b2df" category="summary">Astra Control ist ein Softwareprodukt von NetApp für das Management des Daten-Lebenszyklus für Ihre Kubernetes-Applikationen. Je nach Umgebung sind zwei Implementierungsmodelle verfügbar. Sowohl Astra Control Center als auch der Astra Control Service nutzen für eine bestimmte Version die gleiche REST API. DIE REST-API und andere verwandte Automatisierungstechnologien können Sie für das Management Ihrer Astra Control Implementierungen nutzen.</block>
+  <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Dokumentation der Astra Control Automation</block>
+  <block id="31862872c35b9509755103831963a7ff" category="summary">Auf weitere Ressourcen erhalten Sie Zugriff. Dort erhalten Sie weitere Informationen zu NetApp Cloud Services und Support sowie ZU allgemeinen REST- und Cloud-Konzepten.</block>
+  <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="doc">Weitere Ressourcen</block>
+  <block id="3cce5f3eaf76e098ba8e28f7bbba3f92" category="section-title">Astra</block>
+  <block id="3a4b2c66d4bdac6ce0e3340c71a39eda" category="inline-link">Astra Control Center-Dokumentation</block>
+  <block id="281db70ca8dfcac9ebe6166029058548" category="list-text"><block ref="281db70ca8dfcac9ebe6166029058548" category="inline-link-rx"></block></block>
+  <block id="01d5e4ec3cb4b0c1971b9e8a5199a107" category="paragraph">Dokumentation für die aktuelle Version der Astra Control Center-Software, die beim Kunden vor Ort eingesetzt wird.</block>
+  <block id="ef22ff17624b3faeed227ce5c717eb5f" category="inline-link">Dokumentation des Astra Control Service</block>
+  <block id="a3fb339c1c586b61a4747f75e3e18873" category="list-text"><block ref="a3fb339c1c586b61a4747f75e3e18873" category="inline-link-rx"></block></block>
+  <block id="9533b0dcff191d66f9ea3fe447bffddc" category="paragraph">Dokumentation für die aktuelle Version der Astra Control Service-Software, die in der Public Cloud verfügbar ist.</block>
+  <block id="be1c3d3113c4023e29e8dd947523c711" category="inline-link">Astra Data Store-Dokumentation</block>
+  <block id="c1f6a45da7b5911a5f35093ae72bfc7a" category="list-text"><block ref="c1f6a45da7b5911a5f35093ae72bfc7a" category="inline-link-rx"></block></block>
+  <block id="f1078b605bb76543a5137c04c286382d" category="paragraph">Dokumentation für die aktuelle Version der Astra Data Store-Software beim Kunden vor Ort.</block>
+  <block id="14d9b10c6196045941347a9e85704b50" category="inline-link">Astra Trident-Dokumentation</block>
+  <block id="b886ef3e400bd69f357f6981475b14e1" category="list-text"><block ref="b886ef3e400bd69f357f6981475b14e1" category="inline-link-rx"></block></block>
+  <block id="5b9e0257ebcdde10e1d11e75a9a03336" category="paragraph">Dokumentation für die aktuelle Version der Astra Trident Software, einem Open-Source-Storage-Orchestrator von NetApp.</block>
+  <block id="c2c4dd027136447874b3a5d1dbac4ae0" category="inline-link">Dokumentation der Astra-Familie</block>
+  <block id="d718eacc67f8b74e62fa7298041adf60" category="list-text"><block ref="d718eacc67f8b74e62fa7298041adf60" category="inline-link-rx"></block></block>
+  <block id="2c3489a3234e45e6f5946c26c4cb7d5e" category="paragraph">Zentraler Standort für den Zugriff auf die gesamte Astra Dokumentation für On-Premises- und Public-Cloud-Implementierungen.</block>
+  <block id="58bf8b302985815533fd451d770a1b0a" category="section-title">NetApp Cloud-Ressourcen</block>
+  <block id="1eeb05c97eb6a268a15e00eff890e07f" category="inline-link">NetApp Cloud-Lösungen</block>
+  <block id="548968c32bccd14a9476be7490cfc41a" category="list-text"><block ref="548968c32bccd14a9476be7490cfc41a" category="inline-link-rx"></block></block>
+  <block id="4049649408c78f285cb012e2651847f4" category="paragraph">Zentraler Standort für NetApp Cloud Lösungen.</block>
+  <block id="654f92d3e3cad866eb53b8787cc67444" category="inline-link">NetApp Cloud Central Konsole</block>
+  <block id="1f45f670e1231774c60ec8b4cae95f3a" category="list-text"><block ref="1f45f670e1231774c60ec8b4cae95f3a" category="inline-link-rx"></block></block>
+  <block id="6b75881aaba9107ac80de75cbb548445" category="paragraph">NetApp Cloud Central Service-Konsole mit Anmeldung.</block>
+  <block id="09ea0908fbfc4cde85bf416e35dc55c8" category="inline-link">NetApp Support</block>
+  <block id="4e3ffaad45a8ae63f200119be8101498" category="list-text"><block ref="4e3ffaad45a8ae63f200119be8101498" category="inline-link-rx"></block></block>
+  <block id="3d32fc1a126e880a8ed715ad4b9c42f5" category="paragraph">Sie erhalten Zugriff auf Tools für die Fehlerbehebung, Dokumentation und technische Support-Unterstützung.</block>
+  <block id="30c6c6906b4bf69f566ac699b562cb7d" category="section-title">REST- und Cloud-Konzepte</block>
+  <block id="e9c4f861f257833ba2ec75155047b6ed" category="inline-link">Dissertation</block>
+  <block id="b9e9e4c00e500b7ab02ea023fdde7644" category="list-text">PhD<block ref="f64b654d7799e22745330f1f41a344ae" category="inline-link-rx"></block> Von Roy Fielding</block>
+  <block id="fc0386108cb3bd212c4e2b1402e8cdc9" category="paragraph">In dieser Publikation wurde das MODELL DER REST-Anwendungsentwicklung eingeführt und etabliert.</block>
+  <block id="2a723769d08b0732d8563ffe6bdaee7d" category="inline-link">Auth0</block>
+  <block id="fa4c9b25eb1d8f275cec785023f608b2" category="list-text"><block ref="fa4c9b25eb1d8f275cec785023f608b2" category="inline-link-rx"></block></block>
+  <block id="28ee6d27c391b09083c6f956239a12ea" category="paragraph">Dies ist der Authentifizierungs- und Autorisierungsplattform-Service, der vom Astra-Service für den Webzugriff genutzt wird.</block>
+  <block id="fa862ec81357f8907a8b75f4d969c590" category="inline-link">RFC-Editor</block>
+  <block id="6763d4dfc2fa6c04b08ba1e1b7751f5f" category="list-text"><block ref="6763d4dfc2fa6c04b08ba1e1b7751f5f" category="inline-link-rx"></block></block>
+  <block id="ba793efaa4293b35388d140ee9308a68" category="paragraph">Maßgebliche Quelle für Web- und Internet-Standards wird als Sammlung von eindeutig nummerierten RFC-Dokumenten gepflegt.</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="summary"></block>
+  <block id="14a831c3d0557a853d7f16eb752484db" category="doc">Fügen Sie LDAP-Einträge zum Astra hinzu</block>
+  <block id="512191c92b8b24122d2373ac3caf757a" category="paragraph">Nachdem LDAP als Authentifizierungsanbieter für Astra Control Center konfiguriert wurde, können Sie die LDAP-Benutzer auswählen, die Astra mit den LDAP-Anmeldedaten authentifizieren soll. Jeder Benutzer muss eine Rolle im Astra haben, bevor er über die Astra Control REST API auf den Astra zugreifen kann.</block>
+  <block id="1259e1bcb3defbf8468fa9b4b317baff" category="paragraph">Es gibt zwei Möglichkeiten, Astra für die Zuweisung von Rollen zu konfigurieren. Wählen Sie den für Ihre Umgebung geeigneten aus.</block>
+  <block id="4e373987ab6f121d73cb3c9d829a077c" category="inline-link-macro">Hinzufügen und Binden eines einzelnen Benutzers</block>
+  <block id="f5acfb5a1e2e11204a7efeab66f37841" category="list-text"><block ref="f5acfb5a1e2e11204a7efeab66f37841" category="inline-link-macro-rx"></block></block>
+  <block id="eada538a3e306c617fada774394426a6" category="inline-link-macro">Fügen Sie eine Gruppe hinzu und binden Sie sie</block>
+  <block id="16cec7fbd9ab597f4db09dbf853b7ceb" category="list-text"><block ref="16cec7fbd9ab597f4db09dbf853b7ceb" category="inline-link-macro-rx"></block></block>
+  <block id="e99b81ee58ab09acce5c0fbc08127e13" category="admonition">Die LDAP-Anmeldedaten bestehen in Form eines Benutzernamens als E-Mail-Adresse und des zugehörigen LDAP-Passworts.</block>
+  <block id="362b4b17b5ad67c04eaf618b3c217139" category="paragraph">Sie können jedem Astra-Benutzer eine Rolle zuweisen, die nach der LDAP-Authentifizierung verwendet wird. Dies ist angemessen, wenn es eine kleine Anzahl von Benutzern gibt und jeder über unterschiedliche administrative Merkmale verfügt.</block>
+  <block id="7250e7ffd1bdbfad9824adacd3541cb3" category="section-title">1. Fügen Sie einen Benutzer hinzu</block>
+  <block id="80429b74c4df5ad07a23ce4efb1b2faa" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um einen Benutzer zu Astra hinzuzufügen und anzugeben, dass LDAP der Authentifizierungsanbieter ist.</block>
+  <block id="3ded167f4ad4afb85c6ace5862e27ba0" category="cell">HTTP-Methode</block>
+  <block id="ac70412e939d72a9234cdebb1af5867b" category="cell">Pfad</block>
+  <block id="a02439ec229d8be0e74b0c1602392310" category="cell">POST</block>
+  <block id="25f12a573132de043b7448f6ef78dbbe" category="cell">/Account/{Account_id}/Core/v1/users</block>
+  <block id="0577bbabd0439eea401a8ec18491d1a6" category="section-title">JSON-Eingabebeispiel</block>
+  <block id="ecfba265de37f13d6cf0121430a4909e" category="paragraph">Beachten Sie folgende Informationen zu den Eingabeparametern:</block>
+  <block id="181e7c57490e9fb900c9322a2192473b" category="list-text">Die folgenden Parameter sind erforderlich:</block>
+  <block id="1123062a01214f821b854c82829467dc" category="list-text"><block ref="4cca77ccfa67be28ea8df8e2fa55e35c" prefix="" category="inline-code"></block></block>
+  <block id="b40bc453bbcc2acf8046abddfb823971" category="list-text"><block ref="ef09e344c513115a542722d58e78b298" prefix="" category="inline-code"></block></block>
+  <block id="ae1bde34794270bb273f407db5974619" category="list-text"><block ref="0c83f57c786a0b4a39efab23731c7ebc" prefix="" category="inline-code"></block></block>
+  <block id="8b6d79c2a8205303d04c5e068e578fd8" category="list-text"><block ref="ef09e344c513115a542722d58e78b298" prefix="" category="inline-code"></block> Ist der Distinguished Name (DN) des Benutzers in LDAP</block>
+  <block id="885e6661c5477a454659497bcf807df5" category="list-text"><block ref="0c83f57c786a0b4a39efab23731c7ebc" prefix="" category="inline-code"></block> Muss für alle in Astra definierten Benutzer eindeutig sein</block>
+  <block id="97c54ae5385dfb0bfaf0ebfe82486c53" category="paragraph">Wenn der<block ref="0c83f57c786a0b4a39efab23731c7ebc" prefix=" " category="inline-code"></block> Der Wert ist nicht eindeutig, es tritt ein Fehler auf und ein HTTP-Statuscode 409 wird in der Antwort zurückgegeben.</block>
+  <block id="e0da47631d6f2648f3a36bde7e269c3b" category="section-title">Beispiel für die Wellung</block>
+  <block id="d6c64252b8ce71696a41d941f4cab6e6" category="section-title">Beispiel für JSON-Antwort</block>
+  <block id="73ae336a1bcf7abf02f83c9d961066d2" category="section-title">2. Fügen Sie eine Rollenbindung für den Benutzer hinzu</block>
+  <block id="f82c041e2677cb63989e7061882203bc" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um den Benutzer an eine bestimmte Rolle zu binden. Sie müssen die UUID des Benutzers im vorherigen Schritt erstellen lassen.</block>
+  <block id="3798adb6ae243fda3b502c1a26ac7f38" category="cell">/Account/{Account_id}/Core/v1/roleBindungen</block>
+  <block id="afeef4481e8f77ed56c4383e82369e67" category="list-text">Der oben verwendete Wert für<block ref="4fe22a948503c3fe556cc6f6831342a9" prefix=" " category="inline-code"></block> Ist die einzige Option, die für die aktuelle Version von Astra verfügbar ist. Er zeigt an, dass der Benutzer nicht auf eine begrenzte Anzahl von Namespaces beschränkt ist und alle darauf zugreifen können.</block>
+  <block id="0622cb2fb15cd9db10328e2ba1d3e821" category="paragraph">Beachten Sie folgende Hinweise zu den Antwortparametern:</block>
+  <block id="ac7d66f43ecf3e035bc9139997762243" category="list-text">Der Wert<block ref="ee11cbb19052e40b07aac0ca060c23ee" prefix=" " category="inline-code"></block> Für das<block ref="463fafd3510d11b15f43ef6174576d16" prefix=" " category="inline-code"></block> Feld gibt an, dass die Rollenbindung für einen Benutzer hinzugefügt wurde (keine Gruppe).</block>
+  <block id="1cce2e3f66074da3b3746e8ff32e3fa7" category="paragraph">Sie können einer Astra-Gruppe eine Rolle zuweisen, die nach der LDAP-Authentifizierung verwendet wird. Dies ist angemessen, wenn es eine große Anzahl von Benutzern gibt und jeder über ähnliche administrative Merkmale verfügt.</block>
+  <block id="92c4973d42b7f8c2b77e4ecde1fb1110" category="section-title">1. Fügen Sie eine Gruppe hinzu</block>
+  <block id="c0ad03b2572c4c7580edf10837ea5620" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um eine Gruppe zu Astra hinzuzufügen und anzugeben, dass LDAP der Authentifizierungsanbieter ist.</block>
+  <block id="53e67e3e5364a93faa473947d3e71330" category="cell">/Account/{Account_id}/Core/v1/groups</block>
+  <block id="d951c83a74c1539e200b4b2a6abc7a9d" category="section-title">2. Fügen Sie eine Rollenbindung für die Gruppe hinzu</block>
+  <block id="a5a9025a2565e62426d0d6fa46ca4e54" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die Gruppe an eine bestimmte Rolle zu binden. Sie müssen die UUID der Gruppe im vorherigen Schritt erstellen lassen. Benutzer, die Mitglieder der Gruppe sind, können sich bei Astra anmelden, nachdem LDAP die Authentifizierung durchgeführt hat.</block>
+  <block id="3f78918ffaed6aa648fbf481030b078e" category="list-text">Der oben verwendete Wert für<block ref="4fe22a948503c3fe556cc6f6831342a9" prefix=" " category="inline-code"></block> Ist die einzige Option, die für die aktuelle Version von Astra verfügbar ist. Er gibt an, dass der Benutzer nicht auf bestimmte Namespaces beschränkt ist und alle darauf zugreifen können.</block>
+  <block id="535f31c0d94d3cf84629bee7a5935c63" category="list-text">Der Wert<block ref="db0f6f37ebeb6ea09489124345af2a45" prefix=" " category="inline-code"></block> Für das<block ref="463fafd3510d11b15f43ef6174576d16" prefix=" " category="inline-code"></block> Feld gibt an, dass die Rollenbindung für eine Gruppe hinzugefügt wurde (kein Benutzer).</block>
+  <block id="f923f903857a5387d3db70494e074632" category="doc">Benutzer auflisten</block>
+  <block id="4c7aee6e8d40dfdf7713e4a924264d5a" category="paragraph">Sie können die Benutzer auflisten, die für ein bestimmtes Astra-Konto definiert sind.</block>
+  <block id="908398b479e9327ae04f2325e64e79ad" category="section-title">1. Listen Sie die Benutzer auf</block>
+  <block id="0ded27ebd95eb2dcf0ec2ac7f61b926c" category="paragraph">Führen Sie den folgenden REST-API-Aufruf aus.</block>
+  <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="cell">GET</block>
+  <block id="c24b0224d3b54e6b4e908019f2447f30" category="section-title">Zusätzliche Eingabeparameter</block>
+  <block id="8ad1007adda12ebaacc83f24d677e5e6" category="paragraph">Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.</block>
+  <block id="83f499a540b1323009c200d6f8cc9396" category="cell">Parameter</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">Typ</block>
+  <block id="b651efdb98a5d6bd2b3935d0c3f4a5e2" category="cell">Erforderlich</block>
+  <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Beschreibung</block>
+  <block id="d436eb0fd9de10b54a828ce6435f7e81" category="cell">Einschließlich</block>
+  <block id="66c1b4c7f3dc385b68a9fa903ccd016d" category="cell">Abfrage</block>
+  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">Nein</block>
+  <block id="17539f6f1332e8e1eec67098e0601a06" category="cell">Wählen Sie optional die Werte aus, die in der Antwort zurückgegeben werden sollen.</block>
+  <block id="d5eaca06185acdad8b69d18d2b7d8a07" category="section-title">Curl-Beispiel: Alle Daten für alle Benutzer zurückgeben</block>
+  <block id="6f0f5a995f8609d334baee54a5b0c773" category="section-title">Curl Beispiel: Gibt den vor-, Nachnamen und die id für alle Benutzer zurück</block>
+  <block id="bff6b273561ec6570215c14bdba13a26" category="section-title">Beispiel für eine JSON-Ausgabe</block>
+  <block id="5b11110b9a97c66915e86bcba53ee809" category="summary">Sie können die definierten Clouds mit einem spezifischen Astra Konto auflisten.</block>
+  <block id="aef02d026fec2eb688571bfa2422be3a" category="doc">Clouds auflisten</block>
+  <block id="1b6ac21e78d44a219b6937e90879165d" category="section-title">1. Die Wolken auflisten</block>
+  <block id="095599abd98771dd2c043675b15cd910" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die Clouds aufzulisten.</block>
+  <block id="d5141cbc6eb85bf48e94e7d96fbd6a95" category="cell">/Account/{Account_id}/Topology/v1/Clouds</block>
+  <block id="e660247893e67f2eed38a94a3b63cd22" category="section-title">Curl-Beispiel: Alle Daten aus allen Clouds zurückgeben</block>
+  <block id="5eb4ace08e506648d2ccc5e95a6d5d96" category="doc">Konfigurieren Sie Astra für die Verwendung eines LDAP-Servers</block>
+  <block id="a4cce93638d786143ceaec53646fcbd0" category="paragraph">Sie müssen einen LDAP-Server auswählen und Astra so konfigurieren, dass der Server als Authentifizierungsanbieter verwendet wird. Die Konfigurationsaufgabe besteht aus den unten beschriebenen Schritten. Jeder Schritt umfasst einen einzelnen REST-API-Aufruf.</block>
+  <block id="b05f354eda3398ade96e9055b0305ee6" category="section-title">1. Fügen Sie ein CA-Zertifikat hinzu</block>
+  <block id="468c35b0a371a6568ff7d068ff72eeea" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um ein CA-Zertifikat zu Astra hinzuzufügen.</block>
+  <block id="073d8b65fb7ecf85a06f38d463b9fdd1" category="admonition">Dieser Schritt ist optional und nur erforderlich, wenn Astra und LDAP über einen sicheren Kanal über LDAPS kommunizieren möchten.</block>
+  <block id="13b11308d2e55c74d3dd35f8e9035cf4" category="cell">/Account/{Account_id}/Core/v1/certificates</block>
+  <block id="7557b2b9d5bb2e98944494352545b875" category="list-text"><block ref="b6ba9fa6ea18201bf39ea635ecca9f13" prefix="" category="inline-code"></block> Ist ein JSON-String mit einem base64-kodierten PKCS-11-Zertifikat (PEM-codiert).</block>
+  <block id="6387f0ce5ee860358d87cf0c10e51883" category="list-text"><block ref="90cfc6da5652d21260206e3e7b812234" prefix="" category="inline-code"></block> Sollte auf eingestellt sein<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> Wenn das Zertifikat selbst signiert ist. Die Standardeinstellung lautet<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>.</block>
+  <block id="d18a6eed5380b79bc54e2eb6e4de5506" category="section-title">2. Fügen Sie die Bindungsanmeldeinformationen hinzu</block>
+  <block id="9beb1432cc918de4d5a2f634c78b257d" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die Bindungsanmeldeinformationen hinzuzufügen.</block>
+  <block id="b8044c82f34d859cca6a593e7b24a79d" category="cell">/Account/{Account_id}/Core/v1/Credentials</block>
+  <block id="ae15f0c9912e2e37b3523e7e2e9f84ee" category="list-text"><block ref="e28922e50817cf44dfc07d9869ad3c81" prefix="" category="inline-code"></block> Und<block ref="5f4dcc3b5aa765d61d8327deb882cf99" prefix=" " category="inline-code"></block> Sind die base64-kodierten Bindungsanmeldeinformationen des LDAP-Admin-Benutzers, der eine Verbindung herstellen und das LDAP-Verzeichnis durchsuchen kann.<block ref="e28922e50817cf44dfc07d9869ad3c81" prefix=" " category="inline-code"></block> Ist die E-Mail-Adresse des LDAP-Benutzers.</block>
+  <block id="bc1e18d5941e02ad1eb5530ea712bf97" category="paragraph">Beachten Sie die folgenden Antwortparameter:</block>
+  <block id="7650c05d04a1e9ff8418e0b2c4d3117a" category="list-text">Der<block ref="b80bb7740288fda1f201890375a60c8f" prefix=" " category="inline-code"></block> Der Anmeldedaten werden in nachfolgenden Workflow-Schritten verwendet.</block>
+  <block id="be0de023c657d3318fab7db4965e926d" category="section-title">3. Abrufen der UUID der LDAP-Einstellung</block>
+  <block id="bdf56457fecf48ce12cedd63e4baec6a" category="paragraph">Führen Sie den folgenden REST-API-Aufruf aus, um die UUID von abzurufen<block ref="3940413bb3049c60c5e6b30073232b82" prefix=" " category="inline-code"></block> Die Einstellung ist im Astra Control Center enthalten.</block>
+  <block id="9a7c85ed5d7349bb01adfea8e76844c3" category="admonition">Das folgende Curl-Beispiel verwendet einen Abfrageparameter, um die Einstellensammlung zu filtern. Sie können stattdessen den Filter entfernen, um alle Einstellungen zu erhalten und dann nach zu suchen<block ref="3940413bb3049c60c5e6b30073232b82" prefix=" " category="inline-code"></block>.</block>
+  <block id="29a6dc5ec66799293d0f657ef700f728" category="cell">/Account/{Account_id}/Core/v1/settings</block>
+  <block id="a04f6fc98905b19569e98c821652785c" category="section-title">4. Aktualisieren Sie die LDAP-Einstellung</block>
+  <block id="c74075f7ca4f004176562adafe18dc7f" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die LDAP-Einstellung zu aktualisieren und die Konfiguration abzuschließen. Verwenden Sie die<block ref="b80bb7740288fda1f201890375a60c8f" prefix=" " category="inline-code"></block> Wert aus dem vorherigen API-Aufruf für das<block ref="7ea6634ba39c1f0d96a6fb712db84dee" prefix=" " category="inline-code"></block> Wert im URL-Pfad unten.</block>
+  <block id="0634ea9e84d965a9b2b7b53435251582" category="admonition">Sie können zuerst eine ANFRAGE FÜR DIE spezifische Einstellung ausstellen, um das configSchema zu sehen. Hier erhalten Sie weitere Informationen zu den erforderlichen Feldern in der Konfiguration.</block>
+  <block id="3e75383a5992a6d15fb81e872e46e256" category="cell">PUT</block>
+  <block id="815d5f652b66fa7fa04278a0dc9e7f06" category="cell">/Account/{Account_id}/Core/v1/settings/{setting_id}</block>
+  <block id="ca58d7a87892784f449108b5713d3d80" category="list-text"><block ref="d97a94e6c10d324fbb3c5f3a1c4a12d5" prefix="" category="inline-code"></block> Sollte auf eingestellt sein<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> Oder es kann ein Fehler auftreten.</block>
+  <block id="51d0b9cf69c2739ca15a60cff099889f" category="list-text"><block ref="833182351578d6a0a4fc4fcb7c9ee80f" prefix="" category="inline-code"></block> Ist die id der zuvor erstellten Bindungsanmeldeinformationen.</block>
+  <block id="91977da3ac4942f4a1225522ce4a5c8d" category="list-text"><block ref="2596a2b64637696b3703150219e9b695" prefix="" category="inline-code"></block> Sollte auf eingestellt sein<block ref="2363dee608bcd9f6ce7f980bfdad5789" prefix=" " category="inline-code"></block> Oder<block ref="298fcfb5d2eed57aee2342417e0ee046" prefix=" " category="inline-code"></block> Basierend auf Ihrer Konfiguration im vorherigen Schritt.</block>
+  <block id="760e899cc5769c0faca3e4d9e4a5fe50" category="list-text">Als Anbieter wird nur „Active Directory“ unterstützt.</block>
+  <block id="c7d952ff6c857d0f8f2f2361f8599340" category="paragraph">Wenn der Anruf erfolgreich ist, wird die HTTP 204-Antwort zurückgegeben.</block>
+  <block id="da31a4db41ccdf3dc0b4203a87c48c02" category="section-title">5. Abrufen der LDAP-Einstellung</block>
+  <block id="49776a9f5739155239c8bae279694c8f" category="paragraph">Sie können optional den folgenden REST-API-Aufruf durchführen, um die LDAP-Einstellungen abzurufen und die Aktualisierung zu bestätigen.</block>
+  <block id="88b81844873daf6f3107692fe9afb47e" category="paragraph">Suchen Sie das<block ref="9ed39e2ea931586b6a985a6942ef573e" prefix=" " category="inline-code"></block> Feld in der Antwort, die einen der Werte in der unten stehenden Tabelle enthält.</block>
+  <block id="46a2a41cc6e552044816a2d04634545d" category="cell">Bundesland</block>
+  <block id="7c6c2e5d48ab37a007cbf70d3ea25fa4" category="cell">Ausstehend</block>
+  <block id="1bf4c086db2064d68723fe48dcda6be2" category="cell">Die Konfiguration ist noch aktiv und noch nicht abgeschlossen.</block>
+  <block id="9f7d0ee82b6a6ca7ddeae841f3253059" category="cell">Gültig</block>
+  <block id="8ca1440fffd6ba28f4d36aa66ef134f4" category="cell">Die Konfiguration wurde erfolgreich abgeschlossen und<block ref="00c442f55ef4e21b2669179048817b6a" prefix=" " category="inline-code"></block> In der Antwort Matches<block ref="4308c350049ae0705f60efc443759184" prefix=" " category="inline-code"></block>.</block>
+  <block id="cb5e100e5a9a3e7f6d1fd97512215282" category="cell">Fehler</block>
+  <block id="d6b82591a59dcebabe58a580017b8eb7" category="cell">Die LDAP-Konfiguration ist fehlgeschlagen.</block>
+  <block id="846402b8c9f043783b1fea0eaa5d5e3a" category="summary">Sie können die S3-Buckets für ein bestimmtes Astra-Konto auflisten.</block>
+  <block id="69e44482660be2fd1013a46b8f354ef2" category="doc">Listen Sie die Buckets auf</block>
+  <block id="9117feaebfa26145178f03156c040dec" category="section-title">1. Listen Sie die Eimer auf</block>
+  <block id="4609424b2fcb4eca19af08e562b2f818" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die Buckets aufzulisten.</block>
+  <block id="9fb6a7e4842bd1acf9b57b499b8036b0" category="cell">/Account/{Account_id}/Topology/v1/Buckets</block>
+  <block id="cfafa44c04121f529847f5cd8be51756" category="section-title">Curl-Beispiel: Gibt alle Daten für alle Buckets zurück</block>
+  <block id="9b419681cf780fc8739ee91b14338a6d" category="summary">Sie können die verfügbaren Speicherklassen auflisten.</block>
+  <block id="a2e45d2c4126abee2b89f161a0a3a50f" category="doc">Auflisten von Speicherklassen</block>
+  <block id="daaec12836753c1aad81b32a5a058476" category="section-title">1. Wählen Sie die Cloud</block>
+  <block id="0d3339545a3c8c350c171199c6549779" category="paragraph">Führen Sie den Workflow aus <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> Und wählen Sie die Cloud aus, in der Sie arbeiten werden.</block>
+  <block id="cb1d8fe3c0fa41d5a40e80cca7f91ff2" category="section-title">2. Wählen Sie den Cluster</block>
+  <block id="1a26d4a9628f05c630331939becee5ab" category="inline-link-macro">Listen Sie die Cluster auf</block>
+  <block id="4c52978a3e6a86d17e5ea3080d73c1d4" category="paragraph">Führen Sie den Workflow aus <block ref="23d58ac86c4531c319d79804ab05ca2c" category="inline-link-macro-rx"></block> Und wählen Sie den Cluster aus.</block>
+  <block id="0555a951c447a0cbe3807de815a06d5d" category="section-title">3. Liste der Speicherklassen für einen bestimmten Cluster</block>
+  <block id="646ae38688e5af41b737db05fd5a5cdb" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die Storage-Klassen für einen bestimmten Cluster und die Cloud aufzulisten.</block>
+  <block id="bed512ae2e247eeb98fdd4cd3feb1f36" category="cell">/Account/{Account_id}/Topology/v1/Clouds/&lt;CLOUD_ID&gt;/Cluster/&lt;CLUSTER_ID&gt;/storageClasses</block>
+  <block id="55d1071fe1b5a920cb319a5cdd834452" category="section-title">Curl Beispiel: Gibt alle Daten für alle Speicherklassen zurück</block>
+  <block id="a70539afac49ca03ebbf1219df791a81" category="paragraph">Sie können die verfügbaren Cluster in einer bestimmten Cloud auflisten.</block>
+  <block id="6e7a5e444e17b81da2d35e5e7b5fb7ea" category="paragraph">Führen Sie den Workflow aus <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> Wählen Sie dann die Cloud mit den Clustern aus.</block>
+  <block id="4a8c29c133faeda5a63e72796ed312c8" category="section-title">2. Listen Sie die Cluster auf</block>
+  <block id="279e904c662f9babe50ce81e0df24ea5" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die Cluster in einer bestimmten Cloud aufzulisten.</block>
+  <block id="ea62700eaf9c7c85e33b80518f121429" category="cell">/Account/{Account_id}/Topology/v1/Clouds/{Cloud_id}/Cluster</block>
+  <block id="6ff447fbf69dd4070e63e99da1dde7b0" category="section-title">Curl-Beispiel: Gibt alle Daten für alle Cluster zurück</block>
+  <block id="bec9f16b8e469e038cb36941a7f49a27" category="summary">Mithilfe dieser Workflows können Sie die Infrastruktur erstellen und warten, die bei einer Implementierung von Astra Control Center verwendet wird. In vielen Fällen können die Workflows auch mit dem Astra Control Service genutzt werden.</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="doc">Bevor Sie beginnen</block>
+  <block id="8f6291e033ff30c19e8b03e19a26f0f3" category="admonition">Diese Workflows können jederzeit von NetApp erweitert und ergänzt werden, sodass Sie sie in regelmäßigen Abständen prüfen sollten.</block>
+  <block id="6fd2337d24b1882caa5014a35282404b" category="section-title">Allgemeine Vorbereitung</block>
+  <block id="1b18b55a054bdd1b04a8c8f5c862bc4f" category="inline-link-macro">Die Nutzung der Workflows wird vorbereitet</block>
+  <block id="cbdeff17f21659aa95f18f7102990f97" category="paragraph">Bevor Sie einen Astra-Workflow verwenden, sollten Sie unbedingt lesen <block ref="1d4e486ef41d26d87e2c5a1c939d4914" category="inline-link-macro-rx"></block>.</block>
+  <block id="ec34ea1038c99109c93f6776a16e2be8" category="section-title">Workflow-Kategorien</block>
+  <block id="c2864f49ccd62b4a439e6e98cf080bad" category="paragraph">Die Infrastruktur-Workflows sind in verschiedene Kategorien unterteilt, um den gewünschten Workflow leichter finden zu können.</block>
+  <block id="3adbdb3ac060038aa0e6e6c138ef9873" category="cell">Kategorie</block>
+  <block id="cfc97f6bd7c3456321d1fd8b90352beb" category="cell">Identität und Zugriff</block>
+  <block id="d65ef3c48dc6be2ab6c525428ec0071f" category="cell">Mit diesen Workflows können Sie die Identität und den Zugriff auf Astra verwalten. Zu den Ressourcen zählen Benutzer, Anmeldedaten und Token.</block>
+  <block id="7a75d31b87be9d056b6bda38eaa0ec04" category="cell">LDAP-Konfiguration</block>
+  <block id="da44d6a90298c4994e9893ac3929f496" category="cell">Optional können Sie Astra Control Center so konfigurieren, dass Sie LDAP zur Authentifizierung ausgewählter Benutzer verwenden.</block>
+  <block id="62254758dcfe975098fab22609c8aa79" category="cell">Buckets</block>
+  <block id="acda08632ae3ad28c4cd07196e0eedc6" category="cell">Sie können diese Workflows zum Erstellen und Managen der S3-Buckets verwenden, die zum Speichern von Backups verwendet werden.</block>
+  <block id="8c4aa541ee911e8d80451ef8cc304806" category="cell">Storage</block>
+  <block id="86bae698153c67b42f5d6879975769c8" category="cell">Durch diese Workflows können Sie Storage-Back-Ends und -Volumes hinzufügen und verwalten.</block>
+  <block id="9b99bf7d2bfd4b09363304c166832734" category="cell">Cluster</block>
+  <block id="fb06a1a5fb91fa6698fe3e86c0957986" category="cell">Sie können Managed Kubernetes Cluster hinzufügen, damit Sie die enthaltenen Applikationen schützen und unterstützen können.</block>
+  <block id="efc48892bfa2d48bf7b7099da5e8b1cb" category="summary">Optional können Sie Astra Control Center mit einem LDAP-Server (Lightweight Directory Access Protocol) integrieren, um die Authentifizierung für ausgewählte Astra-Benutzer durchzuführen.</block>
+  <block id="5416f32b477dd06c275634ccd1f515ef" category="doc">Vorbereiten der LDAP-Konfiguration</block>
+  <block id="64e2f4d6a4ddca1f96b57f2204e643e0" category="paragraph">Optional können Sie Astra Control Center mit einem LDAP-Server (Lightweight Directory Access Protocol) integrieren, um die Authentifizierung für ausgewählte Astra-Benutzer durchzuführen. LDAP ist ein branchenübliches Protokoll für den Zugriff auf verteilte Verzeichnisinformationen und eine beliebte Wahl für die Unternehmensauthentifizierung.</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="list-title">Verwandte Informationen</block>
+  <block id="7ec8f89b6c735a5a73c147cd118f1dc0" category="inline-link">LDAP - Technische Spezifikation - Road Map</block>
+  <block id="4a5c91444ee2cc7af3551ee1a7752ceb" category="list-text"><block ref="4a5c91444ee2cc7af3551ee1a7752ceb" category="inline-link-rx"></block></block>
+  <block id="2a906b17d905fdd3a0299e217eccf792" category="inline-link">LDAP-Version 3</block>
+  <block id="7cf9f7fe5b261dcd2ad0d601d9060fc4" category="list-text"><block ref="7cf9f7fe5b261dcd2ad0d601d9060fc4" category="inline-link-rx"></block></block>
+  <block id="28b2cfaececf9f33556a32eb29382c27" category="section-title">Überblick über den Implementierungsprozess</block>
+  <block id="32011db5e3f2b973acfc8aed3c0529a5" category="paragraph">Auf hohem Niveau müssen Sie mehrere Schritte durchführen, um einen LDAP-Server für die Authentifizierung von Astra-Benutzern zu konfigurieren.</block>
+  <block id="c1b67e408996198828424d7c76c02bd0" category="admonition">Während sich die unten aufgeführten Schritte nacheinander befinden, können Sie sie in einer anderen Reihenfolge ausführen. Sie können beispielsweise die Astra-Benutzer und -Gruppen festlegen, bevor Sie den LDAP-Server konfigurieren.</block>
+  <block id="a3cb839890daad4f93490c8dec227de5" category="inline-link-macro">Anforderungen und Einschränkungen zu erfüllen</block>
+  <block id="c56b0e2cad98039f90afc405a76c9339" category="list-text">Prüfen <block ref="686b04a911782dec11ddeea9b8f057bc" category="inline-link-macro-rx"></block> Um Optionen, Anforderungen und Einschränkungen zu verstehen.</block>
+  <block id="90380231066a158ebf6100b796ff4c99" category="list-text">Wählen Sie einen LDAP-Server und die gewünschten Konfigurationsoptionen (einschließlich Sicherheit) aus.</block>
+  <block id="5740ce327fba4073ca1904b06bc75eb3" category="list-text">Führen Sie den Workflow aus <block ref="bf310a7fd12c5fc1c6d25b61c9a5b93c" category="inline-link-macro-rx"></block> Um Astra mit dem LDAP-Server zu integrieren.</block>
+  <block id="b9c3ffd9ba3c6bf134abfff90267daf9" category="list-text">Überprüfen Sie die Benutzer und Gruppen auf dem LDAP-Server, um sicherzustellen, dass sie ordnungsgemäß definiert sind.</block>
+  <block id="449f06d287054d92195f8d12380492a2" category="list-text">Führen Sie den entsprechenden Workflow in aus <block ref="fa99eeb7a6945e9d3646f3be23581902" category="inline-link-macro-rx"></block> So identifizieren Sie die Benutzer, die mit LDAP authentifiziert werden sollen.</block>
+  <block id="3ff570634537eaff0815860b69ce8091" category="paragraph">Vor der Konfiguration von Astra zur Verwendung von LDAP zur Authentifizierung sollten Sie sich die unten aufgeführten Konfigurationsmöglichkeiten, einschließlich Einschränkungen und Konfigurationsoptionen, ansehen.</block>
+  <block id="c36e6b423c38bf8ef0ea8072377038ba" category="paragraph">Die Astra Control-Plattform verfügt über zwei Implementierungsmodelle. Die LDAP-Authentifizierung wird nur bei Astra Control Center-Implementierungen unterstützt.</block>
+  <block id="7fef125dab1669f0bd061ee06a5d6f99" category="paragraph">Die aktuelle Version von Astra Control Center unterstützt nur die Konfiguration der LDAP-Authentifizierung mithilfe der Astra Control REST API. Ein wichtiger Aspekt dieser Einschränkung ist, dass die LDAP-Benutzer nicht auf der Registerkarte Benutzer des Astra Web-Interface angezeigt werden. Sie sind über DIE REST-API am Endpunkt verfügbar<block ref="866daca8068a293350bba7e05821c446" prefix=" " category="inline-code"></block>.</block>
+  <block id="18164a8c6c2e5e2bcefd983d32500f4b" category="paragraph">Sie müssen über einen LDAP-Server verfügen, um die Astra-Authentifizierungsanforderungen zu akzeptieren und zu bearbeiten. Das Active Directory von Microsoft wird mit der aktuellen Version von Astra Control Center unterstützt.</block>
+  <block id="200a1d5a87da368403e19065f0bdc581" category="paragraph">Bei der Konfiguration des LDAP-Servers in Astra können Sie optional eine sichere Verbindung festlegen. In diesem Fall wird ein Zertifikat für das LDAPS-Protokoll benötigt.</block>
+  <block id="9977ea9eb2d078e2d962856f8263451f" category="paragraph">Sie müssen die Benutzer auswählen, die mit LDAP authentifiziert werden sollen. Dazu können Sie entweder die einzelnen Benutzer oder eine Gruppe von Benutzern identifizieren. Die Konten müssen auf dem LDAP-Server definiert werden. Sie müssen auch im Astra (Typ LDAP) identifiziert werden, wodurch die Authentifizierungsanforderungen an LDAP weitergeleitet werden können.</block>
+  <block id="2513c835dd297cecfbb5520096ce3826" category="paragraph">Mit der aktuellen Version von Astra Control Center ist der einzige unterstützte Wert für<block ref="4fe22a948503c3fe556cc6f6831342a9" prefix=" " category="inline-code"></block> Ist „*“. Dies bedeutet, dass der Benutzer nicht auf eine begrenzte Anzahl von Namespaces beschränkt ist und auf alle zugreifen kann. Siehe <block ref="fa99eeb7a6945e9d3646f3be23581902" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="9b220fa67069c2260857f2597ac91e53" category="paragraph">Zu den von LDAP verwendeten Anmeldeinformationen gehören der Benutzername (E-Mail-Adresse) und das zugehörige Passwort.</block>
+  <block id="8c7e9f2dfcd0125922dfbce36a1a4c2a" category="inline-link">Benutzer entfernen</block>
+  <block id="8b762bd0efe3e57dbdbc5d0f912ee411" category="paragraph">Alle E-Mail-Adressen, die in einer Astra Control Center-Implementierung als Benutzernamen fungieren, müssen eindeutig sein. Sie können keinen LDAP-Benutzer mit einer E-Mail-Adresse hinzufügen, die bereits in Astra definiert ist. Wenn eine doppelte E-Mail vorhanden ist, müssen Sie sie zuerst aus Astra löschen. Siehe<block ref="a92cb03f8a893365ffccb1d3a846870f" category="inline-link-rx"></block> Auf der Astra Control Center Dokumentationswebsite finden Sie weitere Informationen.</block>
+  <block id="83e2e963b0499e60bb6c46f08a38ce7b" category="paragraph">Sie können die LDAP-Benutzer und -Gruppen zum Astra Control Center hinzufügen, auch wenn sie noch nicht in LDAP vorhanden sind oder der LDAP-Server nicht konfiguriert ist. Auf diese Weise können Sie vor der Konfiguration des LDAP-Servers Benutzer und Gruppen konfigurieren.</block>
+  <block id="2839ece291324f6c806790ca58811cc8" category="paragraph">Wenn ein LDAP-Benutzer zu mehreren LDAP-Gruppen gehört und den Gruppen verschiedene Rollen in Astra zugewiesen wurden, ist die effektive Rolle des Benutzers bei der Authentifizierung die bevorzugte. Wenn einem Benutzer beispielsweise das zugewiesen ist<block ref="4b2a1529867b8d697685b1722ccd0149" prefix=" " category="inline-code"></block> Rolle mit Gruppe1, aber hat die<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> Rolle in Groupp2, die Rolle des Benutzers wäre<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block>. Dies basiert auf der Hierarchie des Astra (höchste bis niedrigste):</block>
+  <block id="b6f4a2ec6356bbd56d49f2096bf9d3d3" category="list-text">Eigentümer</block>
+  <block id="e3afed0047b08059d0fada10f400c1e5" category="list-text">Admin</block>
+  <block id="858ba4765e53c712ef672a9570474b1d" category="list-text">Mitglied</block>
+  <block id="fb15c53f22336982a182b84aeb2f42eb" category="list-text">Prüfer</block>
+  <block id="f2ed562f43254d0123b5ec5c7446769b" category="paragraph">Astra synchronisiert seine Benutzer und Gruppen etwa alle 60 Sekunden mit dem LDAP-Server. Wenn also ein Benutzer oder eine Gruppe zu LDAP hinzugefügt oder aus dieser entfernt wird, kann es bis zu einer Minute dauern, bis er in Astra verfügbar ist.</block>
+  <block id="9f836651cdc687b80d11b030386b39cc" category="inline-link-macro">Deaktivieren und Zurücksetzen von LDAP</block>
+  <block id="b76debe413bda7ec6dfd72991496d708" category="paragraph">Bevor Sie versuchen, die LDAP-Konfiguration zurückzusetzen, müssen Sie zunächst die LDAP-Authentifizierung deaktivieren. Außerdem zum Ändern des LDAP-Servers <block ref="0fe1baa8e02361e3eee878349edf39fc" prefix="(" category="inline-code"></block>), Sie müssen beide Operationen ausführen. Siehe <block ref="9757cdec26988067ceb9687504d1344e" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="19ec08da81a826d919d64ab860845c04" category="inline-link-macro">API-Referenz</block>
+  <block id="fd492c20355537c6885cfc88284a0f9c" category="paragraph">Die LDAP-Konfigurations-Workflows führen REST-API-Aufrufe zur Ausführung der spezifischen Aufgaben durch. Jeder API-Aufruf kann Eingabeparameter enthalten, wie in den angegebenen Beispielen dargestellt. Siehe <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> Weitere Informationen zum Auffinden der Referenzdokumentation.</block>
+  <block id="29927b373bf91a30324f8b9244efff87" category="paragraph">Für eine Astra Control Center-Implementierung können Sie zwei optionale administrative Aufgaben durchführen. Sie können die LDAP-Authentifizierung global deaktivieren und die LDAP-Konfiguration zurücksetzen.</block>
+  <block id="0409c9f1dab10d77e34c0dde2e7d2640" category="inline-link-macro">Abrufen der UUID der LDAP-Einstellung</block>
+  <block id="60c04eaeef0130847b81e4afbda94ddd" category="paragraph">Beide Workflow-Aufgaben erfordern die id für den<block ref="3940413bb3049c60c5e6b30073232b82" prefix=" " category="inline-code"></block> Astra-Einstellung: Details zum Abrufen der Einstellungen-id finden Sie in *Konfigurieren des LDAP-Servers*. Siehe <block ref="79d5da28a6715eb561c830637b2fc4c6" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="1b7e4184801e48f4201e523ef3933d7f" category="inline-link-macro">Deaktivieren Sie die LDAP-Authentifizierung</block>
+  <block id="7d40ea0a4f491763035cc48ea1a6ddcf" category="list-text"><block ref="7d40ea0a4f491763035cc48ea1a6ddcf" category="inline-link-macro-rx"></block></block>
+  <block id="1f4306b5533c4a2e43c1a403aeb464e4" category="inline-link-macro">LDAP-Authentifizierungskonfiguration zurücksetzen</block>
+  <block id="554945e8b5658618072d4db6e6f57ea1" category="list-text"><block ref="554945e8b5658618072d4db6e6f57ea1" category="inline-link-macro-rx"></block></block>
+  <block id="e37b6056e7a6d186a2c97a4d2a9aad18" category="paragraph">Sie können den folgenden REST-API-Aufruf durchführen, um die LDAP-Authentifizierung für eine bestimmte Astra-Implementierung global zu deaktivieren. Der Anruf aktualisiert den<block ref="3940413bb3049c60c5e6b30073232b82" prefix=" " category="inline-code"></block> Einstellung und das<block ref="d97a94e6c10d324fbb3c5f3a1c4a12d5" prefix=" " category="inline-code"></block> Wert ist gesetzt auf<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>.</block>
+  <block id="2fc2b6f607cda95230b0bc78aff13ddf" category="paragraph">Wenn der Anruf erfolgreich ist, wird der angezeigt<block ref="57bec28586ffcd6cb601b3992f95c356" prefix=" " category="inline-code"></block> Die Antwort wird zurückgegeben. Sie können optional die Konfigurationseinstellungen erneut abrufen, um die Änderung zu bestätigen.</block>
+  <block id="d2378ce17d1deb939d9765a975ab1310" category="paragraph">Sie können den folgenden REST-API-Aufruf ausführen, um Astra vom LDAP-Server zu trennen und die LDAP-Konfiguration in Astra zurückzusetzen. Der Anruf aktualisiert den<block ref="3940413bb3049c60c5e6b30073232b82" prefix=" " category="inline-code"></block> Einstellung und der Wert von<block ref="0fe1baa8e02361e3eee878349edf39fc" prefix=" " category="inline-code"></block> Wird gelöscht.</block>
+  <block id="404ddca7091b6ebdfdac8d79757305f6" category="paragraph">Der Wert von<block ref="d97a94e6c10d324fbb3c5f3a1c4a12d5" prefix=" " category="inline-code"></block> Muss auch auf festgelegt sein<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>. Sie können diesen Wert entweder vor dem Rücksetzen oder als Teil des Rückrufs festlegen. Im zweiten Fall<block ref="0fe1baa8e02361e3eee878349edf39fc" prefix=" " category="inline-code"></block> Sollte gelöscht werden und<block ref="d97a94e6c10d324fbb3c5f3a1c4a12d5" prefix=" " category="inline-code"></block> Bei demselben Reset-Anruf auf false gesetzt.</block>
+  <block id="bbb26ec6e926ef3caf7a0e11d73ac4f8" category="admonition">Dies ist ein disruptiver Betrieb, und Sie sollten mit Vorsicht vorgehen. Alle importierten LDAP-Benutzer und -Gruppen werden gelöscht. Außerdem werden alle zugehörigen Astra-Benutzer, Gruppen und RoleBindings (LDAP-Typ) gelöscht, die Sie im Astra Control Center erstellt haben.</block>
+  <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">Beachten Sie Folgendes:</block>
+  <block id="bca37564b08c352c9b5fbb27a68163fc" category="list-text">Um den LDAP-Server zu ändern, müssen Sie die LDAP-Änderung deaktivieren und zurücksetzen<block ref="3a40e7a1b430feef8590ca83c2def76a" prefix=" " category="inline-code"></block> Bis zu einem Null-Wert, wie im Beispiel oben gezeigt.</block>
+  <block id="6fde5ce7c3e78a7b80189e22926ce1a9" category="paragraph">Wenn der Anruf erfolgreich ist, wird der angezeigt<block ref="57bec28586ffcd6cb601b3992f95c356" prefix=" " category="inline-code"></block> Die Antwort wird zurückgegeben. Sie können optional die Konfiguration erneut abrufen, um die Änderung zu bestätigen.</block>
+  <block id="99a4fd4c49fccb599a3b4d33e4b37909" category="doc">Auflisten von Storage-Back-Ends</block>
+  <block id="c3a6f95958616037be5bc621e7f71032" category="paragraph">Sie können die verfügbaren Storage-Back-Ends auflisten.</block>
+  <block id="be1dcc1afbc1a43cd23e6374cd48ad18" category="section-title">1. Listen Sie die Back-Ends auf</block>
+  <block id="61bf96d95cf34f1d59a77975db5785f3" category="cell">/Account/{Account_id}/Topology/v1/storageBackends</block>
+  <block id="97d6ce33b116e0cdc883be2e518a550e" category="section-title">Curl-Beispiel: Gibt alle Daten für alle Storage-Back-Ends zurück</block>
+  <block id="49d7482cad2dac48b0f0e77473d3a249" category="doc">Auflistung gemanagter Cluster</block>
+  <block id="1b382a88a3817dcba16a81ec9e5cf1c5" category="paragraph">Sie können die Kubernetes-Cluster auflisten, die derzeit vom Astra gemanagt werden.</block>
+  <block id="fa52d266bf5c95bd5d51a11ed63c7fa3" category="section-title">1. Listen Sie die verwalteten Cluster auf</block>
+  <block id="10b14b5f4283ee7f1b6186e8ca9a4bb1" category="cell">/Account/{Account_id}/Topology/v1/manageClusters</block>
+  <block id="4086ad8bc58a79384e2abed3e4c7b4f1" category="summary">Es gibt verschiedene Kubernetes-Konzepte, die für die Verwendung der Astra REST API relevant sind.</block>
+  <block id="35e431c9f5b342b3021d74196ba6d0ca" category="doc">Grundlegende Kubernetes-Konzepte</block>
+  <block id="c8308b1eba7ba926a61b8fd802194386" category="section-title">Objekte</block>
+  <block id="f1cc005117a5cbfdc746b09fc2740ce3" category="paragraph">Die in einer Kubernetes-Umgebung gepflegten Objekte sind persistente Einheiten, die die Konfiguration des Clusters repräsentieren. Diese Objekte beschreiben zusammen den Status des Systems einschließlich des Cluster-Workloads.</block>
+  <block id="13d28e8dfc702e3456e0767dff9a128a" category="section-title">Namespaces</block>
+  <block id="e4bf9ae863cd1aefddf2b696b955f449" category="paragraph">Namespaces bieten eine Technik zum Isolation von Ressourcen in einem einzigen Cluster. Diese Organisationsstruktur ist nützlich, wenn die Arten von Arbeit, Nutzer und Ressourcen aufgeteilt werden. Objekte mit einem Umfang „_Namespace“_ müssen innerhalb des Namespace eindeutig sein, während Objekte mit einem „_Cluster Scope_“ im gesamten Cluster eindeutig sein müssen.</block>
+  <block id="3ad6cb6100190c8f81e99fd52debf7ef" category="section-title">Etiketten</block>
+  <block id="3430bf151db09278950b5545d1433fc0" category="paragraph">Labels können den Kubernetes-Objekten zugeordnet werden. Sie beschreiben Attribute mit Schlüsselwert-Paaren und können eine beliebige Organisation auf dem Cluster durchsetzen. Diese können sich für ein Unternehmen nützlich sein, liegen aber nicht in der zentralen Handhabung von Kubernetes.</block>
+  <block id="736214fe7532e2fc83d855d2d8a1cc51" category="summary">Vor der Live-Implementierung sollten Sie sich mit der Organisation und dem Format der Astra-Workflows vertraut machen.</block>
+  <block id="0b79795d3efc95b9976c7c5b933afce2" category="section-title">Einführung</block>
+  <block id="b3433e01f10e1e1369d819f420b2a8a7" category="paragraph">Ein _Workflow_ ist eine Sequenz aus einem oder mehreren Schritten, die zum Erreichen einer bestimmten administrativen Aufgabe oder eines bestimmten Ziels erforderlich sind. Jeder Schritt in einem Astra Control Workflow ist einer der folgenden:</block>
+  <block id="6f01c5142da7df41a4b71dc3f7570bda" category="list-text">REST-API-Aufruf (mit Details wie Curl- und JSON-Beispiele)</block>
+  <block id="78fa555cbbf5cfea76fb1b1f6ee2dd29" category="list-text">Aufruf eines weiteren Astra-Workflows</block>
+  <block id="0250c1a44d81b589b5b4f427275ac9f1" category="list-text">Sonstige verwandte Aufgaben (z. B. die Entscheidung für eine erforderliche Designentscheidung)</block>
+  <block id="b4ad63a307b10645d3f05daf2a68fd69" category="paragraph">Workflows umfassen die wichtigsten Schritte und Parameter, die zur Durchführung jeder Aufgabe erforderlich sind. Sie bieten als Ausgangspunkt für die Anpassung Ihrer Automatisierungsumgebung.</block>
+  <block id="3791b7d0d91a2238c40dbbfefa886cc7" category="section-title">Allgemeine Eingabeparameter</block>
+  <block id="4793f7e43c0b614d9436bdc916a53132" category="paragraph">Die unten beschriebenen Eingabeparameter sind für alle Curl-Proben, die zur Veranschaulichung eines REST-API-Aufrufs verwendet werden, üblich.</block>
+  <block id="accb68848ca657de52fbb603de5210a7" category="admonition">Da diese Eingabeparameter universell erforderlich sind, werden sie in den einzelnen Arbeitsabläufen nicht weiter beschrieben. Wenn für ein bestimmtes Curl-Beispiel zusätzliche Eingabeparameter verwendet werden, werden sie im Abschnitt *zusätzliche Eingabeparameter* beschrieben.</block>
+  <block id="18a5eb10fa0d3a464702a4b8daac4266" category="section-title">Pfadparameter</block>
+  <block id="916bff7b68625feaff0fa92152a8c4f0" category="inline-link-macro">URL-Format</block>
+  <block id="503c8aae9452b9959d308d3f2d3096fe" category="paragraph">Der bei jedem REST-API-Aufruf verwendete Endpunkt-Pfad umfasst die folgenden Parameter. Siehe auch <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="351a2eb8764e19b9e565e8a355469e70" category="list-text">Konto-ID</block>
+  <block id="6e567afb3c0582569592264335e77063" category="inline-link-macro">Holen Sie sich ein API-Token</block>
+  <block id="1f6e2f2cfb847644b16a490ce41ebd8b" category="list-text">Dies ist der UUIDv4-Wert, der das Astra-Konto identifiziert, auf dem der API-Vorgang ausgeführt wird. Siehe <block ref="949977ec887dbf77cf703083221524dc" category="inline-link-macro-rx"></block> Weitere Informationen zur Suche nach Ihrer Konto-ID.</block>
+  <block id="736943e80c16e2be98d8595e6376e4ee" category="section-title">Anfragekopfzeilen</block>
+  <block id="60a612c6fb7649fb73c8bba8ecc92e3e" category="paragraph">Je nach REST-API-Aufruf müssen Sie möglicherweise mehrere Anforderungsheader einbeziehen.</block>
+  <block id="9cd8a2455b1839ff98ef70c05b9b5983" category="list-text">Autorisierung</block>
+  <block id="9a536be7255d1442830c11bda56d6752" category="list-text">Für alle API-Aufrufe in den Workflows wird ein API-Token zur Identifizierung des Benutzers benötigt. Sie müssen das Token in das aufnehmen<block ref="9cd8a2455b1839ff98ef70c05b9b5983" prefix=" " category="inline-code"></block> Kopfzeile der Anfrage. Siehe <block ref="949977ec887dbf77cf703083221524dc" category="inline-link-macro-rx"></block> Weitere Informationen zum Generieren eines API-Tokens finden Sie unter.</block>
+  <block id="266ba14af58a3dfa4b9e1c90a8879dfb" category="list-text">Content-Typ</block>
+  <block id="d3372edb76427cc513c6612948a1009a" category="list-text">Mit dem HTTP-POST und PUT-Anfragen, bei denen JSON im Anforderungstext enthalten ist, sollten Sie den Medientyp basierend auf der Astra-Ressource deklarieren. Beispielsweise können Sie die Kopfzeile einschließen<block ref="6b1fa66c8eb31836b3e529f0e6b8671a" prefix=" " category="inline-code"></block> Beim Erstellen eines Snapshots für eine verwaltete Anwendung.</block>
+  <block id="c4408d335012a56ff58937d78050efad" category="list-text">Akzeptieren</block>
+  <block id="06aaa274f211af6567a97cd2601245c4" category="list-text">Sie können den spezifischen Medientyp des Inhalts, den Sie in der Antwort erwarten, basierend auf der Astra-Ressource erklären. Beispielsweise können Sie die Kopfzeile einschließen<block ref="9cd2649dcee6f80ddd08934531e4b34e" prefix=" " category="inline-code"></block> Wenn Sie die Backups für eine gemanagte Applikation auflisten. Zur Vereinfachung akzeptieren die Wellproben in den Workflows jedoch alle Medientypen.</block>
+  <block id="e61e133d4cfd72503fe6ac169a680fab" category="section-title">Darstellung von Token und Identifikatoren</block>
+  <block id="89b2bf9f7f0100dcd9717a9f846c1938" category="paragraph">Das API-Token und andere ID-Werte, die mit den Curl-Beispielen verwendet werden, sind undurchsichtig und haben keine erkennbare Bedeutung. Um die Lesbarkeit der Proben zu verbessern, werden die tatsächlichen Token- und ID-Werte nicht verwendet. Stattdessen werden kleinere reservierte Schlüsselwörter verwendet, die mehrere Vorteile haben:</block>
+  <block id="4358f6bef945b7769bf5d4ac6e199f45" category="list-text">Die Curl- und JSON-Proben sind klarer und leichter zu verstehen.</block>
+  <block id="f18d64be11866478e05d45955bbf2455" category="list-text">Da alle Schlüsselwörter dasselbe Format mit Klammern und Großbuchstaben verwenden, können Sie schnell den Ort und den Inhalt identifizieren, der eingefügt oder extrahiert werden soll.</block>
+  <block id="ae8a59dcfdfdb01ea66130c76c50f0a7" category="list-text">Kein Wert geht verloren, da die ursprünglichen Parameter nicht kopiert und bei einer tatsächlichen Implementierung verwendet werden können.</block>
+  <block id="a5fa758a804c6e775ad8c0643a197329" category="paragraph">Hier sind einige der in den Curl-Beispielen verwendeten allgemein reservierten Schlüsselwörter. Diese Liste ist nicht vollständig und weitere Schlüsselwörter werden bei Bedarf verwendet. Ihre Bedeutung sollte auf der Grundlage des Kontexts offensichtlich sein.</block>
+  <block id="220f3d3750583b9db48568a0b5b9a5f1" category="cell">Stichwort</block>
+  <block id="901931235afef62a62e9ee2657e55eaf" category="cell">&lt;ACCOUNT_ID&gt;</block>
+  <block id="7b5c2e331dadd94a7f2f3c331d308424" category="cell">Der UUIDv4-Wert identifiziert das Konto, auf dem der API-Vorgang ausgeführt wird.</block>
+  <block id="4a66fdca0794b65eaa799aa5ead36fb1" category="cell">&lt;API_TOKEN&gt;</block>
+  <block id="bf50d5e661106d0abe925af3c2e6f7e7" category="cell">Kopfzeile</block>
+  <block id="14ce98600753e7afda082ba76ce94155" category="cell">Das Inhaberzeichen, das den Anrufer identifiziert und autorisiert.</block>
+  <block id="8aaca9da7a2057e6c3482b19683ee3b0" category="cell">&lt;APP_ID&gt;</block>
+  <block id="f5a4b32e77235d71cac07525901e432b" category="cell">Der UUIDv4-Wert, der die Anwendung für den API-Aufruf identifiziert.</block>
+  <block id="20d2410ae6d60054698fdb2241648ec0" category="paragraph">Je nach Ihrem Implementierungsmodell stehen Ihnen zwei weit gefassten Kategorien von Astra-Workflows zur Verfügung. Wenn Sie Astra Control Center nutzen, sollten Sie mit den Infrastruktur-Workflows beginnen und anschließend mit den Management-Workflows fortfahren. Mit dem Astra Control Service können Sie in der Regel direkt zu den Management-Workflows wechseln.</block>
+  <block id="3968c3333db40e7d3ec4d8fb2fc30853" category="admonition">Die Curl-Beispiele in den Workflows verwenden die URL für den Astra Control Service. Sie müssen die URL ändern, wenn Sie das On-Premise Astra Control Center entsprechend Ihrer Umgebung verwenden.</block>
+  <block id="3037de0d7a975b284e2a80d0ff32a9cc" category="section-title">Infrastruktur-Workflows</block>
+  <block id="23f646b4da04b69e64a7e464ec005504" category="paragraph">Diese Workflows befassen sich mit der Astra-Infrastruktur, einschließlich Referenzen, Buckets und Storage-Back-Ends. Sie werden mit dem Astra Control Center benötigt, können aber in den meisten Fällen auch mit dem Astra Control Service verwendet werden. Die Workflows konzentrieren sich auf die Aufgaben, die für die Einrichtung und Wartung eines von Astra gemanagten Clusters erforderlich sind.</block>
+  <block id="a0aa3c13c7e155cdac2e684ed97bd329" category="section-title">Management-Workflows</block>
+  <block id="ead63516b6f8d40a5195059120a34741" category="paragraph">Diese Workflows können nach einem verwalteten Cluster verwendet werden. Die Workflows konzentrieren sich auf die Applikationssicherung und unterstützen Abläufe wie das Backup, Restore und Klonen einer Applikation.</block>
+  <block id="f2082cbd04c532123c4a60b265595268" category="summary">Sie müssen ein Astra API Token erhalten, um die Astra Control REST API zu verwenden.</block>
+  <block id="e18812059a8d09f0f17ebcad797930df" category="paragraph">Ein API-Token identifiziert den Anrufer an Astra und muss bei jedem REST-API-Aufruf enthalten sein.</block>
+  <block id="0e2c9374186101782c17c706d964b6ab" category="list-text">Sie können über die Astra Web-Benutzeroberfläche ein API-Token generieren.</block>
+  <block id="dd1c8bab333b87721ef3d1780c9d2744" category="list-text">Die mit dem Token getragene Benutzeridentität wird vom Benutzer bestimmt, der das Token erstellt.</block>
+  <block id="80c4d1da0ffc63fa594010f5c5541b4b" category="list-text">Das Token muss in das enthalten sein<block ref="9cd8a2455b1839ff98ef70c05b9b5983" prefix=" " category="inline-code"></block> HTTP-Anfragekopf.</block>
+  <block id="261bfb4842abd90ac7080375e1e3a342" category="list-text">Ein Token läuft nie ab, nachdem es erstellt wurde.</block>
+  <block id="7d3bb36b2de41ab91073fa12ad3242f6" category="list-text">Sie können ein Token über die Astra Web-Benutzeroberfläche widerrufen.</block>
+  <block id="99910604d292e8754daf25a401bb8857" category="inline-link-macro">Ein API-Token widerrufen</block>
+  <block id="344fcf1ffe13f47b7e084c95c8926ec6" category="list-text"><block ref="344fcf1ffe13f47b7e084c95c8926ec6" category="inline-link-macro-rx"></block></block>
+  <block id="1ac36aa6ca00de5e76a5920ca6368fa6" category="section-title">Erstellen Sie ein Astra API-Token</block>
+  <block id="8d4eb0217153cb37c8687158d7067cfb" category="paragraph">In den folgenden Schritten wird beschrieben, wie ein Astra API Token erstellt wird.</block>
+  <block id="646fd3c3d22d826a188a59c1bba8854b" category="paragraph">Sie benötigen die Zugangsdaten für ein Astra-Konto.</block>
+  <block id="af02d3e1ad157f1839fbba3f7e1fc763" category="paragraph">Diese Aufgabe erzeugt ein API-Token in der Astra-Webschnittstelle. Sie sollten auch die Account-ID abrufen, die auch bei API-Aufrufen benötigt wird.</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Schritte</block>
+  <block id="c7937dcfe6d6141d399008b7df375246" category="list-text">Melden Sie sich mit Ihren Anmeldedaten im Astra an.</block>
+  <block id="c3cd4b6e8352817aeaab7114fc20ee4d" category="inline-link"><block ref="c3cd4b6e8352817aeaab7114fc20ee4d" category="inline-link-rx"></block></block>
+  <block id="6f38ef059f4b592ce26b99012c9d756d" category="paragraph">Rufen Sie die folgende Website für den Astra Control Service auf:<block ref="0045c0d6f22ad59c53fc1e6d3b91c771" category="inline-link-rx"></block></block>
+  <block id="7d88293618d45c51062ebb23f7a5777d" category="list-text">Klicken Sie auf das Figurensymbol oben rechts auf der Seite und wählen Sie *API Access*.</block>
+  <block id="b329e0b224bc672c7032902e91459644" category="list-text">Klicken Sie auf *API-Token generieren* auf der Seite und klicken Sie im Popup-Fenster auf *API-Token generieren*.</block>
+  <block id="3040c02566f3d35a3b86a6ca9472dadd" category="list-text">Klicken Sie auf das Symbol, um die Token-Zeichenfolge in die Zwischenablage zu kopieren und im Editor zu speichern.</block>
+  <block id="df98c0b39730eeb3f14749ea1c0684c2" category="list-text">Kopieren Sie die Konto-id, die auf derselben Seite verfügbar ist, und speichern Sie sie.</block>
+  <block id="38ed0da570fd8c0b212e0f8dc6cdb8fc" category="paragraph">Wenn Sie über Curl oder eine Programmiersprache auf die Astra Control REST API zugreifen, müssen Sie das API-Träger-Token in das HTTP einbeziehen<block ref="9cd8a2455b1839ff98ef70c05b9b5983" prefix=" " category="inline-code"></block> Kopfzeile der Anfrage.</block>
+  <block id="3c7367ab4ec3900042f765d5f3b81ee6" category="summary">Die Astra Control REST API ist für den Einstieg schnell einsatzbereit.</block>
+  <block id="ff187555434d269d1d36dedf48955cdb" category="paragraph">Sie können sich schnell auf den Einstieg in die Astra Control REST API vorbereiten, indem Sie die unten aufgeführten Schritte überprüfen.</block>
+  <block id="2f4e21e17441a71f2d731b0fdb15fc17" category="paragraph">Sie benötigen Astra-Anmeldeinformationen, um sich bei der Astra Web-Benutzeroberfläche anzumelden und ein API-Token zu generieren. Mit Astra Control Center verwalten Sie diese Anmeldedaten lokal. Mit dem Astra Control Service können Sie über den *Auth0*-Dienst auf die Anmeldeinformationen zugreifen.</block>
+  <block id="4b96d62533ac6ea29ddc9891a6776a3b" category="paragraph">Sie sollten mit verschiedenen grundlegenden Kubernetes-Konzepten vertraut sein. Siehe <block ref="e274b8e6d2e2ed892d318b3b2d0764db" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="67d003f4d71c424d95442bd22e4d9b35" category="inline-link-macro">Core-REST-Implementierung</block>
+  <block id="0c59027cf761af16d5101de509ed5ef7" category="paragraph">Prüfen Sie die Daten <block ref="533ba43849291e761802432633424684" category="inline-link-macro-rx"></block> Für Informationen über REST-Konzepte und die Details zur Entwicklung der Astra Control REST API.</block>
+  <block id="1975d27c17bd745494bde5176f3687d2" category="paragraph">Beachten Sie die zusätzlichen Informationsressourcen, wie in vorgeschlagen <block ref="d9232e9ba333ee728d29f8228e038c57" category="inline-link-macro-rx"></block>.</block>
+  <block id="2d388ce46646f517f31092dee87e1af6" category="summary">Sie können einen einfachen curl Befehl an Ihrer Workstation CLI ausgeben, um mit dem Astra Control REST API zu beginnen und seine Verfügbarkeit zu bestätigen.</block>
+  <block id="3e25960a79dbc69b674cd4ec67a72c62" category="doc">Hallo Welt</block>
+  <block id="9b355d9a0df5a5e777f4cd881f971a4e" category="paragraph">Das Dienstprogramm Curl muss auf Ihrer lokalen Workstation verfügbar sein. Sie müssen außerdem über ein API-Token und die zugehörige Account-ID verfügen. Siehe <block ref="67af9ad396391bc7ade4b472f0b4f030" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="cbd2fd368381db0d8cdbdead253cf132" category="paragraph">Der folgende Curl Befehl ruft eine Liste der Astra-Benutzer ab. Geben Sie die entsprechenden &lt;ACCOUNT_ID&gt; und &lt;API_TOKEN&gt; wie angegeben an.</block>
+  <block id="e14d216616a4529ca008fe30d48b4bda" category="summary">Astra Control Center und Astra Control Service bieten eine gemeinsame REST-API, auf die Sie direkt über eine Programmiersprache oder ein Dienstprogramm wie Curl zugreifen können. Die API zeichnet sich durch mehrere wichtige Highlights und Vorteile aus.</block>
+  <block id="48f085a79b3bd49f8180067c06092213" category="doc">Überblick über die Merkmale und Vorteile</block>
+  <block id="640575a1239211b2cdac8d24cbd8fe4e" category="paragraph">Astra Control Center und Astra Control Service bieten eine gemeinsame REST-API, auf die Sie direkt über eine Programmiersprache oder ein Dienstprogramm wie Curl zugreifen können. Die wichtigsten Highlights und Vorteile der API sind nachfolgend aufgeführt.</block>
+  <block id="351df3aa3706c8ed2199a8019e815c0c" category="admonition">Um auf DIE REST-API zuzugreifen, müssen Sie sich zunächst bei der Astra Web-Benutzeroberfläche anmelden und ein API-Token generieren. Sie müssen das Token bei jeder API-Anforderung einschließen.</block>
+  <block id="6c38ead9bdb25d09c6e504c53fc268a5" category="paragraph">Die Astra Control API wurde mit REST-Technologie und aktuellen Best Practices erstellt. Die Kerntechnologie umfasst HTTP, JSON und RBAC.</block>
+  <block id="6ded6cd1a82081d2c5fe31ad44e26927" category="paragraph">Astra Control Service wird in der Public Cloud-Umgebung eingesetzt und Astra Control Center ist Ihre lokale Implementierung. Beide Implementierungsmodelle werden über eine REST-API unterstützt.</block>
+  <block id="8538dfe988aff949d5dd74e2d6c12949" category="paragraph">Die externen REST-Endpunkte, mit denen auf die Ressourcenzuordnung auf ein konsistentes Objektmodell zugegriffen wird, das vom Astra-Service intern gewartet wird. Das Objektmodell basiert auf er-Modellierung (Entity-Relationship), mit der API-Aktionen und -Antworten klar definiert werden können.</block>
+  <block id="479c256f055cedaadf40e8a31b1cb62f" category="paragraph">Die REST-API bietet eine umfangreiche Reihe von Abfrageparametern, mit denen Sie auf die Ressourcensammlungen zugreifen können. Einige der unterstützten Vorgänge umfassen Filtern, Sortieren und Paginieren.</block>
+  <block id="bdc2516aa5546e7df819a07cd9385485" category="paragraph">Das Design der Astra Web-Benutzeroberfläche ist auf DIE REST-API abgestimmt, so dass es Konsistenz zwischen den beiden Zugriffspfaden und der Benutzererfahrung gibt.</block>
+  <block id="973e2c06fdb700a27ccfb70fe4627261" category="paragraph">Die Astra Control REST API bietet eine robuste Debugging- und Problembestimmung, einschließlich Systemereignissen und Benutzerbenachrichtigungen.</block>
+  <block id="b6c92126e042e664395830549916fde8" category="paragraph">Sie erhalten eine Reihe von Workflows, die Sie bei der Entwicklung Ihres Automatisierungscodes unterstützen. Die Workflows sind in zwei Kategorien unterteilt: Infrastruktur und Management.</block>
+  <block id="e252a713c9e65fd0bb92dbc65b6b0610" category="paragraph">Neben dem direkten Zugriff auf DIE REST API können weitere Automatisierungstechnologien verwendet werden, die auf der REST-API basieren.</block>
+  <block id="4b675e54aa1095b2b20f8c4019de37b0" category="inline-link">Astra-Dokumentation</block>
+  <block id="e24577a913c63a00f3c432062590ce18" category="paragraph">Die Dokumentation der Astra Control Automation ist Teil der größeren Dokumentation der Astra-Familie. Siehe<block ref="30a4a2719bc4878ee8fefb5295fc2613" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="d803102aaa79040d7acdf0fdfaf7f156" category="summary">Zur Automatisierung einer Astra Implementierung können Sie auf die Ressourcen zugreifen, die über die ASTRA Control REST-API bereitgestellt werden. Jede Ressource ist über einen oder mehrere Endpunkte verfügbar. Diese Seite enthält eine Einführung in DIE REST-Ressourcen, die Sie im Rahmen einer Automatisierungsimplementierung nutzen können.</block>
+  <block id="599887dba3179dd0daaa4b5d587aa0a0" category="doc">Ressourcen und Endpunkte</block>
+  <block id="2cb4d33cb32e61ac40dcce4208d54e3c" category="paragraph">Zur Automatisierung einer Astra Implementierung können Sie auf die Ressourcen zugreifen, die über die ASTRA Control REST-API bereitgestellt werden. Jede Ressource ist über einen oder mehrere Endpunkte verfügbar. Nachfolgend finden Sie eine Einführung zu DEN REST-Ressourcen, die Sie im Rahmen einer Automatisierungsimplementierung nutzen können.</block>
+  <block id="98904826ae5cef8716020180473276c8" category="admonition">Das Format des Pfads und der vollständigen URL für den Zugriff auf die Astra Control-Ressourcen basiert auf mehreren Werten. Siehe <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen. Siehe auch <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> Weitere Informationen zur Verwendung der Astra-Ressourcen und -Endpunkte.</block>
+  <block id="94076f0e9f9b57b9bc636dff06dec4be" category="section-title">Zusammenfassung der Astra Control REST-Ressourcen</block>
+  <block id="0f879b71f480ca631ac007cea8270eb9" category="paragraph">Die primären Ressourcenendpunkte in der Astra Control REST API sind in drei Kategorien unterteilt. Auf jede Ressource kann mit allen CRUD-Vorgängen (Erstellen, Lesen, Aktualisieren, Löschen) zugegriffen werden, sofern nicht anders angegeben.</block>
+  <block id="5814e35bd932d85c35c92f3c990f80c0" category="paragraph">Die Spalte *Release* zeigt den Astra-Release an, als die Ressource zum ersten Mal eingeführt wurde. Dieses Feld ist für Ressourcen verfügbar, die mit der aktuellen Version neu hinzugefügt wurden.</block>
+  <block id="7dbea29c80effd84223267932eaa1d82" category="section-title">Kernressourcen</block>
+  <block id="5503f539f2ed18a2040c3adee6743b18" category="paragraph">Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau und zur Wartung der Astra-Laufzeitumgebung erforderlich sind.</block>
+  <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">Ressource</block>
+  <block id="b8e7b465df7c5979dc731d06e84ce2cf" category="cell">Freigabe</block>
+  <block id="08bd40c7543007ad06e4fce31618f6ec" category="cell">Konto</block>
+  <block id="b9afcd2399096c529c7bdb5fde05df0e" category="cell">21.12</block>
+  <block id="39a70d60ad1f39618d1dd601b341a2f6" category="cell">Mithilfe der Account-Ressourcen können Sie die isolierten Mandanten innerhalb der mandantenfähigen Astra Control Implementierungsumgebung managen.</block>
+  <block id="4ace64fe7e8d8a82871a5ef9df9dc6a4" category="cell">ASUP</block>
+  <block id="8ff5110ebae476ca35aeb20b14a75693" category="cell">21.08</block>
+  <block id="c42aa22ce7e41e552d950420b7f9261a" category="cell">Die ASUP Ressourcen stellen die AutoSupport Bundles dar, die an den NetApp Support weitergeleitet werden.</block>
+  <block id="eb0f48a107df1a0f343d4cd513b555e6" category="cell">Zertifikat</block>
+  <block id="c966687cd1c8354905372f920eb2a23b" category="cell">*22.08*</block>
+  <block id="3fe0021542d501c59073fddce2d62709" category="cell">Die Zertifikatressourcen stellen die installierten Zertifikate dar, die für eine starke Authentifizierung für ausgehende Verbindungen verwendet werden.</block>
+  <block id="03bc142e6422dbb9b288ad2cabee08c7" category="cell">Anmeldedaten</block>
+  <block id="af08b45fa44807ac1852671e6fc59d44" category="cell">21.04</block>
+  <block id="6a610191ab493ebeb9ee88ec2384254d" category="cell">Die Ressourcen für Zugangsdaten enthalten sicherheitsbezogene Informationen, die mit Astra-Benutzern, Clustern, Buckets und Storage-Back-Ends verwendet werden können.</block>
+  <block id="654223e205de4e4d6e9760a2c9bbcc59" category="cell">Berechtigung</block>
+  <block id="3f949e8f5c970921cc9c0ae857ee43ac" category="cell">Die Berechtigungsressourcen stellen die Funktionen und Kapazitäten dar, die für ein Konto auf Basis der aktiven Lizenzen und Abonnements verfügbar sind.</block>
+  <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">Ereignis</block>
+  <block id="41fe27488836be5a48654e2e7f9b9a3c" category="cell">Die Event-Ressourcen repräsentieren alle Ereignisse, die im System auftreten, einschließlich der Untergruppe, die als Benachrichtigungen klassifiziert ist.</block>
+  <block id="b9ab083ebcf27029a022bf2e308555ab" category="cell">Execution Hook</block>
+  <block id="54d57faf98d4bfad6eed40ece793dce5" category="cell">Die Hook-Ressourcen für die Ausführung stellen benutzerdefinierte Skripts dar, die Sie entweder vor oder nach einem Snapshot einer verwalteten App ausführen können.</block>
+  <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">Merkmal</block>
+  <block id="387f4c62cef9b23f6940608d7fd4518c" category="cell">Die Funktionsressourcen stellen ausgewählte Astra-Funktionen dar, die Sie abfragen können, um festzustellen, ob diese im System aktiviert oder deaktiviert sind. Der Zugriff ist auf schreibgeschützt beschränkt.</block>
+  <block id="03937134cedab9078be39a77ee3a48a0" category="cell">Gruppieren</block>
+  <block id="a744e9bf981f07cf1f6ae31ed0df70b1" category="cell">Die Gruppenressourcen sind die Astra-Gruppen und die damit verbundenen Ressourcen. In der aktuellen Version werden nur LDAP-Gruppen unterstützt.</block>
+  <block id="f42562a6ae551c35216254ce200afcc8" category="cell">Hook-Quelle</block>
+  <block id="fba14cda608976c44a49d623666f37c7" category="cell">Die Hakenquellenressourcen stellen den aktuellen Quellcode dar, der mit einem Testsuite verwendet wird. Die Trennung des Quellcodes von der Ausführungskontrolle hat mehrere Vorteile, wie z. B. die Freigabe der Skripte.</block>
+  <block id="794df3791a8c800841516007427a2aa3" category="cell">Lizenz</block>
+  <block id="b2d55dc4fec3ba025999ca224e38960b" category="cell">Die Lizenzressourcen stellen die für ein Astra-Konto verfügbaren Lizenzen dar.</block>
+  <block id="96d008db67fc0b5551a926842bbb6a71" category="cell">Benachrichtigung</block>
+  <block id="c4f95a0bc4f1a90ec9fa6c084868ffe3" category="cell">Die Benachrichtigungsressourcen sind Astra-Ereignisse mit einem Benachrichtigungsziel. Der Zugriff erfolgt auf Benutzerbasis.</block>
+  <block id="209802fb858e2c83205027dbbb5d9e6c" category="cell">Paket</block>
+  <block id="e764fe6b8f8825a307a87cedbef45678" category="cell">22.04</block>
+  <block id="d340d1aca9540d03d5dbc3a841480388" category="cell">Die Paketressourcen ermöglichen die Registrierung und den Zugriff auf Paketdefinitionen. Softwarepakete bestehen aus verschiedenen Komponenten, einschließlich Dateien, Bildern und anderen Artefakten.</block>
+  <block id="fd2bd51169cf1622d8afc842b6c7fae9" category="cell">Rollenbindung</block>
+  <block id="6ebaa723a81c40b3c1242f8bad10ff34" category="cell">Die Role Binding Ressourcen stellen die Beziehungen zwischen bestimmten Paaren von Benutzern und Konten dar. Zusätzlich zur Verknüpfung zwischen den beiden wird für jede über eine bestimmte Rolle ein Satz von Berechtigungen festgelegt.</block>
+  <block id="51ac4bf63a0c6a9cefa7ba69b4154ef1" category="cell">Einstellung</block>
+  <block id="939b4310fe5592716c602cf48793e84f" category="cell">Die Einstellungsressourcen stellen eine Sammlung von Schlüsselwert-Paaren dar, die ein Feature für ein bestimmtes Astra-Konto beschreiben.</block>
+  <block id="787ad0b7a17de4ad6b1711bbf8d79fcb" category="cell">Abonnement</block>
+  <block id="f1cf7121547bd4912f3ebf1b8e483b5a" category="cell">Die Abonnementressourcen stellen die aktiven Abonnements für ein Astra-Konto dar.</block>
+  <block id="459a6f79ad9b13cbcb5f692d2cc7a94d" category="cell">Token</block>
+  <block id="de89d8750ec160e779ccfc4acb253798" category="cell">Die Token-Ressourcen stellen die Token dar, die für den programmatischen Zugriff auf die Astra Control REST API verfügbar sind.</block>
+  <block id="3d74270bce6df5c461068acd3992d1bd" category="cell">Ungelesene Benachrichtigung</block>
+  <block id="0bfed6a24fda71fcefed59052aa8b04d" category="cell">Die nicht gelesenen Benachrichtigungsressourcen stellen Benachrichtigungen dar, die einem bestimmten Benutzer zugewiesen, aber noch nicht gelesen wurden.</block>
+  <block id="f683581d3e75f05f9d9215f9b4696cef" category="cell">Upgrade</block>
+  <block id="2d90c29fa077bbff5b5b4c8a523efa88" category="cell">Die Upgrade-Ressourcen bieten Zugriff auf Softwarekomponenten und können Upgrades initiieren.</block>
+  <block id="8f9bfe9d1345237cb3b2b205864da075" category="cell">Benutzer</block>
+  <block id="6335f12cd32772f1f765a1aadeaffd96" category="cell">Die Benutzerressourcen sind Astra-Benutzer, die auf das System basierend auf ihrer definierten Rolle zugreifen können.</block>
+  <block id="cc32566cda71be962f99357b3002c8db" category="section-title">Gemanagte Applikationsressourcen</block>
+  <block id="9e9335e3f4a9b4abe338f2fa5fec0162" category="paragraph">Die Endpunkte der gemanagten Applikationsressourcen bieten Zugriff auf die gemanagten Kubernetes-Applikationen.</block>
+  <block id="79018ac7f72b136dcb6a5f9e125d4c2b" category="cell">Anwendungsressource</block>
+  <block id="f63ec399edbf672707e34b98cb969ccd" category="cell">Die Anwendungsressourcen stellen interne Sammlungen von staatlichen Informationen dar, die für das Management der Astra-Anwendungen erforderlich sind.</block>
+  <block id="639d7e9624e068b9cb919e6476673916" category="cell">Applikations-Backup</block>
+  <block id="e92acef3d98e8a64572a05792290f27b" category="cell">Die Backup-Ressourcen der Applikation stellen Backups der gemanagten Applikationen dar.</block>
+  <block id="1fd2b9909603c282becde555a00d5699" category="cell">Anwendungs-Snapshot</block>
+  <block id="73150caf4eee48175bcbbee6e9bdf201" category="cell">Die Snapshot-Ressourcen der Anwendung stellen Snapshots der verwalteten Anwendungen dar.</block>
+  <block id="9f9b94351efdd20bfec97ae027bdd1de" category="cell">Überschreiben des Testablaufanhängehaken</block>
+  <block id="d20b671eee65b07689030c1a810243c7" category="cell">Über die Ressourcen zum Überschreiben der Execution Hooks können Sie die vorab geladenen NetApp Standard-Testausführungshaken für bestimmte Applikationen nach Bedarf deaktivieren.</block>
+  <block id="25f7347236b51a5eae4ba01a7862cb55" category="cell">Zeitplan</block>
+  <block id="91fd88ee3861a8eb1aa5fb75a5577d89" category="cell">Die Zeitplanressourcen sind Datensicherungsvorgänge, die im Rahmen einer Datenschutzrichtlinie für die gemanagten Applikationen geplant sind.</block>
+  <block id="67c58d2de17edb43efeda54f12292dd2" category="section-title">Topologieressourcen</block>
+  <block id="2570c360375a393547ef6c0be287059b" category="paragraph">Die Endpunkte der Topologieressourcen bieten Zugriff auf nicht verwaltete Applikationen und Storage-Ressourcen.</block>
+  <block id="ac863f346e618f9a959b5c95d5d28941" category="cell">App.</block>
+  <block id="e43da2c91ef5f1040a302b6b10917893" category="cell">Die App-Ressourcen umfassen alle Kubernetes-Applikationen, auch die, die nicht von Astra gemanagt werden.</block>
+  <block id="c600ce546bf9ac67939481d537d10403" category="cell">AppMirror</block>
+  <block id="2ea0c70486ac42aa9093e842d4d23473" category="cell">Die AppMirror-Ressourcen stellen die AppMirror-Ressourcen dar, die für das Management von Applikationsspiegelungsbeziehungen bereitgestellt werden.</block>
+  <block id="30edf70db68aa84f05d3e72326807b0c" category="cell">Eimer</block>
+  <block id="6252662cb4947c8a0051b73da80307e9" category="cell">Die Bucket-Ressourcen sind die S3-Cloud-Buckets, die für die Speicherung von Backups der vom Astra gemanagten Applikationen verwendet werden.</block>
+  <block id="c8e2277ecfb1427838c488c217f99466" category="cell">Cloud</block>
+  <block id="e44f381ea37820094446c414c36db5ca" category="cell">Die Cloud-Ressourcen stellen Clouds dar, mit denen Astra-Clients verbunden werden können, um Cluster und Applikationen zu managen.</block>
+  <block id="249694a485fc5d3289c38986b4f8e887" category="cell">Cluster</block>
+  <block id="8826893c737aedf5a5169a74fb17ac54" category="cell">Die Cluster-Ressourcen stellen die Kubernetes-Cluster dar, die nicht von Kubernetes gemanagt werden.</block>
+  <block id="db6b0e60fc01fe1efd233929dea252ca" category="cell">Cluster-Node</block>
+  <block id="46f255d802b6381149870692736dad56" category="cell">Die Cluster-Node-Ressourcen bieten eine zusätzliche Auflösung, durch die Sie auf die einzelnen Nodes innerhalb eines Kubernetes-Clusters zugreifen können.</block>
+  <block id="f8ae2befc6a1cee31f421d5496ea6aeb" category="cell">Verwalteter Cluster</block>
+  <block id="9cfbb01459b058e1710e14a0720bc3a3" category="cell">Die gemanagten Cluster-Ressourcen stellen die Kubernetes-Cluster dar, die derzeit von Kubernetes gemanagt werden.</block>
+  <block id="129be99fc591453941e189ee076a0290" category="cell">Gemanagtes Storage-Back-End</block>
+  <block id="3e96a7fa7d0e1d88d70912b8a5d80908" category="cell">Die gemanagten Storage-Backend-Ressourcen ermöglichen Ihnen den Zugriff auf abstrahierte Darstellungen der Back-End-Storage-Anbieter. Diese Storage-Back-Ends können von den gemanagten Clustern und Applikationen verwendet werden.</block>
+  <block id="b3ba0fe968ce39dcfc6fe8cc0f1b02da" category="cell">Namespace</block>
+  <block id="08dafbbeceed7e340c9625fd30927d83" category="cell">Die Namespace-Ressourcen bieten Zugriff auf die innerhalb eines Kubernetes-Clusters verwendeten Namespaces.</block>
+  <block id="6c5e678cf147ef415c2e584ba561bce7" category="cell">Storage-Back-End</block>
+  <block id="4c5c5ddf14933aa945693ada812ede98" category="cell">Die Storage-Back-End-Ressourcen stellen Anbieter von Storage-Services dar, die von den von Astra gemanagten Clustern und Applikationen verwendet werden können.</block>
+  <block id="dd8c5eff0fd4dd0b3760e41db59bfb3a" category="cell">Storage-Klasse</block>
+  <block id="8fb50be09f59469582a9c05b97f8517c" category="cell">Ressourcen der Storage-Klasse stellen unterschiedliche Storage-Klassen oder -Typen dar, die für ein bestimmtes gemanagtes Cluster erkannt und verfügbar sind.</block>
+  <block id="ec0f2a3052ae80ccfcad8020e8680088" category="cell">Storage-Gerät</block>
+  <block id="5482e18b728d9af600694261c0650975" category="cell">Die Storage-Geräteressourcen bieten Zugriff auf die Festplatten, die mit einem bestimmten Storage-Node für Storage-Back-Ends vom Typ Astra Data Store (ADS) verbunden sind. Ein ADS Storage Back-End wird als Kubernetes-Cluster implementiert.</block>
+  <block id="fe171fe0421ac266ac1285e64b1311d2" category="cell">Storage-Node</block>
+  <block id="2c0709150edcf4371b39572b109c04c3" category="cell">Die Storage-Node-Ressourcen stellen die Nodes dar, die Teil eines ADS-Clusters sind.</block>
+  <block id="bd7a9717d29c5ddcab1bc175eda1e298" category="cell">Datenmenge</block>
+  <block id="d0600f0c4c9b294b53d39320b3945b84" category="cell">Die Volume-Ressourcen stellen die Kubernetes Storage Volumes dar, die mit den gemanagten Applikationen verknüpft sind.</block>
+  <block id="a3033e8e82a579c4e34115e2186d13ad" category="section-title">Zusätzliche Ressourcen und Endpunkte</block>
+  <block id="4ded71dc03234200c0b0b124900cea7d" category="paragraph">Zur Unterstützung einer Astra-Implementierung stehen mehrere zusätzliche Ressourcen und Endpunkte zur Verfügung.</block>
+  <block id="55fcf9a6a46c69408785dcd2e3a82522" category="admonition">Diese Ressourcen und Endpunkte sind derzeit nicht in der Astra Control REST API-Referenzdokumentation enthalten.</block>
+  <block id="34b4714329fbd5b24fd78ba32d5a5722" category="list-text">OpenAPI</block>
+  <block id="3568b4ed2338901078928983e029bbba" category="list-text">Die OpenAPI-Endpunkte bieten Zugriff auf das aktuelle OpenAPI JSON-Dokument und andere zugehörige Ressourcen.</block>
+  <block id="4f48af1c326e720124a79cc1f9216ecb" category="list-text">OpenMetrics</block>
+  <block id="27ee1c661b70f7b369179a81dd12721d" category="list-text">Die OpenMetrics-Endpunkte bieten über die OpenMetrics-Ressource Zugriff auf die Kontokennzahlen. Support ist mit dem Astra Control Center Implementierungsmodell verfügbar.</block>
+  <block id="7a161061772a428a5823e2adbe01f5f4" category="summary">Sie können auf die Details der Astra Control REST-API-Aufrufe zugreifen, einschließlich HTTP-Methoden, Eingabeparameter und Antworten. Diese vollständige Referenz ist hilfreich, wenn Automatisierungsapplikationen mithilfe der REST API entwickelt werden.</block>
+  <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">Die REST-API-Referenzdokumentation wird derzeit mit Astra Control bereitgestellt und ist online verfügbar.</block>
+  <block id="18bfd97c33ffd64bcd077be2ff48cd45" category="paragraph">Sie benötigen ein Konto für Astra Control Center oder Astra Control Service.</block>
+  <block id="1fb6c6816575c47391caa2d4408774f5" category="paragraph">Rufen Sie die folgende Website für den Astra Control Service auf: <block ref="a7c1946d9e83ca7cb364e2283d9c1bfa" category="inline-link-macro-rx"></block></block>
+  <block id="a242cf3d90ad638fe0e23d9477b74175" category="list-text">Klicken Sie oben auf der Seite auf die URL, die unter *API Documentation* angezeigt wird.</block>
+  <block id="1cafd580155ad918d6c525c18cc8e5e6" category="list-text">Geben Sie bei Aufforderung erneut Ihre Anmeldeinformationen für das Konto an.</block>
+  <block id="c09d3feeeeb00d4c76b65e91bde7c0ac" category="summary">Die Astra REST API unterstützt die rollenbasierte Zugriffssteuerung (RBAC), um den Zugriff auf Systemfunktionen zu gewähren und einzuschränken.</block>
+  <block id="2496b3f288a81c8c923f8c9c19fe6ed4" category="doc">RBAC-Sicherheit</block>
+  <block id="93f59591ef6394ec20a0c8c92e574665" category="section-title">Astra Rollen</block>
+  <block id="1dfeab1980c9d1053325319ee410d098" category="paragraph">Jeder Astra-Benutzer wird einer einzigen Rolle zugewiesen, die die Aktionen bestimmt, die durchgeführt werden können. Die Rollen sind in einer Hierarchie angeordnet, wie in der folgenden Tabelle beschrieben.</block>
+  <block id="bbbabdbe1b262f75d99d62880b953be1" category="cell">Rolle</block>
+  <block id="40923151202a4a1da433572b776bb7ae" category="cell">Hat alle Berechtigungen der Admin-Rolle und kann auch Astra-Konten löschen.</block>
+  <block id="7bd88b6f5fdbbacda32d9f1f4588445c" category="cell">Verfügt über alle Berechtigungen der Mitgliedsrolle und kann Benutzer auch dazu einladen, einem Konto beizutreten.</block>
+  <block id="c37989e11868a0f90a80fc60977df53f" category="cell">Kunden können ihre Astra-Applikations- und Computing-Ressourcen vollständig managen.</block>
+  <block id="29b1525afac196c8ab375f7fdb7808de" category="cell">Beschränkt auf die Anzeige von Ressourcen.</block>
+  <block id="e34439ebb43a7db679d765747385c74b" category="section-title">Erweiterte RBAC mit Namespace-Granularität</block>
+  <block id="ca9f95dba864c02ec48ffa894954ce17" category="admonition">Diese Funktion wurde mit Version 22.04 des Astra REST API eingeführt.</block>
+  <block id="a9d9517c68a53b1205519361f2ca686a" category="paragraph">Wenn eine Rollenbindung für einen bestimmten Benutzer festgelegt wird, kann eine Einschränkung angewendet werden, um die Namespaces zu begrenzen, auf die der Benutzer Zugriff hat. Diese Bedingung kann auf verschiedene Weise definiert werden, wie in der nachstehenden Tabelle beschrieben. Siehe Parameter<block ref="9d72e251fdcf37fccaf2f90e4fdc8cc0" prefix=" " category="inline-code"></block> In der Role Binding API für weitere Informationen.</block>
+  <block id="b1c94ca2fbc3e78fc30069c8d0f01680" category="cell">Alle</block>
+  <block id="2314ef5c1b30435a1b1cc4653755e483" category="cell">Der Benutzer kann über den Platzhalterparameter „*“ auf alle Namespaces zugreifen. Dies ist der Standardwert, um die Abwärtskompatibilität beizubehalten.</block>
+  <block id="6adf97f83acf6453d4a6a4b1070f3754" category="cell">Keine</block>
+  <block id="d199198d4707ccee0eda9f48caa1d5a2" category="cell">Die Bedingungsliste wird angegeben, obwohl sie leer ist. Dies bedeutet, dass der Benutzer keinen Zugriff auf einen Namespace hat.</block>
+  <block id="b3a4cc1061fd85ffd3c83cd8e72944d9" category="cell">Namespace-Liste</block>
+  <block id="20ff3ae26f36cff01131b324696db602" category="cell">Die UUID eines Namespace enthält, die den Benutzer auf den Single Namespace beschränkt. Eine kommagetrennte Liste kann auch verwendet werden, um den Zugriff auf mehrere Namespaces zu ermöglichen.</block>
+  <block id="b021df6aac4654c454f46c77646e745f" category="cell">Etikett</block>
+  <block id="18ea4b625687c7be99c38ace25c075e1" category="cell">Ein Etikett wird angegeben und der Zugriff ist allen übereinstimmenden Namespaces erlaubt.</block>
+  <block id="d5def2c7a33c06df000ce3ff88f44d5e" category="summary">Mit der Astra Control REST API stehen verschiedene Supportfunktionen zur Verfügung, die für Diagnose und Debugging genutzt werden können.</block>
+  <block id="68f3bee395b27d2cbfdf4b021846dcca" category="doc">Diagnose und Support</block>
+  <block id="ccfae33112eaa095d6943fef30aeb1c6" category="section-title">API-Ressourcen</block>
+  <block id="519b3b4f6c348f4c18db7639e52ec355" category="paragraph">Verschiedene Astra-Funktionen sind über API-Ressourcen zugänglich und bieten diagnostische Informationen und Support.</block>
+  <block id="621e2d44fe17dda8434e1747939506fc" category="cell">Systemaktivitäten, die im Rahmen der Astra-Verarbeitung erfasst werden.</block>
+  <block id="b9df3bfca1810fb5992aadc53d6c5f6e" category="cell">Eine Untergruppe der Ereignisse, die als wichtig genug betrachtet werden, um dem Benutzer präsentiert zu werden.</block>
+  <block id="0f15555c27239decf2cb19f7c4f55045" category="cell">Die Benachrichtigungen, die noch vom Benutzer gelesen oder abgerufen werden müssen.</block>
+  <block id="8814863051032c96890d514b89b4519c" category="summary">Die Astra Control REST API bietet verschiedene Möglichkeiten, über die definierten Abfrageparameter auf Ressourcensammlungen zuzugreifen.</block>
+  <block id="3d9217d4e4ef94c56689e548b5186591" category="doc">Arbeit mit Sammlungen</block>
+  <block id="70aa5e2062c38998b012ec6ad0a58b47" category="paragraph">Sie können angeben, welche Schlüsselwertpaare für jede Ressourceninstanz mit dem zurückgegeben werden sollen<block ref="d436eb0fd9de10b54a828ce6435f7e81" prefix=" " category="inline-code"></block> Parameter. Alle Fälle werden im Antwortkörper zurückgegeben.</block>
+  <block id="9ef1f99668081dc49f2b7578a58a3eb0" category="paragraph">Mithilfe der Filterung von Sammlungsressourcen kann ein API-Benutzer Bedingungen festlegen, die bestimmen, ob eine Ressource im Antwortkörper zurückgegeben wird. Der<block ref="b2c97ae425dd751b0e48a3acae79cf4a" prefix=" " category="inline-code"></block> Parameter wird verwendet, um die Filterbedingung anzuzeigen.</block>
+  <block id="46a94c0bcecf335769bbfabb72514b44" category="paragraph">Die Sammelressource-Sortierung ermöglicht einem API-Benutzer, die Reihenfolge anzugeben, in der Ressourcen im Antwortkörper zurückgegeben werden. Der<block ref="4294376261299ba2cafafdb77ca4deeb" prefix=" " category="inline-code"></block> Parameter wird verwendet, um die Filterbedingung anzuzeigen.</block>
+  <block id="b4a49af66f4e673d029ee977129248ee" category="paragraph">Sie können Paginierung erzwingen, indem Sie die Anzahl der Ressourceninstanzen beschränken, die für eine Anforderung über die zurückgegeben werden<block ref="aa9f73eea60a006820d0f8768bc8a3fc" prefix=" " category="inline-code"></block> Parameter.</block>
+  <block id="6a7d4ae9b8c0f0a303422357fd399580" category="paragraph">Wenn Sie den Booleschen Parameter angeben<block ref="e2942a04780e223b215eb8b663cf5353" prefix=" " category="inline-code"></block> Auf einstellen<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, Die Anzahl der Ressourcen im zurückgegebenen Array für eine bestimmte Antwort ist im Abschnitt Metadaten angegeben.</block>
+  <block id="0f20f78dc9e61210d9143c555c8e2db8" category="summary">Sie können ein API-Token an der Astra-Webschnittstelle widerrufen, wenn es nicht mehr benötigt wird.</block>
+  <block id="1e035d8ab99dbf14a530ceac5ef93e74" category="paragraph">Sie benötigen ein Astra-Konto. Sie sollten auch die Token identifizieren, die Sie widerrufen möchten.</block>
+  <block id="c4f78d9edffd445c660b4325747b976a" category="paragraph">Nachdem ein Token entzogen wurde, ist es sofort und dauerhaft unbrauchbar.</block>
+  <block id="6aec476981db1f529613506dbaf170dd" category="list-text">Wählen Sie das Token oder die Token aus, die Sie widerrufen möchten.</block>
+  <block id="ae4a6c751a5ef4ed21296977cde2b309" category="list-text">Klicken Sie im Dropdown-Feld *Aktionen* auf *Token aufheben*.</block>
+  <block id="3559bd2aaec7a375c246be9bad63a176" category="summary">Sie können ein Backup für eine bestimmte Applikation erstellen und dann das Backup zum Wiederherstellen oder Klonen der App verwenden.</block>
+  <block id="80681c9412a27f13b376ee7ffc18f647" category="doc">Backup für eine Anwendung erstellen</block>
+  <block id="7d45849f0acada4f0f40e1349c847305" category="inline-link-macro">Listen Sie die Apps auf</block>
+  <block id="e02fd4c0a67641762561c661c332b72d" category="paragraph">Sie müssen über die ID der App verfügen, die Sie sichern möchten. Bei Bedarf können Sie den Workflow verwenden <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Zum Auffinden der Anwendung.</block>
+  <block id="15d4d7ada9bf77d46154e409388ea743" category="section-title">1. Erstellen Sie ein Backup</block>
+  <block id="96d15410fa829d04096983645e60475b" category="cell">/Accounts/{Account_id}/k8s/v1/Apps/{App_id}/appBackups</block>
+  <block id="c9a1712ca7c64da73ff9ce7bc4f48bea" category="cell">App-id</block>
+  <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">Ja.</block>
+  <block id="8eb729367d3278cfd6c5aa5310d1f61c" category="cell">Gibt die Applikation an, in der das Backup erstellt werden soll.</block>
+  <block id="0ecd11c1d7a287401d148a23bbd7a2f8" category="cell">JSON</block>
+  <block id="ac101b32dda4448cf13a93fe283dddd8" category="cell">Text</block>
+  <block id="6f3183b7efdec0553f8a26ad8a42bd12" category="cell">Stellt die Parameter für die Sicherung bereit. Siehe das folgende Beispiel.</block>
+  <block id="eaa80d521faeae22624528a6ab4291dc" category="section-title">Curl Beispiel: Erstellen Sie ein Backup für die App</block>
+  <block id="ada65121a72989ba6a7ceafb787c2971" category="summary">Sie können eine neue Applikation erstellen, indem Sie eine vorhandene Applikation klonen.</block>
+  <block id="9d29351a61669dd1dfeee1d7e8b13578" category="doc">Klonen einer Anwendung</block>
+  <block id="f9af5d61179519ce2b27f22348ea2c5b" category="paragraph">Beachten Sie Folgendes zu diesem Workflow:</block>
+  <block id="c16473b0d0e0a369510a4772f6a13523" category="list-text">Ein Anwendungsbackup oder -Snapshot wird nicht verwendet</block>
+  <block id="8b442400420c3b7121c9e031882bcf48" category="list-text">Der Klonvorgang wird im selben Cluster durchgeführt</block>
+  <block id="c92ab9403e09db69311aeb9f72e2e480" category="list-text">Die neue App wird in einem anderen Namespace platziert</block>
+  <block id="e1d39bdee6b9663d35dc3845e9dd04e5" category="admonition">Zum Klonen einer App auf einem anderen Cluster müssen Sie den aktualisieren<block ref="792ca1969ece6362fb045f326e3976de" prefix=" " category="inline-code"></block> Parameter in den JSON-Input, wie es für Ihre Umgebung geeignet ist.</block>
+  <block id="1db96426d6f4f867edf3cc0ae9e35947" category="section-title">1. Wählen Sie die zu klonenden App aus</block>
+  <block id="b46f6842bf882cb490d122382f7a98d5" category="paragraph">Führen Sie den Workflow aus <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Und wählen Sie die Anwendung aus, die Sie klonen möchten. Für DEN REST-Aufruf, der zum Klonen der App verwendet wird, sind mehrere Ressourcenwerte erforderlich.</block>
+  <block id="91e9ad87c32b1417c98a1c8a57d14d21" category="section-title">2. Die App klonen</block>
+  <block id="af2926b139e31d88056f28937a9c49b6" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die App zu klonen.</block>
+  <block id="567a9af273a25b92860b783e7f5a7524" category="cell">/Account/{Account_id}/k8s/v2/Apps</block>
+  <block id="5a77a315cc422da89819194837af885d" category="cell">Stellt die Parameter für die geklonte App bereit. Siehe das folgende Beispiel.</block>
+  <block id="812ae8a5c2b12f97ec673b1ed61bab86" category="section-title">Curl Beispiel: Klonen einer App</block>
+  <block id="29d0525c4055c4b47d6c1f6b4681a4d4" category="summary">Diese Workflows können als Teil der Verwaltung der Applikationen in einem von Astra gemanagten Cluster verwendet werden.</block>
+  <block id="27a254eb05f2f4059b9d5170bcd8034f" category="paragraph">Die Management-Workflows sind in verschiedene Kategorien unterteilt, um die Suche nach den gewünschten zu erleichtern.</block>
+  <block id="eadfe8388f5ebf45cdfeff23f0e39899" category="cell">Applikationskontrolle</block>
+  <block id="9de4b07ae6319c45521f7ab9180fa62e" category="cell">Mithilfe dieser Workflows können Sie verwaltete und nicht gemanagte Applikationen steuern. Sie können die Apps auflisten sowie eine verwaltete App erstellen und entfernen.</block>
+  <block id="9c041cca5c70493333f8bd4912e37e70" category="cell">Applikationssicherung</block>
+  <block id="166cbd4582aeac28601a128615e486a3" category="cell">Mithilfe dieser Workflows können gemanagte Applikationen durch Snapshots und Backups gesichert werden.</block>
+  <block id="6a627ba1141f45676a9b0d39e9f12cbe" category="cell">Klonen und Wiederherstellen von Applikationen</block>
+  <block id="dcacef3fb7dda1b3246ea19ce71d84fc" category="cell">In diesen Workflows wird beschrieben, wie Sie gemanagte Applikationen klonen und wiederherstellen.</block>
+  <block id="db5eb84117d06047c97c9a0191b5fffe" category="cell">Unterstützung</block>
+  <block id="e24800f8fa54848c57ec9b63af6231d3" category="cell">Es stehen mehrere Workflows zur Verfügung, um Ihre Applikationen zu debuggen und zu unterstützen sowie die allgemeine Kubernetes-Umgebung.</block>
+  <block id="015f8c34f52b6ef8a3361958660f5e88" category="section-title">Weitere Überlegungen</block>
+  <block id="f51006269ca36dd064b0504bccc2bab2" category="paragraph">Bei der Verwendung der Management-Workflows müssen einige zusätzliche Aspekte berücksichtigt werden.</block>
+  <block id="3dd9fa89c534831c942fd3c706deca44" category="section-title">Klonen einer Applikation</block>
+  <block id="78997a84642061d9102d778722872a51" category="paragraph">Beim Klonen einer Applikation müssen einige Aspekte berücksichtigt werden. Die unten beschriebenen Parameter sind Teil des JSON-Eingangs.</block>
+  <block id="a7eed35cf4f7cd555c34dd8d3e496a35" category="list-text">Quell-Cluster-ID</block>
+  <block id="5b7d7363c3d7d36aacb94acf0c5c3971" category="list-text">Der Wert von<block ref="6ea72d6fed899bc2f33c4b7246e5c4d1" prefix=" " category="inline-code"></block> Identifiziert immer das Cluster, auf dem die ursprüngliche App installiert ist.</block>
+  <block id="83226168f6703173a6f41521f74e5e6d" category="list-text">Cluster-ID</block>
+  <block id="766d0712a291d8165795e09add3367ff" category="list-text">Der Wert von<block ref="e30ef139b9685b27f18c53d8eadbbdb5" prefix=" " category="inline-code"></block> Identifiziert das Cluster, auf dem die neue App installiert werden soll.</block>
+  <block id="512b5d7fd1ded773db988e422913ed99" category="list-text">Beim Klonen innerhalb desselben Clusters<block ref="e30ef139b9685b27f18c53d8eadbbdb5" prefix=" " category="inline-code"></block> Und<block ref="6ea72d6fed899bc2f33c4b7246e5c4d1" prefix=" " category="inline-code"></block> Gleicher Wert.</block>
+  <block id="80401ca31e505d9762ac5fcfda80ae2b" category="list-text">Beim Klonen über Cluster unterscheiden sich die beiden Werte und<block ref="e30ef139b9685b27f18c53d8eadbbdb5" prefix=" " category="inline-code"></block> Sollte die ID des Ziel-Clusters sein.</block>
+  <block id="3f21870e9b4a671a888e440f450398fc" category="list-text">Der<block ref="89801e9e98979062e84647433a8ed3e9" prefix=" " category="inline-code"></block> Der Wert muss sich von der ursprünglichen Quell-App unterscheiden. Außerdem kann der Namespace für den Klon nicht vorhanden sein und Astra wird ihn erstellen.</block>
+  <block id="a283a1d894f9805dcaa0a49b701fdb84" category="list-text">Backups und Snapshots</block>
+  <block id="97f3e02c94643c10592e0ad5805ec40c" category="list-text">Optional können Sie eine Applikation aus einem vorhandenen Backup oder Snapshot mit der klonen<block ref="95975894ad83aa619ab00b6b8d022ae6" prefix=" " category="inline-code"></block> Oder<block ref="b8c64b32c0262c06506b4c7cb2ed458b" prefix=" " category="inline-code"></block> Parameter. Wenn Sie keine Backup oder Momentaufnahme zur Verfügung stellen, wird Astra zuerst eine Sicherung der Anwendung erstellen und dann aus dem Backup klonen.</block>
+  <block id="d287ccc97c319b0bc115d2d1ff777c0c" category="section-title">Wiederherstellen einer Anwendung</block>
+  <block id="bc75de9e075d82274edd026fd05fd01f" category="paragraph">Folgende Punkte sind bei der Wiederherstellung einer Applikation zu beachten.</block>
+  <block id="2d49337d583eac8056d564e348f43744" category="list-text">Das Wiederherstellen einer Applikation ähnelt dem Klonvorgang.</block>
+  <block id="af5cd1844721ca591969375d08152b0e" category="list-text">Beim Wiederherstellen einer Anwendung müssen Sie entweder ein Backup oder einen Snapshot bereitstellen.</block>
+  <block id="7bf69d8a687703afd9b5af54243f143d" category="summary">Sie können eine neue Applikation erstellen, indem Sie sie aus einem Backup klonen.</block>
+  <block id="879ad4bddb82a977b90643c7b33a4e49" category="doc">Klonen einer Applikation aus einem Backup</block>
+  <block id="6a3f7086385ab02e213a4864a905e1e5" category="list-text">Es wird ein App-Backup verwendet</block>
+  <block id="a873d81cfc688902e71d08400f93684a" category="section-title">2. Wählen Sie das zu verwendende Backup aus</block>
+  <block id="8aa0f7001085d2ffdad3efbc0e9de159" category="inline-link-macro">Listen Sie die Backups auf</block>
+  <block id="d40d66b0e6d970d00db3de547260af68" category="paragraph">Führen Sie den Workflow aus <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> Und wählen Sie das gewünschte Backup aus.</block>
+  <block id="a2e167678135121b44df9d3e6c7a8d2d" category="section-title">3. Die App klonen</block>
+  <block id="f3e3d6adafd239930134d426b02920c1" category="cell">/Account/{Account_id}/k8s/v2/qpps</block>
+  <block id="b8622ecf971d21371a3ba9d07a233300" category="section-title">Curl Beispiel: Klonen einer Applikation aus einem Backup</block>
+  <block id="ecf41bcdc089c3b619f5975173077430" category="summary">Sie können die für eine bestimmte Anwendung erstellten Backups auflisten.</block>
+  <block id="dbd2251516ab8d7e1775469c5c1508a3" category="paragraph">Sie müssen über die ID der App verfügen, für die Sie die Backups auflisten möchten. Bei Bedarf können Sie den Workflow verwenden <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Zum Auffinden der Anwendung.</block>
+  <block id="4cd1e59d794feeee43e7cd32844ec8ec" category="section-title">1. Listen Sie die Backups auf</block>
+  <block id="0254dd3f84d764f594f8490729e7c196" category="cell">Gibt die verwaltete Anwendung an, die die aufgeführten Backups besitzt.</block>
+  <block id="53c07d76a2f4ca060d727cd96fd24eeb" category="section-title">Curl Beispiel: Alle Backups für die App zurückgeben</block>
+  <block id="6a94b76b128da4767ce7885cb84ec799" category="doc">Löschen einer fehlgeschlagenen Anwendung</block>
+  <block id="90c78af3e4fa9a4298b9bc66f86d06a6" category="paragraph">Sie können eine verwaltete Anwendung möglicherweise nicht entfernen, wenn eine Sicherung oder ein Snapshot in einem fehlgeschlagenen Zustand vorhanden ist. In diesem Fall können Sie die App mithilfe des unten beschriebenen Workflows manuell entfernen.</block>
+  <block id="8b7796198eef86f78d17188652bd8260" category="section-title">1. Wählen Sie die zu löschende App</block>
+  <block id="82029d5fee8f7191d3a021c9db8b43ac" category="paragraph">Führen Sie den Workflow aus <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Und wählen Sie die Anwendung aus, die Sie entfernen möchten.</block>
+  <block id="c776475c27b1d7a554d7f110559479d9" category="section-title">2. Listen Sie die bestehenden Backups für die App auf</block>
+  <block id="03697ae46f1d2d1002ffcb19e1ebbd04" category="paragraph">Führen Sie den Workflow aus <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block>.</block>
+  <block id="dcefcc8de5a7541a95d041f4943c300d" category="section-title">3. Löschen Sie alle Backups</block>
+  <block id="cb2cecbd9776fc0c17c7929541fe9404" category="inline-link-macro">Löschen Sie ein Backup</block>
+  <block id="198a14532624e3324770ded326a70a0d" category="paragraph">Löschen Sie alle App-Backups durch Ausführen des Workflows <block ref="4f0b12c4d7b6e38cbd2c51245afded1c" category="inline-link-macro-rx"></block> Für jedes Backup in der Liste.</block>
+  <block id="dbda08e56067649f1ab59eea05bc44db" category="section-title">4. Listen Sie die vorhandenen Snapshots für die App auf</block>
+  <block id="020ac174aad4268a50eed3705447b327" category="inline-link-macro">Listen Sie die Snapshots auf</block>
+  <block id="431b5bf2b0c89bff5ce71c6d5a42c4be" category="paragraph">Führen Sie den Workflow aus <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block>.</block>
+  <block id="2d29043fd95ac713b9b4c9b91db9d11b" category="section-title">5. Löschen Sie alle Snapshots</block>
+  <block id="efb44cfe1d5b8d9954ea045385675c66" category="inline-link-macro">Löschen Sie einen Snapshot</block>
+  <block id="97153f849dc1e17ce221b1aecaa1b827" category="paragraph">Führen Sie den Workflow aus <block ref="9716569143d126579035607ebd1a1120" category="inline-link-macro-rx"></block> Von jedem Snapshot in der Liste.</block>
+  <block id="af9ef9bb2e7c334105bad0aa17ad5d28" category="section-title">6. Entfernen Sie die Anwendung</block>
+  <block id="f33f60a3b5c95e8659ec5a992f0f055c" category="inline-link-macro">Verwaltung einer Anwendung aufheben</block>
+  <block id="08a28b071946cc1515702440ff6582d8" category="paragraph">Führen Sie den Workflow aus <block ref="a7ef8d5c47daed312bb700c375f9019c" category="inline-link-macro-rx"></block> Um die Anwendung zu entfernen.</block>
+  <block id="5678454487dc87ea3b9a2601e9ecd8e3" category="summary">Sie können einen Snapshot löschen, der einer Anwendung zugeordnet ist.</block>
+  <block id="a08d0039b6defc60dd0db0aebca289d8" category="paragraph">Sie müssen Folgendes haben:</block>
+  <block id="057648776a4afb375be6db76fd760748" category="list-text">ID der Anwendung, die den Snapshot besitzt. Bei Bedarf können Sie den Workflow verwenden <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Zum Auffinden der Anwendung.</block>
+  <block id="8228d21d4972f0a8ed1a2129680b70b2" category="list-text">ID des Snapshots, den Sie löschen möchten. Bei Bedarf können Sie den Workflow verwenden <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block> Um den Snapshot zu finden.</block>
+  <block id="860aa2c08f5183e7dd18366105498ef2" category="section-title">1. Löschen Sie den Snapshot</block>
+  <block id="32f68a60cef40faedbc6af20298c1a1e" category="cell">Löschen</block>
+  <block id="c25f938f3e5ab183a0718fbc32b60cce" category="cell">/Accounts/{Account_id}/k8s/v1/Apps/{App_id}/appSnaps/{appSnap_id}</block>
+  <block id="151b82a6507e2eebe2f879130b46a783" category="cell">Identifiziert die verwaltete Anwendung, die den Snapshot besitzt.</block>
+  <block id="79e04f95eeac07344faa5b56bab83760" category="cell">snapshot-id</block>
+  <block id="49a137437654fc49a3099dbd628c1484" category="cell">Identifiziert den zu löschenden Snapshot.</block>
+  <block id="c60d917b462a557b73224bd3194b4cf6" category="section-title">Curl Beispiel: Löschen Sie einen einzelnen Snapshot für die App</block>
+  <block id="44d23b5c3f8571e7bb4294d0b82f7497" category="doc">Eine App verwalten</block>
+  <block id="a9f7d2aed593551dc011220c90a52be3" category="paragraph">Sie können eine gemanagte Applikation auf Basis einer Applikation erstellen, die Astra in einem bestimmten Namespace bereits bekannt ist. Wenn eine Applikation mit Astra verwaltet oder definiert wird, können Sie sie durch Backups und Snapshots schützen.</block>
+  <block id="d801ba89b540c5da0e4f732a81e855fd" category="section-title">1. Wählen Sie den Namespace</block>
+  <block id="ef1d4c0913b02ff6423ee4d1161fea0b" category="inline-link-macro">Listen Sie die Namespaces auf</block>
+  <block id="0a94b02b2f35acb72af0ca2e31006abb" category="paragraph">Führen Sie den Workflow aus <block ref="d14574597a65756c248d691b26627131" category="inline-link-macro-rx"></block> Und wählen Sie den Namespace aus.</block>
+  <block id="0c686bb338de3ff0d9a5c7aff0164f66" category="section-title">3. Die Anwendung verwalten</block>
+  <block id="3c7008ad6fd78ff999655de722126630" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die Anwendung zu verwalten.</block>
+  <block id="f211caf53405c1c7a730894c76845b78" category="cell">Stellt die Parameter bereit, die zur Identifizierung der zu verwaltenden Anwendung erforderlich sind. Siehe das folgende Beispiel.</block>
+  <block id="6a476923d36b27fb8d2ff2da1e18c322" category="section-title">Curl Beispiel: Eine App verwalten</block>
+  <block id="2b194b9170143eb845c618e13f34e5fb" category="paragraph">Sie können eine verwaltete Anwendung entfernen, wenn sie nicht mehr benötigt wird. Durch Entfernen einer verwalteten Anwendung werden auch die zugeordneten Zeitpläne gelöscht.</block>
+  <block id="a32aff1568b14bb39f1c15ef5e32eb54" category="paragraph">Sie müssen über die ID der App verfügen, die Sie verwalten möchten. Bei Bedarf können Sie den Workflow verwenden <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Zum Auffinden der Anwendung.</block>
+  <block id="1fa9ca676a71f70d29ff65963febbf34" category="paragraph">Backups und Snapshots der Applikation werden nicht automatisch entfernt, wenn sie gelöscht wird. Wenn Sie die Backups und Snapshots nicht mehr benötigen, sollten Sie sie löschen, bevor Sie die Anwendung entfernen.</block>
+  <block id="ba058813d4014443679bdc5bad08e6da" category="section-title">1. Die App wurde nicht verwaltet</block>
+  <block id="cc627e860ccc11393d4a5fb9a37cf9a7" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die App zu entfernen.</block>
+  <block id="f6ae66a627b9c3047f8f88beffc23cd7" category="cell">/Accounts/{Account_id}/k8s/v2/Apps/{App_id}</block>
+  <block id="58e5b159105a6ed936549bb5a1695ea7" category="cell">Identifiziert die zu entfernende Anwendung.</block>
+  <block id="0be694be5856c81608913372d1359b00" category="section-title">Curl Beispiel: Eine verwaltete App entfernen</block>
+  <block id="596763b84eac1a557d6c2b19a508c915" category="summary">Sie können ein Backup einer Anwendung löschen.</block>
+  <block id="9a7affff9968bb03650e50fa108c3fa7" category="list-text">ID der Applikation, für die das Backup zuständig ist. Bei Bedarf können Sie den Workflow verwenden <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Zum Auffinden der Anwendung.</block>
+  <block id="9332cf683c594f797fdb3d0a19819c01" category="list-text">ID des zu löschenden Backups. Bei Bedarf können Sie den Workflow verwenden <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> Um den Snapshot zu finden.</block>
+  <block id="9764b72f7f4c0e5ee3e7e8350c8ccd00" category="section-title">1. Löschen Sie die Sicherung</block>
+  <block id="e6c08d334ddcc8f5824e2eb3371f9b4f" category="admonition">Sie können das Löschen einer fehlgeschlagenen Sicherung wie unten beschrieben mit der optionalen Anforderungs-Kopfzeile erzwingen.</block>
+  <block id="907cc0ef4298a38b7fa096493c7684a0" category="cell">/Accounts/{Account_id}/k8s/v1/Apps/{App_id}/appBackups/{appBackup_id}</block>
+  <block id="bd5f8c5e1797c9b7450b0fcd4de20d28" category="cell">Gibt die verwaltete Anwendung an, die das Backup besitzt.</block>
+  <block id="deed7df33f535761651277671dff8ecd" category="cell">Backup-id</block>
+  <block id="31bed42d29869473ab52c27108626330" category="cell">Identifiziert das zu löschende Backup.</block>
+  <block id="24d522ed56286396130064a0fbfa76f1" category="cell">Löschen erzwingen</block>
+  <block id="7fbc2bc01923d084eec8be7efd48837b" category="cell">Wird verwendet, um das Löschen eines fehlgeschlagenen Backups zu erzwingen.</block>
+  <block id="97b9689d8a4aef28c756533c3e3bca1d" category="section-title">Curl Beispiel: Löschen Sie ein einzelnes Backup für die App</block>
+  <block id="58f00e9fb9c0fb6247e6c188b96d901b" category="section-title">Curl Beispiel: Löschen Sie eine einzelne Sicherung für die App mit der Force-Option</block>
+  <block id="1003e23b805c899981a7d5126ccc0378" category="summary">Sie können die Snapshots auflisten, die für eine bestimmte Anwendung erstellt wurden.</block>
+  <block id="9abace8c90645d3ee8eec992f42d897a" category="paragraph">Sie müssen über die ID der App verfügen, für die Sie die Snapshots auflisten möchten. Bei Bedarf können Sie den Workflow verwenden <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Zum Auffinden der Anwendung.</block>
+  <block id="f09394ee48f57bbe80f0a951776c3439" category="section-title">1. Listen Sie die Snapshots auf</block>
+  <block id="02b00e5480497e1586ce1bf62bf8184a" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die Snapshots aufzulisten.</block>
+  <block id="250f359ba7b762da3435baba160a6f1b" category="cell">/Accounts/{Account_id}/k8s/v1/Apps/{App_id}/appSnaps</block>
+  <block id="f38ae0e099fa484b915fa7bab67ac4b2" category="cell">Identifiziert die Anwendung, die die aufgeführten Snapshots besitzt.</block>
+  <block id="e2942a04780e223b215eb8b663cf5353" category="cell">Zählen</block>
+  <block id="5aeb23b435f0d586a0493bb8c70b8fc5" category="cell">Wenn<block ref="1107fecd9982ff61044e33612f40fb9d" prefix=" " category="inline-code"></block> Die Anzahl der Snapshots wird im Metadatenabschnitt der Antwort berücksichtigt.</block>
+  <block id="f51493699b1a1513a7a2e95212bdc3da" category="section-title">Curl Beispiel: Gibt alle Schnappschüsse für die App zurück</block>
+  <block id="a6678bfaa94621c04bacbb0514f6d9d4" category="section-title">Curl Beispiel: Gibt alle Snapshots für die App und die Zählung zurück</block>
+  <block id="0388f8ab481ed6c7aef94777258ef378" category="summary">Sie können alle Ressourcenvariablen abrufen, die eine einzelne Anwendung beschreiben.</block>
+  <block id="61b98994206e2a99e823ca136bdf24a1" category="doc">Holen Sie sich eine App</block>
+  <block id="c2e04773cf7cf8f91a4a9a351b03c32f" category="paragraph">Sie müssen die ID der App haben, die Sie abrufen möchten. Bei Bedarf können Sie den Workflow verwenden <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Zum Auffinden der Anwendung.</block>
+  <block id="d822b85cd89777748e1bd6b0a8fd0a46" category="section-title">1. Holen Sie sich die Anwendung</block>
+  <block id="6bb9953a8e27258bd16ce65f51b81000" category="cell">ID-Wert der abzurufenden Anwendung.</block>
+  <block id="036e9ec4ee01123ffae8afd3dab3ff9f" category="section-title">Curl Beispiel: Alle Daten für die Anwendung zurückgeben</block>
+  <block id="bfdba4e9998c294b1a4016914698c099" category="summary">Sie können eine Applikation wiederherstellen, indem Sie eine neue Applikation aus einem Backup erstellen.</block>
+  <block id="dc299aaf3e84eb3627f50d2d2484cf17" category="doc">Wiederherstellung einer Anwendung aus einem Backup</block>
+  <block id="14e236ddabe391b8a0496211807ab78b" category="section-title">1. Wählen Sie die Anwendung, die wiederhergestellt werden soll</block>
+  <block id="7a217d2f25d9076086e8f01a3a0e198d" category="paragraph">Führen Sie den Workflow aus <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Und wählen Sie die Anwendung aus, die Sie klonen möchten. Für DEN REST-Aufruf, der zur Wiederherstellung der App verwendet wird, sind mehrere Ressourcenwerte erforderlich.</block>
+  <block id="dac907b900763815cd0dab3692a0ccb9" category="section-title">3. Stellen Sie die App wieder her</block>
+  <block id="08d7f360c94a906d3639173599184943" category="paragraph">Führen Sie den folgenden REST-API-Aufruf aus. Sie müssen die ID für ein Backup (wie unten gezeigt) oder einen Snapshot angeben.</block>
+  <block id="46690c7c33008cbcef94d31765deede2" category="cell">/Account/{Account_id}/k8s/v2/Apps/{App_id}</block>
+  <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">Curl Beispiel: Wiederherstellen einer vorhandenen Applikation aus einem Backup</block>
+  <block id="a6fe5f717c07a456c15f8f2af8c1c7b7" category="doc">Listen Sie die Benachrichtigungen auf</block>
+  <block id="28e5da4816b7e4821438045e6ed86d2b" category="paragraph">Sie können die Benachrichtigungen für ein bestimmtes Astra-Konto auflisten. Dies können Sie im Rahmen der Überwachung der Systemaktivität oder des Debugging eines Problems tun.</block>
+  <block id="9d9ee088d3dd8f7e21041745a8cf259f" category="section-title">1. Listen Sie die Benachrichtigungen auf</block>
+  <block id="66faf58201d5b76b037701451b9a3234" category="cell">/Account/{Account_id}/Core/v1/notifications</block>
+  <block id="b2c97ae425dd751b0e48a3acae79cf4a" category="cell">Filtern</block>
+  <block id="0aaaa617845874504df6c76a750325da" category="cell">Filtern Sie optional die Benachrichtigungen, die in der Antwort zurückgegeben werden sollen.</block>
+  <block id="f921030431759c9c846d8a3fd7d84ca2" category="section-title">Curl Beispiel: Alle Benachrichtigungen zurückgeben</block>
+  <block id="943e5258980784703a84c31110cf2eec" category="section-title">Curl Beispiel: Gibt die Beschreibung für Benachrichtigungen mit Schweregrad der Warnung zurück</block>
+  <block id="55c34d696f9301dcae31350ec87093ac" category="summary">Sie können eine neue Applikation erstellen, indem Sie sie aus einem Snapshot klonen.</block>
+  <block id="6c2edaf69733280351ebbe36a83562ae" category="doc">Eine Anwendung aus einem Snapshot klonen</block>
+  <block id="38395f100e712c841ca6c8a613f86abc" category="list-text">Ein App-Snapshot wird verwendet</block>
+  <block id="da88fe405a2037d8a9476bbfc8f6cf7f" category="section-title">2. Wählen Sie den zu verwendenden Snapshot aus</block>
+  <block id="176ae10d2b65c2e741fef4d23fc66fe5" category="paragraph">Führen Sie den Workflow aus <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block> Und wählen Sie den gewünschten Snapshot aus.</block>
+  <block id="601c2032f11a3d99c3889b1faf260874" category="section-title">Curl Beispiel: Klonen einer App aus einem Snapshot</block>
+  <block id="29fd28138191fbfa1b58ba0623d40105" category="summary">Sie können einen Snapshot für eine bestimmte Anwendung erstellen.</block>
+  <block id="be48e6237dab1df212834256a63ceb44" category="doc">Erstellen Sie einen Snapshot für eine Anwendung</block>
+  <block id="e32d1c8a20aafa5c39c1d3b2c3875f36" category="paragraph">Sie müssen über die ID der App verfügen, für die Sie einen Snapshot erstellen möchten. Bei Bedarf können Sie den Workflow verwenden <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> Zum Auffinden der Anwendung.</block>
+  <block id="18c7420f03313eb33044afb6b943cb43" category="section-title">1. Erstellen Sie einen Snapshot</block>
+  <block id="ca88d296d98d8a63f103fe3b0b63d819" category="cell">Gibt die verwaltete Anwendung an, in der der Snapshot erstellt werden soll.</block>
+  <block id="97edc5e90d2062e191a3eae330d2afa0" category="cell">Stellt die Parameter für den Snapshot bereit. Siehe das folgende Beispiel.</block>
+  <block id="c681a34970e8e1b61eddc5718f0627e9" category="section-title">Curl Beispiel: Erstellen Sie einen Snapshot für die App</block>
+  <block id="82d9e1423b1fe50e0e9afcb47255d25a" category="summary">Sie können die Applikationen auflisten, die aktuell vom Astra verwaltet werden. Dies könnten Sie tun, um die Snapshots oder Backups für eine bestimmte Anwendung zu finden.</block>
+  <block id="48db3210f5486202c6926aa7551be0bd" category="section-title">1. Listen Sie die Anwendungen auf</block>
+  <block id="6ca58aed53ac62d5749597600edbbdff" category="section-title">Curl Beispiel: Gibt alle Daten für alle Apps zurück</block>
+  <block id="68c53a357a1ff35f5aa8ba654aab4362" category="section-title">Curl-Beispiel: Gibt den Namen, die id und den Status aller Apps zurück</block>
+  <block id="c9ed41c2c3fbdd3ab2809e8a19fa57ee" category="summary">Sie können die verfügbaren Namespaces auflisten.</block>
+  <block id="2a983bbf122e057a73bf1870cf2ea2db" category="section-title">1. Listen Sie die Namespaces auf</block>
+  <block id="c42968dfccb26ee2ef5912aaf9ee50ed" category="paragraph">Führen Sie den folgenden REST-API-Aufruf durch, um die Namespaces aufzulisten.</block>
+  <block id="11ccdd095a2f5d49045fb5bc39eaae3e" category="cell">/Account/{Account_id}/Topology/v1/Namespaces</block>
+  <block id="55b85a82f8838ea89842d9ebe5cbe0d6" category="section-title">Curl Beispiel: Gibt alle Daten für alle Namespaces zurück</block>
+  <block id="f06023f42f86a62fda5cde9e1ca56143" category="section-title">Curl-Beispiel: Rückgabename, Status und Cluster-ID für alle Namespaces</block>
+  <block id="78ceba6718263592394adb03dc11471c" category="summary">Sie sollten alle bekannten Probleme für die aktuelle Version im Zusammenhang mit der Astra Control REST API überprüfen. Die bekannten Probleme identifizieren Probleme, die die erfolgreiche Verwendung des Produkts verhindern könnten.</block>
+  <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="doc">Bekannte Probleme</block>
+  <block id="0b7d1e8a8b66c054d1b104e700b7bd15" category="admonition">Es gibt keine neuen Probleme, die mit der Version 22.08 der Astra Control REST API bekannt sind. Die unten beschriebenen Probleme wurden in vorherigen Versionen entdeckt und gelten noch für die aktuelle Version.</block>
+  <block id="f977fda19bbfe49b9346f60f532f0704" category="section-title">Es werden nicht alle Speichergeräte in einem Back-End-Speicher-Node erkannt</block>
+  <block id="13595bcf3f8022567de41bcd09ef92b2" category="paragraph">Wenn ein REST-API-Aufruf zum Abrufen der in einem Storage-Node definierten Speichergeräte ausruft, werden nur die Astra Data Store-Geräte erkannt. Es werden nicht alle Geräte zurückgegeben.</block>
+  <block id="fd341dfea170932946910997510c48e8" category="section-title">Astra Data Store Storage-Backend in Unbekanntem Zustand</block>
+  <block id="e1c83179f57e62cb00fbb2646ef58e6e" category="paragraph">Das Backend des Astra Data Store Storage ist im System<block ref="88183b946cc5f0e8c96b2e66e1c74a7e" prefix=" " category="inline-code"></block> Geben Sie den Status an, nachdem Sie einen API-Aufruf zum Abrufen des Storage-Back-End veranlasst haben. In diesem Fall ist das Storage Backend tatsächlich noch verfügbar und kann kommuniziert werden. Eine Komponente innerhalb des Speicher-Backend ist jedoch wahrscheinlich in einem ungesunden Zustand und muss wieder in einen gesunden Zustand versetzt werden, damit das Storage-Backend als angezeigt wird<block ref="78945de8de090e90045d299651a68a9b" prefix=" " category="inline-code"></block>.</block>
+  <block id="7128d9d8a839786105f002007172fbe5" category="summary">NetApp aktualisiert regelmäßig die Astra Control REST API und bietet Ihnen neue Funktionen, Verbesserungen und Fehlerbehebungen.</block>
+  <block id="c93cc787737ceea532bea714170e32cf" category="doc">Was ist neu mit der Astra Control REST API</block>
+  <block id="affab1573a02975db1b9ece3ebe809a2" category="section-title">August 10 2022 (22.08)</block>
+  <block id="0e7874b5c73e32ebc1ff07cc0f74f4d2" category="paragraph">Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie erweiterte Sicherheits- und Administrationsfunktionen.</block>
+  <block id="b2e7eefe39dff61bfe224d948a6b01f1" category="section-title">Neue und verbesserte Astra-Ressourcen</block>
+  <block id="a143d01f8afcfb8648ec6fb992293200" category="paragraph">Es wurden drei neue Ressourcen-Typen hinzugefügt: *Zertifikat*, *Gruppe* und *AppMirror*. Darüber hinaus wurden die Versionen verschiedener vorhandener Ressourcen aktualisiert.</block>
+  <block id="a49c9c380ec2e13191e995f949a1c440" category="section-title">LDAP-Authentifizierung</block>
+  <block id="9ea80302c854cab54e3ed66f65694108" category="paragraph">Optional können Sie Astra Control Center so konfigurieren, dass sie sich in einen LDAP-Server integrieren lassen, um ausgewählte Astra-Benutzer zu authentifizieren. Siehe <block ref="4c601a7a96565855370b413505d72329" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="b79763fc13e85adccc94bdf927bdccb8" category="section-title">Verbesserter Execution Hook</block>
+  <block id="ed2e31da39a5549d92b9ca0161d3b6e8" category="paragraph">Die Astra Control 21.12 Version bietet zusätzliche Unterstützung für die Testdurchführung. Zusätzlich zu den vorhandenen Hooks für die vor- und NachSnapshot-Ausführung können Sie nun mit der Version 22.08 die folgenden Testausführungshaken konfigurieren:</block>
+  <block id="0a2055495a94f091655a2e4d421cffe2" category="list-text">Vor dem Backup</block>
+  <block id="cf6e97e89c4b36c29252fcb7b0728d2f" category="list-text">Nach dem Backup</block>
+  <block id="349b93d2884e6ca3d41d0d9dab41dcd8" category="list-text">Nach dem Wiederherstellen</block>
+  <block id="255ac707ef7c398985c59f77208f8d50" category="paragraph">Astra Control ermöglicht jetzt auch die Verwendung desselben Skripts für mehrere Testausführungshaken.</block>
+  <block id="4d3f5aacbe703c00b43aa62f3955f464" category="section-title">Applikationsreplizierung mit SnapMirror</block>
+  <block id="ecdbe161d2c7428016e927963a859b5c" category="paragraph">Daten und Applikationsänderungen lassen sich nun mithilfe der NetApp SnapMirror Technologie auf Clustern replizieren. Diese Verbesserung kann auch zur Verbesserung Ihrer Business Continuity- und Recovery-Funktionen eingesetzt werden.</block>
+  <block id="b7fbb6594679af1b038dd55956fa1042" category="inline-link">Astra Control Center: Was ist neu</block>
+  <block id="971f691a78e3ee1f19fb4b8c587dce95" category="list-text"><block ref="971f691a78e3ee1f19fb4b8c587dce95" category="inline-link-rx"></block></block>
+  <block id="efb9cca3b55227a8ebbaffd837df76fe" category="inline-link">Astra Control Service: Was ist neu</block>
+  <block id="77f722ff3432ad425822aea915cbea34" category="list-text"><block ref="77f722ff3432ad425822aea915cbea34" category="inline-link-rx"></block></block>
+  <block id="638191aa40b01d59e16da3223262a2ae" category="section-title">26. April 2022 (22.04)</block>
+  <block id="4bde032aca792c950934ec7109889309" category="paragraph">Es wurden zwei neue Ressourcen-Typen hinzugefügt: *Paket* und *Upgrade*. Außerdem wurden die Versionen verschiedener vorhandener Ressourcen aktualisiert.</block>
+  <block id="ce130d685ca26589024445539bb4a112" category="paragraph">Wenn Sie eine Rolle einem zugeordneten Benutzer zuweisen, können Sie die Namespaces beschränken, auf die der Benutzer Zugriff hat. Siehe * Role Binding API* Referenz und <block ref="7771c01373e5c08e3b1e2d74687ada1b" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="32a38a631a3c644b9305586dfbe4c946" category="section-title">Entfernen des Buckets</block>
+  <block id="abe9507eaf1545e513b2bda0f13294b6" category="paragraph">Sie können einen Eimer entfernen, wenn er nicht mehr benötigt wird oder nicht ordnungsgemäß funktioniert.</block>
+  <block id="aa702244278ce9224bdf493dbd836fcf" category="section-title">Unterstützung von Cloud Volumes ONTAP</block>
+  <block id="e7bb002985d166e3cf6e1ddc4e4393b2" category="paragraph">Cloud Volumes ONTAP wird nun als Storage Back-End unterstützt.</block>
+  <block id="2db9f7bc36bbde906d13641387315f23" category="section-title">Zusätzliche Produktverbesserungen</block>
+  <block id="5fe6ed1138cf9586db6e448abda4c52c" category="paragraph">Die beiden Astra Control-Produktimplementierungen sind mit einigen zusätzlichen Verbesserungen vertraut:</block>
+  <block id="268713e23997ec1f8e0973dd7e0f9dd0" category="list-text">Generischer Eingang für Astra Control Center</block>
+  <block id="201f9ff2e7c358be8d5de91222827154" category="list-text">Privates Cluster in AKS</block>
+  <block id="c947068eab1ac219cdd1ae261b1673a0" category="list-text">Unterstützung für Kubernetes 1.22</block>
+  <block id="0afb329986521efa00ad1d41bb8a946f" category="list-text">Unterstützung des VMware Tanzu Portfolios</block>
+  <block id="f1ba17f787cb31c4e5cc9082051b3c0e" category="paragraph">Sehen Sie sich die Seite *Was ist neu* auf den Dokumentationsseite des Astra Control Centers und des Astra Control Service an.</block>
+  <block id="a1be4875b5bb7cb5ecf7bdcde9034c85" category="section-title">Bis 14. Dezember 2021 (21.12)</block>
+  <block id="09709048ce6033b774d7c044c1d718a2" category="paragraph">Dieses Release enthält eine Erweiterung der REST API sowie eine Änderung der Dokumentationsstruktur, um die Entwicklung von Astra Control durch zukünftige Release-Updates besser zu unterstützen.</block>
+  <block id="ac36e7b65e4f6ad43be3f12f0d0799df" category="section-title">Separate Dokumentation für Astra Automation für jede Version von Astra Control</block>
+  <block id="9a96b1cd085b9e8e259f701ed2e8edbc" category="inline-link-macro">Frühere Versionen der Dokumentation Astra Control Automation</block>
+  <block id="b0d9341a86886d085ea7727cabd2ea40" category="inline-link">Astra Control Automation</block>
+  <block id="0a389878c5dc68edba73dd8e0e98c145" category="paragraph">Jede Version von Astra Control verfügt über eine eigene REST-API, die auf die Funktionen der spezifischen Version zugeschnitten wurde. Die Dokumentation für jede Version der Astra Control REST API ist jetzt auf einer eigenen dedizierten Website zusammen mit dem zugehörigen GitHub Content Repository verfügbar. Die Hauptdoktorandseite<block ref="528bb65c82e5ff834ab031d8d81cba09" category="inline-link-rx"></block> Enthält immer die Dokumentation für die aktuellste Version. Siehe <block ref="c9bb9dcf44e030eb56e66a1e24e585e6" category="inline-link-macro-rx"></block> Weitere Informationen zu vorherigen Releases.</block>
+  <block id="ebafbad4787b0e1e6e07c722454234fb" category="section-title">Erweiterung der REST-Ressourcentypen</block>
+  <block id="ddcf50c29294d4414f3f7c1bbc892cb5" category="inline-link-macro">Ressourcen</block>
+  <block id="4d1c4b6bfa2aac0ebe38d861ab737e79" category="paragraph">Die Anzahl DER REST-Ressourcentypen hat sich mit Schwerpunkt auf Ausführungs-Hooks und Storage-Back-Ends weiter erweitert. Die neuen Ressourcen umfassen: Konto, Testsuite, Hook Source, Execution Hook Override, Cluster Node, Managed Storage Back-End, Namespace, Storage-Gerät und Storage-Node. Siehe <block ref="f79c22f30a5c9f960ce998adee5739fa" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="0e8625d3981b9d26e0866da357d318c8" category="section-title">NetApp Astra Control Python SDK</block>
+  <block id="736ac6ee210a91c2f1a6638cc6127fd4" category="paragraph">NetApp Astra Control Python SDK ist ein Open-Source-Paket, mit dem sich der Automatisierungscode für Ihre Astra Control Umgebung leichter entwickeln lässt. Der Kern ist das Astra SDK, das eine Reihe von Klassen umfasst, um die Komplexität der REST API Aufrufe zu abstrahieren. Es gibt auch ein Toolkit-Skript zur Ausführung spezifischer administrativer Aufgaben durch Zusammenfassung und Abstrahierung der Python-Klassen. Siehe <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="b179356a4d80ff3c8707972005712b2f" category="section-title">August 5 2021 (21.08)</block>
+  <block id="adbf11dd6ee196fa62d94a4c1d8e03f2" category="paragraph">Diese Version umfasst die Einführung eines neuen Astra Implementierungsmodells und eine wesentliche Erweiterung der REST-API.</block>
+  <block id="95550f34187aaccfb0a17b770c43f0d6" category="section-title">Astra Control Center-Implementierungsmodell</block>
+  <block id="2ccd65a5a6a4e8a5f8ce16d83c39361b" category="paragraph">Neben dem vorhandenen Astra Control Service, der als Public Cloud-Service bereitgestellt wird, umfasst diese Version auch das On-Premises-Implementierungsmodell von Astra Control Center. Sie können Astra Control Center an Ihrem Standort installieren und so Ihre lokale Kubernetes-Umgebung managen. Die beiden Astra Control Implementierungsmodelle nutzen dieselbe REST-API, wobei in der Dokumentation nur geringfügige Unterschiede zu berücksichtigen sind.</block>
+  <block id="e83314a43cc3f59ae86485142dc33671" category="paragraph">Die Zahl der Ressourcen, auf die über die Astra Control REST-API zugegriffen werden kann, ist enorm erweitert. Viele der neuen Ressourcen bilden die Grundlage für das On-Premises Astra Control Center-Angebot. Die neuen Ressourcen umfassen: ASUP, Berechtigung, Funktion, Lizenz, Einstellung, Abonnement, Bucket, Cloud, Cluster, gemanagtes Cluster, Back-End-Storage und Storage-Klasse. Siehe <block ref="f79c22f30a5c9f960ce998adee5739fa" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="73297c42730cb1ade0a0a336f3012b8a" category="section-title">Zusätzliche Endpunkte unterstützen eine Astra Implementierung</block>
+  <block id="5f5312990235e82a209579a232929aef" category="paragraph">Neben den erweiterten REST-Ressourcen stehen noch mehrere weitere neue API-Endpunkte zur Unterstützung einer Astra Control Implementierung zur Verfügung.</block>
+  <block id="8cf4055911ae05ed7dc35f98a193f09e" category="list-text">OpenAPI-Unterstützung</block>
+  <block id="13c89442e2b2eedafc42714812ad8c6b" category="list-text">Unterstützung von OpenMetrics</block>
+  <block id="22221689a6b4fc342456938de9f79725" category="list-text">Die OpenMetrics-Endpunkte bieten über die OpenMetrics-Ressource Zugriff auf Kontokennzahlen.</block>
+  <block id="b090a7e9d0299b1a0c16321ebfd1f755" category="section-title">15. April 2021 (21.04)</block>
+  <block id="40bde2f2e0e627e3fcf147169d6d315a" category="paragraph">Diese Version umfasst die folgenden neuen Funktionen und Verbesserungen.</block>
+  <block id="1b232d16c3766a50978710492ba942a2" category="section-title">Einführung DER REST API</block>
+  <block id="8df6c80ff18efadb362ec0a4942fb7b6" category="paragraph">Die Astra Control REST API ist für den Astra Control Service verfügbar. Das System wurde auf Basis VON REST-Technologien und aktuellen Best Practices erstellt. Die API ist die Grundlage für die Automatisierung Ihrer Astra-Implementierungen und umfasst die folgenden Funktionen und Vorteile.</block>
+  <block id="0ef8b3f579af1cdc8418626db265a1ce" category="list-text">Es sind vierzehn REST-Ressourcen verfügbar.</block>
+  <block id="121299e02e8f57f664e9d96d52862087" category="list-text">Zugriff auf API-Token</block>
+  <block id="afa765b35dc1feb232f57160727f2c44" category="list-text">Der Zugriff auf DIE REST-API wird über ein API-Zugriffstoken bereitgestellt, das Sie über die Astra Web-Benutzeroberfläche generieren können. Das API-Token bietet sicheren Zugriff auf die API.</block>
+  <block id="affb0039f4c476ad568439a171c9db0c" category="list-text">Unterstützung für Sammlungen</block>
+  <block id="39fc3040b9fe64cf202ce4de80bf7f69" category="list-text">Es gibt eine umfangreiche Reihe von Abfrageparametern, die für den Zugriff auf die Ressourcen-Sammlungen verwendet werden können. Einige der unterstützten Vorgänge umfassen Filtern, Sortieren und Paginieren.</block>
+  <block id="a941511c207017106c6b7b09e9dec884" category="summary">Die Dokumentation auf dieser Site beschreibt die Astra Control REST API und die damit verbundenen Automatisierungstechnologien, die mit Astra Control verfügbar sind.</block>
+  <block id="d71331c5ce470b093ebf6c996f4ed88a" category="doc">Informationen zu diesem Release</block>
+  <block id="8b4ec359317fe3f9d108f39c57680e63" category="paragraph">Die Dokumentation auf dieser Seite beschreibt die Astra Control REST API und die damit verbundenen Automatisierungstechnologien, die mit der August 2022 (22.08) Version von Astra Control verfügbar sind. Diese Version der REST-API ist insbesondere mit den entsprechenden 22.08 Versionen von Astra Control Center und Astra Control Service enthalten.</block>
+  <block id="ea68f7ff6b79a550f669d752f15bd5da" category="paragraph">Weitere Informationen zu diesem Release sowie zu vorherigen Versionen finden Sie auf den folgenden Seiten und den folgenden Websites:</block>
+  <block id="89d597c4d411409065b7e48fe97b7327" category="inline-link-macro">Neuerungen bei der Astra Control REST-API</block>
+  <block id="55d1aec576bc2fa5929c487a67f4f1fe" category="list-text"><block ref="55d1aec576bc2fa5929c487a67f4f1fe" category="inline-link-macro-rx"></block></block>
+  <block id="c4fabb35d8b386aaa673c94aee7e69f2" category="inline-link-macro">REST-Ressourcen und -Endpunkte</block>
+  <block id="d8c5d8ee32fcd828c5197ddcb0a431b2" category="list-text"><block ref="d8c5d8ee32fcd828c5197ddcb0a431b2" category="inline-link-macro-rx"></block></block>
+  <block id="432b09f47d1f21c47c9c27c092f6475a" category="inline-link">Astra Control Center 22.08-Dokumentation</block>
+  <block id="9177c91a006b716e5c7a48a3d2949f6f" category="list-text"><block ref="9177c91a006b716e5c7a48a3d2949f6f" category="inline-link-rx"></block></block>
+  <block id="8f54ea65f0b6d079dd66703c0e3d7fbd" category="inline-link">Astra Control Service 22.08 Dokumentation</block>
+  <block id="3d951227fdf405841826a71ed6c30234" category="list-text"><block ref="3d951227fdf405841826a71ed6c30234" category="inline-link-rx"></block></block>
+  <block id="fdd081f1598a50889ba0720484271938" category="inline-link-macro">Frühere Versionen der Dokumentation von Astra Automation</block>
+  <block id="0cc206202c15e68cf39519791ed593a1" category="list-text"><block ref="0cc206202c15e68cf39519791ed593a1" category="inline-link-macro-rx"></block></block>
+  <block id="3f4fc4220755866f399810fee47c7884" category="inline-link-macro">GitHub-Autor</block>
+  <block id="65ed3c4720fad34d453db54755338725" category="paragraph">Bleiben Sie mit Twitter am Ball. @NetAppDoc. Senden Sie Feedback zu Dokumentation, indem Sie ein <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> Oder senden Sie eine E-Mail an doccomments@netapp.com.</block>
+  <block id="a5f871c981a398cb87374a1ff883bcca" category="summary">Mit dem folgenden Skript können Sie die Anwendungen für Ihr Astra-Konto auflisten.</block>
+  <block id="0dca49fc2e144253162b8cbd94b3b83c" category="admonition">Siehe <block ref="471a805638f43cfd34206d9398385425" category="inline-link-macro-rx"></block> Beispiel für die erforderliche JSON-Eingabedatei.</block>
+  <block id="c30daace746a4b0fbccf1758ed0282eb" category="summary">Python ist eine beliebte Entwicklungssprache bei der Datacenter-Automatisierung. Bevor Sie die nativen Funktionen von Python zusammen mit mehreren gängigen Paketen nutzen, müssen Sie die Umgebung und die erforderlichen Eingabedateien vorbereiten.</block>
+  <block id="a048c98daf24dc4c378ae4a226190097" category="admonition">NetApp hat nicht nur direkt mit Python auf die Astra Control REST API zugegriffen, sondern bietet auch ein Toolkit-Paket, das die API abstrahiert und einige der Komplexität beseitigt. Siehe <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="0998ed5beee28345ae02fc586e2414f2" category="section-title">Bereiten Sie die Umgebung vor</block>
+  <block id="eacdf05a2e0f975530592f3afa7c5858" category="paragraph">Im Folgenden werden die grundlegenden Konfigurationsanforderungen für die Ausführung der Python-Skripte beschrieben.</block>
+  <block id="5d4e91ee0c02874831683e91598ba067" category="paragraph">Sie müssen die neueste Version von Python 3 installiert haben.</block>
+  <block id="eac991115911389530678363913a1115" category="paragraph">Die Bibliotheken *Requests* und *urllib3* müssen installiert sein. Sie können je nach Ihrer Umgebung Pip oder ein anderes Python Management Tool verwenden.</block>
+  <block id="67a1ee90ebb7f60d74dc1baee961de03" category="paragraph">Die Arbeitsstation, auf der die Skripte ausgeführt werden, muss Netzwerkzugriff haben und Astra Control erreichen können. Bei der Verwendung des Astra Control Service müssen Sie mit dem Internet verbunden sein und eine Verbindung zum Dienst unter herstellen können<block ref="c3cd4b6e8352817aeaab7114fc20ee4d" prefix=" " category="inline-code"></block>.</block>
+  <block id="ddeb9b8a16dddd591affefce272eca3b" category="paragraph">Sie benötigen ein gültiges Astra-Konto mit der Account-ID und dem API-Token. Siehe <block ref="949977ec887dbf77cf703083221524dc" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="4b8e18b7aa4e59cfa3e050e47541b237" category="section-title">Erstellen Sie die JSON-Eingabedateien</block>
+  <block id="28d986906a20a82d756066c923b70105" category="paragraph">Die Python-Skripte basieren auf Konfigurationsinformationen in JSON-Eingabedateien. Im Folgenden finden Sie Beispieldateien.</block>
+  <block id="b16c2ac3d45f78db4d3ebfb08672cd50" category="admonition">Sie müssen die Proben entsprechend Ihrer Umgebung aktualisieren.</block>
+  <block id="332b0c66434f09b3a45336c87ac0af07" category="paragraph">Die folgende Datei enthält das API-Token und das Astra-Konto. Sie müssen diese Datei mit der an Python-Skripte übergeben<block ref="20f011826070657b0f0092278d65ec74" prefix=" " category="inline-code"></block> (Oder<block ref="9c157254ffeac0b068860f6730a52e55" prefix=" " category="inline-code"></block>) CLI-Parameter.</block>
+  <block id="a64509d450efa26111a7b1e6db3baf74" category="summary">NetApp Astra Control Python SDK ist ein Open-Source-Paket, mit dem Sie eine Astra Control Implementierung automatisieren können. Das Paket ist auch eine wertvolle Ressource, um sich über die Astra Control REST API zu informieren, vielleicht im Rahmen der Erstellung Ihrer eigenen Automatisierungsplattform.</block>
+  <block id="20f4f585bd60497ac5129e3cac5ce9f3" category="admonition">Zur Einfachheit wird das NetApp Astra Control Python SDK durchgehend auf dieser Seite als *SDK* bezeichnet.</block>
+  <block id="583a49db5f92162fc0bd14c90e6dfd12" category="section-title">Zwei verwandte Softwaretools</block>
+  <block id="6185cd9749993dbef93bbd9484213c5d" category="paragraph">Das SDK enthält zwei verschiedene, wenn auch verwandte Tools, die auf verschiedenen Ebenen der Abstraktion beim Zugriff auf die Astra Control REST API arbeiten.</block>
+  <block id="ad7e7ea46900019430506e34b6c4ad49" category="paragraph">Das Astra SDK bietet die Kernfunktionen der Plattform. Es enthält eine Reihe von Python-Klassen, in denen die zugrunde liegenden REST-API-Aufrufe abstrahiert werden. Die Klassen unterstützen administrative Aktionen auf verschiedenen Astra Control Ressourcen, einschließlich Apps, Backups, Snapshots und Cluster.</block>
+  <block id="6dbbc40c6449ca3fda5f8c356b6b0376" category="paragraph">Das Astra SDK ist ein Teil des Pakets und wird in der Single bereitgestellt<block ref="8e24221e5cfbad6149a14c48b4dd58f3" prefix=" " category="inline-code"></block> Datei: Sie können diese Datei in Ihre Umgebung importieren und die Klassen direkt verwenden.</block>
+  <block id="5e5df168638042d7a718b1e5462bfb24" category="admonition">Das *NetApp Astra Control Python SDK* (oder nur SDK) ist der Name des gesamten Pakets. Das *Astra SDK* bezieht sich auf die Core Python Klassen in der einzelnen Datei<block ref="8e24221e5cfbad6149a14c48b4dd58f3" prefix=" " category="inline-code"></block>.</block>
+  <block id="56b26fd2ed2c36f5045eb36cf77c7948" category="paragraph">Neben der Astra SDK-Datei, die<block ref="60ad2d8ffdf3ae47e1d966e913600e87" prefix=" " category="inline-code"></block> Skript ist ebenfalls verfügbar. Dieses Skript wird auf einer höheren Abstraktionsebene ausgeführt und bietet Zugriff auf diskrete, intern als Python-Funktionen definierte administrative Aktionen. Das Skript importiert das Astra SDK und ruft nach Bedarf die Klassen an.</block>
+  <block id="c1fa54c7b9d3166a56b9afe8d178025e" category="section-title">Zugang zu</block>
+  <block id="caf8d9c274d92761873c194de7fd847e" category="paragraph">Sie haben folgende Möglichkeiten, auf das SDK zuzugreifen:</block>
+  <block id="0b0321c50e2a79cdce826f0c8f5f7f20" category="inline-link">Python-Paketindex</block>
+  <block id="44dd27a5a91f4e2450789bd7e3f6c406" category="paragraph">Das SDK ist unter verfügbar<block ref="8410061c73ca21d204619a04c32c035c" category="inline-link-rx"></block> Unter dem Namen *acToolkit*. Dem Paket wird eine Versionsnummer zugewiesen und bei Bedarf auch weiterhin aktualisiert. Sie müssen das Paketverwaltungsprogramm * PIP* verwenden, um das Paket in Ihrer Umgebung zu installieren.</block>
+  <block id="fa103d25b0ba58afb589f2477f97ed72" category="paragraph">Nach der Installation können die astraSDK.py Klassen durch Platzieren genutzt werden<block ref="76849eda0e5f4a7733ff0b15b3732747" prefix=" " category="inline-code"></block> In Ihren Skripten. Darüber Hinaus<block ref="66fd12d9ff1f201836f6985310abbadc" prefix=" " category="inline-code"></block> Kann direkt an Ihrer Eingabeaufforderung aufgerufen werden und entspricht<block ref="60ad2d8ffdf3ae47e1d966e913600e87" prefix=" " category="inline-code"></block> <block ref="bf94e40b5d50dd994df430b6578d2c3d" prefix="(" category="inline-code"></block> Ist das gleiche wie<block ref="f8717a0559b654e2501fbd6d78c9ebda" prefix=" " category="inline-code"></block>).</block>
+  <block id="cc255a90b5e22a79adcc253fd5643c0e" category="inline-link">PyPI: NetApp Astra Control Python SDK</block>
+  <block id="9b0e393771050d40b4c31aba2a4ced9d" category="paragraph">Siehe<block ref="42193bd5b0dd84ae5b9573e56d2978ff" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="e8c4206b0f47aa117169255eaa08c5eb" category="paragraph">Der SDK-Quellcode ist auch bei GitHub erhältlich. Das Repository umfasst Folgendes:</block>
+  <block id="674eb3a9ec8ac34ddaaf6ea44b7eb422" category="list-text"><block ref="8e24221e5cfbad6149a14c48b4dd58f3" prefix="" category="inline-code"></block> (Astra SDK mit Python-Klassen)</block>
+  <block id="f2af4f364548b21864e1b7b7bd176f6c" category="list-text"><block ref="60ad2d8ffdf3ae47e1d966e913600e87" prefix="" category="inline-code"></block> (Auf höherer Ebene funktionbasiertes Skript)</block>
+  <block id="63eaa893bb8e1f738d6a4c1c1447da78" category="list-text">Detaillierte Installationsanforderungen und Anweisungen</block>
+  <block id="463554d1311a014b3fde6d3323ae338f" category="list-text">Installationsskripte</block>
+  <block id="01d954fb2edbf283d121f0651b04de83" category="list-text">Zusätzliche Dokumentation</block>
+  <block id="c9a3d674846b5861ee3ca1771cb3fe5e" category="inline-link">GitHub: NetApp/netapp-astra-Toolkits</block>
+  <block id="6a3e1686f161e74193cdf5b583396b8c" category="paragraph">Sie können die klonen<block ref="722f7e844f39c6d237353116706890c9" category="inline-link-rx"></block> Repository in Ihre lokale Umgebung einbinden</block>
+  <block id="6343ba741cd1ee396593580192d07224" category="section-title">Installation und grundlegende Anforderungen</block>
+  <block id="7e5ad59a792bdfb61631a29cbadd4216" category="paragraph">Es gibt verschiedene Optionen und Anforderungen, die bei der Installation des Pakets und bei der Vorbereitung der Verwendung berücksichtigt werden müssen.</block>
+  <block id="9fcb3e0ffb2078377dcce5ceb342f1b1" category="paragraph">Sie können das SDK auf eine der folgenden Arten installieren:</block>
+  <block id="addd50afdb87beb574080cc62fcaac55" category="inline-link">Docker: NetApp/astra-Toolkits</block>
+  <block id="afc927e48c3a27421eaa76491afcb73f" category="list-text">Verwenden Sie das vorbereitete<block ref="a7cb3b9c076603cec82f8f2444d22246" category="inline-link-rx"></block> Image, das alle erforderlichen Abhängigkeiten installiert hat, einschließlich<block ref="66fd12d9ff1f201836f6985310abbadc" prefix=" " category="inline-code"></block></block>
+  <block id="8dc9da526ba6c16b80ab6196594c6d59" category="list-text">Verwenden Sie Pip, um den zu installieren<block ref="66fd12d9ff1f201836f6985310abbadc" prefix=" " category="inline-code"></block> Paket von PyPI in Ihre Python-Umgebung</block>
+  <block id="d2eba1db06d9a5fbe5780c6a0d3131b9" category="list-text">Klonen Sie das GitHub Repository und kopieren/ändern Sie die beiden Core Python-Dateien, damit sie für Ihren Python-Client-Code zugänglich sind</block>
+  <block id="acb730b2d5158050dc822b6dc8c932e2" category="paragraph">Weitere Informationen finden Sie auf den Seiten PyPI und GitHub.</block>
+  <block id="20cb526cb438c874dbc67eaf9ded63f0" category="paragraph">Ob direkt die Python-Klassen im Astra SDK oder die Funktionen im<block ref="60ad2d8ffdf3ae47e1d966e913600e87" prefix=" " category="inline-code"></block> Skript, schließlich sind Sie bei einer Implementierung von Astra Control auf DIE REST-API zugreifen. Aus diesem Grund benötigen Sie ein Astra-Konto zusammen mit einem API-Token. Siehe <block ref="6790e3b8b21e3717c59b764a5b68d086" category="inline-link-macro-rx"></block> Und die anderen Seiten im Abschnitt *Get Started* dieser Dokumentation für weitere Informationen.</block>
+  <block id="27b72a5b697b4b5014519a7f674fe0f9" category="paragraph">Das SDK verfügt über mehrere Voraussetzungen für die lokale Python-Umgebung. Beispiel: Sie müssen Python 3.8 oder höher verwenden. Darüber hinaus sind mehrere Python-Pakete erforderlich. Weitere Informationen finden Sie auf der GitHub Repository-Seite oder auf der Seite des PyPI-Pakets.</block>
+  <block id="2c3632f4f9feb6a54026be6d9c946d20" category="section-title">Zusammenfassung hilfreicher Ressourcen</block>
+  <block id="74c118bd101940603c14c3d7326843a4" category="paragraph">Im Folgenden finden Sie einige Ressourcen, die Sie für den Einstieg benötigen.</block>
+  <block id="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="list-text"><block ref="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="inline-link-rx"></block></block>
+  <block id="b455f4010eda9452a921d32bfc7e1318" category="list-text"><block ref="b455f4010eda9452a921d32bfc7e1318" category="inline-link-rx"></block></block>
+  <block id="e598386ca051245bd47f1531754638e2" category="list-text"><block ref="e598386ca051245bd47f1531754638e2" category="inline-link-rx"></block></block>
+  <block id="28f2e38e559165835d242a67c869c1fb" category="summary">DIE Rest-API von Astra Control bietet Zugriff auf Ressourceninstanzen und Ressourcensammlungen.</block>
+  <block id="0ef9d205b3c12ed04d4b22391e87afc8" category="doc">Ressourcen und Sammlungen</block>
+  <block id="a1da6a69dc3621a153be0d63ad955397" category="admonition">Konzeptionell ist eine REST *Ressource* ähnlich wie ein *Objekt* wie mit den objektorientierten Programmiersprachen und -Systemen definiert. Manchmal werden diese Begriffe synonym verwendet. Aber im Allgemeinen wird „Ressource“ bevorzugt, wenn sie im Kontext der externen REST API verwendet wird, während „Objekt“ für die entsprechenden zustandsorientierte Instanz Daten verwendet wird, die auf dem Server gespeichert sind.</block>
+  <block id="10522d991ba47cf052332e37b93638f3" category="section-title">Eigenschaften der Astra-Ressourcen</block>
+  <block id="c4613329138e41e46eb20ecf28914817" category="paragraph">Die Astra Control REST API entspricht den Prinzipien des RESTful Designs. Jede Astra-Ressourceninstanz wird auf Basis eines klar definierten Ressourcentyps erstellt. Eine Reihe von Ressourceninstanzen desselben Typs wird als *Sammlung* bezeichnet. Die API-Aufrufe wirken sich auf einzelne Ressourcen oder Ressourcensammlungen aus.</block>
+  <block id="f501980961d6c7a1f8d0f73eb1998d2d" category="paragraph">Die in der Astra Control REST API enthaltenen Ressourcentypen weisen folgende Merkmale auf:</block>
+  <block id="1462bc4396a7f92c2a40fdb70353c11b" category="list-text">Jeder Ressourcentyp wird mit einem Schema definiert (in der Regel in JSON)</block>
+  <block id="6a7693b24adc0a8f49972d3c9fa44aa7" category="list-text">Jedes Ressourcenschema enthält den Ressourcentyp und die -Version</block>
+  <block id="3a5bb03daf09a5f9ee7c38abedb79438" category="list-text">Ressourcentypen sind global eindeutig</block>
+  <block id="a520c7cb73d88575fc93ad35b53894ab" category="paragraph">Die über die Astra Control REST-API verfügbaren Ressourceinstanzen weisen folgende Merkmale auf:</block>
+  <block id="ad12b03bd967f6232973db6e1e8d54e8" category="list-text">Ressourceninstanzen werden auf Basis eines einzelnen Ressourcentyps erstellt</block>
+  <block id="a8ae0ec6707984a7a25ae5d6d872a26e" category="list-text">Der Ressourcentyp wird mit dem Wert Medientyp angezeigt</block>
+  <block id="32add7a750dbbb025d0ec6c3b8058890" category="list-text">Instanzen bestehen aus statusorientierten Daten, die vom Astra-Service gewartet werden</block>
+  <block id="e53d478a862931c0d5d839bc35228be1" category="list-text">Auf jede Instanz kann über eine eindeutige und langlebige URL zugegriffen werden</block>
+  <block id="60c8f94b742e229bdac6f65b26abd188" category="list-text">In Fällen, in denen eine Ressourceninstanz mehr als eine Darstellung haben kann, können verschiedene Medientypen verwendet werden, um die gewünschte Darstellung anzufordern</block>
+  <block id="5edbe2734dc4b7c3185c8a5192c5e940" category="paragraph">Die Ressourcensammlungen, die über die ASTRA Control REST-API verfügbar sind, weisen folgende Merkmale auf:</block>
+  <block id="4ed370961773751cbf665ad3ec9bbe7d" category="list-text">Der Satz von Ressourceninstanzen eines einzelnen Ressourcentyps wird als Sammlung bezeichnet</block>
+  <block id="8bb3319f4df785fb5e6ac6a323cc692e" category="list-text">Ressourcensammlungen haben eine einzigartige und langlebige URL</block>
+  <block id="7b37fb297bfca9ad91bb761c9ecdb3e0" category="paragraph">Jeder Ressourceninstanz wird bei der Erstellung eine Kennung zugewiesen. Diese Kennung ist ein 128-Bit UUIDv4-Wert. Die zugewiesenen UUUIDv4-Werte sind global eindeutig und unveränderbar. Nachdem ein API-Aufruf ausgegeben wurde, der eine neue Instanz erstellt, wird eine URL mit der zugehörigen id an den Anrufer in A zurückgegeben<block ref="ce5bf551379459c1c61d2a204061c455" prefix=" " category="inline-code"></block> Kopfzeile der HTTP-Antwort. Sie können die Kennung extrahieren und bei nachfolgenden Anrufen verwenden, wenn Sie sich auf die Ressourceninstanz beziehen.</block>
+  <block id="bf5096ce255d57836c10f7a02fbd117d" category="admonition">Die Ressourcen-ID ist der primäre Schlüssel, der für Sammlungen verwendet wird.</block>
+  <block id="052550c93dde25614a02e3e525606762" category="section-title">Gemeinsame Struktur für Astra-Ressourcen</block>
+  <block id="1e34169f9f85961a4918c2a3ec12335c" category="paragraph">Jede Astra Control-Ressource ist mit einer gemeinsamen Struktur definiert.</block>
+  <block id="d691a99f89ba35430c2ae2930698e2f3" category="paragraph">Jede Astra-Ressource enthält die in der folgenden Tabelle aufgeführten Schlüsselwerte.</block>
+  <block id="897356954c2cd3d41b221e3f24f99bba" category="cell">Taste</block>
+  <block id="599dcce2998a6b40b1e38e8c6006cb0a" category="cell">Typ</block>
+  <block id="531bacc74686bf6c0c3c06dc14ba8ac4" category="cell">Ein global eindeutiger Ressourcentyp, der als *Ressourcentyp* bezeichnet wird.</block>
+  <block id="2af72f100c356273d46284f6fd1dfc08" category="cell">Version</block>
+  <block id="e8677f33e0fa58029ec381a961def5e0" category="cell">Eine Version-ID, die als *Resource-Version* bezeichnet wird.</block>
+  <block id="b80bb7740288fda1f201890375a60c8f" category="cell">id</block>
+  <block id="679eeb2f006a684ca3bde51d5ee04c65" category="cell">Ein global eindeutiger Bezeichner, der als *Resource Identifier* bezeichnet wird.</block>
+  <block id="9f81f3c07476a0d97f6793673dd8e475" category="cell">Metadaten</block>
+  <block id="e4cf899c2773024506ffc1cf5118b130" category="cell">Ein JSON-Objekt mit verschiedenen Informationen, einschließlich Benutzer- und Systemetiketten.</block>
+  <block id="743dff21ad3d768ffb79a4dc0d853b4a" category="paragraph">Das JSON-Metadatenobjekt, das in jeder Astra-Ressource enthalten ist, enthält die in der folgenden Tabelle aufgeführten Schlüsselwerte.</block>
+  <block id="42cecfeff00cc916fef4f64e7b921079" category="cell">Etiketten</block>
+  <block id="d7aefd81a0396b4a6170af899b6ba156" category="cell">JSON-Array mit Client-angegebenen Beschriftungen, die der Ressource zugeordnet sind.</block>
+  <block id="b3473b191865b146062fdca327dc1e0f" category="cell">CreationZeitstempel</block>
+  <block id="d53343f1e86eb9c74de3507e65e51df0" category="cell">JSON-Zeichenfolge mit einem Zeitstempel, der angibt, wann die Ressource erstellt wurde.</block>
+  <block id="f30264e4e420a038d09448da6fd0a440" category="cell">Änderungszeitstempel</block>
+  <block id="a2a12fff7c0c1ad7aa7d6ec9894d7dfd" category="cell">JSON-Zeichenfolge mit einem ISO-8601-formatierten Zeitstempel, der angibt, wann die Ressource zuletzt geändert wurde.</block>
+  <block id="34998857f537140306898d54d4b970dc" category="cell">Erstellt von</block>
+  <block id="af7c4c7bd30238dcb53e639cf7a50996" category="cell">JSON-Zeichenfolge mit der UUUIDv4-Kennung der Benutzer-id, die die Ressource erstellt hat. Wenn die Ressource von einer internen Systemkomponente erstellt wurde und der Erstellungseinheit keine UUID zugeordnet ist, wird die *Null* UUID verwendet.</block>
+  <block id="b7aa38141b9dd3f7e78cd09e7f60ce0c" category="paragraph">Ausgewählte Ressourcen A<block ref="9ed39e2ea931586b6a985a6942ef573e" prefix=" " category="inline-code"></block> Wert, der zur Orchestrierung von Lifecycle-Übergängen und zur Steuerung des Zugriffs eingesetzt wird.</block>
+  <block id="94fd56b370187429c8fbd312f50f5c1b" category="summary">Die allgemeine Struktur der URL, die für den Zugriff auf eine Ressourceninstanz oder -Sammlung über DIE REST-API verwendet wird, besteht aus mehreren Werten. Diese Struktur spiegelt das zugrunde liegende Objektmodell und das Systemdesign wider.</block>
+  <block id="e166d573b25ce4160633b91145d1eae5" category="paragraph">Die Wurzel des Ressourcenpfads zu jedem REST-Endpunkt ist das Astra-Konto. Daher beginnen alle Pfade in der URL mit<block ref="773211dffefd6ff22a8717595591ca91" prefix=" " category="inline-code"></block> Wo<block ref="8a089c2a7e6c77be2e2e68c5c366f460" prefix=" " category="inline-code"></block> Ist der eindeutige UUUIDv4-Wert für das Konto. Interne Struktur Dies ist ein Design, in dem der gesamte Ressourcenzugriff auf einem bestimmten Konto basiert.</block>
+  <block id="c96943fca3fb4769805adeaadbfa2a4c" category="paragraph">Die Astra-Ressourcenendpunkte lassen sich in drei verschiedene Kategorien einteilen:</block>
+  <block id="f5eee40efb177a56f7f47f4e9ae88fc0" category="list-text">Kern <block ref="ae20cee98ae962b39919c99c9fa7e1c8" prefix="(" category="inline-code"></block>)</block>
+  <block id="e82590686de294a35499703d86b3864d" category="list-text">Gemanagte Applikation <block ref="7466713d447629f279c035593d0e5915" prefix="(" category="inline-code"></block>)</block>
+  <block id="339ca9edd021d342e12ce488d3083b7b" category="list-text">Topologie <block ref="bdb7ca6d76afde60f0988ada498ba87f" prefix="(" category="inline-code"></block>)</block>
+  <block id="2598572d1690c4e8c484f3411842c6ed" category="paragraph">Siehe <block ref="f79c22f30a5c9f960ce998adee5739fa" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="807911da3f02747e900f1cbb28978d93" category="paragraph">Jede der drei Ressourcenkategorien verfügt über eine globale Version, die die Version der Ressourcen steuert, auf die zugegriffen wird. Nach Konventionen und Definition zu einer neuen Hauptversion einer Ressourcenkategorie wechseln (z. B. von)<block ref="28a2a7dc609f4cccc18847065506737d" prefix=" " category="inline-code"></block> Bis<block ref="88ea36c8fc61681c48dea9b12e9a2fb8" prefix=" " category="inline-code"></block>) Wird Bruchänderungen in der API einführen.</block>
+  <block id="a759694558fdad138d8e71cc88a58b5b" category="paragraph">Eine Kombination von Ressourcentypen und Identifikatoren kann im Pfad verwendet werden, basierend darauf, ob auf eine Ressourceninstanz oder -Sammlung zugegriffen wird.</block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="list-title">Beispiel</block>
+  <block id="2fc537b9f7b2c95f698a1e045c1ca8c7" category="list-text">Ressourcenpfad</block>
+  <block id="4c1c10477ca13145352fd9a92f9744f6" category="paragraph">Basierend auf der oben dargestellten Struktur ist ein typischer Pfad zu einem Endpunkt:<block ref="12662cf5431171146c880e7742535780" prefix=" " category="inline-code"></block>.</block>
+  <block id="8a95104150e07b745de96037e7eb15b4" category="list-text">Vollständige URL</block>
+  <block id="f39323c9cdd9d851595dba08fa974f82" category="paragraph">Die vollständige URL für den entsprechenden Endpunkt lautet:<block ref="5b0e8fd9db35d3aec1a4072a60117b3f" prefix=" " category="inline-code"></block>.</block>
+  <block id="ad60c6f0b038daedb3b46ea65cd82bc1" category="summary">Die Astra Control REST-API verwendet HTTP und zugehörige Parameter, um auf die Ressourceinstanzen und -Sammlungen zu reagieren.</block>
+  <block id="7ab91fd48b58ce1ea4cada1f1a4e1808" category="doc">HTTP-Details</block>
+  <block id="e4c8251a9c6d357d3aa4b05293542914" category="paragraph">Die Astra Control REST-API verwendet HTTP und zugehörige Parameter, um auf die Ressourceinstanzen und -Sammlungen zu reagieren. Einzelheiten zur HTTP-Implementierung finden Sie unten.</block>
+  <block id="deaf360f123e9392f769c7ceb4e01747" category="section-title">API-Transaktionen und das CRUD-Modell</block>
+  <block id="01b7ef875c4a217845bac8e7ae38175b" category="paragraph">Die Astra Control REST API implementiert ein transaktionsorientiertes Modell mit klar definierten Abläufen und Zustandsübergängen.</block>
+  <block id="1f5760bedf7c68291dfd4d306c189bc8" category="paragraph">Jeder REST-API-Aufruf erfolgt als HTTP-Anfrage an den Astra-Service. Jede Anforderung generiert eine entsprechende Antwort zurück an den Client. Dieses Request-Response-Paar kann als API-Transaktion betrachtet werden.</block>
+  <block id="c015cb2c04ac629966b40f1d6b58b583" category="paragraph">Auf Grundlage des *CRUD*-Modells kann auf alle über die Astra Control REST API verfügbaren Ressourcen und Sammlungen zugegriffen werden. Es gibt vier Vorgänge, von denen jede einer einzigen HTTP-Methode zugeordnet wird. Dazu gehören:</block>
+  <block id="686e697538050e4664636337cc3b834f" category="list-text">Erstellen</block>
+  <block id="7a1a5f3e79fdc91edf2f5ead9d66abb4" category="list-text">Lesen</block>
+  <block id="06933067aafd48425d67bcb01bba5cb6" category="list-text">Aktualisierung</block>
+  <block id="f2a6c498fb90ee345d997f888fce3b18" category="list-text">Löschen</block>
+  <block id="fde59e3cd820ea0be7c3ed5c4be3f292" category="paragraph">Bei einigen der Astra-Ressourcen wird nur ein Teil dieser Vorgänge unterstützt. Sie sollten die überprüfen <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> Weitere Informationen zu einem bestimmten API-Aufruf.</block>
+  <block id="957a8c35c28e967701ff975f1d7182d5" category="section-title">HTTP-Methoden</block>
+  <block id="63d1169901437c6f9acfc445cee3a4ba" category="paragraph">Die von der API unterstützten HTTP-Methoden oder Verben werden in der folgenden Tabelle dargestellt.</block>
+  <block id="4c3880bb027f159e801041b1021e88e8" category="cell">Methode</block>
+  <block id="8ecfde6cfb333d8f81de0672a75b159c" category="cell">CRUD</block>
+  <block id="79666eb3555d2ff3385526690b29f173" category="cell">Ruft Objekteigenschaften für eine Ressourceninstanz oder -Sammlung ab. Dies wird als *list*-Operation bei Verwendung mit einer Sammlung betrachtet.</block>
+  <block id="109ca1b43f20cf704cb82d1e60d1dfd5" category="cell">Erstellt eine neue Ressourceninstanz basierend auf den Eingabeparametern. Die langfristige URL wird in A zurückgegeben<block ref="ce5bf551379459c1c61d2a204061c455" prefix=" " category="inline-code"></block> Kopfzeile der Antwort.</block>
+  <block id="8fe6ec01587dacf444e7eeb72caaed1b" category="cell">Aktualisiert eine gesamte Ressourceninstanz mit dem mitgelieferten JSON Request Body. Wichtige Werte, die nicht vom Benutzer änderbar sind, bleiben erhalten.</block>
+  <block id="eef129331314d2c9f4c4a5b0fdde3c7e" category="cell">Löscht eine vorhandene Ressourceninstanz.</block>
+  <block id="61967c09828f8562a1a95fc9f6fd0151" category="section-title">Header für Anfragen und Antworten</block>
+  <block id="beeda4a7ebc8ea202e9ed1791403ab32" category="paragraph">Die folgende Tabelle fasst die HTTP-Header zusammen, die mit der Astra Control REST API verwendet werden.</block>
+  <block id="b0e56909c3a57b0d8dbf0222bd347ceb" category="inline-link">RFC 7232</block>
+  <block id="29e389ad4bb7b567cc956b0b4089f88e" category="inline-link">RFC 7233</block>
+  <block id="443369a4b9d28a4c4d185bde530f0a78" category="admonition">Siehe<block ref="3f1bb67bc2b98a20cf2c87c4fe0c3ca6" category="inline-link-rx"></block> Und<block ref="085309009337d32266cee2ab4ba9f174" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="81098f701c45e252a078b3eee62f0dab" category="cell">Nutzungshinweise</block>
+  <block id="15c2d85f1fae22a3c3a0594510a1f611" category="cell">Anfrage</block>
+  <block id="f230b5adb8a23c24f7900d2a94c7f069" category="cell">Wenn der Wert „*/*“ ist oder nicht angegeben wird,<block ref="d1f5a9d446c6cec2cf63545e8163e585" prefix=" " category="inline-code"></block> Wird in der Kopfzeile der Inhaltstyp-Antwort zurückgegeben. Wenn der Wert auf den Astra Resource Media Type gesetzt ist, wird derselbe Medientyp in der Kopfzeile des Inhaltstyps zurückgegeben.</block>
+  <block id="59e52e38bb9acc4d18bd31669b92507e" category="cell">Träger-Token mit dem API-Schlüssel für den Benutzer.</block>
+  <block id="dc105ac52c237f9f09c74b0767f64f74" category="cell">Inhaltstyp</block>
+  <block id="d64ed3e9c10229648e069f56e32f4c8e" category="cell">Antwort</block>
+  <block id="440093e664bc9325d3ee55442e0e1a2c" category="cell">Wird basierend auf dem zurückgegeben<block ref="c4408d335012a56ff58937d78050efad" prefix=" " category="inline-code"></block> Kopfzeile der Anfrage.</block>
+  <block id="16ddf21b3f21fcb2433e28cd2e3b33d8" category="cell">Etag</block>
+  <block id="7cb86e69c4338a43e1a5427a78eb80a7" category="cell">Im Lieferumfang eines erfolgreichen RFC 7232-Standards enthalten. Der Wert ist eine hexadezimale Darstellung des MD5-Werts für die gesamte JSON-Ressource.</block>
+  <block id="71e1f368d893f92df0ad4a838a3bbbd9" category="cell">If-Match</block>
+  <block id="556a98dd71f4adebd0bbb3b105ab8ddd" category="cell">Ein Precondition Request Header, wie in Abschnitt 3.1 RFC 7232 beschrieben und unterstützt *PUT* Anforderungen.</block>
+  <block id="3c092637f114ffbf533ef4426b84a1bd" category="cell">Wenn-Geändert-Seit</block>
+  <block id="9e69ea9561f904c53fa87d91042d2982" category="cell">Ein Precondition Request Header, wie in Abschnitt 3.4 RFC 7232 beschrieben und unterstützt *PUT* Anforderungen.</block>
+  <block id="ea7192f5dc601974605b32a2334c1769" category="cell">Wenn-Unmodified-Since</block>
+  <block id="ce5bf551379459c1c61d2a204061c455" category="cell">Standort</block>
+  <block id="cea5f66f37995fb196323018a31600fc" category="cell">Enthält die vollständige URL der neu erstellten Ressource.</block>
+  <block id="6e2102ce7d7573c8b221194a86f7a48b" category="section-title">Abfrageparameter</block>
+  <block id="7fec4843ebac2572cb7aba56b67d7ddb" category="inline-link-macro">Arbeiten mit Sammlungen</block>
+  <block id="b206801753ef0a6abfae5904e5c68a57" category="paragraph">Die folgenden Abfrageparameter stehen zur Verwendung mit Ressourcensammlungen zur Verfügung. Siehe <block ref="114f30b2f00431234237350f516a01cf" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="ce73e1ed10f91fd167ae3d5803ce8dff" category="cell">Abfrageparameter</block>
+  <block id="4d0d3b0c69167fef7204e14c4e946c15" category="cell">Enthält die Felder, die beim Lesen einer Sammlung zurückgegeben werden sollen.</block>
+  <block id="c6960e489ca14167f9bd9ace657e6790" category="cell">Gibt die Felder an, die für die Rückgabe einer Ressource beim Lesen einer Sammlung übereinstimmen müssen.</block>
+  <block id="4294376261299ba2cafafdb77ca4deeb" category="cell">Orderby</block>
+  <block id="cef5a79ac183c2043267cf9b8a6fde0b" category="cell">Bestimmt die Reihenfolge der beim Lesen einer Sammlung zurückgegebenen Ressourcen.</block>
+  <block id="aa9f73eea60a006820d0f8768bc8a3fc" category="cell">Grenze</block>
+  <block id="0233c5525461d7223c11d45dc1c590ab" category="cell">Begrenzt die maximale Anzahl an Ressourcen, die beim Lesen einer Sammlung zurückgegeben werden.</block>
+  <block id="08b43519a7e36ee4c6c5615d1663bcfd" category="cell">überspringen</block>
+  <block id="58eeca9906af37123daca426979fbe90" category="cell">Legt fest, wie viele Ressourcen beim Lesen einer Sammlung weitergehen und überspringen sollen.</block>
+  <block id="16bd6f56e0279353c2bf47e3b1d13c41" category="cell">Gibt an, ob die Gesamtzahl der Ressourcen im Metadatenobjekt zurückgegeben werden soll.</block>
+  <block id="2974f783f17d54a41f4040c8daa90545" category="section-title">HTTP-Statuscodes</block>
+  <block id="175b29f6f8dd1aa8a166427b6bcd061c" category="paragraph">Im Folgenden werden die HTTP-Statuscodes beschrieben, die von der REST-API von Astra Control verwendet werden.</block>
+  <block id="ef69df9e80d5e1591d22bfe189aa737e" category="admonition">Die Astra Control REST API nutzt auch den *Problemdetails für HTTP APIs* Standard. Siehe <block ref="d9c154af7dec160f41ead610ccb970e9" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="ca0dbad92a874b2f69b549293387925e" category="cell">Codieren</block>
+  <block id="7277de5f2ed6f17c61f1f25594591a82" category="cell">Bedeutung</block>
+  <block id="3644a684f98ea8fe223c713b77189a77" category="cell">200</block>
+  <block id="e0aa021e21dddbd6d8cecec71e9cf564" category="cell">OK</block>
+  <block id="ebe8cd0cd7287699e570e52e72202209" category="cell">Zeigt Erfolg für Anrufe an, die keine neue Ressourceninstanz erstellen.</block>
+  <block id="757b505cfd34c64c85ca5b5690ee5293" category="cell">201</block>
+  <block id="0eceeb45861f9585dd7a97a3e36f85c6" category="cell">Erstellt</block>
+  <block id="257e32e339ab2841c4fa5590926cbb5d" category="cell">Ein Objekt wurde erfolgreich erstellt, und die Kopfzeile für die Standortantwort enthält die eindeutige Kennung für das Objekt.</block>
+  <block id="274ad4786c3abca69fa097b85867d9a4" category="cell">204</block>
+  <block id="8386bf720b8b55126f9551c6678647f9" category="cell">Kein Inhalt</block>
+  <block id="aae60f64e8a8cfaba50bb2292348bc3c" category="cell">Die Anfrage war erfolgreich, obwohl kein Inhalt zurückgegeben wurde.</block>
+  <block id="18d8042386b79e2c279fd162df0205c8" category="cell">400</block>
+  <block id="0fc30646d5cf22910283967bf24ebf66" category="cell">Schlechte Anfrage</block>
+  <block id="d61713af1a9c56d51f7fb3873bed7e92" category="cell">Die Eingabe der Anfrage ist nicht erkannt oder nicht angemessen.</block>
+  <block id="816b112c6105b3ebd537828a39af4818" category="cell">401</block>
+  <block id="e06d1ba70f1331e9f9a113cc2f887d3f" category="cell">Nicht Autorisiert</block>
+  <block id="046b13999cd7e3b5a519e3f6c564f5b9" category="cell">Der Benutzer ist nicht autorisiert und muss authentieren.</block>
+  <block id="bbf94b34eb32268ada57a3be5062fe7d" category="cell">403</block>
+  <block id="722969577a96ca3953e84e3d949dee81" category="cell">Verboten</block>
+  <block id="8df9e8f24b204c91ad0a9031f9c09a16" category="cell">Der Zugriff wird aufgrund eines Autorisierungsfehlers verweigert.</block>
+  <block id="4f4adcbf8c6f66dcfc8a3282ac2bf10a" category="cell">404</block>
+  <block id="9e076f5885f5cc16a4b5aeb8de4adff5" category="cell">Nicht gefunden</block>
+  <block id="24ff0a9484d837d82e7f8f8218e196b6" category="cell">Die Ressource, auf die in diesem Antrag verwiesen wird, ist nicht vorhanden.</block>
+  <block id="a96b65a721e561e1e3de768ac819ffbb" category="cell">409</block>
+  <block id="f1d4ac54357cc0932f385d56814ba7e4" category="cell">Konflikt</block>
+  <block id="47a99fc0005eeb289896eda4eb4b708a" category="cell">Der Versuch, ein Objekt zu erstellen, ist fehlgeschlagen, weil das Objekt bereits vorhanden ist.</block>
+  <block id="cee631121c2ec9232f3a2f028ad5c89b" category="cell">500</block>
+  <block id="8f8913c1f755436db84ae169e37c61f9" category="cell">Interner Fehler</block>
+  <block id="03f0e0f686ebd5f796ca9febd1723676" category="cell">Ein allgemeiner interner Fehler ist auf dem Server aufgetreten.</block>
+  <block id="285e19f20beded7d215102b49d5c09a0" category="cell">503</block>
+  <block id="9ed1d9418efab93ff8b4b1793913fabe" category="cell">Service nicht verfügbar</block>
+  <block id="a6613dcc5c4d971acabeae88baf14cb7" category="cell">Der Dienst ist aus irgendeinem Grund nicht bereit, die Anfrage zu bearbeiten.</block>
+  <block id="ce44f3c6e8850cf4a69ccd2da1d186c8" category="summary">Representational State Transfer (REST) ist ein Stil für die Erstellung von verteilten Web-Anwendungen. Bei der Anwendung auf das Design einer Web-Services-API, stellt sie eine Reihe von Mainstream-Technologien und Best Practices für die Offenlegung serverbasierter Ressourcen und die Verwaltung ihrer Status.</block>
+  <block id="c0471368cdc5da09455ecd80f16c96c7" category="doc">REST-Web-Services</block>
+  <block id="8af1f604c2ddb0ae53e02227ab1ca1da" category="paragraph">Representational State Transfer (REST) ist ein Stil für die Erstellung von verteilten Web-Anwendungen. Bei der Anwendung auf das Design einer Web-Services-API, stellt sie eine Reihe von Mainstream-Technologien und Best Practices für die Offenlegung serverbasierter Ressourcen und die Verwaltung ihrer Status. REST bietet eine konsistente Grundlage für die Applikationsentwicklung, doch je nach den jeweiligen Designoptionen können die Details jeder API variieren. Vor dem Einsatz in einer Live-Implementierung sollten Sie sich der Merkmale der Astra Control REST API bewusst sein.</block>
+  <block id="b0fcdfb2c58efafaace08609d3e95f6d" category="section-title">Ressourcen- und Zustandsdarstellung</block>
+  <block id="d2d07b32aecf22c6a25dc91e4b898e5e" category="paragraph">Ressourcen sind die Grundkomponenten eines webbasierten Systems. Beim Erstellen einer ANWENDUNG FÜR REST-Webservices umfassen die frühen Designaufgaben Folgendes:</block>
+  <block id="c73e999111ecc4cc9c48709542105db9" category="list-text">Identifizierung von System- oder serverbasierten Ressourcen</block>
+  <block id="0400993c35912a6c4e281a903a66400e" category="paragraph">Jedes System nutzt und verwaltet Ressourcen. Eine Ressource kann eine Datei-, Geschäftstransaktion-, Prozess- oder Verwaltungseinheit sein. Eine der ersten Aufgaben bei der Entwicklung einer auf REST-Webservices basierenden Applikation ist die Identifizierung der Ressourcen.</block>
+  <block id="082f61fd927dc840d6a4c2daa3a8d76d" category="list-text">Definition von Ressourcenstatus und zugehörigen Statusoperationen</block>
+  <block id="5f4e63d9846190edae863ef33879f410" category="paragraph">Die Ressourcen befinden sich immer in einer endlichen Anzahl von Staaten. Die Zustände sowie die damit verbundenen Operationen, die zur Auswirkung der Statusänderungen verwendet werden, müssen klar definiert werden.</block>
+  <block id="6e9ee433459bf14a5380c1e7371232a9" category="section-title">URI-Endpunkte</block>
+  <block id="64c51063277c11a48be48ec3446f5087" category="paragraph">Jede REST-Ressource muss definiert und über ein gut definiertes Adressierungssystem verfügbar gemacht werden. Die Endpunkte, in denen die Ressourcen gefunden und identifiziert werden, verwenden einen einheitlichen Resource Identifier (URI). Der URI bietet ein allgemeines Framework zum Erstellen eines eindeutigen Namens für jede Ressource im Netzwerk. Der Uniform Resource Locator (URL) ist ein URI-Typ, der mit Webservices zur Identifizierung und zum Zugriff von Ressourcen verwendet wird. Ressourcen werden in der Regel in einer hierarchischen Struktur ausgesetzt, die einem Dateiverzeichnis ähnelt.</block>
+  <block id="34d23bd6dd51b3238872241264de74bf" category="section-title">HTTP-Meldungen</block>
+  <block id="19f05b47f4b958662678fc11fd0ce414" category="paragraph">Hypertext Transfer Protocol (HTTP) ist das Protokoll, das vom Webservice-Client und -Server zum Austausch von Anforderungs- und Antwortmeldungen zu den Ressourcen verwendet wird. Im Rahmen der Entwicklung einer Web-Services-Anwendung werden HTTP-Methoden den Ressourcen und entsprechenden Statusmanagement-Aktionen zugeordnet. HTTP ist statusfrei. Um im Rahmen einer Transaktion eine Reihe verwandter Anforderungen und Antworten zuzuordnen, müssen daher zusätzliche Informationen in die HTTP-Header enthalten sein, die mit den Anforderungs- und Antwortdatenströmen verwendet werden.</block>
+  <block id="bd4c8bbdccbcb7826a3bc4ae421c0604" category="section-title">JSON-Formatierung</block>
+  <block id="352836aad17f0db4217873eb0a9524b3" category="paragraph">Während Informationen auf verschiedene Weise zwischen einem Web-Services-Client und Server strukturiert und übertragen werden können, ist die beliebteste Option JavaScript Object Notation (JSON). JSON ist ein Branchenstandard für die Darstellung einfacher Datenstrukturen im Klartext und wird zur Übertragung von Zustandsdaten zur Beschreibung der Ressourcen verwendet. Die Astra Control REST API verwendet JSON, um die Daten zu formatieren, die im Körper von jeder HTTP-Anfrage und Antwort.</block>
+  <block id="86d5185860be6c597f7e7d99be200aa0" category="summary">Die Dokumentation zur Automatisierung ist für frühere Astra Control Versionen verfügbar.</block>
+  <block id="4bddbc6d61b2586c05f9efdf9aa7b5cd" category="paragraph">Die Dokumentation zur Automatisierung früherer Astra Control Versionen finden Sie unter den nachfolgenden Links.</block>
+  <block id="798161428a705ba47c31cc8ace9316e3" category="inline-link">Astra Control Automation 22.04 - Dokumentation</block>
+  <block id="693af21b54b2e5032434113328d4a53e" category="list-text"><block ref="693af21b54b2e5032434113328d4a53e" category="inline-link-rx"></block></block>
+  <block id="d61b1a26306fd2300000d407ac76b0ca" category="inline-link">Astra Control Automation 21.12 - Dokumentation</block>
+  <block id="f7fb8efb01216bddc5505f64c4c92bae" category="list-text"><block ref="f7fb8efb01216bddc5505f64c4c92bae" category="inline-link-rx"></block></block>
+  <block id="832210201d55f5c764a32c055a00b726" category="inline-link">Astra Control Automation 21.08 - Dokumentation</block>
+  <block id="025fa2688359a439d7fa215fbbbaf287" category="list-text"><block ref="025fa2688359a439d7fa215fbbbaf287" category="inline-link-rx"></block></block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">Rechtliche Hinweise ermöglichen den Zugriff auf Copyright-Erklärungen, Marken, Patente und mehr.</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Rechtliche Hinweise</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Urheberrecht</block>
+  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">Marken</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp, das NETAPP Logo und die auf der NetApp Markenseite aufgeführten Marken sind Marken von NetApp Inc. Andere Firmen- und Produktnamen können Marken der jeweiligen Eigentümer sein.</block>
+  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">Patente</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">Eine aktuelle Liste der NetApp Patente finden Sie unter:</block>
+  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">Datenschutzrichtlinie</block>
+  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
+  <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API-Lizenz</block>
+  <block id="f7c79ca7f13fd9da78390d5a97db7042" category="paragraph"><block ref="f7c79ca7f13fd9da78390d5a97db7042" category="inline-link-rx"></block></block>
+  <block id="1045f2798351223896fdab281a8307eb" category="sidebar">Dokumentation zur Astra Control Automation</block>
+  <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">Frühere Versionen</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Los geht's</block>
+  <block id="d58b759501469292f5d0464d265c376c" category="sidebar">REST-Implementierung</block>
+  <block id="b4ec6b7393a41bf5e5870f1ce48009e5" category="sidebar">REST-Ressourcen und -Sammlungen</block>
+  <block id="f38713c0367843938a57ef219a3bfbfc" category="sidebar">Zusammenfassung der Astra API-Ressourcen</block>
+  <block id="e6b088db24ebe67ed0e9567d309387ec" category="sidebar">Workflows</block>
+  <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="sidebar">Vorbereitung</block>
+  <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
+  <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">Native Verwendung von Python</block>
+  <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">Die komplette Astra Dokumentation</block>
+  <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">Konfigurieren Sie den LDAP-Server</block>
+  <block id="c7a97245522ed1fb42a97f5e4d3c60b7" category="sidebar">Listen Sie Cluster auf</block>
+  <block id="4a8f72b777dc9735afaebac72822c77e" category="sidebar">Clouds</block>
+  <block id="b99e07f4bea810f88b69ecfe1784ab28" category="sidebar">Clouds auflisten</block>
+  <block id="b65e59022e022b723c1c1fbb73cd0092" category="sidebar">Buckets auflisten</block>
+  <block id="35ae08a314ffffc02580e3c3fbfad924" category="sidebar">Funktionen und Vorteile</block>
+  <block id="d75a5043a76ca76174481f399b106691" category="sidebar">Weitere Nutzungsüberlegungen</block>
+  <block id="36b64aad8a26246fe3ad4116a2b6f289" category="sidebar">Diagnose</block>
+  <block id="824ee32982b0cc1ac1aca8447c9cb3cf" category="sidebar">Applikationskontrolle</block>
+  <block id="4d3e9b74a79b7af51564aa58491a951e" category="sidebar">Listen Sie Apps auf</block>
+  <block id="373370c9330843dbc9a492b75e68e396" category="sidebar">App-Schutz</block>
+  <block id="f787d303cdb9d100881b69dd4d492588" category="sidebar">Snapshot-Auflistung</block>
+  <block id="f7bcabdf07e891b3508301fa92282eea" category="sidebar">Führen Sie Backups auf</block>
+  <block id="bfb2cee5de3a54c30810194a0077e673" category="sidebar">Erstellen von Snapshots</block>
+  <block id="905771c53eca9759892774cc3976e8b7" category="sidebar">Backup erstellen</block>
+  <block id="c461a6f00f9a642a637e3f162f3ded1b" category="sidebar">Snapshot löschen</block>
+  <block id="b6cf8e12bbbeee058067ebf8c8dda7e2" category="sidebar">Sicherung löschen</block>
+  <block id="c315f2255bd42f6e4eec1a748ed0acba" category="sidebar">Klonen und Wiederherstellen einer Applikation</block>
+  <block id="76427b3f214d8ae919f1432a89eefd65" category="sidebar">Listet Namespaces auf</block>
+  <block id="999e0dcec594b55111b1ede61b4409f5" category="sidebar">Listenbenachrichtigungen</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">Versionshinweise</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Was ist neu</block>
+  <block id="365c8dec8255a8a164436c71a2611920" category="sidebar">Verwendung Von Python</block>
+  <block id="35bcd8d33247c44923eb71df2f2f0a2d" category="sidebar">Native Python</block>
+</blocks>

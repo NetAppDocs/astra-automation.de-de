@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: python/python_before.html 
+keywords: python3, requests, urllib3, identity, json 
+summary: Python ist eine beliebte Entwicklungssprache bei der Datacenter-Automatisierung. Bevor Sie die nativen Funktionen von Python zusammen mit mehreren gängigen Paketen nutzen, müssen Sie die Umgebung und die erforderlichen Eingabedateien vorbereiten. 
+---
+= Bevor Sie beginnen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Python ist eine beliebte Entwicklungssprache bei der Datacenter-Automatisierung. Bevor Sie die nativen Funktionen von Python zusammen mit mehreren gängigen Paketen nutzen, müssen Sie die Umgebung und die erforderlichen Eingabedateien vorbereiten.
+
+
+NOTE: NetApp hat nicht nur direkt mit Python auf die Astra Control REST API zugegriffen, sondern bietet auch ein Toolkit-Paket, das die API abstrahiert und einige der Komplexität beseitigt. Siehe link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] Finden Sie weitere Informationen.
+
+
+
+== Bereiten Sie die Umgebung vor
+
+Im Folgenden werden die grundlegenden Konfigurationsanforderungen für die Ausführung der Python-Skripte beschrieben.
+
+Sie müssen die neueste Version von Python 3 installiert haben.
+
+Die Bibliotheken *Requests* und *urllib3* müssen installiert sein. Sie können je nach Ihrer Umgebung Pip oder ein anderes Python Management Tool verwenden.
+
+Die Arbeitsstation, auf der die Skripte ausgeführt werden, muss Netzwerkzugriff haben und Astra Control erreichen können. Bei der Verwendung des Astra Control Service müssen Sie mit dem Internet verbunden sein und eine Verbindung zum Dienst unter herstellen können `https://astra.netapp.io`.
+
+Sie benötigen ein gültiges Astra-Konto mit der Account-ID und dem API-Token. Siehe link:../get-started/get_api_token.html["Holen Sie sich ein API-Token"] Finden Sie weitere Informationen.
+
+
+
+== Erstellen Sie die JSON-Eingabedateien
+
+Die Python-Skripte basieren auf Konfigurationsinformationen in JSON-Eingabedateien. Im Folgenden finden Sie Beispieldateien.
+
+
+NOTE: Sie müssen die Proben entsprechend Ihrer Umgebung aktualisieren.
+
+Die folgende Datei enthält das API-Token und das Astra-Konto. Sie müssen diese Datei mit der an Python-Skripte übergeben `-i` (Oder `--identity`) CLI-Parameter.
+
+[source, json]
+----
+{
+  "api_token": "kH4CA_uVIa8q9UuPzhJaAHaGlaR7-no901DkkrVjIXk=",
+  "account_id": "5131dfdf-03a4-5218-ad4b-fe84442b9786"
+}
+----

@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_ldap_disable_reset.html 
+keywords:  
+summary:  
+---
+= Deaktivieren und Zurücksetzen von LDAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Für eine Astra Control Center-Implementierung können Sie zwei optionale administrative Aufgaben durchführen. Sie können die LDAP-Authentifizierung global deaktivieren und die LDAP-Konfiguration zurücksetzen.
+
+Beide Workflow-Aufgaben erfordern die id für den `astra.account.ldap` Astra-Einstellung: Details zum Abrufen der Einstellungen-id finden Sie in *Konfigurieren des LDAP-Servers*. Siehe link:../workflows_infra/wf_ldap_configure_server.html#3-retrieve-the-uuid-of-the-ldap-setting["Abrufen der UUID der LDAP-Einstellung"] Finden Sie weitere Informationen.
+
+* link:../workflows_infra/wf_ldap_disable_reset.html#disable-ldap-authentication["Deaktivieren Sie die LDAP-Authentifizierung"]
+* link:../workflows_infra/wf_ldap_disable_reset.html#reset-the-ldap-authentication-configuration["LDAP-Authentifizierungskonfiguration zurücksetzen"]
+
+
+
+
+== Deaktivieren Sie die LDAP-Authentifizierung
+
+Sie können den folgenden REST-API-Aufruf durchführen, um die LDAP-Authentifizierung für eine bestimmte Astra-Implementierung global zu deaktivieren. Der Anruf aktualisiert den `astra.account.ldap` Einstellung und das `isEnabled` Wert ist gesetzt auf `false`.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| PUT | /Account/{Account_id}/Core/v1/settings/{setting_id} 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.0",
+  "desiredConfig": {
+    "connectionHost": "myldap.example.com",
+    "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+    "groupBaseDN": "OU=groups,OU=astra,DC=example,DC=com",
+    "isEnabled": "false",
+    "port": 686,
+    "secureMode": "LDAPS",
+    "userBaseDN": "OU=users,OU=astra,DC=example,dc=com",
+    "userSearchFilter": "((objectClass=User))",
+    "vendor": "Active Directory"
+    }
+}
+----
+[source, curl]
+----
+curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+Wenn der Anruf erfolgreich ist, wird der angezeigt `HTTP 204` Die Antwort wird zurückgegeben. Sie können optional die Konfigurationseinstellungen erneut abrufen, um die Änderung zu bestätigen.
+
+
+
+== LDAP-Authentifizierungskonfiguration zurücksetzen
+
+Sie können den folgenden REST-API-Aufruf ausführen, um Astra vom LDAP-Server zu trennen und die LDAP-Konfiguration in Astra zurückzusetzen. Der Anruf aktualisiert den `astra.account.ldap` Einstellung und der Wert von `connectionHost` Wird gelöscht.
+
+Der Wert von `isEnabled` Muss auch auf festgelegt sein `false`. Sie können diesen Wert entweder vor dem Rücksetzen oder als Teil des Rückrufs festlegen. Im zweiten Fall `connectionHost` Sollte gelöscht werden und `isEnabled` Bei demselben Reset-Anruf auf false gesetzt.
+
+
+CAUTION: Dies ist ein disruptiver Betrieb, und Sie sollten mit Vorsicht vorgehen. Alle importierten LDAP-Benutzer und -Gruppen werden gelöscht. Außerdem werden alle zugehörigen Astra-Benutzer, Gruppen und RoleBindings (LDAP-Typ) gelöscht, die Sie im Astra Control Center erstellt haben.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| PUT | /Account/{Account_id}/Core/v1/settings/{setting_id} 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.0",
+  "desiredConfig": {
+    "connectionHost": "",
+    "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+    "groupBaseDN": "OU=groups,OU=astra,DC=example,DC=com",
+    "isEnabled": "false",
+    "port": 686,
+    "secureMode": "LDAPS",
+    "userBaseDN": "OU=users,OU=astra,DC=example,dc=com",
+    "userSearchFilter": "((objectClass=User))",
+    "vendor": "Active Directory"
+    }
+}
+----
+Beachten Sie Folgendes:
+
+* Um den LDAP-Server zu ändern, müssen Sie die LDAP-Änderung deaktivieren und zurücksetzen `connectHost` Bis zu einem Null-Wert, wie im Beispiel oben gezeigt.
+
+
+[source, curl]
+----
+curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+Wenn der Anruf erfolgreich ist, wird der angezeigt `HTTP 204` Die Antwort wird zurückgegeben. Sie können optional die Konfiguration erneut abrufen, um die Änderung zu bestätigen.

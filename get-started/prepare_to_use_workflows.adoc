@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: get-started/prepare_to_use_workflows.html 
+keywords: workflows, prepare workflows, use workflows 
+summary: Vor der Live-Implementierung sollten Sie sich mit der Organisation und dem Format der Astra-Workflows vertraut machen. 
+---
+= Die Nutzung der Workflows wird vorbereitet
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vor der Live-Implementierung sollten Sie sich mit der Organisation und dem Format der Astra-Workflows vertraut machen.
+
+
+
+== Einführung
+
+Ein _Workflow_ ist eine Sequenz aus einem oder mehreren Schritten, die zum Erreichen einer bestimmten administrativen Aufgabe oder eines bestimmten Ziels erforderlich sind. Jeder Schritt in einem Astra Control Workflow ist einer der folgenden:
+
+* REST-API-Aufruf (mit Details wie Curl- und JSON-Beispiele)
+* Aufruf eines weiteren Astra-Workflows
+* Sonstige verwandte Aufgaben (z. B. die Entscheidung für eine erforderliche Designentscheidung)
+
+
+Workflows umfassen die wichtigsten Schritte und Parameter, die zur Durchführung jeder Aufgabe erforderlich sind. Sie bieten als Ausgangspunkt für die Anpassung Ihrer Automatisierungsumgebung.
+
+
+
+== Allgemeine Eingabeparameter
+
+Die unten beschriebenen Eingabeparameter sind für alle Curl-Proben, die zur Veranschaulichung eines REST-API-Aufrufs verwendet werden, üblich.
+
+
+NOTE: Da diese Eingabeparameter universell erforderlich sind, werden sie in den einzelnen Arbeitsabläufen nicht weiter beschrieben. Wenn für ein bestimmtes Curl-Beispiel zusätzliche Eingabeparameter verwendet werden, werden sie im Abschnitt *zusätzliche Eingabeparameter* beschrieben.
+
+
+
+=== Pfadparameter
+
+Der bei jedem REST-API-Aufruf verwendete Endpunkt-Pfad umfasst die folgenden Parameter. Siehe auch link:../rest-core/url_format.html["URL-Format"] Finden Sie weitere Informationen.
+
+Konto-ID:: Dies ist der UUIDv4-Wert, der das Astra-Konto identifiziert, auf dem der API-Vorgang ausgeführt wird. Siehe link:../get-started/get_api_token.html["Holen Sie sich ein API-Token"] Weitere Informationen zur Suche nach Ihrer Konto-ID.
+
+
+
+
+=== Anfragekopfzeilen
+
+Je nach REST-API-Aufruf müssen Sie möglicherweise mehrere Anforderungsheader einbeziehen.
+
+Autorisierung:: Für alle API-Aufrufe in den Workflows wird ein API-Token zur Identifizierung des Benutzers benötigt. Sie müssen das Token in das aufnehmen `Authorization` Kopfzeile der Anfrage. Siehe link:../get-started/get_api_token.html["Holen Sie sich ein API-Token"] Weitere Informationen zum Generieren eines API-Tokens finden Sie unter.
+Content-Typ:: Mit dem HTTP-POST und PUT-Anfragen, bei denen JSON im Anforderungstext enthalten ist, sollten Sie den Medientyp basierend auf der Astra-Ressource deklarieren. Beispielsweise können Sie die Kopfzeile einschließen `Content-Type: application/astra-appSnap+json` Beim Erstellen eines Snapshots für eine verwaltete Anwendung.
+Akzeptieren:: Sie können den spezifischen Medientyp des Inhalts, den Sie in der Antwort erwarten, basierend auf der Astra-Ressource erklären. Beispielsweise können Sie die Kopfzeile einschließen `Accept: application/astra-appBackup+json` Wenn Sie die Backups für eine gemanagte Applikation auflisten. Zur Vereinfachung akzeptieren die Wellproben in den Workflows jedoch alle Medientypen.
+
+
+
+
+== Darstellung von Token und Identifikatoren
+
+Das API-Token und andere ID-Werte, die mit den Curl-Beispielen verwendet werden, sind undurchsichtig und haben keine erkennbare Bedeutung. Um die Lesbarkeit der Proben zu verbessern, werden die tatsächlichen Token- und ID-Werte nicht verwendet. Stattdessen werden kleinere reservierte Schlüsselwörter verwendet, die mehrere Vorteile haben:
+
+* Die Curl- und JSON-Proben sind klarer und leichter zu verstehen.
+* Da alle Schlüsselwörter dasselbe Format mit Klammern und Großbuchstaben verwenden, können Sie schnell den Ort und den Inhalt identifizieren, der eingefügt oder extrahiert werden soll.
+* Kein Wert geht verloren, da die ursprünglichen Parameter nicht kopiert und bei einer tatsächlichen Implementierung verwendet werden können.
+
+
+Hier sind einige der in den Curl-Beispielen verwendeten allgemein reservierten Schlüsselwörter. Diese Liste ist nicht vollständig und weitere Schlüsselwörter werden bei Bedarf verwendet. Ihre Bedeutung sollte auf der Grundlage des Kontexts offensichtlich sein.
+
+[cols="25,15,60"]
+|===
+| Stichwort | Typ | Beschreibung 
+
+
+| <ACCOUNT_ID> | Pfad | Der UUIDv4-Wert identifiziert das Konto, auf dem der API-Vorgang ausgeführt wird. 
+
+
+| <API_TOKEN> | Kopfzeile | Das Inhaberzeichen, das den Anrufer identifiziert und autorisiert. 
+
+
+| <APP_ID> | Pfad | Der UUIDv4-Wert, der die Anwendung für den API-Aufruf identifiziert. 
+|===
+
+
+== Workflow-Kategorien
+
+Je nach Ihrem Implementierungsmodell stehen Ihnen zwei weit gefassten Kategorien von Astra-Workflows zur Verfügung. Wenn Sie Astra Control Center nutzen, sollten Sie mit den Infrastruktur-Workflows beginnen und anschließend mit den Management-Workflows fortfahren. Mit dem Astra Control Service können Sie in der Regel direkt zu den Management-Workflows wechseln.
+
+
+NOTE: Die Curl-Beispiele in den Workflows verwenden die URL für den Astra Control Service. Sie müssen die URL ändern, wenn Sie das On-Premise Astra Control Center entsprechend Ihrer Umgebung verwenden.
+
+
+
+=== Infrastruktur-Workflows
+
+Diese Workflows befassen sich mit der Astra-Infrastruktur, einschließlich Referenzen, Buckets und Storage-Back-Ends. Sie werden mit dem Astra Control Center benötigt, können aber in den meisten Fällen auch mit dem Astra Control Service verwendet werden. Die Workflows konzentrieren sich auf die Aufgaben, die für die Einrichtung und Wartung eines von Astra gemanagten Clusters erforderlich sind.
+
+
+
+=== Management-Workflows
+
+Diese Workflows können nach einem verwalteten Cluster verwendet werden. Die Workflows konzentrieren sich auf die Applikationssicherung und unterstützen Abläufe wie das Backup, Restore und Klonen einer Applikation.

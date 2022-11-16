@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_buckets.html 
+keywords:  
+summary: Sie können die S3-Buckets für ein bestimmtes Astra-Konto auflisten. 
+---
+= Listen Sie die Buckets auf
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können die S3-Buckets für ein bestimmtes Astra-Konto auflisten.
+
+
+
+=== 1. Listen Sie die Eimer auf
+
+Führen Sie den folgenden REST-API-Aufruf durch, um die Buckets aufzulisten.
+
+[cols="25,75"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| GET | /Account/{Account_id}/Topology/v1/Buckets 
+|===
+
+
+===== Curl-Beispiel: Gibt alle Daten für alle Buckets zurück
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/buckets' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----

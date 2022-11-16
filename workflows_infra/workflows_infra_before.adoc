@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/workflows_infra_before.html 
+keywords: workflows, infrastructure workflows, preparation 
+summary: Mithilfe dieser Workflows können Sie die Infrastruktur erstellen und warten, die bei einer Implementierung von Astra Control Center verwendet wird. In vielen Fällen können die Workflows auch mit dem Astra Control Service genutzt werden. 
+---
+= Bevor Sie beginnen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mithilfe dieser Workflows können Sie die Infrastruktur erstellen und warten, die bei einer Implementierung von Astra Control Center verwendet wird. In vielen Fällen können die Workflows auch mit dem Astra Control Service genutzt werden.
+
+
+NOTE: Diese Workflows können jederzeit von NetApp erweitert und ergänzt werden, sodass Sie sie in regelmäßigen Abständen prüfen sollten.
+
+
+
+== Allgemeine Vorbereitung
+
+Bevor Sie einen Astra-Workflow verwenden, sollten Sie unbedingt lesen link:../get-started/prepare_to_use_workflows.html["Die Nutzung der Workflows wird vorbereitet"].
+
+
+
+== Workflow-Kategorien
+
+Die Infrastruktur-Workflows sind in verschiedene Kategorien unterteilt, um den gewünschten Workflow leichter finden zu können.
+
+[cols="25,75"]
+|===
+| Kategorie | Beschreibung 
+
+
+| Identität und Zugriff | Mit diesen Workflows können Sie die Identität und den Zugriff auf Astra verwalten. Zu den Ressourcen zählen Benutzer, Anmeldedaten und Token. 
+
+
+| LDAP-Konfiguration | Optional können Sie Astra Control Center so konfigurieren, dass Sie LDAP zur Authentifizierung ausgewählter Benutzer verwenden. 
+
+
+| Buckets | Sie können diese Workflows zum Erstellen und Managen der S3-Buckets verwenden, die zum Speichern von Backups verwendet werden. 
+
+
+| Storage | Durch diese Workflows können Sie Storage-Back-Ends und -Volumes hinzufügen und verwalten. 
+
+
+| Cluster | Sie können Managed Kubernetes Cluster hinzufügen, damit Sie die enthaltenen Applikationen schützen und unterstützen können. 
+|===

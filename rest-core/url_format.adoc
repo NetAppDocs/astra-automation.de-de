@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: rest-core/url_format.html 
+keywords: url, url format, endpoint, version 
+summary: Die allgemeine Struktur der URL, die für den Zugriff auf eine Ressourceninstanz oder -Sammlung über DIE REST-API verwendet wird, besteht aus mehreren Werten. Diese Struktur spiegelt das zugrunde liegende Objektmodell und das Systemdesign wider. 
+---
+= URL-Format
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Die allgemeine Struktur der URL, die für den Zugriff auf eine Ressourceninstanz oder -Sammlung über DIE REST-API verwendet wird, besteht aus mehreren Werten. Diese Struktur spiegelt das zugrunde liegende Objektmodell und das Systemdesign wider.
+
+Die Wurzel des Ressourcenpfads zu jedem REST-Endpunkt ist das Astra-Konto. Daher beginnen alle Pfade in der URL mit `/account/{account_id}` Wo `account_id` Ist der eindeutige UUUIDv4-Wert für das Konto. Interne Struktur Dies ist ein Design, in dem der gesamte Ressourcenzugriff auf einem bestimmten Konto basiert.
+
+Die Astra-Ressourcenendpunkte lassen sich in drei verschiedene Kategorien einteilen:
+
+* Kern (`/core`)
+* Gemanagte Applikation (`/k8s`)
+* Topologie (`/topology`)
+
+
+Siehe link:../endpoints/resources.html["Ressourcen"] Finden Sie weitere Informationen.
+
+Jede der drei Ressourcenkategorien verfügt über eine globale Version, die die Version der Ressourcen steuert, auf die zugegriffen wird. Nach Konventionen und Definition zu einer neuen Hauptversion einer Ressourcenkategorie wechseln (z. B. von) `/v1` Bis `/v2`) Wird Bruchänderungen in der API einführen.
+
+Eine Kombination von Ressourcentypen und Identifikatoren kann im Pfad verwendet werden, basierend darauf, ob auf eine Ressourceninstanz oder -Sammlung zugegriffen wird.
+
+.Beispiel
+* Ressourcenpfad
++
+Basierend auf der oben dargestellten Struktur ist ein typischer Pfad zu einem Endpunkt: `/accounts/{account_id}/core/v1/users`.
+
+* Vollständige URL
++
+Die vollständige URL für den entsprechenden Endpunkt lautet: `https://astra.netapp.io/accounts/{account_id}/core/v1/users`.
+
+

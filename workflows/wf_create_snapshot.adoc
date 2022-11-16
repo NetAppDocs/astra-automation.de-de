@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_create_snapshot.html 
+keywords:  
+summary: Sie können einen Snapshot für eine bestimmte Anwendung erstellen. 
+---
+= Erstellen Sie einen Snapshot für eine Anwendung
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können einen Snapshot für eine bestimmte Anwendung erstellen.
+
+
+
+=== Bevor Sie beginnen
+
+Sie müssen über die ID der App verfügen, für die Sie einen Snapshot erstellen möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
+
+
+
+=== 1. Erstellen Sie einen Snapshot
+
+Führen Sie den folgenden REST-API-Aufruf aus.
+
+[cols="25,75"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| POST | /Accounts/{Account_id}/k8s/v1/Apps/{App_id}/appSnaps 
+|===
+
+
+===== Zusätzliche Eingabeparameter
+
+Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.
+
+[cols="25,10,10,55"]
+|===
+| Parameter | Typ | Erforderlich | Beschreibung 
+
+
+| App-id | Pfad | Ja. | Gibt die verwaltete Anwendung an, in der der Snapshot erstellt werden soll. 
+
+
+| JSON | Text | Ja. | Stellt die Parameter für den Snapshot bereit. Siehe das folgende Beispiel. 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type": "application/astra-appSnap",
+  "version": "1.1",
+  "name": "snapshot-david-1"
+}
+----
+
+
+===== Curl Beispiel: Erstellen Sie einen Snapshot für die App
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Content-Type: application/astra-appSnap+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

@@ -1,0 +1,50 @@
+---
+section: workflows
+title: Management-Workflows
+entries:
+- title: Bevor Sie beginnen
+  url: "/workflows/workflows_before.html"
+- title: Applikationskontrolle
+  entries:
+  - title: Listen Sie Apps auf
+    url: "/workflows/wf_list_man_apps.html"
+  - title: Holen Sie sich eine App
+    url: "/workflows/wf_get_man_app.html"
+  - title: Eine App verwalten
+    url: "/workflows/wf_manage_app.html"
+  - title: Verwaltung einer Anwendung aufheben
+    url: "/workflows/wf_unmanage_app.html"
+- title: App-Schutz
+  entries:
+  - title: Snapshot-Auflistung
+    url: "/workflows/wf_list_snapshots.html"
+  - title: Führen Sie Backups auf
+    url: "/workflows/wf_list_backups.html"
+  - title: Erstellen von Snapshots
+    url: "/workflows/wf_create_snapshot.html"
+  - title: Backup erstellen
+    url: "/workflows/wf_create_backup.html"
+  - title: Snapshot löschen
+    url: "/workflows/wf_delete_snapshot.html"
+  - title: Sicherung löschen
+    url: "/workflows/wf_delete_backup.html"
+- title: Klonen und Wiederherstellen einer Applikation
+  entries:
+  - title: Klonen einer Anwendung
+    url: "/workflows/wf_clone_app.html"
+  - title: Eine Anwendung aus einem Snapshot klonen
+    url: "/workflows/wf_clone_app_snapshot.html"
+  - title: Klonen einer Applikation aus einem Backup
+    url: "/workflows/wf_clone_app_backup.html"
+  - title: Wiederherstellung einer Anwendung aus einem Backup
+    url: "/workflows/wf_restore_app_backup.html"
+- title: Namespaces
+  entries:
+  - title: Listet Namespaces auf
+    url: "/workflows/wf_list_namespaces.html"
+- title: Unterstützung
+  entries:
+  - title: Listenbenachrichtigungen
+    url: "/workflows/wf_list_notifications.html"
+  - title: Löschen einer fehlgeschlagenen Anwendung
+    url: "/workflows/wf_delete_failed_app.html"

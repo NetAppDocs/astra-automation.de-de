@@ -1,0 +1,188 @@
+---
+sidebar: sidebar 
+permalink: endpoints/resources.html 
+keywords: resources, endpoints, core, managed application, topology, openapi, openmetrics 
+summary: Zur Automatisierung einer Astra Implementierung können Sie auf die Ressourcen zugreifen, die über die ASTRA Control REST-API bereitgestellt werden. Jede Ressource ist über einen oder mehrere Endpunkte verfügbar. Diese Seite enthält eine Einführung in DIE REST-Ressourcen, die Sie im Rahmen einer Automatisierungsimplementierung nutzen können. 
+---
+= Ressourcen und Endpunkte
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Zur Automatisierung einer Astra Implementierung können Sie auf die Ressourcen zugreifen, die über die ASTRA Control REST-API bereitgestellt werden. Jede Ressource ist über einen oder mehrere Endpunkte verfügbar. Nachfolgend finden Sie eine Einführung zu DEN REST-Ressourcen, die Sie im Rahmen einer Automatisierungsimplementierung nutzen können.
+
+
+NOTE: Das Format des Pfads und der vollständigen URL für den Zugriff auf die Astra Control-Ressourcen basiert auf mehreren Werten. Siehe link:../rest-core/url_format.html["URL-Format"] Finden Sie weitere Informationen. Siehe auch link:../reference/api_reference.html["API-Referenz"] Weitere Informationen zur Verwendung der Astra-Ressourcen und -Endpunkte.
+
+
+
+== Zusammenfassung der Astra Control REST-Ressourcen
+
+Die primären Ressourcenendpunkte in der Astra Control REST API sind in drei Kategorien unterteilt. Auf jede Ressource kann mit allen CRUD-Vorgängen (Erstellen, Lesen, Aktualisieren, Löschen) zugegriffen werden, sofern nicht anders angegeben.
+
+Die Spalte *Release* zeigt den Astra-Release an, als die Ressource zum ersten Mal eingeführt wurde. Dieses Feld ist für Ressourcen verfügbar, die mit der aktuellen Version neu hinzugefügt wurden.
+
+
+
+=== Kernressourcen
+
+Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau und zur Wartung der Astra-Laufzeitumgebung erforderlich sind.
+
+[cols="20,10,70"]
+|===
+| Ressource | Freigabe | Beschreibung 
+
+
+| Konto | 21.12 | Mithilfe der Account-Ressourcen können Sie die isolierten Mandanten innerhalb der mandantenfähigen Astra Control Implementierungsumgebung managen. 
+
+
+| ASUP | 21.08 | Die ASUP Ressourcen stellen die AutoSupport Bundles dar, die an den NetApp Support weitergeleitet werden. 
+
+
+| Zertifikat | *22.08* | Die Zertifikatressourcen stellen die installierten Zertifikate dar, die für eine starke Authentifizierung für ausgehende Verbindungen verwendet werden. 
+
+
+| Anmeldedaten | 21.04 | Die Ressourcen für Zugangsdaten enthalten sicherheitsbezogene Informationen, die mit Astra-Benutzern, Clustern, Buckets und Storage-Back-Ends verwendet werden können. 
+
+
+| Berechtigung | 21.08 | Die Berechtigungsressourcen stellen die Funktionen und Kapazitäten dar, die für ein Konto auf Basis der aktiven Lizenzen und Abonnements verfügbar sind. 
+
+
+| Ereignis | 21.04 | Die Event-Ressourcen repräsentieren alle Ereignisse, die im System auftreten, einschließlich der Untergruppe, die als Benachrichtigungen klassifiziert ist. 
+
+
+| Execution Hook | 21.12 | Die Hook-Ressourcen für die Ausführung stellen benutzerdefinierte Skripts dar, die Sie entweder vor oder nach einem Snapshot einer verwalteten App ausführen können. 
+
+
+| Merkmal | 21.08 | Die Funktionsressourcen stellen ausgewählte Astra-Funktionen dar, die Sie abfragen können, um festzustellen, ob diese im System aktiviert oder deaktiviert sind. Der Zugriff ist auf schreibgeschützt beschränkt. 
+
+
+| Gruppieren | *22.08* | Die Gruppenressourcen sind die Astra-Gruppen und die damit verbundenen Ressourcen. In der aktuellen Version werden nur LDAP-Gruppen unterstützt. 
+
+
+| Hook-Quelle | 21.12 | Die Hakenquellenressourcen stellen den aktuellen Quellcode dar, der mit einem Testsuite verwendet wird. Die Trennung des Quellcodes von der Ausführungskontrolle hat mehrere Vorteile, wie z. B. die Freigabe der Skripte. 
+
+
+| Lizenz | 21.08 | Die Lizenzressourcen stellen die für ein Astra-Konto verfügbaren Lizenzen dar. 
+
+
+| Benachrichtigung | 21.04 | Die Benachrichtigungsressourcen sind Astra-Ereignisse mit einem Benachrichtigungsziel. Der Zugriff erfolgt auf Benutzerbasis. 
+
+
+| Paket | 22.04 | Die Paketressourcen ermöglichen die Registrierung und den Zugriff auf Paketdefinitionen. Softwarepakete bestehen aus verschiedenen Komponenten, einschließlich Dateien, Bildern und anderen Artefakten. 
+
+
+| Rollenbindung | 21.04 | Die Role Binding Ressourcen stellen die Beziehungen zwischen bestimmten Paaren von Benutzern und Konten dar. Zusätzlich zur Verknüpfung zwischen den beiden wird für jede über eine bestimmte Rolle ein Satz von Berechtigungen festgelegt. 
+
+
+| Einstellung | 21.08 | Die Einstellungsressourcen stellen eine Sammlung von Schlüsselwert-Paaren dar, die ein Feature für ein bestimmtes Astra-Konto beschreiben. 
+
+
+| Abonnement | 21.08 | Die Abonnementressourcen stellen die aktiven Abonnements für ein Astra-Konto dar. 
+
+
+| Token | 21.04 | Die Token-Ressourcen stellen die Token dar, die für den programmatischen Zugriff auf die Astra Control REST API verfügbar sind. 
+
+
+| Ungelesene Benachrichtigung | 21.04 | Die nicht gelesenen Benachrichtigungsressourcen stellen Benachrichtigungen dar, die einem bestimmten Benutzer zugewiesen, aber noch nicht gelesen wurden. 
+
+
+| Upgrade | 22.04 | Die Upgrade-Ressourcen bieten Zugriff auf Softwarekomponenten und können Upgrades initiieren. 
+
+
+| Benutzer | 21.04 | Die Benutzerressourcen sind Astra-Benutzer, die auf das System basierend auf ihrer definierten Rolle zugreifen können. 
+|===
+
+
+=== Gemanagte Applikationsressourcen
+
+Die Endpunkte der gemanagten Applikationsressourcen bieten Zugriff auf die gemanagten Kubernetes-Applikationen.
+
+[cols="20,10,70"]
+|===
+| Ressource | Freigabe | Beschreibung 
+
+
+| Anwendungsressource | 21.04 | Die Anwendungsressourcen stellen interne Sammlungen von staatlichen Informationen dar, die für das Management der Astra-Anwendungen erforderlich sind. 
+
+
+| Applikations-Backup | 21.04 | Die Backup-Ressourcen der Applikation stellen Backups der gemanagten Applikationen dar. 
+
+
+| Anwendungs-Snapshot | 21.04 | Die Snapshot-Ressourcen der Anwendung stellen Snapshots der verwalteten Anwendungen dar. 
+
+
+| Überschreiben des Testablaufanhängehaken | 21.12 | Über die Ressourcen zum Überschreiben der Execution Hooks können Sie die vorab geladenen NetApp Standard-Testausführungshaken für bestimmte Applikationen nach Bedarf deaktivieren. 
+
+
+| Zeitplan | 21.04 | Die Zeitplanressourcen sind Datensicherungsvorgänge, die im Rahmen einer Datenschutzrichtlinie für die gemanagten Applikationen geplant sind. 
+|===
+
+
+=== Topologieressourcen
+
+Die Endpunkte der Topologieressourcen bieten Zugriff auf nicht verwaltete Applikationen und Storage-Ressourcen.
+
+[cols="20,10,70"]
+|===
+| Ressource | Freigabe | Beschreibung 
+
+
+| App. | 21.04 | Die App-Ressourcen umfassen alle Kubernetes-Applikationen, auch die, die nicht von Astra gemanagt werden. 
+
+
+| AppMirror | *22.08* | Die AppMirror-Ressourcen stellen die AppMirror-Ressourcen dar, die für das Management von Applikationsspiegelungsbeziehungen bereitgestellt werden. 
+
+
+| Eimer | 21.08 | Die Bucket-Ressourcen sind die S3-Cloud-Buckets, die für die Speicherung von Backups der vom Astra gemanagten Applikationen verwendet werden. 
+
+
+| Cloud | 21.08 | Die Cloud-Ressourcen stellen Clouds dar, mit denen Astra-Clients verbunden werden können, um Cluster und Applikationen zu managen. 
+
+
+| Cluster | 21.08 | Die Cluster-Ressourcen stellen die Kubernetes-Cluster dar, die nicht von Kubernetes gemanagt werden. 
+
+
+| Cluster-Node | 21.12 | Die Cluster-Node-Ressourcen bieten eine zusätzliche Auflösung, durch die Sie auf die einzelnen Nodes innerhalb eines Kubernetes-Clusters zugreifen können. 
+
+
+| Verwalteter Cluster | 21.08 | Die gemanagten Cluster-Ressourcen stellen die Kubernetes-Cluster dar, die derzeit von Kubernetes gemanagt werden. 
+
+
+| Gemanagtes Storage-Back-End | 21.12 | Die gemanagten Storage-Backend-Ressourcen ermöglichen Ihnen den Zugriff auf abstrahierte Darstellungen der Back-End-Storage-Anbieter. Diese Storage-Back-Ends können von den gemanagten Clustern und Applikationen verwendet werden. 
+
+
+| Namespace | 21.12 | Die Namespace-Ressourcen bieten Zugriff auf die innerhalb eines Kubernetes-Clusters verwendeten Namespaces. 
+
+
+| Storage-Back-End | 21.08 | Die Storage-Back-End-Ressourcen stellen Anbieter von Storage-Services dar, die von den von Astra gemanagten Clustern und Applikationen verwendet werden können. 
+
+
+| Storage-Klasse | 21.08 | Ressourcen der Storage-Klasse stellen unterschiedliche Storage-Klassen oder -Typen dar, die für ein bestimmtes gemanagtes Cluster erkannt und verfügbar sind. 
+
+
+| Storage-Gerät | 21.12 | Die Storage-Geräteressourcen bieten Zugriff auf die Festplatten, die mit einem bestimmten Storage-Node für Storage-Back-Ends vom Typ Astra Data Store (ADS) verbunden sind. Ein ADS Storage Back-End wird als Kubernetes-Cluster implementiert. 
+
+
+| Storage-Node | 21.12 | Die Storage-Node-Ressourcen stellen die Nodes dar, die Teil eines ADS-Clusters sind. 
+
+
+| Datenmenge | 21.04 | Die Volume-Ressourcen stellen die Kubernetes Storage Volumes dar, die mit den gemanagten Applikationen verknüpft sind. 
+|===
+
+
+== Zusätzliche Ressourcen und Endpunkte
+
+Zur Unterstützung einer Astra-Implementierung stehen mehrere zusätzliche Ressourcen und Endpunkte zur Verfügung.
+
+
+NOTE: Diese Ressourcen und Endpunkte sind derzeit nicht in der Astra Control REST API-Referenzdokumentation enthalten.
+
+OpenAPI:: Die OpenAPI-Endpunkte bieten Zugriff auf das aktuelle OpenAPI JSON-Dokument und andere zugehörige Ressourcen.
+OpenMetrics:: Die OpenMetrics-Endpunkte bieten über die OpenMetrics-Ressource Zugriff auf die Kontokennzahlen. Support ist mit dem Astra Control Center Implementierungsmodell verfügbar.
+

@@ -1,0 +1,83 @@
+---
+settings:
+  name: Astra Automation
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: rn/whats_new.html
+  langs: de-de,us-en,ja-jp,zh-cn,zh-tw,ko-kr,fr-fr
+sidebar:
+  entries:
+  - title: Dokumentation zur Astra Control Automation
+    url: "/index.html"
+  - section: rn
+  - section: intro
+  - section: get-started
+  - section: rest-core
+  - section: endpoints
+  - section: additional
+  - section: workflows_infra
+  - section: workflows
+  - section: python
+  - section: reference
+  - section: information
+  - title: Frühere Versionen
+    url: "/aa-earlier-versions.html"
+  - title: Rechtliche Hinweise
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: Los geht's
+    links:
+    - title: Einführung
+      url: "/intro/introduction.html"
+    - title: Bevor Sie beginnen
+      url: "/get-started/before_get_started.html"
+    - title: Holen Sie sich ein API-Token
+      url: "/get-started/get_api_token.html"
+    - title: Hallo Welt
+      url: "/get-started/hello_world.html"
+  - title: REST-Implementierung
+    links:
+    - title: REST-Web-Services
+      url: "/rest-core/rest_web_services.html"
+    - title: HTTP-Details
+      url: "/rest-core/http_details.html"
+    - title: URL-Format
+      url: "/rest-core/url_format.html"
+  - title: Weitere Überlegungen
+    links:
+    - title: RBAC-Sicherheit
+      url: "/additional/rbac.html"
+    - title: Arbeit mit Sammlungen
+      url: "/additional/work_with_collections.html"
+    - title: Diagnose und Support
+      url: "/additional/diagnostics_support.html"
+    - title: Ein API-Token widerrufen
+      url: "/additional/revoke_token.html"
+  - title: Ressourcen
+    links:
+    - title: REST-Ressourcen und -Sammlungen
+      url: "/rest-core/resources_collections.html"
+    - title: Zusammenfassung der Astra API-Ressourcen
+      url: "/endpoints/resources.html"
+  - title: Workflows
+    links:
+    - title: Vorbereitung
+      url: "/get-started/prepare_to_use_workflows.html"
+    - title: Infrastruktur-Workflows
+      url: "/workflows_infra/workflows_infra_before.html"
+    - title: Management-Workflows
+      url: "/workflows/workflows_before.html"
+  - title: Python
+    links:
+    - title: NetApp Astra Control Python SDK
+      url: "/python/astra_toolkits.html"
+    - title: Native Verwendung von Python
+      url: "/python/python_before.html"
+product-family:
+  name: Astra
+  repo: astra-family
+  sidebar_label: Die komplette Astra Dokumentation
