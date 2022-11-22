@@ -520,6 +520,8 @@
           
 
 
+
+
         </li>
       </ul>
     
@@ -574,6 +576,10 @@
             Cluster
           </a>
           
+
+
+
+
 
 
 
@@ -734,6 +740,8 @@
             App-Schutz
           </a>
           
+
+
 
 
 
@@ -1010,11 +1018,11 @@
         Holen Sie sich ein API-Token
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Hallo Welt"
+      data-pdf-filename="Ihr erster API-Aufruf"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/de-de/astra-automation/get-started/hello_world.html">
-        Hallo Welt
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/get-started/first_call.html">
+        Ihr erster API-Aufruf
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Die Nutzung der Workflows wird vorbereitet"
@@ -1142,6 +1150,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_list_users.html">
         Benutzer auflisten
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erstellen Sie einen Benutzer"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_create_user.html">
+        Erstellen Sie einen Benutzer
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="LDAP-Konfiguration"
@@ -1197,11 +1212,25 @@
         Listen Sie Cluster auf
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Fügen Sie einen Cluster hinzu"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_add_cluster.html">
+        Fügen Sie einen Cluster hinzu
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Auflistung gemanagter Cluster"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_list_man_clusters.html">
         Auflistung gemanagter Cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Verwalten eines Clusters"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_man_cluster.html">
+        Verwalten eines Clusters
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Clouds"
@@ -1361,6 +1390,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows/wf_delete_backup.html">
         Sicherung löschen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sicherungsrichtlinie erstellen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows/wf_create_protection.html">
+        Sicherungsrichtlinie erstellen
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Klonen und Wiederherstellen einer Applikation"
@@ -1571,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-16 18:27:40 +0000">11/16/2022</time>
+    <time datetime="2022-11-22 17:16:26 +0000">11/22/2022</time>
     
   
 
@@ -1591,13 +1627,53 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="22-november-2022-22-11">22. November 2022 (22.11)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie eine erweiterte Namespace- und LDAP-Unterstützung.</p>
+</div>
+<div class="sect2">
+<h3 id="neue-und-verbesserte-astra-ressourcen">Neue und verbesserte Astra-Ressourcen</h3>
+<div class="paragraph">
+<p>Es wurden vier neue Ressourcentypen hinzugefügt: <strong>ApiResource</strong>, <strong>ldapGroup</strong>, <strong>ldapUser</strong> und <strong>Task</strong>. Außerdem wurden mehrere vorhandene Ressourcen und Endpunkte verbessert.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="überwachung-des-supports-für-lang-laufende-aufgaben">Überwachung des Supports für lang laufende Aufgaben</h3>
+<div class="paragraph">
+<p>Die neuen Task-Endpunkte bieten Zugriff auf verwaltete Task-Ressourcen und können zum Anzeigen des Status interner, lang laufender Aufgaben verwendet werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verbesserte-namespace-nutzungsszenarien">Verbesserte Namespace-Nutzungsszenarien</h3>
+<div class="paragraph">
+<p>Es wurde Unterstützung für Apps hinzugefügt, die mehrere Namespaces umfassen, sowie für Cluster-Ressourcen, die für Namespace-qualifizierte Ressourcen zugewiesen sind.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="erweiterte-cloud-abonnements">Erweiterte Cloud-Abonnements</h3>
+<div class="paragraph">
+<p>Für jeden Cloud-Provider können jetzt mehrere Kontoabonnements hinzugefügt werden.</p>
+</div>
+<div class="ulist">
+<div class="title">Verwandte Informationen</div>
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html" target="_blank" rel="noopener">"Astra Control Center: Was ist neu"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="august-10-2022-22-08">August 10 2022 (22.08)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie erweiterte Sicherheits- und Administrationsfunktionen.</p>
 </div>
 <div class="sect2">
-<h3 id="neue-und-verbesserte-astra-ressourcen">Neue und verbesserte Astra-Ressourcen</h3>
+<h3 id="neue-und-verbesserte-astra-ressourcen-2">Neue und verbesserte Astra-Ressourcen</h3>
 <div class="paragraph">
 <p>Es wurden drei neue Ressourcen-Typen hinzugefügt: <strong>Zertifikat</strong>, <strong>Gruppe</strong> und <strong>AppMirror</strong>. Darüber hinaus wurden die Versionen verschiedener vorhandener Ressourcen aktualisiert.</p>
 </div>
@@ -1639,10 +1715,7 @@
 <div class="title">Verwandte Informationen</div>
 <ul>
 <li>
-<p><a href="https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html" target="_blank" rel="noopener">"Astra Control Center: Was ist neu"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html" target="_blank" rel="noopener">"Astra Control Service: Was ist neu"</a></p>
+<p><a href="https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/whats-new.html" target="_blank" rel="noopener">"Astra Control Center 22.08: Was ist neu"</a></p>
 </li>
 </ul>
 </div>
@@ -1656,7 +1729,7 @@
 <p>Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie erweiterte Sicherheits- und Administrationsfunktionen.</p>
 </div>
 <div class="sect2">
-<h3 id="neue-und-verbesserte-astra-ressourcen-2">Neue und verbesserte Astra-Ressourcen</h3>
+<h3 id="neue-und-verbesserte-astra-ressourcen-3">Neue und verbesserte Astra-Ressourcen</h3>
 <div class="paragraph">
 <p>Es wurden zwei neue Ressourcen-Typen hinzugefügt: <strong>Paket</strong> und <strong>Upgrade</strong>. Außerdem wurden die Versionen verschiedener vorhandener Ressourcen aktualisiert.</p>
 </div>
@@ -1707,10 +1780,7 @@
 <div class="title">Verwandte Informationen</div>
 <ul>
 <li>
-<p><a href="https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html" target="_blank" rel="noopener">"Astra Control Center: Was ist neu"</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html" target="_blank" rel="noopener">"Astra Control Service: Was ist neu"</a></p>
+<p><a href="https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/whats-new.html" target="_blank" rel="noopener">"Astra Control Center 22.04: Was ist neu"</a></p>
 </li>
 </ul>
 </div>
@@ -1739,6 +1809,14 @@
 <h3 id="netapp-astra-control-python-sdk">NetApp Astra Control Python SDK</h3>
 <div class="paragraph">
 <p>NetApp Astra Control Python SDK ist ein Open-Source-Paket, mit dem sich der Automatisierungscode für Ihre Astra Control Umgebung leichter entwickeln lässt. Der Kern ist das Astra SDK, das eine Reihe von Klassen umfasst, um die Komplexität der REST API Aufrufe zu abstrahieren. Es gibt auch ein Toolkit-Skript zur Ausführung spezifischer administrativer Aufgaben durch Zusammenfassung und Abstrahierung der Python-Klassen. Siehe <a href="../python/astra_toolkits.html">"NetApp Astra Control Python SDK"</a> Finden Sie weitere Informationen.</p>
+</div>
+<div class="ulist">
+<div class="title">Verwandte Informationen</div>
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/whats-new.html" target="_blank" rel="noopener">"Astra Control Center 21.12: Was ist neu"</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1777,6 +1855,14 @@
 <p>Die OpenMetrics-Endpunkte bieten über die OpenMetrics-Ressource Zugriff auf Kontokennzahlen.</p>
 </dd>
 </dl>
+</div>
+<div class="ulist">
+<div class="title">Verwandte Informationen</div>
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra-control-center-2108/release-notes/whats-new.html" target="_blank" rel="noopener">"Astra Control Center 21.08: Was ist neu"</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

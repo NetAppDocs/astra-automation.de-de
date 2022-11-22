@@ -9,14 +9,14 @@
   <meta property="og:title" content="Konfigurieren Sie Astra für die Verwendung eines LDAP-Servers" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/de-de/astra-automation/workflows_infra/wf_ldap_configure_server.html" />
-	<meta property="og:description" content="" />
+	<meta property="og:description" content="Sie müssen einen LDAP-Server auswählen und Astra so konfigurieren, dass der Server als Authentifizierungsanbieter verwendet wird." />
   <meta property="og:image" content="https://docs.netapp.com/de-de/astra-automation/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Sie müssen einen LDAP-Server auswählen und Astra so konfigurieren, dass der Server als Authentifizierungsanbieter verwendet wird.">
   <meta name="keywords" content=" "><!-- Icons -->
   <link rel="icon" href="/de-de/astra-automation/images/favicon.ico" type="image/x-icon">
 
@@ -518,6 +518,8 @@
           
 
 
+
+
         </li>
       </ul>
     
@@ -574,6 +576,10 @@
             Cluster
           </a>
           
+
+
+
+
 
 
 
@@ -734,6 +740,8 @@
             App-Schutz
           </a>
           
+
+
 
 
 
@@ -1010,11 +1018,11 @@
         Holen Sie sich ein API-Token
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Hallo Welt"
+      data-pdf-filename="Ihr erster API-Aufruf"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/de-de/astra-automation/get-started/hello_world.html">
-        Hallo Welt
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/get-started/first_call.html">
+        Ihr erster API-Aufruf
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Die Nutzung der Workflows wird vorbereitet"
@@ -1142,6 +1150,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_list_users.html">
         Benutzer auflisten
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Erstellen Sie einen Benutzer"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_create_user.html">
+        Erstellen Sie einen Benutzer
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="LDAP-Konfiguration"
@@ -1197,11 +1212,25 @@
         Listen Sie Cluster auf
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Fügen Sie einen Cluster hinzu"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_add_cluster.html">
+        Fügen Sie einen Cluster hinzu
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Auflistung gemanagter Cluster"
       data-li-level="3#" 
       class=" "
     ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_list_man_clusters.html">
         Auflistung gemanagter Cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Verwalten eines Clusters"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows_infra/wf_man_cluster.html">
+        Verwalten eines Clusters
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Clouds"
@@ -1361,6 +1390,13 @@
       class=" "
     ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows/wf_delete_backup.html">
         Sicherung löschen
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Sicherungsrichtlinie erstellen"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/astra-automation/workflows/wf_create_protection.html">
+        Sicherungsrichtlinie erstellen
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Klonen und Wiederherstellen einer Applikation"
@@ -1571,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-16 18:27:40 +0000">11/16/2022</time>
+    <time datetime="2022-11-22 17:16:26 +0000">11/22/2022</time>
     
   
 
@@ -1619,7 +1655,7 @@ Dieser Schritt ist optional und nur erforderlich, wenn Astra und LDAP über eine
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/Account/{Account_id}/Core/v1/certificates</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/Accounts/{Account_id}/Core/v1/certificates</p></td>
 </tr>
 </tbody>
 </table>
@@ -1728,7 +1764,7 @@ Dieser Schritt ist optional und nur erforderlich, wenn Astra und LDAP über eine
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/Account/{Account_id}/Core/v1/Credentials</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/Accounts/{Account_id}/Core/v1/Credentials</p></td>
 </tr>
 </tbody>
 </table>
@@ -1826,7 +1862,7 @@ Das folgende Curl-Beispiel verwendet einen Abfrageparameter, um die Einstellensa
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/Account/{Account_id}/Core/v1/settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/Accounts/{Account_id}/Core/v1/settings</p></td>
 </tr>
 </tbody>
 </table>
@@ -1885,7 +1921,7 @@ Sie können zuerst eine ANFRAGE FÜR DIE spezifische Einstellung ausstellen, um 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PUT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/Account/{Account_id}/Core/v1/settings/{setting_id}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/Accounts/{Account_id}/Core/v1/settings/{setting_id}</p></td>
 </tr>
 </tbody>
 </table>
@@ -1961,7 +1997,7 @@ Sie können zuerst eine ANFRAGE FÜR DIE spezifische Einstellung ausstellen, um 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/Account/{Account_id}/Core/v1/settings/{setting_id}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/Accounts/{Account_id}/Core/v1/settings/{setting_id}</p></td>
 </tr>
 </tbody>
 </table>
