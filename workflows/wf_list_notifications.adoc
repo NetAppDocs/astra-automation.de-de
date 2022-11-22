@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_list_notifications.html 
 keywords:  
-summary:  
+summary: Sie können die Benachrichtigungen für ein bestimmtes Astra-Konto auflisten. Dies können Sie im Rahmen der Überwachung der Systemaktivität oder des Debugging eines Problems tun. 
 ---
 = Listen Sie die Benachrichtigungen auf
 :hardbreaks:
@@ -27,7 +27,7 @@ Führen Sie den folgenden REST-API-Aufruf aus.
 | HTTP-Methode | Pfad 
 
 
-| GET | /Account/{Account_id}/Core/v1/notifications 
+| GET | /Accounts/{Account_id}/Core/v1/notifications 
 |===
 
 

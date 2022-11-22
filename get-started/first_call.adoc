@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: get-started/hello_world.html 
-keywords: get started, simple example 
+permalink: get-started/first_call.html 
+keywords: get started, first call, hello world 
 summary: Sie können einen einfachen curl Befehl an Ihrer Workstation CLI ausgeben, um mit dem Astra Control REST API zu beginnen und seine Verfügbarkeit zu bestätigen. 
 ---
-= Hallo Welt
+= Ihr erster API-Aufruf
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -25,7 +25,7 @@ Der folgende Curl Befehl ruft eine Liste der Astra-Benutzer ab. Geben Sie die en
 curl --location --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/json' --header 'Authorization: Bearer <API_TOKEN>'
 ----
 .Beispiel für eine JSON-Ausgabe
-[source, json]
+[listing]
 ----
 {
   "items": [

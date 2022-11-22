@@ -28,6 +28,8 @@ entries:
     url: "/workflows/wf_delete_snapshot.html"
   - title: Sicherung löschen
     url: "/workflows/wf_delete_backup.html"
+  - title: Sicherungsrichtlinie erstellen
+    url: "/workflows/wf_create_protection.html"
 - title: Klonen und Wiederherstellen einer Applikation
   entries:
   - title: Klonen einer Anwendung

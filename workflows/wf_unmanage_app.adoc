@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_unmanage_app.html 
 keywords:  
-summary:  
+summary: Sie können eine verwaltete Anwendung entfernen, wenn sie nicht mehr benötigt wird. Durch Entfernen einer verwalteten Anwendung werden auch die zugeordneten Zeitpläne gelöscht. 
 ---
 = Verwaltung einer Anwendung aufheben
 :hardbreaks:

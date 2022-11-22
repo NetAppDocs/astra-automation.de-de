@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_disable_reset.html 
 keywords:  
-summary:  
+summary: Für eine Astra Control Center-Implementierung können Sie zwei optionale administrative Aufgaben durchführen. Sie können die LDAP-Authentifizierung global deaktivieren und die LDAP-Konfiguration zurücksetzen. 
 ---
 = Deaktivieren und Zurücksetzen von LDAP
 :hardbreaks:
@@ -33,7 +33,7 @@ Sie können den folgenden REST-API-Aufruf durchführen, um die LDAP-Authentifizi
 | HTTP-Methode | Pfad 
 
 
-| PUT | /Account/{Account_id}/Core/v1/settings/{setting_id} 
+| PUT | /Accounts/{Account_id}/Core/v1/settings/{setting_id} 
 |===
 
 
@@ -79,7 +79,7 @@ CAUTION: Dies ist ein disruptiver Betrieb, und Sie sollten mit Vorsicht vorgehen
 | HTTP-Methode | Pfad 
 
 
-| PUT | /Account/{Account_id}/Core/v1/settings/{setting_id} 
+| PUT | /Accounts/{Account_id}/Core/v1/settings/{setting_id} 
 |===
 
 

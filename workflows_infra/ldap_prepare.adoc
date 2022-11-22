@@ -45,7 +45,7 @@ Vor der Konfiguration von Astra zur Verwendung von LDAP zur Authentifizierung so
 
 Die Astra Control-Plattform verfügt über zwei Implementierungsmodelle. Die LDAP-Authentifizierung wird nur bei Astra Control Center-Implementierungen unterstützt.
 
-Die aktuelle Version von Astra Control Center unterstützt nur die Konfiguration der LDAP-Authentifizierung mithilfe der Astra Control REST API. Ein wichtiger Aspekt dieser Einschränkung ist, dass die LDAP-Benutzer nicht auf der Registerkarte Benutzer des Astra Web-Interface angezeigt werden. Sie sind über DIE REST-API am Endpunkt verfügbar `../core/v1/users`.
+Die aktuelle Version von Astra Control Center unterstützt die Konfiguration der LDAP-Authentifizierung sowohl mit der Astra Control REST API als auch mit der Astra Web-Benutzeroberfläche.
 
 Sie müssen über einen LDAP-Server verfügen, um die Astra-Authentifizierungsanforderungen zu akzeptieren und zu bearbeiten. Das Active Directory von Microsoft wird mit der aktuellen Version von Astra Control Center unterstützt.
 

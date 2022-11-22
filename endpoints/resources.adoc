@@ -44,7 +44,7 @@ Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau un
 | ASUP | 21.08 | Die ASUP Ressourcen stellen die AutoSupport Bundles dar, die an den NetApp Support weitergeleitet werden. 
 
 
-| Zertifikat | *22.08* | Die Zertifikatressourcen stellen die installierten Zertifikate dar, die für eine starke Authentifizierung für ausgehende Verbindungen verwendet werden. 
+| Zertifikat | 22.08 | Die Zertifikatressourcen stellen die installierten Zertifikate dar, die für eine starke Authentifizierung für ausgehende Verbindungen verwendet werden. 
 
 
 | Anmeldedaten | 21.04 | Die Ressourcen für Zugangsdaten enthalten sicherheitsbezogene Informationen, die mit Astra-Benutzern, Clustern, Buckets und Storage-Back-Ends verwendet werden können. 
@@ -62,10 +62,16 @@ Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau un
 | Merkmal | 21.08 | Die Funktionsressourcen stellen ausgewählte Astra-Funktionen dar, die Sie abfragen können, um festzustellen, ob diese im System aktiviert oder deaktiviert sind. Der Zugriff ist auf schreibgeschützt beschränkt. 
 
 
-| Gruppieren | *22.08* | Die Gruppenressourcen sind die Astra-Gruppen und die damit verbundenen Ressourcen. In der aktuellen Version werden nur LDAP-Gruppen unterstützt. 
+| Gruppieren | 22.08 | Die Gruppenressourcen sind die Astra-Gruppen und die damit verbundenen Ressourcen. In der aktuellen Version werden nur LDAP-Gruppen unterstützt. 
 
 
 | Hook-Quelle | 21.12 | Die Hakenquellenressourcen stellen den aktuellen Quellcode dar, der mit einem Testsuite verwendet wird. Die Trennung des Quellcodes von der Ausführungskontrolle hat mehrere Vorteile, wie z. B. die Freigabe der Skripte. 
+
+
+| LDAP-Gruppe | *22.11* | Sie können die Gruppen im konfigurierten LDAP-Server auflisten. Der Zugriff auf die LDAP-Gruppen ist schreibgeschützt. 
+
+
+| LDAP-Benutzer | *22.11* | Sie können die Benutzer im konfigurierten LDAP-Server auflisten. Der Zugriff auf LDAP-Benutzer ist schreibgeschützt. 
 
 
 | Lizenz | 21.08 | Die Lizenzressourcen stellen die für ein Astra-Konto verfügbaren Lizenzen dar. 
@@ -84,6 +90,9 @@ Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau un
 
 
 | Abonnement | 21.08 | Die Abonnementressourcen stellen die aktiven Abonnements für ein Astra-Konto dar. 
+
+
+| Aufgabe | *22.11* | Die Task-Ressourcen bieten schreibgeschützten Zugriff auf verwaltete Aufgabe und können verwendet werden, um den Status der internen Langlaufaufgaben anzuzeigen. 
 
 
 | Token | 21.04 | Die Token-Ressourcen stellen die Token dar, die für den programmatischen Zugriff auf die Astra Control REST API verfügbar sind. 
@@ -133,10 +142,13 @@ Die Endpunkte der Topologieressourcen bieten Zugriff auf nicht verwaltete Applik
 | Ressource | Freigabe | Beschreibung 
 
 
+| API-Ressource | *22.11* | Die API-Ressourcenendpunkte bieten einen schreibgeschützten Zugriff auf die Kubernetes-Ressourcen in einem bestimmten gemanagten Cluster. 
+
+
 | App. | 21.04 | Die App-Ressourcen umfassen alle Kubernetes-Applikationen, auch die, die nicht von Astra gemanagt werden. 
 
 
-| AppMirror | *22.08* | Die AppMirror-Ressourcen stellen die AppMirror-Ressourcen dar, die für das Management von Applikationsspiegelungsbeziehungen bereitgestellt werden. 
+| AppMirror | 22.08 | Die AppMirror-Ressourcen stellen die AppMirror-Ressourcen dar, die für das Management von Applikationsspiegelungsbeziehungen bereitgestellt werden. 
 
 
 | Eimer | 21.08 | Die Bucket-Ressourcen sind die S3-Cloud-Buckets, die für die Speicherung von Backups der vom Astra gemanagten Applikationen verwendet werden. 
@@ -154,9 +166,6 @@ Die Endpunkte der Topologieressourcen bieten Zugriff auf nicht verwaltete Applik
 | Verwalteter Cluster | 21.08 | Die gemanagten Cluster-Ressourcen stellen die Kubernetes-Cluster dar, die derzeit von Kubernetes gemanagt werden. 
 
 
-| Gemanagtes Storage-Back-End | 21.12 | Die gemanagten Storage-Backend-Ressourcen ermöglichen Ihnen den Zugriff auf abstrahierte Darstellungen der Back-End-Storage-Anbieter. Diese Storage-Back-Ends können von den gemanagten Clustern und Applikationen verwendet werden. 
-
-
 | Namespace | 21.12 | Die Namespace-Ressourcen bieten Zugriff auf die innerhalb eines Kubernetes-Clusters verwendeten Namespaces. 
 
 
@@ -164,12 +173,6 @@ Die Endpunkte der Topologieressourcen bieten Zugriff auf nicht verwaltete Applik
 
 
 | Storage-Klasse | 21.08 | Ressourcen der Storage-Klasse stellen unterschiedliche Storage-Klassen oder -Typen dar, die für ein bestimmtes gemanagtes Cluster erkannt und verfügbar sind. 
-
-
-| Storage-Gerät | 21.12 | Die Storage-Geräteressourcen bieten Zugriff auf die Festplatten, die mit einem bestimmten Storage-Node für Storage-Back-Ends vom Typ Astra Data Store (ADS) verbunden sind. Ein ADS Storage Back-End wird als Kubernetes-Cluster implementiert. 
-
-
-| Storage-Node | 21.12 | Die Storage-Node-Ressourcen stellen die Nodes dar, die Teil eines ADS-Clusters sind. 
 
 
 | Datenmenge | 21.04 | Die Volume-Ressourcen stellen die Kubernetes Storage Volumes dar, die mit den gemanagten Applikationen verknüpft sind. 

@@ -47,7 +47,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die App zu klonen.
 | HTTP-Methode | Pfad 
 
 
-| POST | /Account/{Account_id}/k8s/v2/Apps 
+| POST | /Accounts/{Account_id}/k8s/v2/Apps 
 |===
 
 

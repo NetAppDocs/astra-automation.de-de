@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_manage_app.html 
 keywords:  
-summary:  
+summary: Sie können eine gemanagte Applikation auf Basis einer Applikation erstellen, die Astra in einem bestimmten Namespace bereits bekannt ist. Wenn eine Applikation mit Astra verwaltet oder definiert wird, können Sie sie durch Backups und Snapshots schützen. 
 ---
 = Eine App verwalten
 :hardbreaks:
@@ -39,7 +39,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Anwendung zu verwalten.
 | HTTP-Methode | Pfad 
 
 
-| POST | /Account/{Account_id}/k8s/v2/Apps 
+| POST | /Accounts/{Account_id}/k8s/v2/Apps 
 |===
 
 

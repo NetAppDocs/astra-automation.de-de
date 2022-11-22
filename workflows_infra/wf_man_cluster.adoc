@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_man_cluster.html 
+keywords:  
+summary: Sie können ein Kubernetes-Cluster so managen, dass Datensicherungsvorgänge ausgeführt werden können. 
+---
+= Verwalten eines Clusters
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können ein Kubernetes-Cluster so managen, dass die Datensicherung durchgeführt werden kann.
+
+
+
+=== 1. Wählen Sie den zu verwaltenden Cluster aus
+
+Führen Sie den Workflow aus link:../workflows_infra/wf_list_clusters.html["Listen Sie Cluster auf"] Und wählen Sie das gewünschte Cluster aus. Das Hotel `managedState` Des Clusters muss sein `unmanaged`.
+
+
+
+=== 2. Wählen Sie optional die Speicherklasse aus
+
+Führen Sie optional den Workflow aus link:../workflows_infra/wf_list_storage_classes.html["Auflisten von Speicherklassen"] Und wählen Sie die gewünschte Storage-Klasse aus.
+
+
+NOTE: Wenn Sie beim Aufruf zum Verwalten des Clusters keine Storage-Klasse anbieten, wird die standardmäßige Storage-Klasse verwendet.
+
+
+
+=== 3. Verwalten Sie den Cluster
+
+Führen Sie den folgenden REST-API-Aufruf durch, um das Cluster zu verwalten.
+
+[cols="1,6"]
+|===
+| HTTP-Methode | Pfad 
+
+
+| POST | /Accounts/{Account_id}/Topology/v1/manageClusters 
+|===
+
+
+===== JSON-Eingabebeispiel
+
+[source, json]
+----
+{
+  "type": "application/astra-managedCluster",
+  "version": "1.0",
+  "id": "d0fdf455-4330-476d-bb5d-4d109714e07d"
+}
+----
+
+
+===== Beispiel für die Wellung
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/managedClusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

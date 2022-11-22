@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_configure_server.html 
 keywords:  
-summary:  
+summary: Sie müssen einen LDAP-Server auswählen und Astra so konfigurieren, dass der Server als Authentifizierungsanbieter verwendet wird. 
 ---
 = Konfigurieren Sie Astra für die Verwendung eines LDAP-Servers
 :hardbreaks:
@@ -30,7 +30,7 @@ NOTE: Dieser Schritt ist optional und nur erforderlich, wenn Astra und LDAP übe
 | HTTP-Methode | Pfad 
 
 
-| POST | /Account/{Account_id}/Core/v1/certificates 
+| POST | /Accounts/{Account_id}/Core/v1/certificates 
 |===
 
 
@@ -121,7 +121,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Bindungsanmeldeinformati
 | HTTP-Methode | Pfad 
 
 
-| POST | /Account/{Account_id}/Core/v1/Credentials 
+| POST | /Accounts/{Account_id}/Core/v1/Credentials 
 |===
 
 
@@ -189,7 +189,7 @@ NOTE: Das folgende Curl-Beispiel verwendet einen Abfrageparameter, um die Einste
 | HTTP-Methode | Pfad 
 
 
-| GET | /Account/{Account_id}/Core/v1/settings 
+| GET | /Accounts/{Account_id}/Core/v1/settings 
 |===
 
 
@@ -228,7 +228,7 @@ NOTE: Sie können zuerst eine ANFRAGE FÜR DIE spezifische Einstellung ausstelle
 | HTTP-Methode | Pfad 
 
 
-| PUT | /Account/{Account_id}/Core/v1/settings/{setting_id} 
+| PUT | /Accounts/{Account_id}/Core/v1/settings/{setting_id} 
 |===
 
 
@@ -281,7 +281,7 @@ Sie können optional den folgenden REST-API-Aufruf durchführen, um die LDAP-Ein
 | HTTP-Methode | Pfad 
 
 
-| GET | /Account/{Account_id}/Core/v1/settings/{setting_id} 
+| GET | /Accounts/{Account_id}/Core/v1/settings/{setting_id} 
 |===
 
 

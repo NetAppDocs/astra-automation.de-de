@@ -27,7 +27,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Clouds aufzulisten.
 | HTTP-Methode | Pfad 
 
 
-| GET | /Account/{Account_id}/Topology/v1/Clouds 
+| GET | /Accounts/{Account_id}/Topology/v1/Clouds 
 |===
 
 

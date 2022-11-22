@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_list_clusters.html 
 keywords:  
-summary:  
+summary: Sie können die verfügbaren Cluster in einer bestimmten Cloud auflisten. 
 ---
 = Listen Sie die Cluster auf
 :hardbreaks:
@@ -33,7 +33,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Cluster in einer bestimm
 | HTTP-Methode | Pfad 
 
 
-| GET | /Account/{Account_id}/Topology/v1/Clouds/{Cloud_id}/Cluster 
+| GET | /Accounts/{Account_id}/Topology/v1/Clouds/{Cloud_id}/Cluster 
 |===
 
 

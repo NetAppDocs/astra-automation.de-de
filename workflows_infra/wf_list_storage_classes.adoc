@@ -39,7 +39,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Storage-Klassen für ein
 | HTTP-Methode | Pfad 
 
 
-| GET | /Account/{Account_id}/Topology/v1/Clouds/<CLOUD_ID>/Cluster/<CLUSTER_ID>/storageClasses 
+| GET | /Accounts/{Account_id}/Topology/v1/Clouds/<CLOUD_ID>/Cluster/<CLUSTER_ID>/storageClasses 
 |===
 
 

@@ -18,6 +18,40 @@ NetApp aktualisiert regelmäßig die Astra Control REST API und bietet Ihnen neu
 
 
 
+== 22. November 2022 (22.11)
+
+Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie eine erweiterte Namespace- und LDAP-Unterstützung.
+
+
+
+=== Neue und verbesserte Astra-Ressourcen
+
+Es wurden vier neue Ressourcentypen hinzugefügt: *ApiResource*, *ldapGroup*, *ldapUser* und *Task*. Außerdem wurden mehrere vorhandene Ressourcen und Endpunkte verbessert.
+
+
+
+=== Überwachung des Supports für lang laufende Aufgaben
+
+Die neuen Task-Endpunkte bieten Zugriff auf verwaltete Task-Ressourcen und können zum Anzeigen des Status interner, lang laufender Aufgaben verwendet werden.
+
+
+
+=== Verbesserte Namespace-Nutzungsszenarien
+
+Es wurde Unterstützung für Apps hinzugefügt, die mehrere Namespaces umfassen, sowie für Cluster-Ressourcen, die für Namespace-qualifizierte Ressourcen zugewiesen sind.
+
+
+
+=== Erweiterte Cloud-Abonnements
+
+Für jeden Cloud-Provider können jetzt mehrere Kontoabonnements hinzugefügt werden.
+
+.Verwandte Informationen
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center: Was ist neu"^]
+
+
+
+
 == August 10 2022 (22.08)
 
 Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie erweiterte Sicherheits- und Administrationsfunktionen.
@@ -54,8 +88,7 @@ Astra Control ermöglicht jetzt auch die Verwendung desselben Skripts für mehre
 Daten und Applikationsänderungen lassen sich nun mithilfe der NetApp SnapMirror Technologie auf Clustern replizieren. Diese Verbesserung kann auch zur Verbesserung Ihrer Business Continuity- und Recovery-Funktionen eingesetzt werden.
 
 .Verwandte Informationen
-* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center: Was ist neu"^]
-* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service: Was ist neu"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/whats-new.html["Astra Control Center 22.08: Was ist neu"^]
 
 
 
@@ -103,8 +136,7 @@ Die beiden Astra Control-Produktimplementierungen sind mit einigen zusätzlichen
 Sehen Sie sich die Seite *Was ist neu* auf den Dokumentationsseite des Astra Control Centers und des Astra Control Service an.
 
 .Verwandte Informationen
-* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center: Was ist neu"^]
-* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service: Was ist neu"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/whats-new.html["Astra Control Center 22.04: Was ist neu"^]
 
 
 
@@ -130,6 +162,10 @@ Die Anzahl DER REST-Ressourcentypen hat sich mit Schwerpunkt auf Ausführungs-Ho
 === NetApp Astra Control Python SDK
 
 NetApp Astra Control Python SDK ist ein Open-Source-Paket, mit dem sich der Automatisierungscode für Ihre Astra Control Umgebung leichter entwickeln lässt. Der Kern ist das Astra SDK, das eine Reihe von Klassen umfasst, um die Komplexität der REST API Aufrufe zu abstrahieren. Es gibt auch ein Toolkit-Skript zur Ausführung spezifischer administrativer Aufgaben durch Zusammenfassung und Abstrahierung der Python-Klassen. Siehe link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] Finden Sie weitere Informationen.
+
+.Verwandte Informationen
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/whats-new.html["Astra Control Center 21.12: Was ist neu"^]
+
 
 
 
@@ -157,6 +193,10 @@ Neben den erweiterten REST-Ressourcen stehen noch mehrere weitere neue API-Endpu
 
 OpenAPI-Unterstützung:: Die OpenAPI-Endpunkte bieten Zugriff auf das aktuelle OpenAPI JSON-Dokument und andere zugehörige Ressourcen.
 Unterstützung von OpenMetrics:: Die OpenMetrics-Endpunkte bieten über die OpenMetrics-Ressource Zugriff auf Kontokennzahlen.
+
+
+.Verwandte Informationen
+* https://docs.netapp.com/us-en/astra-control-center-2108/release-notes/whats-new.html["Astra Control Center 21.08: Was ist neu"^]
 
 
 

@@ -39,7 +39,7 @@ Führen Sie den folgenden REST-API-Aufruf aus. Sie müssen die ID für ein Backu
 | HTTP-Methode | Pfad 
 
 
-| PUT | /Account/{Account_id}/k8s/v2/Apps/{App_id} 
+| PUT | /Accounts/{Account_id}/k8s/v2/Apps/{App_id} 
 |===
 
 

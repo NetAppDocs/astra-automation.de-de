@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_add_entries.html 
 keywords:  
-summary:  
+summary: Nachdem LDAP als Authentifizierungsanbieter für Astra Control Center konfiguriert wurde, können Sie die LDAP-Benutzer auswählen, die Astra mit den LDAP-Anmeldedaten authentifizieren soll. 
 ---
 = Fügen Sie LDAP-Einträge zum Astra hinzu
 :hardbreaks:
@@ -42,7 +42,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um einen Benutzer zu Astra hinz
 | HTTP-Methode | Pfad 
 
 
-| POST | /Account/{Account_id}/Core/v1/users 
+| POST | /Accounts/{Account_id}/Core/v1/users 
 |===
 
 
@@ -132,7 +132,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um den Benutzer an eine bestimm
 | HTTP-Methode | Pfad 
 
 
-| POST | /Account/{Account_id}/Core/v1/roleBindungen 
+| POST | /Accounts/{Account_id}/Core/v1/roleBindungen 
 |===
 
 
@@ -208,7 +208,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um eine Gruppe zu Astra hinzuzu
 | HTTP-Methode | Pfad 
 
 
-| POST | /Account/{Account_id}/Core/v1/groups 
+| POST | /Accounts/{Account_id}/Core/v1/groups 
 |===
 
 
@@ -274,7 +274,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Gruppe an eine bestimmte
 | HTTP-Methode | Pfad 
 
 
-| POST | /Account/{Account_id}/Core/v1/roleBindungen 
+| POST | /Accounts/{Account_id}/Core/v1/roleBindungen 
 |===
 
 
