@@ -46,6 +46,12 @@ Es wurde Unterstützung für Apps hinzugefügt, die mehrere Namespaces umfassen,
 
 Für jeden Cloud-Provider können jetzt mehrere Kontoabonnements hinzugefügt werden.
 
+
+
+=== Weitere Workflows
+
+Weitere Workflows, die die Astra Control REST API veranschaulichen, wurden hinzugefügt. Siehe link:../workflows_infra/workflows_infra_before.html["Infrastruktur-Workflows"] Und link:../workflows/workflows_before.html["Management-Workflows"] Finden Sie weitere Informationen.
+
 .Verwandte Informationen
 * https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center: Was ist neu"^]
 
