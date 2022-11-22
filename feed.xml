@@ -8,16 +8,16 @@
     <description>The latest updates from NetApp Documentation</description>
     <language>de-de</language>
     <ttl>60</ttl>
-    <pubDate>Tue, 22 Nov 2022 17:18:56 +0000</pubDate>
-    <lastBuildDate>Tue, 22 Nov 2022 17:18:56 +0000</lastBuildDate>
+    <pubDate>Tue, 22 Nov 2022 20:28:48 +0000</pubDate>
+    <lastBuildDate>Tue, 22 Nov 2022 20:28:48 +0000</lastBuildDate>
     
     
     
     <item>
       <title>Was ist neu mit der Astra Control REST API (22 Nov 2022)</title>
-      <pubDate>Tue, 22 Nov 2022 17:16:26 +0000</pubDate>
-      <link>https://docs.netapp.com/de-de/astra-automation/rn/whats_new.html?time=1669137386</link>
-      <guid isPermaLink="false">Tue, 22 Nov 2022 17:16:26 +0000</guid>
+      <pubDate>Tue, 22 Nov 2022 20:26:29 +0000</pubDate>
+      <link>https://docs.netapp.com/de-de/astra-automation/rn/whats_new.html?time=1669148789</link>
+      <guid isPermaLink="false">Tue, 22 Nov 2022 20:26:29 +0000</guid>
       <description><![CDATA[ NetApp aktualisiert regelmäßig die Astra Control REST API und bietet Ihnen neue Funktionen, Verbesserungen und Fehlerbehebungen. ]]></description>
     </item>
     
