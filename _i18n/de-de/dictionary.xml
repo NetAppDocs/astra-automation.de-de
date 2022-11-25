@@ -649,8 +649,6 @@
   <block id="f06023f42f86a62fda5cde9e1ca56143" category="section-title">Curl-Beispiel: Rückgabename, Status und Cluster-ID für alle Namespaces</block>
   <block id="78ceba6718263592394adb03dc11471c" category="summary">Sie sollten alle bekannten Probleme für die aktuelle Version im Zusammenhang mit der Astra Control REST API überprüfen. Die bekannten Probleme identifizieren Probleme, die die erfolgreiche Verwendung des Produkts verhindern könnten.</block>
   <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="doc">Bekannte Probleme</block>
-  <block id="f977fda19bbfe49b9346f60f532f0704" category="section-title">Es werden nicht alle Speichergeräte in einem Back-End-Speicher-Node erkannt</block>
-  <block id="13595bcf3f8022567de41bcd09ef92b2" category="paragraph">Wenn ein REST-API-Aufruf zum Abrufen der in einem Storage-Node definierten Speichergeräte ausruft, werden nur die Astra Data Store-Geräte erkannt. Es werden nicht alle Geräte zurückgegeben.</block>
   <block id="7128d9d8a839786105f002007172fbe5" category="summary">NetApp aktualisiert regelmäßig die Astra Control REST API und bietet Ihnen neue Funktionen, Verbesserungen und Fehlerbehebungen.</block>
   <block id="c93cc787737ceea532bea714170e32cf" category="doc">Was ist neu mit der Astra Control REST API</block>
   <block id="affab1573a02975db1b9ece3ebe809a2" category="section-title">August 10 2022 (22.08)</block>
@@ -1104,4 +1102,6 @@
   <block id="01d6bcac2686956739a4135c6248a7e0" category="admonition">Es gibt keine neuen Probleme, die mit der Version 22.11 der Astra Control REST API bekannt sind. Die unten beschriebenen Probleme wurden in vorherigen Versionen entdeckt und gelten noch für die aktuelle Version.</block>
   <block id="25742c79c197ce7f0982652ead3bd964" category="section-title">Weitere Workflows</block>
   <block id="7494e7f70b31d89664784c20229e8098" category="paragraph">Weitere Workflows, die die Astra Control REST API veranschaulichen, wurden hinzugefügt. Siehe <block ref="fc2071d838ca44c08fca8ef5c62f2e8e" category="inline-link-macro-rx"></block> Und <block ref="b729850dc33cbcb91b47d13a137b85a8" category="inline-link-macro-rx"></block> Finden Sie weitere Informationen.</block>
+  <block id="7a95f2a4373ad29d744890f090214195" category="inline-link">Bekannte Probleme bei Astra Control Center</block>
+  <block id="9fa80e5e6d07d73203692c1b2c6a3f1f" category="paragraph">Siehe<block ref="1748a923b17519fc41af247d5369ec47" category="inline-link-rx"></block> Finden Sie weitere Informationen.</block>
 </blocks>

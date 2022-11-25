@@ -19,8 +19,4 @@ Sie sollten alle bekannten Probleme für die aktuelle Version im Zusammenhang mi
 
 NOTE: Es gibt keine neuen Probleme, die mit der Version 22.11 der Astra Control REST API bekannt sind. Die unten beschriebenen Probleme wurden in vorherigen Versionen entdeckt und gelten noch für die aktuelle Version.
 
-
-
-== Es werden nicht alle Speichergeräte in einem Back-End-Speicher-Node erkannt
-
-Wenn ein REST-API-Aufruf zum Abrufen der in einem Storage-Node definierten Speichergeräte ausruft, werden nur die Astra Data Store-Geräte erkannt. Es werden nicht alle Geräte zurückgegeben.
+Siehe https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Bekannte Probleme bei Astra Control Center"^] Finden Sie weitere Informationen.
