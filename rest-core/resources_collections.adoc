@@ -25,6 +25,7 @@ NOTE: Konzeptionell ist eine REST *Ressource* ähnlich wie ein *Objekt* wie mit 
 
 Die Astra Control REST API entspricht den Prinzipien des RESTful Designs. Jede Astra-Ressourceninstanz wird auf Basis eines klar definierten Ressourcentyps erstellt. Eine Reihe von Ressourceninstanzen desselben Typs wird als *Sammlung* bezeichnet. Die API-Aufrufe wirken sich auf einzelne Ressourcen oder Ressourcensammlungen aus.
 
+.Ressourcentypen
 Die in der Astra Control REST API enthaltenen Ressourcentypen weisen folgende Merkmale auf:
 
 * Jeder Ressourcentyp wird mit einem Schema definiert (in der Regel in JSON)
@@ -32,6 +33,7 @@ Die in der Astra Control REST API enthaltenen Ressourcentypen weisen folgende Me
 * Ressourcentypen sind global eindeutig
 
 
+.Ressourceninstanzen
 Die über die Astra Control REST-API verfügbaren Ressourceinstanzen weisen folgende Merkmale auf:
 
 * Ressourceninstanzen werden auf Basis eines einzelnen Ressourcentyps erstellt
@@ -41,12 +43,14 @@ Die über die Astra Control REST-API verfügbaren Ressourceinstanzen weisen folg
 * In Fällen, in denen eine Ressourceninstanz mehr als eine Darstellung haben kann, können verschiedene Medientypen verwendet werden, um die gewünschte Darstellung anzufordern
 
 
+.Ressourcensammlungen
 Die Ressourcensammlungen, die über die ASTRA Control REST-API verfügbar sind, weisen folgende Merkmale auf:
 
 * Der Satz von Ressourceninstanzen eines einzelnen Ressourcentyps wird als Sammlung bezeichnet
 * Ressourcensammlungen haben eine einzigartige und langlebige URL
 
 
+.Instanz-IDs
 Jeder Ressourceninstanz wird bei der Erstellung eine Kennung zugewiesen. Diese Kennung ist ein 128-Bit UUIDv4-Wert. Die zugewiesenen UUUIDv4-Werte sind global eindeutig und unveränderbar. Nachdem ein API-Aufruf ausgegeben wurde, der eine neue Instanz erstellt, wird eine URL mit der zugehörigen id an den Anrufer in A zurückgegeben `Location` Kopfzeile der HTTP-Antwort. Sie können die Kennung extrahieren und bei nachfolgenden Anrufen verwenden, wenn Sie sich auf die Ressourceninstanz beziehen.
 
 
@@ -58,6 +62,7 @@ NOTE: Die Ressourcen-ID ist der primäre Schlüssel, der für Sammlungen verwend
 
 Jede Astra Control-Ressource ist mit einer gemeinsamen Struktur definiert.
 
+.Einheitliche Daten
 Jede Astra-Ressource enthält die in der folgenden Tabelle aufgeführten Schlüsselwerte.
 
 [cols="15,85"]
@@ -76,6 +81,7 @@ Jede Astra-Ressource enthält die in der folgenden Tabelle aufgeführten Schlüs
 
 | Metadaten | Ein JSON-Objekt mit verschiedenen Informationen, einschließlich Benutzer- und Systemetiketten. 
 |===
+.Metadatenobjekt
 Das JSON-Metadatenobjekt, das in jeder Astra-Ressource enthalten ist, enthält die in der folgenden Tabelle aufgeführten Schlüsselwerte.
 
 [cols="15,85"]
@@ -94,4 +100,5 @@ Das JSON-Metadatenobjekt, das in jeder Astra-Ressource enthalten ist, enthält d
 
 | Erstellt von | JSON-Zeichenfolge mit der UUUIDv4-Kennung der Benutzer-id, die die Ressource erstellt hat. Wenn die Ressource von einer internen Systemkomponente erstellt wurde und der Erstellungseinheit keine UUID zugeordnet ist, wird die *Null* UUID verwendet. 
 |===
+.Ressourcenstatus
 Ausgewählte Ressourcen A `state` Wert, der zur Orchestrierung von Lifecycle-Übergängen und zur Steuerung des Zugriffs eingesetzt wird.

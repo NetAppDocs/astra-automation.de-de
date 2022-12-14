@@ -16,8 +16,10 @@ summary: Sie können einen einfachen curl Befehl an Ihrer Workstation CLI ausgeb
 [role="lead"]
 Sie können einen einfachen curl Befehl an Ihrer Workstation CLI ausgeben, um mit dem Astra Control REST API zu beginnen und seine Verfügbarkeit zu bestätigen.
 
+.Bevor Sie beginnen
 Das Dienstprogramm Curl muss auf Ihrer lokalen Workstation verfügbar sein. Sie müssen außerdem über ein API-Token und die zugehörige Account-ID verfügen. Siehe link:get_api_token.html["Holen Sie sich ein API-Token"] Finden Sie weitere Informationen.
 
+.Beispiel für die Wellung
 Der folgende Curl Befehl ruft eine Liste der Astra-Benutzer ab. Geben Sie die entsprechenden <ACCOUNT_ID> und <API_TOKEN> wie angegeben an.
 
 [source, curl]

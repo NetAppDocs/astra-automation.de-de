@@ -16,8 +16,10 @@ summary: Die allgemeine Struktur der URL, die für den Zugriff auf eine Ressourc
 [role="lead"]
 Die allgemeine Struktur der URL, die für den Zugriff auf eine Ressourceninstanz oder -Sammlung über DIE REST-API verwendet wird, besteht aus mehreren Werten. Diese Struktur spiegelt das zugrunde liegende Objektmodell und das Systemdesign wider.
 
+.Konto als Root
 Die Wurzel des Ressourcenpfads zu jedem REST-Endpunkt ist das Astra-Konto. Daher beginnen alle Pfade in der URL mit `/account/{account_id}` Wo `account_id` Ist der eindeutige UUUIDv4-Wert für das Konto. Interne Struktur Dies ist ein Design, in dem der gesamte Ressourcenzugriff auf einem bestimmten Konto basiert.
 
+.Kategorie der Endpoint-Ressourcen
 Die Astra-Ressourcenendpunkte lassen sich in drei verschiedene Kategorien einteilen:
 
 * Kern (`/core`)
@@ -27,8 +29,10 @@ Die Astra-Ressourcenendpunkte lassen sich in drei verschiedene Kategorien eintei
 
 Siehe link:../endpoints/resources.html["Ressourcen"] Finden Sie weitere Informationen.
 
+.Kategorienversion
 Jede der drei Ressourcenkategorien verfügt über eine globale Version, die die Version der Ressourcen steuert, auf die zugegriffen wird. Nach Konventionen und Definition zu einer neuen Hauptversion einer Ressourcenkategorie wechseln (z. B. von) `/v1` Bis `/v2`) Wird Bruchänderungen in der API einführen.
 
+.Ressourceinstanz oder -Sammlung
 Eine Kombination von Ressourcentypen und Identifikatoren kann im Pfad verwendet werden, basierend darauf, ob auf eine Ressourceninstanz oder -Sammlung zugegriffen wird.
 
 .Beispiel

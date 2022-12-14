@@ -16,10 +16,14 @@ summary: Die Astra Control REST API ist für den Einstieg schnell einsatzbereit.
 [role="lead"]
 Sie können sich schnell auf den Einstieg in die Astra Control REST API vorbereiten, indem Sie die unten aufgeführten Schritte überprüfen.
 
+.Astra-Konto besitzen Anmeldedaten
 Sie benötigen Astra-Anmeldeinformationen, um sich bei der Astra Web-Benutzeroberfläche anzumelden und ein API-Token zu generieren. Mit Astra Control Center verwalten Sie diese Anmeldedaten lokal. Mit dem Astra Control Service können Sie über den *Auth0*-Dienst auf die Anmeldeinformationen zugreifen.
 
+.Lernen Sie die grundlegenden Kubernetes-Konzepte kennen
 Sie sollten mit verschiedenen grundlegenden Kubernetes-Konzepten vertraut sein. Siehe link:kubernetes_concepts.html["Grundlegende Kubernetes-Konzepte"] Finden Sie weitere Informationen.
 
+.ÜBERPRÜFUNG DER REST-Konzepte und der Implementierung
 Prüfen Sie die Daten link:../rest-core/rest_web_services.html["Core-REST-Implementierung"] Für Informationen über REST-Konzepte und die Details zur Entwicklung der Astra Control REST API.
 
+.Weitere Informationen
 Beachten Sie die zusätzlichen Informationsressourcen, wie in vorgeschlagen link:../information/additional_resources.html["Weitere Ressourcen"].

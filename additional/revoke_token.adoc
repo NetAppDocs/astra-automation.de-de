@@ -16,8 +16,10 @@ summary: Sie können ein API-Token an der Astra-Webschnittstelle widerrufen, wen
 [role="lead"]
 Sie können ein API-Token an der Astra-Webschnittstelle widerrufen, wenn es nicht mehr benötigt wird.
 
+.Bevor Sie beginnen
 Sie benötigen ein Astra-Konto. Sie sollten auch die Token identifizieren, die Sie widerrufen möchten.
 
+.Über diese Aufgabe
 Nachdem ein Token entzogen wurde, ist es sofort und dauerhaft unbrauchbar.
 
 .Schritte

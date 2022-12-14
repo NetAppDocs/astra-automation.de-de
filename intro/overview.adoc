@@ -19,20 +19,29 @@ Astra Control Center und Astra Control Service bieten eine gemeinsame REST-API, 
 
 NOTE: Um auf DIE REST-API zuzugreifen, müssen Sie sich zunächst bei der Astra Web-Benutzeroberfläche anmelden und ein API-Token generieren. Sie müssen das Token bei jeder API-Anforderung einschließen.
 
+.Basiert auf REST-Technologie
 Die Astra Control API wurde mit REST-Technologie und aktuellen Best Practices erstellt. Die Kerntechnologie umfasst HTTP, JSON und RBAC.
 
+.Unterstützung der beiden Astra Control Implementierungsmodelle
 Astra Control Service wird in der Public Cloud-Umgebung eingesetzt und Astra Control Center ist Ihre lokale Implementierung. Beide Implementierungsmodelle werden über eine REST-API unterstützt.
 
+.Klare Zuordnung zwischen REST-Endpunkt-Ressourcen und Objektmodell
 Die externen REST-Endpunkte, mit denen auf die Ressourcenzuordnung auf ein konsistentes Objektmodell zugegriffen wird, das vom Astra-Service intern gewartet wird. Das Objektmodell basiert auf er-Modellierung (Entity-Relationship), mit der API-Aktionen und -Antworten klar definiert werden können.
 
+.Umfangreiche Reihe von Abfrageparametern
 Die REST-API bietet eine umfangreiche Reihe von Abfrageparametern, mit denen Sie auf die Ressourcensammlungen zugreifen können. Einige der unterstützten Vorgänge umfassen Filtern, Sortieren und Paginieren.
 
+.Ausrichtung auf die Web-UI von Astra Control
 Das Design der Astra Web-Benutzeroberfläche ist auf DIE REST-API abgestimmt, so dass es Konsistenz zwischen den beiden Zugriffspfaden und der Benutzererfahrung gibt.
 
+.Robuste Debugging- und Problemermittlung
 Die Astra Control REST API bietet eine robuste Debugging- und Problembestimmung, einschließlich Systemereignissen und Benutzerbenachrichtigungen.
 
+.Workflow-Prozesse
 Sie erhalten eine Reihe von Workflows, die Sie bei der Entwicklung Ihres Automatisierungscodes unterstützen. Die Workflows sind in zwei Kategorien unterteilt: Infrastruktur und Management.
 
+.Grundlage für erweiterte Automatisierungstechnologien
 Neben dem direkten Zugriff auf DIE REST API können weitere Automatisierungstechnologien verwendet werden, die auf der REST-API basieren.
 
+.Teil der Dokumentation der Astra-Familie
 Die Dokumentation der Astra Control Automation ist Teil der größeren Dokumentation der Astra-Familie. Siehe https://docs.netapp.com/us-en/astra-family/["Astra-Dokumentation"^] Finden Sie weitere Informationen.

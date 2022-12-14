@@ -39,8 +39,10 @@ Ein API-Token identifiziert den Anrufer an Astra und muss bei jedem REST-API-Auf
 
 In den folgenden Schritten wird beschrieben, wie ein Astra API Token erstellt wird.
 
+.Bevor Sie beginnen
 Sie benötigen die Zugangsdaten für ein Astra-Konto.
 
+.Über diese Aufgabe
 Diese Aufgabe erzeugt ein API-Token in der Astra-Webschnittstelle. Sie sollten auch die Account-ID abrufen, die auch bei API-Aufrufen benötigt wird.
 
 .Schritte
@@ -54,4 +56,5 @@ Rufen Sie die folgende Website für den Astra Control Service auf: https://astra
 . Kopieren Sie die Konto-id, die auf derselben Seite verfügbar ist, und speichern Sie sie.
 
 
+.Nachdem Sie fertig sind
 Wenn Sie über Curl oder eine Programmiersprache auf die Astra Control REST API zugreifen, müssen Sie das API-Träger-Token in das HTTP einbeziehen `Authorization` Kopfzeile der Anfrage.

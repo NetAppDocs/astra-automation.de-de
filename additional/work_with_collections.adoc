@@ -16,12 +16,17 @@ summary: Die Astra Control REST API bietet verschiedene Möglichkeiten, über di
 [role="lead"]
 Die Astra Control REST API bietet verschiedene Möglichkeiten, über die definierten Abfrageparameter auf Ressourcensammlungen zuzugreifen.
 
+.Wählen Sie Werte aus
 Sie können angeben, welche Schlüsselwertpaare für jede Ressourceninstanz mit dem zurückgegeben werden sollen `include` Parameter. Alle Fälle werden im Antwortkörper zurückgegeben.
 
+.Filtern
 Mithilfe der Filterung von Sammlungsressourcen kann ein API-Benutzer Bedingungen festlegen, die bestimmen, ob eine Ressource im Antwortkörper zurückgegeben wird. Der `filter` Parameter wird verwendet, um die Filterbedingung anzuzeigen.
 
+.Sortieren
 Die Sammelressource-Sortierung ermöglicht einem API-Benutzer, die Reihenfolge anzugeben, in der Ressourcen im Antwortkörper zurückgegeben werden. Der `orderBy` Parameter wird verwendet, um die Filterbedingung anzuzeigen.
 
+.Paginierung
 Sie können Paginierung erzwingen, indem Sie die Anzahl der Ressourceninstanzen beschränken, die für eine Anforderung über die zurückgegeben werden `limit` Parameter.
 
+.Zählen
 Wenn Sie den Booleschen Parameter angeben `count` Auf einstellen `true`, Die Anzahl der Ressourcen im zurückgegebenen Array für eine bestimmte Antwort ist im Abschnitt Metadaten angegeben.

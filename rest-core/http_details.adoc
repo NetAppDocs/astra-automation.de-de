@@ -22,8 +22,10 @@ Die Astra Control REST-API verwendet HTTP und zugehörige Parameter, um auf die 
 
 Die Astra Control REST API implementiert ein transaktionsorientiertes Modell mit klar definierten Abläufen und Zustandsübergängen.
 
+.API-Transaktion bei Anfrage und Reaktion
 Jeder REST-API-Aufruf erfolgt als HTTP-Anfrage an den Astra-Service. Jede Anforderung generiert eine entsprechende Antwort zurück an den Client. Dieses Request-Response-Paar kann als API-Transaktion betrachtet werden.
 
+.Unterstützung für CRUD-Betriebsmodell
 Auf Grundlage des *CRUD*-Modells kann auf alle über die Astra Control REST API verfügbaren Ressourcen und Sammlungen zugegriffen werden. Es gibt vier Vorgänge, von denen jede einer einzigen HTTP-Methode zugeordnet wird. Dazu gehören:
 
 * Erstellen
