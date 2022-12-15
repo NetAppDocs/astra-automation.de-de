@@ -1607,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-16 18:27:40 +0000">11/16/2022</time>
+    <time datetime="2022-12-14 18:18:00 +0000">12/14/2022</time>
     
   
 
@@ -1643,15 +1643,19 @@ NetApp hat nicht nur direkt mit Python auf die Astra Control REST API zugegriffe
 <p>Im Folgenden werden die grundlegenden Konfigurationsanforderungen für die Ausführung der Python-Skripte beschrieben.</p>
 </div>
 <div class="paragraph">
+<div class="title">Python 3</div>
 <p>Sie müssen die neueste Version von Python 3 installiert haben.</p>
 </div>
 <div class="paragraph">
+<div class="title">Weitere Bibliotheken</div>
 <p>Die Bibliotheken <strong>Requests</strong> und <strong>urllib3</strong> müssen installiert sein. Sie können je nach Ihrer Umgebung Pip oder ein anderes Python Management Tool verwenden.</p>
 </div>
 <div class="paragraph">
+<div class="title">Netzwerkzugriff</div>
 <p>Die Arbeitsstation, auf der die Skripte ausgeführt werden, muss Netzwerkzugriff haben und Astra Control erreichen können. Bei der Verwendung des Astra Control Service müssen Sie mit dem Internet verbunden sein und eine Verbindung zum Dienst unter herstellen können <code><a href="https://astra.netapp.io" class="bare">https://astra.netapp.io</a></code>.</p>
 </div>
 <div class="paragraph">
+<div class="title">Identitätsinformationen</div>
 <p>Sie benötigen ein gültiges Astra-Konto mit der Account-ID und dem API-Token. Siehe <a href="../get-started/get_api_token.html">"Holen Sie sich ein API-Token"</a> Finden Sie weitere Informationen.</p>
 </div>
 </div>
@@ -1675,6 +1679,7 @@ Sie müssen die Proben entsprechend Ihrer Umgebung aktualisieren.
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Identitätsinformationen</div>
 <p>Die folgende Datei enthält das API-Token und das Astra-Konto. Sie müssen diese Datei mit der an Python-Skripte übergeben <code>-i</code> (Oder <code>--identity</code>) CLI-Parameter.</p>
 </div>
 <div class="listingblock">

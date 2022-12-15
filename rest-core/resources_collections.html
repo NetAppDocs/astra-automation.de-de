@@ -1607,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-16 18:27:40 +0000">11/16/2022</time>
+    <time datetime="2022-12-14 18:18:00 +0000">12/14/2022</time>
     
   
 
@@ -1643,6 +1643,7 @@ Konzeptionell ist eine REST <strong>Ressource</strong> ähnlich wie ein <strong>
 <p>Die Astra Control REST API entspricht den Prinzipien des RESTful Designs. Jede Astra-Ressourceninstanz wird auf Basis eines klar definierten Ressourcentyps erstellt. Eine Reihe von Ressourceninstanzen desselben Typs wird als <strong>Sammlung</strong> bezeichnet. Die API-Aufrufe wirken sich auf einzelne Ressourcen oder Ressourcensammlungen aus.</p>
 </div>
 <div class="paragraph">
+<div class="title">Ressourcentypen</div>
 <p>Die in der Astra Control REST API enthaltenen Ressourcentypen weisen folgende Merkmale auf:</p>
 </div>
 <div class="ulist">
@@ -1659,6 +1660,7 @@ Konzeptionell ist eine REST <strong>Ressource</strong> ähnlich wie ein <strong>
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Ressourceninstanzen</div>
 <p>Die über die Astra Control REST-API verfügbaren Ressourceinstanzen weisen folgende Merkmale auf:</p>
 </div>
 <div class="ulist">
@@ -1681,6 +1683,7 @@ Konzeptionell ist eine REST <strong>Ressource</strong> ähnlich wie ein <strong>
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Ressourcensammlungen</div>
 <p>Die Ressourcensammlungen, die über die ASTRA Control REST-API verfügbar sind, weisen folgende Merkmale auf:</p>
 </div>
 <div class="ulist">
@@ -1694,6 +1697,7 @@ Konzeptionell ist eine REST <strong>Ressource</strong> ähnlich wie ein <strong>
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Instanz-IDs</div>
 <p>Jeder Ressourceninstanz wird bei der Erstellung eine Kennung zugewiesen. Diese Kennung ist ein 128-Bit UUIDv4-Wert. Die zugewiesenen UUUIDv4-Werte sind global eindeutig und unveränderbar. Nachdem ein API-Aufruf ausgegeben wurde, der eine neue Instanz erstellt, wird eine URL mit der zugehörigen id an den Anrufer in A zurückgegeben <code>Location</code> Kopfzeile der HTTP-Antwort. Sie können die Kennung extrahieren und bei nachfolgenden Anrufen verwenden, wenn Sie sich auf die Ressourceninstanz beziehen.</p>
 </div>
 <div class="admonitionblock note">
@@ -1717,6 +1721,7 @@ Die Ressourcen-ID ist der primäre Schlüssel, der für Sammlungen verwendet wir
 <p>Jede Astra Control-Ressource ist mit einer gemeinsamen Struktur definiert.</p>
 </div>
 <div class="paragraph">
+<div class="title">Einheitliche Daten</div>
 <p>Jede Astra-Ressource enthält die in der folgenden Tabelle aufgeführten Schlüsselwerte.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1750,6 +1755,7 @@ Die Ressourcen-ID ist der primäre Schlüssel, der für Sammlungen verwendet wir
 </tbody>
 </table>
 <div class="paragraph">
+<div class="title">Metadatenobjekt</div>
 <p>Das JSON-Metadatenobjekt, das in jeder Astra-Ressource enthalten ist, enthält die in der folgenden Tabelle aufgeführten Schlüsselwerte.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1783,6 +1789,7 @@ Die Ressourcen-ID ist der primäre Schlüssel, der für Sammlungen verwendet wir
 </tbody>
 </table>
 <div class="paragraph">
+<div class="title">Ressourcenstatus</div>
 <p>Ausgewählte Ressourcen A <code>state</code> Wert, der zur Orchestrierung von Lifecycle-Übergängen und zur Steuerung des Zugriffs eingesetzt wird.</p>
 </div>
 </div>

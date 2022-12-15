@@ -1607,7 +1607,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-22 17:16:26 +0000">11/22/2022</time>
+    <time datetime="2022-12-14 18:18:00 +0000">12/14/2022</time>
     
   
 
@@ -1681,33 +1681,43 @@ Während sich die unten aufgeführten Schritte nacheinander befinden, können Si
 <p>Vor der Konfiguration von Astra zur Verwendung von LDAP zur Authentifizierung sollten Sie sich die unten aufgeführten Konfigurationsmöglichkeiten, einschließlich Einschränkungen und Konfigurationsoptionen, ansehen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Nur unterstützt durch Astra Control Center</div>
 <p>Die Astra Control-Plattform verfügt über zwei Implementierungsmodelle. Die LDAP-Authentifizierung wird nur bei Astra Control Center-Implementierungen unterstützt.</p>
 </div>
 <div class="paragraph">
+<div class="title">Konfiguration über REST-API oder Web-Benutzeroberfläche</div>
 <p>Die aktuelle Version von Astra Control Center unterstützt die Konfiguration der LDAP-Authentifizierung sowohl mit der Astra Control REST API als auch mit der Astra Web-Benutzeroberfläche.</p>
 </div>
 <div class="paragraph">
+<div class="title">LDAP-Server erforderlich</div>
 <p>Sie müssen über einen LDAP-Server verfügen, um die Astra-Authentifizierungsanforderungen zu akzeptieren und zu bearbeiten. Das Active Directory von Microsoft wird mit der aktuellen Version von Astra Control Center unterstützt.</p>
 </div>
 <div class="paragraph">
+<div class="title">Sichere Verbindung zum LDAP-Server</div>
 <p>Bei der Konfiguration des LDAP-Servers in Astra können Sie optional eine sichere Verbindung festlegen. In diesem Fall wird ein Zertifikat für das LDAPS-Protokoll benötigt.</p>
 </div>
 <div class="paragraph">
+<div class="title">Konfigurieren von Benutzern oder Gruppen</div>
 <p>Sie müssen die Benutzer auswählen, die mit LDAP authentifiziert werden sollen. Dazu können Sie entweder die einzelnen Benutzer oder eine Gruppe von Benutzern identifizieren. Die Konten müssen auf dem LDAP-Server definiert werden. Sie müssen auch im Astra (Typ LDAP) identifiziert werden, wodurch die Authentifizierungsanforderungen an LDAP weitergeleitet werden können.</p>
 </div>
 <div class="paragraph">
+<div class="title">Rollenbedingung beim Binden eines Benutzers oder einer Gruppe</div>
 <p>Mit der aktuellen Version von Astra Control Center ist der einzige unterstützte Wert für <code>roleConstraint</code> Ist „*“. Dies bedeutet, dass der Benutzer nicht auf eine begrenzte Anzahl von Namespaces beschränkt ist und auf alle zugreifen kann. Siehe <a href="../workflows_infra/wf_ldap_add_entries.html">"Fügen Sie LDAP-Einträge zum Astra hinzu"</a> Finden Sie weitere Informationen.</p>
 </div>
 <div class="paragraph">
+<div class="title">LDAP-Anmeldedaten</div>
 <p>Zu den von LDAP verwendeten Anmeldeinformationen gehören der Benutzername (E-Mail-Adresse) und das zugehörige Passwort.</p>
 </div>
 <div class="paragraph">
+<div class="title">Eindeutige E-Mail-Adressen</div>
 <p>Alle E-Mail-Adressen, die in einer Astra Control Center-Implementierung als Benutzernamen fungieren, müssen eindeutig sein. Sie können keinen LDAP-Benutzer mit einer E-Mail-Adresse hinzufügen, die bereits in Astra definiert ist. Wenn eine doppelte E-Mail vorhanden ist, müssen Sie sie zuerst aus Astra löschen. Siehe <a href="https://docs.netapp.com/us-en/astra-control-center/use/manage-users.html#remove-users" target="_blank" rel="noopener">"Benutzer entfernen"</a> Auf der Astra Control Center Dokumentationswebsite finden Sie weitere Informationen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Definieren Sie optional zuerst LDAP-Benutzer und -Gruppen</div>
 <p>Sie können die LDAP-Benutzer und -Gruppen zum Astra Control Center hinzufügen, auch wenn sie noch nicht in LDAP vorhanden sind oder der LDAP-Server nicht konfiguriert ist. Auf diese Weise können Sie vor der Konfiguration des LDAP-Servers Benutzer und Gruppen konfigurieren.</p>
 </div>
 <div class="paragraph">
+<div class="title">Ein in mehreren LDAP-Gruppen definierter Benutzer</div>
 <p>Wenn ein LDAP-Benutzer zu mehreren LDAP-Gruppen gehört und den Gruppen verschiedene Rollen in Astra zugewiesen wurden, ist die effektive Rolle des Benutzers bei der Authentifizierung die bevorzugte. Wenn einem Benutzer beispielsweise das zugewiesen ist <code>viewer</code> Rolle mit Gruppe1, aber hat die <code>member</code> Rolle in Groupp2, die Rolle des Benutzers wäre <code>member</code>. Dies basiert auf der Hierarchie des Astra (höchste bis niedrigste):</p>
 </div>
 <div class="ulist">
@@ -1727,12 +1737,15 @@ Während sich die unten aufgeführten Schritte nacheinander befinden, können Si
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Regelmäßige Kontosynchronisation</div>
 <p>Astra synchronisiert seine Benutzer und Gruppen etwa alle 60 Sekunden mit dem LDAP-Server. Wenn also ein Benutzer oder eine Gruppe zu LDAP hinzugefügt oder aus dieser entfernt wird, kann es bis zu einer Minute dauern, bis er in Astra verfügbar ist.</p>
 </div>
 <div class="paragraph">
+<div class="title">Deaktivieren und Zurücksetzen der LDAP-Konfiguration</div>
 <p>Bevor Sie versuchen, die LDAP-Konfiguration zurückzusetzen, müssen Sie zunächst die LDAP-Authentifizierung deaktivieren. Außerdem zum Ändern des LDAP-Servers (<code>connectionHost</code>), Sie müssen beide Operationen ausführen. Siehe <a href="../workflows_infra/wf_ldap_disable_reset.html">"Deaktivieren und Zurücksetzen von LDAP"</a> Finden Sie weitere Informationen.</p>
 </div>
 <div class="paragraph">
+<div class="title">REST-API-Parameter</div>
 <p>Die LDAP-Konfigurations-Workflows führen REST-API-Aufrufe zur Ausführung der spezifischen Aufgaben durch. Jeder API-Aufruf kann Eingabeparameter enthalten, wie in den angegebenen Beispielen dargestellt. Siehe <a href="../reference/api_reference.html">"API-Referenz"</a> Weitere Informationen zum Auffinden der Referenzdokumentation.</p>
 </div>
 </div>
