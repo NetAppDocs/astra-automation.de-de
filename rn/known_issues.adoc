@@ -17,6 +17,10 @@ summary: Sie sollten alle bekannten Probleme für die aktuelle Version im Zusamm
 Sie sollten alle bekannten Probleme für die aktuelle Version im Zusammenhang mit der Astra Control REST API überprüfen. Die bekannten Probleme identifizieren Probleme, die die erfolgreiche Verwendung des Produkts verhindern könnten.
 
 
-NOTE: Es gibt keine neuen Probleme, die mit der Version 22.11 der Astra Control REST API bekannt sind. Die unten beschriebenen Probleme wurden in vorherigen Versionen entdeckt und gelten noch für die aktuelle Version.
+NOTE: Es gibt keine neuen Probleme, die mit der Version 23.01 der Astra Control REST API bekannt sind. Alle nachfolgend beschriebenen Probleme wurden in vorherigen Versionen entdeckt und gelten weiterhin für die aktuelle Version.
 
-Siehe https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Bekannte Probleme bei Astra Control Center"^] Finden Sie weitere Informationen.
+Sehen Sie sich eine der folgenden Seiten auf der Grundlage Ihres Bereitstellungsmodells an.
+
+* https://docs.netapp.com/us-en/astra-control-service/release-notes/known-issues.html["Bekannte Probleme beim Astra Control Service"^]
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Bekannte Probleme bei Astra Control Center"^]
+

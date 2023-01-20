@@ -25,7 +25,7 @@ NOTE: Das Format des Pfads und der vollständigen URL für den Zugriff auf die A
 
 Die primären Ressourcenendpunkte in der Astra Control REST API sind in drei Kategorien unterteilt. Auf jede Ressource kann mit allen CRUD-Vorgängen (Erstellen, Lesen, Aktualisieren, Löschen) zugegriffen werden, sofern nicht anders angegeben.
 
-Die Spalte *Release* zeigt den Astra-Release an, als die Ressource zum ersten Mal eingeführt wurde. Dieses Feld ist für Ressourcen verfügbar, die mit der aktuellen Version neu hinzugefügt wurden.
+Die Spalte *Release* zeigt den Astra-Release an, als die Ressource zum ersten Mal eingeführt wurde. Dieses Feld ist für die Ressourcen erweitert, die zuletzt der REST-API hinzugefügt wurden.
 
 
 

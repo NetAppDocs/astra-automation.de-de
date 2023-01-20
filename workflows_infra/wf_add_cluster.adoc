@@ -14,7 +14,7 @@ summary: Sie können einen Cluster hinzufügen, sodass er vom Astra gemanagt wer
 
 
 [role="lead"]
-Sie können einen Cluster hinzufügen, sodass er vom Astra gemanagt werden kann. Ab dem Astra 22.11 können Sie ein Cluster mit Astra Control Center oder Astra Control Service hinzufügen.
+Sie können einen Cluster hinzufügen, sodass er vom Astra gemanagt werden kann. Ab dem Astra 22.11 können Sie ein Cluster sowohl mit dem Astra Control Center als auch mit dem Astra Control Service hinzufügen.
 
 
 NOTE: Das Hinzufügen eines Clusters ist nicht erforderlich, wenn ein Kubernetes-Service von einem der wichtigsten Cloud-Provider verwendet wird (AKS, EKS, GKE).

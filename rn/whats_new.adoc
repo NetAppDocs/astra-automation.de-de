@@ -18,6 +18,18 @@ NetApp aktualisiert regelmäßig die Astra Control REST API und bietet Ihnen neu
 
 
 
+== 17. Januar 2023 (23.01)
+
+Diese Version enthält eine kleine Aktualisierung der REST-API.
+
+
+
+=== Verbesserte Funktionalität der Testausführungshaken mit Filtern
+
+Bei der Verwendung von Testsuiten können Sie jetzt Filter hinzufügen, um zu steuern, mit welchen Containern ein Haken übereinstimmt. Wenn Sie mehrere Filter für einen einzelnen Testausführungshaken erstellen, werden diese mit einem logischen UND einem Operator kombiniert. Pro Testsuite können Sie bis zu 10 aktive Filter definieren.
+
+
+
 == 22. November 2022 (22.11)
 
 Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie eine erweiterte Namespace- und LDAP-Unterstützung.

@@ -42,11 +42,14 @@ Die Infrastruktur-Workflows sind in verschiedene Kategorien unterteilt, um den g
 | LDAP-Konfiguration | Optional können Sie Astra Control Center so konfigurieren, dass Sie LDAP zur Authentifizierung ausgewählter Benutzer verwenden. 
 
 
+| Cluster | Sie können Managed Kubernetes Cluster hinzufügen, damit Sie die enthaltenen Applikationen schützen und unterstützen können. 
+
+
+| Clouds | Diese Workflows ermöglichen den Zugriff auf die Clouds, die über die Astra Control REST-API verfügbar sind. 
+
+
 | Buckets | Sie können diese Workflows zum Erstellen und Managen der S3-Buckets verwenden, die zum Speichern von Backups verwendet werden. 
 
 
 | Storage | Durch diese Workflows können Sie Storage-Back-Ends und -Volumes hinzufügen und verwalten. 
-
-
-| Cluster | Sie können Managed Kubernetes Cluster hinzufügen, damit Sie die enthaltenen Applikationen schützen und unterstützen können. 
 |===
