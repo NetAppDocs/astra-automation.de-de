@@ -86,4 +86,4 @@ Astra synchronisiert seine Benutzer und Gruppen etwa alle 60 Sekunden mit dem LD
 Bevor Sie versuchen, die LDAP-Konfiguration zurückzusetzen, müssen Sie zunächst die LDAP-Authentifizierung deaktivieren. Außerdem zum Ändern des LDAP-Servers (`connectionHost`), Sie müssen beide Operationen ausführen. Siehe link:../workflows_infra/wf_ldap_disable_reset.html["Deaktivieren und Zurücksetzen von LDAP"] Finden Sie weitere Informationen.
 
 .REST-API-Parameter
-Die LDAP-Konfigurations-Workflows führen REST-API-Aufrufe zur Ausführung der spezifischen Aufgaben durch. Jeder API-Aufruf kann Eingabeparameter enthalten, wie in den angegebenen Beispielen dargestellt. Siehe link:../reference/api_reference.html["API-Referenz"] Weitere Informationen zum Auffinden der Referenzdokumentation.
+Die LDAP-Konfigurations-Workflows führen REST-API-Aufrufe zur Ausführung der spezifischen Aufgaben durch. Jeder API-Aufruf kann Eingabeparameter enthalten, wie in den angegebenen Beispielen dargestellt. Siehe link:../get-started/online_api_ref.html["Online-API-Referenz"] Weitere Informationen zum Auffinden der Referenzdokumentation.

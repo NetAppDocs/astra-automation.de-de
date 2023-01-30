@@ -17,7 +17,7 @@ summary: Zur Automatisierung einer Astra Implementierung können Sie auf die Res
 Zur Automatisierung einer Astra Implementierung können Sie auf die Ressourcen zugreifen, die über die ASTRA Control REST-API bereitgestellt werden. Jede Ressource ist über einen oder mehrere Endpunkte verfügbar. Nachfolgend finden Sie eine Einführung zu DEN REST-Ressourcen, die Sie im Rahmen einer Automatisierungsimplementierung nutzen können.
 
 
-NOTE: Das Format des Pfads und der vollständigen URL für den Zugriff auf die Astra Control-Ressourcen basiert auf mehreren Werten. Siehe link:../rest-core/url_format.html["URL-Format"] Finden Sie weitere Informationen. Siehe auch link:../reference/api_reference.html["API-Referenz"] Weitere Informationen zur Verwendung der Astra-Ressourcen und -Endpunkte.
+NOTE: Das Format des Pfads und der vollständigen URL für den Zugriff auf die Astra Control-Ressourcen basiert auf mehreren Werten. Siehe link:../rest-core/url_format.html["URL-Format"] Finden Sie weitere Informationen. Siehe auch link:../get-started/online_api_ref.html["Online-API-Referenz"] Weitere Informationen zur Verwendung der Astra-Ressourcen und -Endpunkte.
 
 
 
