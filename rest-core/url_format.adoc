@@ -42,6 +42,6 @@ Basierend auf der oben dargestellten Struktur ist ein typischer Pfad zu einem En
 
 * Vollständige URL
 +
-Die vollständige URL für den entsprechenden Endpunkt lautet: `https://astra.netapp.io/accounts/{account_id}/core/v1/users`.
+Die vollständige URL für den entsprechenden Endpunkt lautet: `\https://astra.netapp.io/accounts/{account_id}/core/v1/users`.
 
 
