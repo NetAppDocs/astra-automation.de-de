@@ -36,6 +36,10 @@ Dokumentation für die aktuelle Version der Astra Trident Software, einem Open-S
 +
 Zentraler Standort für den Zugriff auf die gesamte Astra Dokumentation für On-Premises- und Public-Cloud-Implementierungen.
 
+* https://discord.gg/NetApp["Abschnur"^]
++
+Community-Support für Astra Control und andere NetApp Produkte.
+
 
 
 
