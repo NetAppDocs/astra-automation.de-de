@@ -99,7 +99,7 @@ NOTE: Siehe https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232"^] Und https://
 
 == Abfrageparameter
 
-Die folgenden Abfrageparameter stehen zur Verwendung mit Ressourcensammlungen zur Verfügung. Siehe link:../additional/working_with_collections.html["Arbeiten mit Sammlungen"] Finden Sie weitere Informationen.
+Die folgenden Abfrageparameter stehen zur Verwendung mit Ressourcensammlungen zur Verfügung. Siehe link:../additional/work_with_collections.html["Arbeit mit Sammlungen"] Finden Sie weitere Informationen.
 
 [cols="20,80"]
 |===
@@ -130,7 +130,7 @@ Die folgenden Abfrageparameter stehen zur Verwendung mit Ressourcensammlungen zu
 Im Folgenden werden die HTTP-Statuscodes beschrieben, die von der REST-API von Astra Control verwendet werden.
 
 
-NOTE: Die Astra Control REST API nutzt auch den *Problemdetails für HTTP APIs* Standard. Siehe link:diagnostics_support.html["Diagnose und Support"] Finden Sie weitere Informationen.
+NOTE: Die Astra Control REST API nutzt auch den *Problemdetails für HTTP APIs* Standard. Siehe link:../additional/diagnostics_support.html["Diagnose und Support"] Finden Sie weitere Informationen.
 
 [cols="15,20,65"]
 |===
