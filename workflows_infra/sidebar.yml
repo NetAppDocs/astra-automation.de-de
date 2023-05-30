@@ -44,3 +44,5 @@ entries:
     url: "/workflows_infra/wf_list_storage_classes.html"
   - title: Auflisten von Storage-Back-Ends
     url: "/workflows_infra/wf_list_storage_backends.html"
+  - title: Aktivieren Sie dynamische ANF-Pools
+    url: "/workflows_infra/wf_enable_anf_dyn_pools.html"

@@ -27,7 +27,7 @@ Da diese Site die REST API für beide Implementierungsmodelle dokumentiert, gibt
 .Astra Control Implementierungen
 Die Dokumentation auf dieser Website gilt für die folgenden Astra Control Versionen:
 
-* Astra Control Service 23.04
+* Astra Control Service 23.05
 * Astra Control Center 23.04
 
 
@@ -37,7 +37,7 @@ Weitere Informationen zu den aktuellen sowie früheren Astra Control Releases fi
 * link:../rn/whats_new.html["Neuerungen bei der Astra Control REST-API"]
 * link:../endpoints/resources.html["REST-Ressourcen und -Endpunkte"]
 * https://docs.netapp.com/us-en/astra-control-center/["Dokumentation zu Astra Control Center 23.04"^]
-* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 23.04-Dokumentation"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 23.05-Dokumentation"^]
 * link:../aa-earlier-versions.html["Frühere Versionen der Dokumentation von Astra Automation"]
 
 

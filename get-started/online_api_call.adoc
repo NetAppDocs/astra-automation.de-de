@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: get-started/online_api_call.html 
+keywords: reference, api reference, execute call 
+summary: Sie können einen Astra Control REST API-Aufruf über die API-Referenzdokumentations-Seite ausgeben. 
+---
+= Einen Astra-REST-API-Aufruf ausgeben
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können einen Astra Control REST API-Aufruf über die API-Referenzdokumentations-Seite ausgeben.
+
+.Bevor Sie beginnen
+Sie müssen sich bei Astra anmelden und auf die API-Referenzseite zugreifen. Siehe link:../get-started/online_api_ref.html["Zugriff auf die Referenzdokumentation zur Astra API"] Finden Sie weitere Informationen. Sie benötigen außerdem ein Token, um die REST-API zu verwenden. Siehe link:../get-started/get_api_token.html["Holen Sie sich ein API-Token"] Für Details zum Generieren eines API-Tokens.
+
+.Schritte
+. Klicken Sie oben auf der API-Referenzseite auf *Autorisieren*.
+. Kopieren Sie Ihren API-Token-Wert in das Feld im Popup-Fenster, klicken Sie auf *autorisieren* und klicken Sie dann auf *Schließen*.
+. Blättern Sie auf der Seite nach unten, und öffnen Sie den gewünschten API-Aufruf.
+. Klicken Sie auf der rechten Seite auf *Probieren Sie es aus*.
+. Scrollen Sie innerhalb desselben API-Aufrufs nach unten und klicken Sie auf *Ausführen*.
+
+
+.Ergebnis
+Der API-Aufruf wird ausgeführt und der HTTP-Statuscode wird angezeigt.
