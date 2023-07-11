@@ -1193,7 +1193,6 @@
   <block id="f1fca9fdba2865f1e5e68171f8e501c8" category="list-text">Kopieren Sie Ihren API-Token-Wert in das Feld im Popup-Fenster, klicken Sie auf *autorisieren* und klicken Sie dann auf *Schließen*.</block>
   <block id="d77956bf312c489126fb210ac26e1560" category="list-text">Blättern Sie auf der Seite nach unten, und öffnen Sie den gewünschten API-Aufruf.</block>
   <block id="640c9068a50bdac21a3ada93c538c020" category="list-text">Klicken Sie auf der rechten Seite auf *Probieren Sie es aus*.</block>
-  <block id="faa896405f051eeeb846ead40d365dcf" category="list-text">Scrollen Sie innerhalb desselben API-Aufrufs nach unten und klicken Sie auf *Ausführen*.</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Ergebnis</block>
   <block id="5a698356ed60cc238c0048ecf6f15037" category="paragraph">Der API-Aufruf wird ausgeführt und der HTTP-Statuscode wird angezeigt.</block>
   <block id="e90840c9e835dabec4f6627d0ccddef2" category="paragraph">Sie benötigen die Zugangsdaten, um sich für Ihre Implementierung in der Astra Web-Benutzeroberfläche anzumelden. Für Astra Control Service und Astra Control Center gilt die gleiche Vorgehensweise für den Zugriff auf die Referenzdokumentation. Nur die URL ist anders. Ein API-Token ist nicht erforderlich, um auf das Referenzdok zuzugreifen und es anzuzeigen.</block>
@@ -1235,4 +1234,5 @@
   <block id="3987948e759f27889fb63521255c084f" category="inline-link">Astra Control Service 23.06-Dokumentation</block>
   <block id="8de8be2639041c77c0c0e3c2870c7446" category="list-text"><block ref="8de8be2639041c77c0c0e3c2870c7446" category="inline-link-rx"></block></block>
   <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Es gibt keine neuen bekannten Probleme mit der Version 23.06 der Astra Control REST API. Alle nachfolgend beschriebenen Probleme wurden in vorherigen Versionen entdeckt und gelten weiterhin für die aktuelle Version.</block>
+  <block id="db21e6fd52879394e8294f15387580ad" category="list-text">Scrollen Sie innerhalb desselben API-Anrufs nach unten. Geben Sie alle erforderlichen Parameterwerte ein, und klicken Sie auf *Ausführen*, um den Aufruf auszustellen.</block>
 </blocks>
