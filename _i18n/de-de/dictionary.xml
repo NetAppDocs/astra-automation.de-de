@@ -1152,7 +1152,6 @@
   <block id="055a27c4d72ac10e8bf363a70b1218a0" category="paragraph">Diese Version enthält eine kleine Aktualisierung der REST-API.</block>
   <block id="fd681e19859abac8a0d1df0703c54996" category="section-title">Verbesserte Funktionalität der Testausführungshaken mit Filtern</block>
   <block id="03612c2b7f26bb15fe2a8f56732f28ad" category="paragraph">Bei der Verwendung von Testsuiten können Sie jetzt Filter hinzufügen, um zu steuern, mit welchen Containern ein Haken übereinstimmt. Wenn Sie mehrere Filter für einen einzelnen Testausführungshaken erstellen, werden diese mit einem logischen UND einem Operator kombiniert. Pro Testsuite können Sie bis zu 10 aktive Filter definieren.</block>
-  <block id="3c59b55f9bf059f6664a2ad8c3b5ff06" category="paragraph">Die Dokumentation auf dieser Site beschreibt die Astra Control REST-API und die zugehörigen Automatisierungstechnologien, die in den neuesten Versionen der beiden Astra Control Implementierungsmodelle enthalten sind.</block>
   <block id="ce3f3db7878407d89bb9f3e42409287c" category="paragraph">Da diese Site die REST API für beide Implementierungsmodelle dokumentiert, gibt es einige Funktionen, die nur mit dem aktuellsten Astra Control Service-Release verfügbar sind. Jegliche Unterschiede zwischen den beiden Implementierungsmodellen werden bei Bedarf vermerkt.</block>
   <block id="fdd9fe55f1a01a1ad085e5d6ce35c93b" category="paragraph">Die Dokumentation auf dieser Website gilt für die folgenden Astra Control Versionen:</block>
   <block id="06661ae837df4aebc82db4f943f32dd7" category="paragraph">Weitere Informationen zu den aktuellen sowie früheren Astra Control Releases finden Sie auf den folgenden Seiten und auf den folgenden Seiten.</block>
@@ -1173,11 +1172,7 @@
   <block id="62a9da32071f678334a21060c67e7014" category="paragraph">Hier ist ein Beispiel dafür, wie die Datei kubeconfig von YAML nach JSON konvertiert und dann in base64 verschlüsselt wird:</block>
   <block id="013e0c333b0775d95a5c6579724b4b45" category="inline-link">Dokumentation zu Astra Control Automation 22.11</block>
   <block id="52eabae058b28c969498b7a857c6879d" category="list-text"><block ref="52eabae058b28c969498b7a857c6879d" category="inline-link-rx"></block></block>
-  <block id="8f84a5e65a3efc01a0b185016179b60b" category="admonition">Jedem Astra Control Release wird eine Versionsnummer des Formulars *YY.MM* zugewiesen. Dieser Wert Identitäten die Version basierend auf dem Jahr (_YY_) und dem Monat (_MM_) wurde sie verfügbar. So wurde beispielsweise Astra Control Center 23.04 im April 2023 veröffentlicht.</block>
   <block id="c41bf5dc0ae334cb95d5c9af7e04effd" category="paragraph">Im Allgemeinen werden Updates für den Astra Control Service und das Astra Control Center gleichzeitig durchgeführt. Astra Control Service verfügt jedoch über eine beschleunigte Release-Trittfrequenz, die zu einem oder mehreren inkrementellen Updates über die neueste Astra Control Center Version hinaus führen kann.</block>
-  <block id="20a97065ffc33c9c3dbdd1435b0a9fef" category="list-text">Astra Control Center 23.04</block>
-  <block id="e2345475f657a83bdb89f0d758173706" category="inline-link">Dokumentation zu Astra Control Center 23.04</block>
-  <block id="806930774cd41dac9f96fae2a8f4bdd3" category="list-text"><block ref="806930774cd41dac9f96fae2a8f4bdd3" category="inline-link-rx"></block></block>
   <block id="cdfde9b3972928d07d0aa9787e6589c3" category="section-title">25. April 2023 (23.04)</block>
   <block id="05b8695ac535480ad4f4cf9e5bd4ecd2" category="paragraph">Diese Version enthält selektive Updates für DIE REST-API.</block>
   <block id="a1dba4846637919a02bf180b636f6229" category="section-title">Selektive Wiederherstellungsvorgänge</block>
@@ -1230,9 +1225,27 @@
   <block id="58e46bdad56d44447c43649a3b5b4f7b" category="paragraph">Die Abrechnung der Azure Marketplace Abonnements erfolgt jetzt pro Stunde statt pro Minute. Siehe auch<block ref="633dc17422f08a9c882e1f52f9a90b82" category="inline-link-rx"></block>.</block>
   <block id="8e926a216f6adb19574523270dec9729" category="section-title">Restic-Optimierung</block>
   <block id="a73241b184629bdaef0ee68446abeb15" category="paragraph">Mit dem Flag können Sie die Performance-Optimierung für rektische Backups aktivieren<block ref="6fb6e873ef6d6ac86ac763f089d95fa1" prefix=" " category="inline-code"></block> Im neuen<block ref="4e513e9fe169e7733cdfe334575b2dec" prefix=" " category="inline-code"></block> API-Ressource für Einstellungen. Wenn eingestellt auf<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, Die Anzahl von<block ref="47964ec30dfb028cc802262834e3577b" prefix=" " category="inline-code"></block> Diese Restic-Nutzung wird beim Backup großer Volumes in einen Azure-Container erhöht. Für die Volumes von 1 TB bis 4 TB werden 128 Verbindungen verwendet. Für Volumes mit mehr als 4 TB werden 512 Back-End-Verbindungen verwendet.</block>
-  <block id="60bc44a6f8b10e394c8d7a408e94fecc" category="list-text">Astra Control Service 23.06</block>
-  <block id="3987948e759f27889fb63521255c084f" category="inline-link">Astra Control Service 23.06-Dokumentation</block>
-  <block id="8de8be2639041c77c0c0e3c2870c7446" category="list-text"><block ref="8de8be2639041c77c0c0e3c2870c7446" category="inline-link-rx"></block></block>
   <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Es gibt keine neuen bekannten Probleme mit der Version 23.06 der Astra Control REST API. Alle nachfolgend beschriebenen Probleme wurden in vorherigen Versionen entdeckt und gelten weiterhin für die aktuelle Version.</block>
   <block id="db21e6fd52879394e8294f15387580ad" category="list-text">Scrollen Sie innerhalb desselben API-Anrufs nach unten. Geben Sie alle erforderlichen Parameterwerte ein, und klicken Sie auf *Ausführen*, um den Aufruf auszustellen.</block>
+  <block id="7b36f358be6830020f92c7a96bc9ebb7" category="section-title">27. Juli 2023 (23.07)</block>
+  <block id="32b0cbc34ea58967e6c353f6c878e408" category="paragraph">Diese Version enthält selektive Verbesserungen an der REST-API. Sowohl Astra Control Service als auch Astra Control Center wurden mit Version 23.07 aktualisiert.</block>
+  <block id="be9971554f6f1c3ebcb04b3c2ef0dd72" category="section-title">Klon- und Replizierungsvorgänge</block>
+  <block id="3ea32f614af63c14a7b957de0a796445" category="paragraph">Der Klonvorgang unterstützt jetzt nur Live Clones (den aktuellen Status der verwalteten Anwendung). Um aus einem Snapshot oder Backup zu klonen, müssen Sie den Wiederherstellungsvorgang verwenden. Außerdem können Applikationen jetzt zwischen ONTAP Storage-Back-Ends innerhalb desselben Kubernetes-Clusters repliziert werden.</block>
+  <block id="aa6c06174da3e56927ecff87b8b59d97" category="section-title">Erweiterte Storage-Back-Ends</block>
+  <block id="7fdbac7d23ca41d2cef806f176e51840" category="paragraph">Zusätzliche Storage Back-Ends können nun mit Astra Control Center verwendet werden, darunter:</block>
+  <block id="94466e32e364f329d0be558873e8c904" category="list-text">NetApp MetroCluster in einer Stretch-Konfiguration</block>
+  <block id="cd27a1715aac859bc2a48a86ed2000c0" category="inline-link">Longhorn</block>
+  <block id="1d64e26fe87f8846d60010aa3270a37f" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block> 1.5.0 und höher</block>
+  <block id="e6ae92bcba1e3a36ef0b12b0f1ed5c53" category="section-title">Neuer Hook-Typ für die Ausführung</block>
+  <block id="00b87f63b5ab2f631053ae22c2cbadbd" category="paragraph">Der neue Ausführungs-Hook Typ *Post-Failover* ist mit Astra Control Center verfügbar.</block>
+  <block id="6184061dd3b1b99309800d9a0000c740" category="paragraph">In der Dokumentation an dieser Site werden die Astra Control REST-API und die zugehörigen Automatisierungstechnologien beschrieben, die in den beiden Astra Control-Implementierungsmodellen enthalten sind, wie unten beschrieben.</block>
+  <block id="809951d75a5959408aaef7facffe73f1" category="admonition">Jedem Astra Control Release wird eine Versionsnummer des Formulars *YY.MM* zugewiesen. Dieser Wert Identitäten die Version basierend auf dem Jahr (_YY_) und dem Monat (_MM_) wurde sie verfügbar. So wurde beispielsweise Astra Control Center 23.07 im Juli 2023 veröffentlicht.</block>
+  <block id="685fab4e0f4afbe567f9410e426cf33b" category="list-text">Astra Control Service 23.07</block>
+  <block id="20e97def7e9adb5021f4a28abe844ccf" category="list-text">Astra Control Center 23.07</block>
+  <block id="51ec83fd81ce58f9ea70187b74727aff" category="inline-link">Dokumentation zu Astra Control Center 23.07</block>
+  <block id="b2ea0c38a745c6bfb4298aecb931d130" category="list-text"><block ref="b2ea0c38a745c6bfb4298aecb931d130" category="inline-link-rx"></block></block>
+  <block id="88f3464f5e943dd845d3ca23235e5791" category="inline-link">Astra Control Service 23.07-Dokumentation</block>
+  <block id="119edfca8dd05a2365b25f221a07fa7d" category="list-text"><block ref="119edfca8dd05a2365b25f221a07fa7d" category="inline-link-rx"></block></block>
+  <block id="43a62b176f718092748cfb8e6a9afa19" category="inline-link">Dokumentation zu Astra Control Automation 23.04</block>
+  <block id="da054b04f4f9b4f05d91fce1501f15ef" category="list-text"><block ref="da054b04f4f9b4f05d91fce1501f15ef" category="inline-link-rx"></block></block>
 </blocks>

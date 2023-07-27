@@ -16,6 +16,7 @@ summary: Die Dokumentation zur Automatisierung ist für frühere Astra Control V
 [role="lead"]
 Die Dokumentation zur Automatisierung früherer Astra Control Versionen finden Sie unter den nachfolgenden Links.
 
+* https://docs.netapp.com/us-en/astra-automation-2304/["Dokumentation zu Astra Control Automation 23.04"^]
 * https://docs.netapp.com/us-en/astra-automation-2211/["Dokumentation zu Astra Control Automation 22.11"^]
 * https://docs.netapp.com/us-en/astra-automation-2208/["Astra Control Automation 22.08 - Dokumentation"^]
 * https://docs.netapp.com/us-en/astra-automation-2204/["Astra Control Automation 22.04 - Dokumentation"^]
