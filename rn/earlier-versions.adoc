@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: aa-earlier-versions.html 
+permalink: rn/earlier-versions.html 
 keywords: earlier versions, earlier releases 
 summary: Die Dokumentation zur Automatisierung ist für frühere Astra Control Versionen verfügbar. 
 ---

@@ -1,6 +1,6 @@
 ---
 section: rest-core
-title: Core-REST-Implementierung
+title: Kerndesign
 entries:
 - title: REST-Web-Services
   url: "/rest-core/rest_web_services.html"

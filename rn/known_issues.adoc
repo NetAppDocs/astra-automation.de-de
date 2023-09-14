@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: rn/known_issues.html 
 keywords: known issues, issues, bugs, fixes 
-summary: Sie sollten alle bekannten Probleme für die aktuelle Version im Zusammenhang mit der Astra Control REST API überprüfen. Die bekannten Probleme identifizieren Probleme, die die erfolgreiche Verwendung des Produkts verhindern könnten. 
+summary: Sie sollten alle bekannten Probleme für die aktuelle Version von Astra Control und die zugehörige REST-API überprüfen. Die bekannten Probleme identifizieren Probleme, die die erfolgreiche Verwendung des Produkts verhindern könnten. 
 ---
 = Bekannte Probleme
 :hardbreaks:
@@ -14,12 +14,7 @@ summary: Sie sollten alle bekannten Probleme für die aktuelle Version im Zusamm
 
 
 [role="lead"]
-Sie sollten alle bekannten Probleme für die aktuelle Version im Zusammenhang mit der Astra Control REST API überprüfen. Die bekannten Probleme identifizieren Probleme, die die erfolgreiche Verwendung des Produkts verhindern könnten.
-
-
-NOTE: Es gibt keine neuen bekannten Probleme mit der Version 23.06 der Astra Control REST API. Alle nachfolgend beschriebenen Probleme wurden in vorherigen Versionen entdeckt und gelten weiterhin für die aktuelle Version.
-
-Sehen Sie sich eine der folgenden Seiten auf der Grundlage Ihres Bereitstellungsmodells an.
+Sie sollten alle bekannten Probleme für die aktuelle Version von Astra Control und die zugehörige REST-API überprüfen. Die bekannten Probleme identifizieren Probleme, die die erfolgreiche Verwendung des Produkts verhindern könnten. Auf einer der folgenden Seiten finden Sie Informationen zu Ihrem Bereitstellungsmodell:
 
 * https://docs.netapp.com/us-en/astra-control-service/release-notes/known-issues.html["Bekannte Probleme beim Astra Control Service"^]
 * https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Bekannte Probleme bei Astra Control Center"^]
