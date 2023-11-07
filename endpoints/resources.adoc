@@ -68,10 +68,10 @@ Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau un
 | Hook-Quelle | 21.12 | Die Hakenquellenressourcen stellen den aktuellen Quellcode dar, der mit einem Testsuite verwendet wird. Die Trennung des Quellcodes von der Ausführungskontrolle hat mehrere Vorteile, wie z. B. die Freigabe der Skripte. 
 
 
-| LDAP-Gruppe | *22.11* | Sie können die Gruppen im konfigurierten LDAP-Server auflisten. Der Zugriff auf die LDAP-Gruppen ist schreibgeschützt. 
+| LDAP-Gruppe | 22.1 | Sie können die Gruppen im konfigurierten LDAP-Server auflisten. Der Zugriff auf die LDAP-Gruppen ist schreibgeschützt. 
 
 
-| LDAP-Benutzer | *22.11* | Sie können die Benutzer im konfigurierten LDAP-Server auflisten. Der Zugriff auf LDAP-Benutzer ist schreibgeschützt. 
+| LDAP-Benutzer | 22.11 | Sie können die Benutzer im konfigurierten LDAP-Server auflisten. Der Zugriff auf LDAP-Benutzer ist schreibgeschützt. 
 
 
 | Lizenz | 21.08 | Die Lizenzressourcen stellen die für ein Astra-Konto verfügbaren Lizenzen dar. 
@@ -83,6 +83,12 @@ Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau un
 | Paket | 22.04 | Die Paketressourcen ermöglichen die Registrierung und den Zugriff auf Paketdefinitionen. Softwarepakete bestehen aus verschiedenen Komponenten, einschließlich Dateien, Bildern und anderen Artefakten. 
 
 
+| Berechtigung | 23.06 | Die Berechtigungsressourcen stellen Berechtigungen für Vorgänge im System dar. Die API bietet schreibgeschützten Zugriff auf die Berechtigungen. 
+
+
+| Rolle | 23.06 | Die Rollenressourcen stellen Rollen dar, die im System verfügbar sind. Die API bietet schreibgeschützten Zugriff auf die Rollen. 
+
+
 | Rollenbindung | 21.04 | Die Role Binding Ressourcen stellen die Beziehungen zwischen bestimmten Paaren von Benutzern und Konten dar. Zusätzlich zur Verknüpfung zwischen den beiden wird für jede über eine bestimmte Rolle ein Satz von Berechtigungen festgelegt. 
 
 
@@ -92,7 +98,7 @@ Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau un
 | Abonnement | 21.08 | Die Abonnementressourcen stellen die aktiven Abonnements für ein Astra-Konto dar. 
 
 
-| Aufgabe | *22.11* | Die Task-Ressourcen bieten schreibgeschützten Zugriff auf verwaltete Aufgabe und können verwendet werden, um den Status der internen Langlaufaufgaben anzuzeigen. 
+| Aufgabe | 22.11 | Die Task-Ressourcen bieten schreibgeschützten Zugriff auf verwaltete Aufgabe und können verwendet werden, um den Status der internen Langlaufaufgaben anzuzeigen. 
 
 
 | Token | 21.04 | Die Token-Ressourcen stellen die Token dar, die für den programmatischen Zugriff auf die Astra Control REST API verfügbar sind. 
@@ -142,7 +148,7 @@ Die Endpunkte der Topologieressourcen bieten Zugriff auf nicht verwaltete Applik
 | Ressource | Freigabe | Beschreibung 
 
 
-| API-Ressource | *22.11* | Die API-Ressourcenendpunkte bieten einen schreibgeschützten Zugriff auf die Kubernetes-Ressourcen in einem bestimmten gemanagten Cluster. 
+| API-Ressource | 22.11 | Die API-Ressourcenendpunkte bieten einen schreibgeschützten Zugriff auf die Kubernetes-Ressourcen in einem bestimmten gemanagten Cluster. 
 
 
 | App. | 21.04 | Die App-Ressourcen umfassen alle Kubernetes-Applikationen, auch die, die nicht von Astra gemanagt werden. 
