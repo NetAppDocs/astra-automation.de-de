@@ -10,8 +10,10 @@ settings:
     api_enabled: true
   rss_page: rn/whats_new.html
   versions:
-  - version-number: '23.10'
+  - version-number: '24.02'
     url: "/astra-automation"
+  - version-number: '23.10'
+    url: "/astra-automation-2310"
   - version-number: '23.07'
     url: "/astra-automation-2307"
   - version-number: '23.04'
@@ -46,56 +48,6 @@ sidebar:
   - section: information
   - title: Rechtliche Hinweise
     url: "/legal-notices.html"
-homepage:
-  tiles:
-  - title: Los geht's
-    links:
-    - title: Überblick
-      url: "/intro/overview.html"
-    - title: Bevor Sie beginnen
-      url: "/get-started/before_get_started.html"
-    - title: Holen Sie sich ein API-Token
-      url: "/get-started/get_api_token.html"
-    - title: Erster API-Aufruf
-      url: "/get-started/first_call.html"
-  - title: Core REST-Design
-    links:
-    - title: REST-Web-Services
-      url: "/rest-core/rest_web_services.html"
-    - title: HTTP-Details
-      url: "/rest-core/http_details.html"
-    - title: URL-Format
-      url: "/rest-core/url_format.html"
-  - title: Weitere Überlegungen
-    links:
-    - title: RBAC-Sicherheit
-      url: "/additional/rbac.html"
-    - title: Arbeit mit Sammlungen
-      url: "/additional/work_with_collections.html"
-    - title: Diagnose und Support
-      url: "/additional/diagnostics_support.html"
-    - title: Ein API-Token widerrufen
-      url: "/additional/revoke_token.html"
-  - title: Ressourcen
-    links:
-    - title: REST-Ressourcen und -Sammlungen
-      url: "/rest-core/resources_collections.html"
-    - title: Zusammenfassung der Astra API-Ressourcen
-      url: "/endpoints/resources.html"
-  - title: Workflows
-    links:
-    - title: Vorbereitung
-      url: "/get-started/prepare_to_use_workflows.html"
-    - title: Infrastruktur-Workflows
-      url: "/workflows_infra/workflows_infra_before.html"
-    - title: Management-Workflows
-      url: "/workflows/workflows_before.html"
-  - title: Python
-    links:
-    - title: NetApp Astra Control Python SDK
-      url: "/python/astra_toolkits.html"
-    - title: Native Verwendung von Python
-      url: "/python/python_before.html"
 product-family:
   name: Astra
   repo: astra-family

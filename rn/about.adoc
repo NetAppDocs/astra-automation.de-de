@@ -17,16 +17,16 @@ summary: In der Dokumentation an diesem Standort werden die Astra Control REST-A
 In der Dokumentation an diesem Standort werden die Astra Control REST-API und die zugehörigen Automatisierungstechnologien beschrieben, die in den beiden Astra Control Implementierungsmodellen enthalten sind.
 
 .Versionskontrolle freigeben
-Jedem Astra Control Release wird eine Versionsnummer des Formulars *YY.MM* zugewiesen. Dieser Wert Identitäten die Version basierend auf dem Jahr (_YY_) und dem Monat (_MM_) wurde sie verfügbar. So wurde beispielsweise Astra Control Center 23.07 im Juli 2023 veröffentlicht.
+Jedem Astra Control Release wird eine Versionsnummer des Formulars *YY.MM* zugewiesen. In der Regel entspricht dieser Wert der Astra-Version dem Jahr (_YY_) und dem Monat (_MM_), in dem sie verfügbar wurde. So wurde beispielsweise Astra Control Center 23.07 im Juli 2023 veröffentlicht.
 
 .Trittfrequenz freigeben
-Updates für Astra Control Service und Astra Control Center erfolgen in der Regel gleichzeitig. In der Vergangenheit hatte Astra Control Service jedoch ein beschleunigtes Release-Intervall. Dies führte zu einem oder mehreren inkrementellen Updates über die aktuelle Version von Astra Control Center hinaus.
+Updates für Astra Control Service und Astra Control Center erfolgen in der Regel gleichzeitig. In der Vergangenheit hat Astra Control Service jedoch ein beschleunigtes Release-Intervall hinter sich. Dies führte zu einem oder mehreren inkrementellen Updates zwischen den großen Astra Control Center Versionen.
 
 .Astra Control Implementierungen
 Die Dokumentation auf dieser Website gilt für die folgenden Astra Control Versionen:
 
-* Astra Control Service 23.10
-* Astra Control Center 23.10
+* Astra Control Service 24.02
+* Astra Control Center 24.02
 
 
 Da dieser Standort die REST-API für beide Bereitstellungsmodelle dokumentiert, können einige Funktionen nur bei einem Bereitstellungsmodell oder dem anderen verfügbar sein. Alle signifikanten Unterschiede zwischen den beiden werden bei Bedarf festgestellt.
@@ -36,8 +36,8 @@ Weitere Informationen zu den aktuellen sowie früheren Astra Control Releases fi
 
 * link:../rn/whats_new.html["Neuerungen bei der Astra Control REST-API"]
 * link:../endpoints/resources.html["REST-Ressourcen und -Endpunkte"]
-* https://docs.netapp.com/us-en/astra-control-center/["Dokumentation zu Astra Control Center 23.10"^]
-* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 23.10-Dokumentation"^]
+* https://docs.netapp.com/us-en/astra-control-center/["Dokumentation zu Astra Control Center 24.02"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 24.02-Dokumentation"^]
 * link:../rn/earlier-versions.html["Frühere Versionen der Dokumentation von Astra Automation"]
 
 
