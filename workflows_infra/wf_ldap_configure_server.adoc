@@ -18,12 +18,15 @@ Sie müssen einen LDAP-Server auswählen und Astra so konfigurieren, dass der Se
 
 
 
-=== 1. Fügen Sie ein CA-Zertifikat hinzu
+== Schritt 1: Fügen Sie ein CA-Zertifikat hinzu
 
 Führen Sie den folgenden REST-API-Aufruf durch, um ein CA-Zertifikat zu Astra hinzuzufügen.
 
 
 NOTE: Dieser Schritt ist optional und nur erforderlich, wenn Astra und LDAP über einen sicheren Kanal über LDAPS kommunizieren möchten.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -32,10 +35,18 @@ NOTE: Dieser Schritt ist optional und nur erforderlich, wenn Astra und LDAP übe
 
 | POST | /Accounts/{Account_id}/Core/v1/certificates 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/certificates" \
+--include \
+--header "Content-Type: application/astra-certificate+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -52,19 +63,8 @@ Beachten Sie folgende Informationen zu den Eingabeparametern:
 * `isSelfSigned` Sollte auf eingestellt sein `true` Wenn das Zertifikat selbst signiert ist. Die Standardeinstellung lautet `false`.
 
 
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/certificates' --header 'Content-Type: application/astra-certificate+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== Beispiel für JSON-Antwort
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
   "type": "application/astra-certificate",
@@ -112,9 +112,12 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
-=== 2. Fügen Sie die Bindungsanmeldeinformationen hinzu
+== Schritt 2: Fügen Sie die BIND-Anmeldeinformationen hinzu
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die Bindungsanmeldeinformationen hinzuzufügen.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -123,10 +126,18 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Bindungsanmeldeinformati
 
 | POST | /Accounts/{Account_id}/Core/v1/Credentials 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Content-Type: application/astra-certificate+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -144,19 +155,8 @@ Beachten Sie folgende Informationen zu den Eingabeparametern:
 *  `bindDn` Und `password` Sind die base64-kodierten Bindungsanmeldeinformationen des LDAP-Admin-Benutzers, der eine Verbindung herstellen und das LDAP-Verzeichnis durchsuchen kann. `bindDn` Ist die E-Mail-Adresse des LDAP-Benutzers.
 
 
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Content-Type: application/astra-credential+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== Beispiel für JSON-Antwort
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
     "type": "application/astra-credential",
@@ -177,12 +177,15 @@ Beachten Sie die folgenden Antwortparameter:
 
 
 
-=== 3. Abrufen der UUID der LDAP-Einstellung
+== Schritt 3: Abrufen der UUID der LDAP-Einstellung
 
 Führen Sie den folgenden REST-API-Aufruf aus, um die UUID von abzurufen `astra.account.ldap` Die Einstellung ist im Astra Control Center enthalten.
 
 
 NOTE: Das folgende Curl-Beispiel verwendet einen Abfrageparameter, um die Einstellensammlung zu filtern. Sie können stattdessen den Filter entfernen, um alle Einstellungen zu erhalten und dann nach zu suchen `astra.account.ldap`.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -191,19 +194,17 @@ NOTE: Das folgende Curl-Beispiel verwendet einen Abfrageparameter, um die Einste
 
 | GET | /Accounts/{Account_id}/Core/v1/settings 
 |===
-
-
-===== Beispiel für die Wellung
-
+.Beispiel für die Wellung
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings?filter=name%20eq%20'astra.account.ldap'&include=name,id' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings?filter=name%20eq%20'astra.account.ldap'&include=name,id" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
 ----
-
-
-===== Beispiel für JSON-Antwort
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
   "items": [
@@ -216,12 +217,15 @@ curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID
 ----
 
 
-=== 4. Aktualisieren Sie die LDAP-Einstellung
+== Schritt 4: Aktualisieren Sie die LDAP-Einstellung
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die LDAP-Einstellung zu aktualisieren und die Konfiguration abzuschließen. Verwenden Sie die `id` Wert aus dem vorherigen API-Aufruf für das `<SETTING_ID>` Wert im URL-Pfad unten.
 
 
 NOTE: Sie können zuerst eine ANFRAGE FÜR DIE spezifische Einstellung ausstellen, um das configSchema zu sehen. Hier erhalten Sie weitere Informationen zu den erforderlichen Feldern in der Konfiguration.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -230,10 +234,18 @@ NOTE: Sie können zuerst eine ANFRAGE FÜR DIE spezifische Einstellung ausstelle
 
 | PUT | /Accounts/{Account_id}/Core/v1/settings/{setting_id} 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request PUT \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings/<SETTING_ID>" \
+--include \
+--header "Content-Type: application/astra-setting+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -260,21 +272,16 @@ Beachten Sie folgende Informationen zu den Eingabeparametern:
 * Als Anbieter wird nur „Active Directory“ unterstützt.
 
 
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
 Wenn der Anruf erfolgreich ist, wird die HTTP 204-Antwort zurückgegeben.
 
 
 
-=== 5. Abrufen der LDAP-Einstellung
+== Schritt 5: Rufen Sie die LDAP-Einstellung ab
 
 Sie können optional den folgenden REST-API-Aufruf durchführen, um die LDAP-Einstellungen abzurufen und die Aktualisierung zu bestätigen.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -283,19 +290,17 @@ Sie können optional den folgenden REST-API-Aufruf durchführen, um die LDAP-Ein
 
 | GET | /Accounts/{Account_id}/Core/v1/settings/{setting_id} 
 |===
-
-
-===== Beispiel für die Wellung
-
+.Beispiel für die Wellung
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "'https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings/<SETTING_ID>" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Beispiel für JSON-Antwort
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
   "items": [

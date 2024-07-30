@@ -21,21 +21,25 @@ NOTE: Das Hinzufügen eines Clusters ist nicht erforderlich, wenn ein Kubernetes
 
 
 
-=== 1. Holen Sie sich die kubeconfig-Datei
+== Schritt 1: Erhalten Sie die Datei kubeconfig
 
 Sie benötigen eine Kopie der *kubconfig*-Datei von Ihrem Kubernetes-Administrator oder -Dienst.
 
 
 
-=== 2. Bereiten Sie die kubeconfig Datei
+== Schritt 2: Bereiten Sie die Datei kubeconfig vor
 
 Vor der Verwendung der Datei *kubeconfig* sollten Sie die folgenden Vorgänge durchführen:
 
-.Konvertieren Sie die Datei aus dem YAML-Format in JSON
+. Datei aus YAML-Format in JSON konvertieren:
++
 Wenn Sie die kubeconfg-Datei erhalten, die als YAML formatiert ist, müssen Sie sie in JSON konvertieren.
 
-.JSON in base64 kodieren
+. JSON in base64 kodieren:
++
 Sie müssen die JSON-Datei in base64 kodieren.
+
+
 
 .Beispiel
 Hier ist ein Beispiel dafür, wie die Datei kubeconfig von YAML nach JSON konvertiert und dann in base64 verschlüsselt wird:
@@ -44,7 +48,7 @@ Hier ist ein Beispiel dafür, wie die Datei kubeconfig von YAML nach JSON konver
 
 
 
-=== 3. Wählen Sie die Wolke
+== Schritt 3: Wählen Sie die Cloud
 
 Führen Sie den Workflow aus link:../workflows_infra/wf_list_clouds.html["Clouds auflisten"] Und wählen Sie die Cloud aus, der der Cluster hinzugefügt werden soll.
 
@@ -53,9 +57,12 @@ NOTE: Die einzige Cloud, die Sie auswählen können, ist die *private* Cloud.
 
 
 
-=== 4. Erstellen Sie eine Anmeldedaten
+== Schritt 4: Erstellen Sie eine Anmeldeinformation
 
 Führen Sie den folgenden REST-API-Aufruf durch, um mithilfe der kubeconfig-Datei eine Anmeldedaten zu erstellen.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -64,11 +71,18 @@ Führen Sie den folgenden REST-API-Aufruf durch, um mithilfe der kubeconfig-Date
 
 | POST | /Accounts/{Account_id}/Core/v1/Credentials 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
+[source, json]
 ----
 {
   "type" :  "application/astra-credential",
@@ -83,17 +97,12 @@ Führen Sie den folgenden REST-API-Aufruf durch, um mithilfe der kubeconfig-Date
 ----
 
 
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
-----
-
-
-=== 5. Fügen Sie den Cluster hinzu
+== Schritt 5: Fügen Sie den Cluster hinzu
 
 Führen Sie den folgenden REST-API-Aufruf durch, um das Cluster zur Cloud hinzuzufügen. Der Wert des `credentialID` Das Eingabefeld wird vom REST-API-Aufruf im vorherigen Schritt abgerufen.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -102,23 +111,22 @@ Führen Sie den folgenden REST-API-Aufruf durch, um das Cluster zur Cloud hinzuz
 
 | POST | /Accounts/{Account_id}/Topology/v1/Clouds/{Cloud_id}/Cluster 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
+[source, json]
 ----
 {
   "type" :  "application/astra-cluster",
   "version" : "1.1",
   "credentialID": credential_id
 }
-----
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

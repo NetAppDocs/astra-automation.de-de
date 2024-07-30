@@ -18,7 +18,7 @@ Sie können eine verwaltete Anwendung entfernen, wenn sie nicht mehr benötigt w
 
 
 
-=== Bevor Sie beginnen
+== Bevor Sie beginnen
 
 Sie müssen über die ID der App verfügen, die Sie verwalten möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
 
@@ -26,9 +26,12 @@ Backups und Snapshots der Applikation werden nicht automatisch entfernt, wenn si
 
 
 
-=== 1. Die App wurde nicht verwaltet
+== App-Verwaltung aufheben
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die App zu entfernen.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -37,10 +40,7 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die App zu entfernen.
 
 | Löschen | /Accounts/{Account_id}/k8s/v2/Apps/{App_id} 
 |===
-
-
-===== Zusätzliche Eingabeparameter
-
+.Zusätzliche Eingabeparameter
 Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.
 
 [cols="25,10,10,55"]
@@ -50,11 +50,12 @@ Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, wer
 
 | App-id | Pfad | Ja. | Identifiziert die zu entfernende Anwendung. 
 |===
-
-
-===== Curl Beispiel: Eine verwaltete App entfernen
-
+.Curl Beispiel: Eine verwaltete App entfernen
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request DELETE \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps/$APP_ID" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

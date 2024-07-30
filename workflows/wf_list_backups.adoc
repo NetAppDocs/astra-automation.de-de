@@ -18,15 +18,18 @@ Sie können die für eine bestimmte Anwendung erstellten Backups auflisten.
 
 
 
-=== Bevor Sie beginnen
+== Bevor Sie beginnen
 
 Sie müssen über die ID der App verfügen, für die Sie die Backups auflisten möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
 
 
 
-=== 1. Listen Sie die Backups auf
+== Listen Sie die Backups auf
 
 Führen Sie den folgenden REST-API-Aufruf aus.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ Führen Sie den folgenden REST-API-Aufruf aus.
 
 | GET | /Accounts/{Account_id}/k8s/v1/Apps/{App_id}/appBackups 
 |===
-
-
-===== Zusätzliche Eingabeparameter
-
+.Zusätzliche Eingabeparameter
 Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.
 
 [cols="25,10,10,55"]
@@ -48,19 +48,17 @@ Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, wer
 
 | App-id | Pfad | Ja. | Gibt die verwaltete Anwendung an, die die aufgeführten Backups besitzt. 
 |===
-
-
-===== Curl Beispiel: Alle Backups für die App zurückgeben
-
+.Curl Beispiel: Alle Backups für die App zurückgeben
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups" \
+--include  \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Beispiel für eine JSON-Ausgabe
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
     "items": [

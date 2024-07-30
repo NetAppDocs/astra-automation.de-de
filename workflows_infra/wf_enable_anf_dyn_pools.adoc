@@ -21,12 +21,15 @@ NOTE: Dynamic ANF Pools ist eine Funktion der von Astra gemanagten Applikationen
 
 
 
-=== 1. Fügen Sie die Azure-Abonnement-ID hinzu
+== Schritt: Fügen Sie die Azure-Abonnementkennung hinzu
 
 Führen Sie den folgenden REST-API-Aufruf aus.
 
 
 NOTE: Sie müssen das JSON-Eingabebeispiel entsprechend Ihrer Umgebung aktualisieren, einschließlich der Abonnement-ID und dem base64-Wert für den Service-Prinzipal.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -35,6 +38,17 @@ NOTE: Sie müssen das JSON-Eingabebeispiel entsprechend Ihrer Umgebung aktualisi
 
 | POST | /Accounts/{Account_id}/Core/v1/Credentials 
 |===
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Content-Type: application/astra-credential+json"
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
 .JSON-Eingabebeispiel
 [source, json]
 ----
@@ -65,25 +79,20 @@ NOTE: Sie müssen das JSON-Eingabebeispiel entsprechend Ihrer Umgebung aktualisi
   }
 }
 ----
-.Beispiel für die Wellung
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Content-Type: application/astra-credential+json'
-----
 
 
-=== 2. Fügen Sie bei Bedarf einen Eimer hinzu
+== Schritt 2: Fügen Sie bei Bedarf einen Eimer hinzu
 
 Sie sollten bei Bedarf der verwalteten Anwendung einen Bucket hinzufügen.
 
 
 
-=== 3. Nehmen Sie ein Backup der verwalteten App
+== Schritt 3: Erstellen Sie ein Backup der verwalteten App
 
 Führen Sie den Workflow aus link:../workflows/wf_create_backup.html["Backup für eine Anwendung erstellen"]. Der Kapazitäts-Pool, in dem das ursprüngliche persistente Volume vorhanden ist, wird automatisch erweitert oder verkleinert.
 
 
 
-=== 4. Überprüfen Sie das Ereignisprotokoll
+== Schritt 4: Überprüfen Sie das Ereignisprotokoll
 
 Aktivitätsereignisse werden während des Backups protokolliert. Führen Sie den Workflow aus link:../workflows/wf_list_notifications.html["Listen Sie die Benachrichtigungen auf"] Um die Nachrichten anzuzeigen.

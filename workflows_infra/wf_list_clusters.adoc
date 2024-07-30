@@ -18,15 +18,18 @@ Sie können die verfügbaren Cluster in einer bestimmten Cloud auflisten.
 
 
 
-=== 1. Wählen Sie die Cloud
+== Schritt 1: Wählen Sie die Cloud
 
 Führen Sie den Workflow aus link:../workflows_infra/wf_list_clouds.html["Clouds auflisten"] Wählen Sie dann die Cloud mit den Clustern aus.
 
 
 
-=== 2. Listen Sie die Cluster auf
+== Schritt 2: Listen Sie die Cluster auf
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die Cluster in einer bestimmten Cloud aufzulisten.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -35,19 +38,17 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Cluster in einer bestimm
 
 | GET | /Accounts/{Account_id}/Topology/v1/Clouds/{Cloud_id}/Cluster 
 |===
-
-
-===== Curl-Beispiel: Gibt alle Daten für alle Cluster zurück
-
+.Curl-Beispiel: Gibt alle Daten für alle Cluster zurück
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Beispiel für eine JSON-Ausgabe
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
     "items": [

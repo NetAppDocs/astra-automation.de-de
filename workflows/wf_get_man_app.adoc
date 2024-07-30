@@ -18,15 +18,18 @@ Sie können alle Ressourcenvariablen abrufen, die eine einzelne Anwendung beschr
 
 
 
-=== Bevor Sie beginnen
+== Bevor Sie beginnen
 
 Sie müssen die ID der App haben, die Sie abrufen möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
 
 
 
-=== 1. Holen Sie sich die Anwendung
+== Schritt 1: Holen Sie sich die Anwendung
 
 Führen Sie den folgenden REST-API-Aufruf aus.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ Führen Sie den folgenden REST-API-Aufruf aus.
 
 | GET | /Accounts/{Account_id}/k8s/v2/Apps/{App_id} 
 |===
-
-
-===== Zusätzliche Eingabeparameter
-
+.Zusätzliche Eingabeparameter
 Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.
 
 [cols="25,10,10,55"]
@@ -48,11 +48,12 @@ Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, wer
 
 | App-id | Pfad | Ja. | ID-Wert der abzurufenden Anwendung. 
 |===
-
-
-===== Curl Beispiel: Alle Daten für die Anwendung zurückgeben
-
+.Curl Beispiel: Alle Daten für die Anwendung zurückgeben
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps/$APP_ID" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

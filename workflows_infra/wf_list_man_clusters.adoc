@@ -16,11 +16,10 @@ summary: Sie können die Kubernetes-Cluster auflisten, die derzeit vom Astra gem
 [role="lead"]
 Sie können die Kubernetes-Cluster auflisten, die derzeit vom Astra gemanagt werden.
 
-
-
-=== 1. Listen Sie die verwalteten Cluster auf
-
 Führen Sie den folgenden REST-API-Aufruf aus.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -29,11 +28,12 @@ Führen Sie den folgenden REST-API-Aufruf aus.
 
 | GET | /Accounts/{Account_id}/Topology/v1/manageClusters 
 |===
-
-
-===== Curl-Beispiel: Gibt alle Daten für alle Cluster zurück
-
+.Curl-Beispiel: Gibt alle Daten für alle Cluster zurück
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/managedClusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/managedClusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

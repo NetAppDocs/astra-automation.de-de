@@ -16,11 +16,10 @@ summary: Sie können die verfügbaren Storage-Back-Ends auflisten.
 [role="lead"]
 Sie können die verfügbaren Storage-Back-Ends auflisten.
 
-
-
-=== 1. Listen Sie die Back-Ends auf
-
 Führen Sie den folgenden REST-API-Aufruf aus.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -29,19 +28,17 @@ Führen Sie den folgenden REST-API-Aufruf aus.
 
 | GET | /Accounts/{Account_id}/Topology/v1/storageBackends 
 |===
-
-
-===== Curl-Beispiel: Gibt alle Daten für alle Storage-Back-Ends zurück
-
+.Curl-Beispiel: Gibt alle Daten für alle Storage-Back-Ends zurück
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/storageBackends' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/storageBackends" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Beispiel für eine JSON-Ausgabe
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
   "items": [

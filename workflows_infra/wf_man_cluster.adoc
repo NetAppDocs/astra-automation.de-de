@@ -18,13 +18,13 @@ Sie können ein Kubernetes-Cluster so managen, dass die Datensicherung durchgef�
 
 
 
-=== 1. Wählen Sie den zu verwaltenden Cluster aus
+== Schritt 1: Wählen Sie den zu verwaltenden Cluster aus
 
 Führen Sie den Workflow aus link:../workflows_infra/wf_list_clusters.html["Listen Sie Cluster auf"] Und wählen Sie das gewünschte Cluster aus. Das Hotel `managedState` Des Clusters muss sein `unmanaged`.
 
 
 
-=== 2. Wählen Sie optional die Speicherklasse aus
+== Schritt 2: Wählen Sie optional die Storage-Klasse aus
 
 Führen Sie optional den Workflow aus link:../workflows_infra/wf_list_storage_classes.html["Auflisten von Speicherklassen"] Und wählen Sie die gewünschte Storage-Klasse aus.
 
@@ -33,9 +33,12 @@ NOTE: Wenn Sie beim Aufruf zum Verwalten des Clusters keine Storage-Klasse anbie
 
 
 
-=== 3. Verwalten Sie den Cluster
+== Schritt 3: Verwalten des Clusters
 
 Führen Sie den folgenden REST-API-Aufruf durch, um das Cluster zu verwalten.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -44,10 +47,17 @@ Führen Sie den folgenden REST-API-Aufruf durch, um das Cluster zu verwalten.
 
 | POST | /Accounts/{Account_id}/Topology/v1/manageClusters 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/managedClusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -55,12 +65,4 @@ Führen Sie den folgenden REST-API-Aufruf durch, um das Cluster zu verwalten.
   "version": "1.0",
   "id": "d0fdf455-4330-476d-bb5d-4d109714e07d"
 }
-----
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/managedClusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

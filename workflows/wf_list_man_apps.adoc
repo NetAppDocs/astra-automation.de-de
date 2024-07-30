@@ -16,11 +16,10 @@ summary: Sie können die Applikationen auflisten, die aktuell vom Astra verwalte
 [role="lead"]
 Sie können die Applikationen auflisten, die aktuell vom Astra verwaltet werden. Dies könnten Sie tun, um die Snapshots oder Backups für eine bestimmte Anwendung zu finden.
 
-
-
-=== 1. Listen Sie die Anwendungen auf
-
 Führen Sie den folgenden REST-API-Aufruf aus.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -29,10 +28,7 @@ Führen Sie den folgenden REST-API-Aufruf aus.
 
 | GET | /Account/{Account_id}/k8s/v2/Apps 
 |===
-
-
-===== Zusätzliche Eingabeparameter
-
+.Zusätzliche Eingabeparameter
 Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.
 
 [cols="25,10,10,55"]
@@ -42,27 +38,26 @@ Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, wer
 
 | Einschließlich | Abfrage | Nein | Wählen Sie optional die Werte aus, die in der Antwort zurückgegeben werden sollen. 
 |===
-
-
-===== Curl Beispiel: Gibt alle Daten für alle Apps zurück
-
+.Curl Beispiel: Gibt alle Daten für alle Apps zurück
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Curl-Beispiel: Gibt den Namen, die id und den Status aller Apps zurück
-
+.Curl-Beispiel: Gibt den Namen, die id und den Status aller Apps zurück
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps?include=name,id,state' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps?include=name,id,state" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Beispiel für eine JSON-Ausgabe
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
     "items": [

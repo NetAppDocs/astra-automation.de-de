@@ -4,7 +4,7 @@ permalink: workflows_infra/workflows_infra_before.html
 keywords: workflows, infrastructure workflows, preparation 
 summary: Mithilfe dieser Workflows können Sie die Infrastruktur erstellen und warten, die bei einer Implementierung von Astra Control Center verwendet wird. In vielen Fällen können die Workflows auch mit dem Astra Control Service genutzt werden. 
 ---
-= Bevor Sie beginnen
+= Bereiten Sie sich auf die Verwendung der Infrastruktur-Workflows vor
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

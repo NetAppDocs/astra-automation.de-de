@@ -16,11 +16,10 @@ summary: Sie können die definierten Clouds mit einem spezifischen Astra Konto a
 [role="lead"]
 Sie können die definierten Clouds mit einem spezifischen Astra Konto auflisten.
 
-
-
-=== 1. Die Wolken auflisten
-
 Führen Sie den folgenden REST-API-Aufruf durch, um die Clouds aufzulisten.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -29,11 +28,12 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Clouds aufzulisten.
 
 | GET | /Accounts/{Account_id}/Topology/v1/Clouds 
 |===
-
-
-===== Curl-Beispiel: Alle Daten aus allen Clouds zurückgeben
-
+.Curl-Beispiel: Alle Daten aus allen Clouds zurückgeben
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

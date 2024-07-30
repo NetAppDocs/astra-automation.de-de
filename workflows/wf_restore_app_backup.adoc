@@ -18,21 +18,24 @@ Sie können eine Applikation wiederherstellen, indem Sie eine neue Applikation a
 
 
 
-=== 1. Wählen Sie die Anwendung, die wiederhergestellt werden soll
+== Schritt 1: Wählen Sie die App, die wiederhergestellt werden soll
 
 Führen Sie den Workflow aus link:wf_list_man_apps.html["Listen Sie die Apps auf"] Und wählen Sie die Anwendung aus, die Sie klonen möchten. Für DEN REST-Aufruf, der zur Wiederherstellung der App verwendet wird, sind mehrere Ressourcenwerte erforderlich.
 
 
 
-=== 2. Wählen Sie das zu verwendende Backup aus
+== Schritt 2: Wählen Sie das zu verwendende Backup aus
 
 Führen Sie den Workflow aus link:wf_list_backups.html["Listen Sie die Backups auf"] Und wählen Sie das gewünschte Backup aus.
 
 
 
-=== 3. Stellen Sie die App wieder her
+== Schritt 3: Wiederherstellung der App
 
 Führen Sie den folgenden REST-API-Aufruf aus. Sie müssen die ID für ein Backup (wie unten gezeigt) oder einen Snapshot angeben.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -41,10 +44,7 @@ Führen Sie den folgenden REST-API-Aufruf aus. Sie müssen die ID für ein Backu
 
 | PUT | /Accounts/{Account_id}/k8s/v2/Apps/{App_id} 
 |===
-
-
-===== Zusätzliche Eingabeparameter
-
+.Zusätzliche Eingabeparameter
 Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.
 
 [cols="25,10,10,55"]
@@ -54,10 +54,19 @@ Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, wer
 
 | JSON | Text | Ja. | Stellt die Parameter für die geklonte App bereit. Siehe das folgende Beispiel. 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Curl Beispiel: Wiederherstellen einer vorhandenen Applikation aus einem Backup
+[source, curl]
+----
+curl --request PUT \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps/$APP_ID" \
+--include \
+--header "Content-Type: application/astra-app+json" \
+--header "ForceUpdate: true" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -65,12 +74,4 @@ Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, wer
   "version": "2.0",
   "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
 }
-----
-
-
-===== Curl Beispiel: Wiederherstellen einer vorhandenen Applikation aus einem Backup
-
-[source, curl]
-----
-curl --location -i --request PUT 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'ForceUpdate: true' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

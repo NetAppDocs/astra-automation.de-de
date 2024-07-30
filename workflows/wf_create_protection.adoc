@@ -18,15 +18,18 @@ Sie können eine Datensicherungsrichtlinien auf der Grundlage eines oder mehrere
 
 
 
-=== 1. Wählen Sie die App
+== Schritt 1: Wählen Sie die App aus
 
 Führen Sie den Workflow aus link:../workflows/wf_list_man_apps.html["Listen Sie die Apps auf"] Und wählen Sie die gewünschte Anwendung aus.
 
 
 
-=== 2. Erstellen Sie den Schutz
+== Schritt 2: Erstellen Sie den Schutz
 
 Führen Sie den folgenden REST-API-Aufruf durch, um eine Sicherungsrichtlinie für eine bestimmte Anwendung zu erstellen.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -35,10 +38,17 @@ Führen Sie den folgenden REST-API-Aufruf durch, um eine Sicherungsrichtlinie f�
 
 | POST | /Accounts/{Account_id}/k8s/v1/Apps/{App_id}/Schedules 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/schedules" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -53,12 +63,4 @@ Führen Sie den folgenden REST-API-Aufruf durch, um eine Sicherungsrichtlinie f�
   "snapshotRetention": "12",
   "backupRetention": "12"
 }
-----
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/schedules' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

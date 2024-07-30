@@ -30,6 +30,30 @@ Ein _Workflow_ ist eine Sequenz aus einem oder mehreren Schritten, die zum Errei
 Workflows umfassen die wichtigsten Schritte und Parameter, die zur Durchführung jeder Aufgabe erforderlich sind. Sie bieten als Ausgangspunkt für die Anpassung Ihrer Automatisierungsumgebung.
 
 
+NOTE: Ein Workflow kann nur einen Schritt enthalten. Diese einstufigen Workflows werden geringfügig anders formatiert als Workflows, die mehrere Schritte enthalten. Beispielsweise wird der explizite Schrittname entfernt. Die Aktion oder der Vorgang sollte aufgrund des Workflow-Titels eindeutig sein.
+
+
+
+== Workflow-Kategorien
+
+Je nach Ihrem Implementierungsmodell stehen Ihnen zwei weit gefassten Kategorien von Astra-Workflows zur Verfügung. Wenn Sie Astra Control Center nutzen, sollten Sie mit den Infrastruktur-Workflows beginnen und anschließend mit den Management-Workflows fortfahren. Mit dem Astra Control Service können Sie in der Regel direkt zu den Management-Workflows wechseln.
+
+
+NOTE: Die Curl-Beispiele in den Workflows verwenden die URL für Astra Control Service. Sie müssen die URL ändern, wenn Sie das On-Premise Astra Control Center entsprechend Ihrer Umgebung verwenden.
+
+
+
+=== Infrastruktur-Workflows
+
+Diese Workflows befassen sich mit der Astra-Infrastruktur, einschließlich Referenzen, Buckets und Storage-Back-Ends. Sie werden mit dem Astra Control Center benötigt, können aber in den meisten Fällen auch mit dem Astra Control Service verwendet werden. Die Workflows konzentrieren sich auf die Aufgaben, die für die Einrichtung und Wartung eines von Astra gemanagten Clusters erforderlich sind.
+
+
+
+=== Management-Workflows
+
+Sie können diese Workflows verwenden, nachdem Sie ein gemanagtes Cluster eingerichtet haben. Management-Workflows konzentrieren sich auf den Schutz von Applikationen und unterstützen Vorgänge wie Backup, Wiederherstellung und Klonen von Applikationen.
+
+
 
 == Allgemeine Eingabeparameter
 
@@ -69,6 +93,8 @@ Das API-Token und andere ID-Werte, die mit den Curl-Beispielen verwendet werden,
 * Kein Wert geht verloren, da die ursprünglichen Parameter nicht kopiert und bei einer tatsächlichen Implementierung verwendet werden können.
 
 
+Die Variablen sind für die Verwendung in einer Bash Shell-Umgebung formatiert. Jede Variable beginnt mit einem Dollarzeichen und ist bei Bedarf in doppelte Anführungszeichen eingeschlossen. Dies macht sie für Bash erkennbar. Für die Namen wird immer Großbuchstaben verwendet.
+
 Hier sind einige der in den Curl-Beispielen verwendeten allgemein reservierten Schlüsselwörter. Diese Liste ist nicht vollständig und weitere Schlüsselwörter werden bei Bedarf verwendet. Ihre Bedeutung sollte auf der Grundlage des Kontexts offensichtlich sein.
 
 [cols="25,15,60"]
@@ -76,31 +102,34 @@ Hier sind einige der in den Curl-Beispielen verwendeten allgemein reservierten S
 | Stichwort | Typ | Beschreibung 
 
 
-| <ACCOUNT_ID> | Pfad | Der UUIDv4-Wert identifiziert das Konto, auf dem der API-Vorgang ausgeführt wird. 
+| KONTO-ID DES US-DOLLAR | Pfad | Der UUIDv4-Wert identifiziert das Konto, auf dem der API-Vorgang ausgeführt wird. 
 
 
-| <API_TOKEN> | Kopfzeile | Das Inhaberzeichen, das den Anrufer identifiziert und autorisiert. 
+| API_TOKEN USD | Kopfzeile | Das Inhaberzeichen, das den Anrufer identifiziert und autorisiert. 
 
 
-| <APP_ID> | Pfad | Der UUIDv4-Wert, der die Anwendung für den API-Aufruf identifiziert. 
+| APP_ID USD | Pfad | Der UUIDv4-Wert, der die Anwendung für den API-Aufruf identifiziert. 
 |===
 
 
-== Workflow-Kategorien
+== Verwenden der Beispiele mit Bash
 
-Je nach Ihrem Implementierungsmodell stehen Ihnen zwei weit gefassten Kategorien von Astra-Workflows zur Verfügung. Wenn Sie Astra Control Center nutzen, sollten Sie mit den Infrastruktur-Workflows beginnen und anschließend mit den Management-Workflows fortfahren. Mit dem Astra Control Service können Sie in der Regel direkt zu den Management-Workflows wechseln.
-
-
-NOTE: Die Curl-Beispiele in den Workflows verwenden die URL für den Astra Control Service. Sie müssen die URL ändern, wenn Sie das On-Premise Astra Control Center entsprechend Ihrer Umgebung verwenden.
+Wenn Sie die Workflow-Curl-Beispiele direkt verwenden, müssen Sie die darin enthaltenen Variablen mit Werten aktualisieren, die für Ihre Umgebung geeignet sind. Sie können die Beispiele manuell bearbeiten oder sich darauf verlassen, dass die Bash-Shell die Ersetzung für Sie vornimmt, wie unten beschrieben.
 
 
+NOTE: Ein Vorteil der Verwendung von Bash ist, dass Sie die Variablenwerte einmal in einer Shell-Sitzung anstatt einmal pro Curl-Befehl einstellen können.
 
-=== Infrastruktur-Workflows
+.Schritte
+. Öffnen Sie die Bash Shell, die mit Linux oder einem ähnlichen Betriebssystem geliefert wird.
+. Legen Sie die Variablenwerte fest, die in dem zu laufenden Curl-Beispiel enthalten sind. Beispiel:
++
+`$API_TOKEN=SGgpXHeco6M8PLxzIlgbztA4k3_eX4UCa842hOXHBFA=`
 
-Diese Workflows befassen sich mit der Astra-Infrastruktur, einschließlich Referenzen, Buckets und Storage-Back-Ends. Sie werden mit dem Astra Control Center benötigt, können aber in den meisten Fällen auch mit dem Astra Control Service verwendet werden. Die Workflows konzentrieren sich auf die Aufgaben, die für die Einrichtung und Wartung eines von Astra gemanagten Clusters erforderlich sind.
+. Kopieren Sie das Beispiel für die Wellung von der Workflow-Seite, und fügen Sie es in das Shell-Terminal ein.
+. Drücken Sie *ENTER*, um die folgenden Aufgaben auszuführen:
++
+.. Ersetzen Sie die von Ihnen festgelegten Variablenwerte.
+.. Führen Sie den Befehl curl aus.
 
 
 
-=== Management-Workflows
-
-Diese Workflows können nach einem verwalteten Cluster verwendet werden. Die Workflows konzentrieren sich auf die Applikationssicherung und unterstützen Abläufe wie das Backup, Restore und Klonen einer Applikation.

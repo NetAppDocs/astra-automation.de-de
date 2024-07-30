@@ -33,9 +33,12 @@ Sie können jedem Astra-Benutzer eine Rolle zuweisen, die nach der LDAP-Authenti
 
 
 
-=== 1. Fügen Sie einen Benutzer hinzu
+=== Schritt 1: Benutzer hinzufügen
 
 Führen Sie den folgenden REST-API-Aufruf durch, um einen Benutzer zu Astra hinzuzufügen und anzugeben, dass LDAP der Authentifizierungsanbieter ist.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -44,10 +47,18 @@ Führen Sie den folgenden REST-API-Aufruf durch, um einen Benutzer zu Astra hinz
 
 | POST | /Accounts/{Account_id}/Core/v1/users 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/users" \
+--include \
+--header "Content-Type: application/astra-user+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -75,19 +86,8 @@ Beachten Sie folgende Informationen zu den Eingabeparametern:
 
 Wenn der `email` Der Wert ist nicht eindeutig, es tritt ein Fehler auf und ein HTTP-Statuscode 409 wird in der Antwort zurückgegeben.
 
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/astra-user+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== Beispiel für JSON-Antwort
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
   "metadata": {
@@ -123,9 +123,12 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
-=== 2. Fügen Sie eine Rollenbindung für den Benutzer hinzu
+=== Schritt 2: Fügen Sie eine Rollenbindung für den Benutzer hinzu
 
 Führen Sie den folgenden REST-API-Aufruf durch, um den Benutzer an eine bestimmte Rolle zu binden. Sie müssen die UUID des Benutzers im vorherigen Schritt erstellen lassen.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -134,10 +137,18 @@ Führen Sie den folgenden REST-API-Aufruf durch, um den Benutzer an eine bestimm
 
 | POST | /Accounts/{Account_id}/Core/v1/roleBindungen 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/roleBindings" \
+--include \
+--header "Content-Type: application/astra-roleBinding+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -154,19 +165,8 @@ Beachten Sie folgende Informationen zu den Eingabeparametern:
 * Der oben verwendete Wert für `roleConstraint` Ist die einzige Option, die für die aktuelle Version von Astra verfügbar ist. Er zeigt an, dass der Benutzer nicht auf eine begrenzte Anzahl von Namespaces beschränkt ist und alle darauf zugreifen können.
 
 
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== Beispiel für JSON-Antwort
-
-[source, json]
+.Beispiel für JSON-Antwort
+[listing]
 ----
 {
   "metadata": {
@@ -199,9 +199,12 @@ Sie können einer Astra-Gruppe eine Rolle zuweisen, die nach der LDAP-Authentifi
 
 
 
-=== 1. Fügen Sie eine Gruppe hinzu
+=== Schritt 1: Eine Gruppe hinzufügen
 
 Führen Sie den folgenden REST-API-Aufruf durch, um eine Gruppe zu Astra hinzuzufügen und anzugeben, dass LDAP der Authentifizierungsanbieter ist.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -210,10 +213,18 @@ Führen Sie den folgenden REST-API-Aufruf durch, um eine Gruppe zu Astra hinzuzu
 
 | POST | /Accounts/{Account_id}/Core/v1/groups 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/groups" \
+--include \
+--header "Content-Type: application/astra-group+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -234,19 +245,8 @@ Beachten Sie folgende Informationen zu den Eingabeparametern:
 
 
 
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/groups' --header 'Content-Type: application/astra-group+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== Beispiel für JSON-Antwort
-
-[source, json]
+.Beispiel für JSON-Antwort
+[listing]
 ----
 {
   "type": "application/astra-group",
@@ -265,9 +265,12 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
-=== 2. Fügen Sie eine Rollenbindung für die Gruppe hinzu
+=== Schritt 2: Fügen Sie eine Rollenbindung für die Gruppe hinzu
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die Gruppe an eine bestimmte Rolle zu binden. Sie müssen die UUID der Gruppe im vorherigen Schritt erstellen lassen. Benutzer, die Mitglieder der Gruppe sind, können sich bei Astra anmelden, nachdem LDAP die Authentifizierung durchgeführt hat.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -276,10 +279,18 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Gruppe an eine bestimmte
 
 | POST | /Accounts/{Account_id}/Core/v1/roleBindungen 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Beispiel für die Wellung
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/roleBindings" \
+--include \
+--header "Content-Type: application/astra-roleBinding+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -296,19 +307,8 @@ Beachten Sie folgende Informationen zu den Eingabeparametern:
 * Der oben verwendete Wert für `roleConstraint` Ist die einzige Option, die für die aktuelle Version von Astra verfügbar ist. Er gibt an, dass der Benutzer nicht auf bestimmte Namespaces beschränkt ist und alle darauf zugreifen können.
 
 
-
-
-===== Beispiel für die Wellung
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== Beispiel für JSON-Antwort
-
-[source, json]
+.Beispiel für JSON-Antwort
+[listing]
 ----
 {
   "metadata": {

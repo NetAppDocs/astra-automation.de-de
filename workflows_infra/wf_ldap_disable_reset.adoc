@@ -28,6 +28,9 @@ Beide Workflow-Aufgaben erfordern die id für den `astra.account.ldap` Astra-Ein
 
 Sie können den folgenden REST-API-Aufruf durchführen, um die LDAP-Authentifizierung für eine bestimmte Astra-Implementierung global zu deaktivieren. Der Anruf aktualisiert den `astra.account.ldap` Einstellung und das `isEnabled` Wert ist gesetzt auf `false`.
 
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
+
 [cols="1,6"]
 |===
 | HTTP-Methode | Pfad 
@@ -35,10 +38,17 @@ Sie können den folgenden REST-API-Aufruf durchführen, um die LDAP-Authentifizi
 
 | PUT | /Accounts/{Account_id}/Core/v1/settings/{setting_id} 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+[source, curl]
+----
+curl --request PUT \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings/<SETTING_ID>" \
+--include \
+--header "Content-Type: application/astra-setting+json"
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -57,10 +67,6 @@ Sie können den folgenden REST-API-Aufruf durchführen, um die LDAP-Authentifizi
     }
 }
 ----
-[source, curl]
-----
-curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
 Wenn der Anruf erfolgreich ist, wird der angezeigt `HTTP 204` Die Antwort wird zurückgegeben. Sie können optional die Konfigurationseinstellungen erneut abrufen, um die Änderung zu bestätigen.
 
 
@@ -74,6 +80,9 @@ Der Wert von `isEnabled` Muss auch auf festgelegt sein `false`. Sie können dies
 
 CAUTION: Dies ist ein disruptiver Betrieb, und Sie sollten mit Vorsicht vorgehen. Alle importierten LDAP-Benutzer und -Gruppen werden gelöscht. Außerdem werden alle zugehörigen Astra-Benutzer, Gruppen und RoleBindings (LDAP-Typ) gelöscht, die Sie im Astra Control Center erstellt haben.
 
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
+
 [cols="1,6"]
 |===
 | HTTP-Methode | Pfad 
@@ -81,10 +90,17 @@ CAUTION: Dies ist ein disruptiver Betrieb, und Sie sollten mit Vorsicht vorgehen
 
 | PUT | /Accounts/{Account_id}/Core/v1/settings/{setting_id} 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+[source, curl]
+----
+curl --request PUT \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings/<SETTING_ID>" \
+--include \
+--header "Content-Type: application/astra-setting+json"
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -106,10 +122,5 @@ CAUTION: Dies ist ein disruptiver Betrieb, und Sie sollten mit Vorsicht vorgehen
 Beachten Sie Folgendes:
 
 * Um den LDAP-Server zu ändern, müssen Sie die LDAP-Änderung deaktivieren und zurücksetzen `connectHost` Bis zu einem Null-Wert, wie im Beispiel oben gezeigt.
+* Wenn der Anruf erfolgreich ist, wird der angezeigt `HTTP 204` Die Antwort wird zurückgegeben. Sie können optional die Konfiguration erneut abrufen, um die Änderung zu bestätigen.
 
-
-[source, curl]
-----
-curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-Wenn der Anruf erfolgreich ist, wird der angezeigt `HTTP 204` Die Antwort wird zurückgegeben. Sie können optional die Konfiguration erneut abrufen, um die Änderung zu bestätigen.

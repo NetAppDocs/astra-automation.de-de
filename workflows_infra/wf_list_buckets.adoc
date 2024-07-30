@@ -16,11 +16,10 @@ summary: Sie können die S3-Buckets für ein bestimmtes Astra-Konto auflisten.
 [role="lead"]
 Sie können die S3-Buckets für ein bestimmtes Astra-Konto auflisten.
 
-
-
-=== 1. Listen Sie die Eimer auf
-
 Führen Sie den folgenden REST-API-Aufruf durch, um die Buckets aufzulisten.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -29,11 +28,12 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Buckets aufzulisten.
 
 | GET | /Accounts/{Account_id}/Topology/v1/Buckets 
 |===
-
-
-===== Curl-Beispiel: Gibt alle Daten für alle Buckets zurück
-
+.Curl-Beispiel: Gibt alle Daten für alle Buckets zurück
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/buckets' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/buckets" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

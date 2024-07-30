@@ -18,15 +18,18 @@ Sie können einen Snapshot für eine bestimmte Anwendung erstellen.
 
 
 
-=== Bevor Sie beginnen
+== Bevor Sie beginnen
 
 Sie müssen über die ID der App verfügen, für die Sie einen Snapshot erstellen möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
 
 
 
-=== 1. Erstellen Sie einen Snapshot
+== Erstellen Sie einen Snapshot
 
 Führen Sie den folgenden REST-API-Aufruf aus.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ Führen Sie den folgenden REST-API-Aufruf aus.
 
 | POST | /Accounts/{Account_id}/k8s/v1/Apps/{App_id}/appSnaps 
 |===
-
-
-===== Zusätzliche Eingabeparameter
-
+.Zusätzliche Eingabeparameter
 Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, werden die folgenden Parameter auch in den Curl-Beispielen für diesen Schritt verwendet.
 
 [cols="25,10,10,55"]
@@ -51,10 +51,18 @@ Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, wer
 
 | JSON | Text | Ja. | Stellt die Parameter für den Snapshot bereit. Siehe das folgende Beispiel. 
 |===
-
-
-===== JSON-Eingabebeispiel
-
+.Curl Beispiel: Erstellen Sie einen Snapshot für die App
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps" \
+--include \
+--header "Content-Type: application/astra-appSnap+jso" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSON-Eingabebeispiel
 [source, json]
 ----
 {
@@ -62,12 +70,4 @@ Zusätzlich zu den Parametern, die bei allen REST-API-Aufrufen üblich sind, wer
   "version": "1.1",
   "name": "snapshot-david-1"
 }
-----
-
-
-===== Curl Beispiel: Erstellen Sie einen Snapshot für die App
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Content-Type: application/astra-appSnap+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

@@ -18,21 +18,24 @@ Sie können die verfügbaren Speicherklassen auflisten.
 
 
 
-=== 1. Wählen Sie die Cloud
+== Schritt 1: Wählen Sie die Cloud
 
 Führen Sie den Workflow aus link:../workflows_infra/wf_list_clouds.html["Clouds auflisten"] Und wählen Sie die Cloud aus, in der Sie arbeiten werden.
 
 
 
-=== 2. Wählen Sie den Cluster
+== Schritt 2: Wählen Sie den Cluster aus
 
 Führen Sie den Workflow aus link:../workflows_infra/wf_list_clusters.html["Listen Sie die Cluster auf"] Und wählen Sie den Cluster aus.
 
 
 
-=== 3. Liste der Speicherklassen für einen bestimmten Cluster
+== Schritt 3: Listen Sie die Storage-Klassen für einen bestimmten Cluster auf
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die Storage-Klassen für einen bestimmten Cluster und die Cloud aufzulisten.
+
+.HTTP-Methode und -Endpunkt
+Dieser REST-API-Aufruf verwendet die folgende Methode und den folgenden Endpunkt.
 
 [cols="1,6"]
 |===
@@ -41,19 +44,17 @@ Führen Sie den folgenden REST-API-Aufruf durch, um die Storage-Klassen für ein
 
 | GET | /Accounts/{Account_id}/Topology/v1/Clouds/<CLOUD_ID>/Cluster/<CLUSTER_ID>/storageClasses 
 |===
-
-
-===== Curl Beispiel: Gibt alle Daten für alle Speicherklassen zurück
-
+.Curl Beispiel: Gibt alle Daten für alle Speicherklassen zurück
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageClasses' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageClasses" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Beispiel für eine JSON-Ausgabe
-
-[source, json]
+.Beispiel für eine JSON-Ausgabe
+[listing]
 ----
 {
     "items": [
