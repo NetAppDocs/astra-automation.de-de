@@ -1,0 +1,622 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-managedclusters-namespaces.html 
+summary: Listen Sie die Namespaces für einen verwalteten Cluster auf 
+---
+= Listen Sie die Namespaces für einen verwalteten Cluster auf
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/namespaces`#
+
+Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| managedCluster_id | Zeichenkette | Pfad | Wahr  a| 
+ID der enthaltenden managedCluster-Ressource
+
+
+
+| Einschließlich | Zeichenkette | Abfrage | Falsch  a| 
+Gibt an, welche Felder beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "include=id", "include=id,name"
+
+OpenAPI-Beispiele: "id"
+
+* Beispiel: id,name,kubernetesLabels
+
+
+
+
+| Grenze | Zeichenkette | Abfrage | Falsch  a| 
+Gibt die maximale Anzahl der Ressourcen an, die beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "limit=2"
+
+OpenAPI-Beispiele: "2"
+
+
+
+| Filtern | Zeichenkette | Abfrage | Falsch  a| 
+Gibt an, welche Felder übereinstimmen müssen, um beim Auflisten einer Sammlung eine Ressource zurückzugeben.
+
+Unterstützte Operatoren sind:
+
+* eq – Gleichheit
+* lt/gt – Kleiner als/Größer als
+* lte/gte – Kleiner oder gleich/Größer oder gleich
+
+
+URL-Beispiel: "filter=field%20eq%20%27value%27"
+
+OpenAPI-Beispiele: "field eq 'value'"
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Elemente | array[Beliebig aus: link:#namespace_1_2_get_response_body["namespace_1.2_get_response_body"], array[]] | Wahr  a| 
+
+
+
+| Metadaten | link:#type_astra_metadata_list["type_astra_metadata_list"] | Wahr  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-namespaces",
+  "version": "1.2",
+  "items": [
+    [
+      "7d451d2f-196e-4234-aee9-7e2376047e63",
+      "kube-system",
+      [
+        {
+          "name": "app.kubernetes.io/environment",
+          "value": "dev"
+        }
+      ]
+    ],
+    [
+      "66b0873b-214f-4ac7-89d8-922432f941eb",
+      "jenkins",
+      [
+        {
+          "name": "app.kubernetes.io/environment",
+          "value": "dev"
+        }
+      ]
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+targetSchema
+
+[role="api-collapsible-fifth-title"]
+accept-post
+
+[role="api-collapsible-fifth-title"]
+accept-put
+
+[role="api-collapsible-fifth-title"]
+Hinweise
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Status | Zeichenkette | Falsch  a| 
+
+
+
+| erlauben | Array[string] | Falsch  a| 
+
+
+
+| accept-post | link:#accept-post["accept-post"] | Falsch  a| 
+
+
+
+| Berechtigungen | Array[string] | Falsch  a| 
+
+
+
+| accept-put | link:#accept-put["accept-put"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_link
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| rel | Zeichenkette | Wahr  a| 
+
+
+
+| href | Zeichenkette | Wahr  a| 
+
+
+
+| Typ | Zeichenkette | Falsch  a| 
+
+
+
+| targetSchema | link:#targetSchema["targetSchema"] | Falsch  a| 
+
+
+
+| Titel | Zeichenkette | Falsch  a| 
+
+
+
+| Hinweise | link:#hints["Hinweise"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Wahr  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Erstellt von | Zeichenkette | Wahr  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+namespace_1.2_get_response_body
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-namespace"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Links | Array[link:#type_astra_link["type_astra_link"]] | Wahr  a| 
+Links mit Beschreibungen der unterstützten Operationen für die Ressource.
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Namen des Namespace angibt. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 255
+
+
+
+
+| namespaceState | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Status des Namespace angibt. Definierte Werte sind:
+
+* „entdeckt“ – Der Namespace wurde im Cluster gefunden
+* „removed“ – Der Namespace wurde aus dem Cluster gelöscht, oder der Cluster wird nicht verwaltet, aber es könnten Ressourcen vorhanden sein, die auf den Namespace verweisen.
+
+
+
+
+| namespaceStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Wahr  a| 
+JSON-Array mit JSON-Objekten, das zusätzliche Details darüber auflistet, warum „state“ in „state a“, „state b“ oder „state c“ übergegangen ist. Sind keine Details verfügbar, ist dieses Array leer. Folgende Werte sind definiert:
+
+* Mindestanzahl: 0
+
+
+
+
+| kubernetesLabels | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, die jeweils ein dem Namespace zugeordnetes Kubernetes-Label enthalten. Definierte Werte sind:
+
+* Entspricht dem Kubernetes Label Array Schema
+
+
+
+
+| kubernetesUID | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die die von Kubernetes generierte UID der Namespace-Ressource enthält
+
+
+
+| Cluster-ID | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einer global eindeutigen Kennung des Clusters, in dem der Namespace enthalten ist. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| systemType | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die angibt, dass es sich bei dem Namespace um einen System-Namespace handelt. Dieses Feld identifiziert, um welchen Typ von System-Namespace es sich handelt (falls vorhanden) (nur Version 1.1). Definierte Werte sind:
+
+* "kubernetes" - Ein generischer Kubernetes (K8s)-System-Namespace, zum Beispiel "kube-system"
+* "netapp" - Ein NetApp-System-Namespace, zum Beispiel "trident" oder "netapp-monitoring"
+* "openshift" - Ein OpenShift-System-Namespace, zum Beispiel "openshift-monitoring"
+* "rke" - Ein Rancher-Namensraum, zum Beispiel "cattle-logging"
+* "other" – Allgemeine System-Namespaces, die nicht unbedingt woanders hinpassen, zum Beispiel "ingress-nginx", "tekton-system"
+
+
+
+
+| Metadaten | link:#type_astra_metadata["type_astra_metadata"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| fortfahren | Zeichenkette | Falsch  a| 
+
+
+
+| Zählen | Nummer | Falsch  a| 
+
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

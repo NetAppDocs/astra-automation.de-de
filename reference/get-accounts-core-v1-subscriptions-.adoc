@@ -1,0 +1,492 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-subscriptions-.html 
+summary: Abonnement abrufen 
+---
+= Abonnement abrufen
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+Gibt die gespeicherte Subscription-API-Ressource im JSON-Antworttext zurück.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Abonnement-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der aufzulistenden Abonnementsammlung
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns the stored Subscription API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-subscription"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Kundenprofil-ID | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der Kundenprofil-ID von http://authorize.net["Authorize.net"], die von der Benutzeroberfläche aufgerufen wurde, ist für die Testphase nicht festgelegt. Gibt beim Lesevorgang eine leere Zeichenkette zurück, falls nicht festgelegt. Definierte Werte sind:
+
+* Mindestlänge: 0
+* Maximale Länge: 63
+
+
+
+
+| paymentProfileID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der Zahlungsprofil-ID von http://Authorize.net["Authorize.net"] die von der Benutzeroberfläche aufgerufen wurde, nicht für die Testphase festgelegt. Gibt während des Lesevorgangs eine leere Zeichenkette zurück, falls nicht festgelegt. Definierte Werte sind:
+
+* Mindestlänge: 0
+* Maximale Länge: 63
+
+
+
+
+| paymentExpiry | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Zeitstempel, der das Ablaufdatum der Zahlungsmethode angibt. Diese Angabe stammt von authorize.net(http://authorize.net[] und wird über die Benutzeroberfläche festgelegt. Folgende Werte sind definiert:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema Dieses Feld wird bei Testzeiträumen nicht zurückgegeben.
+
+
+
+
+| purchaseOrderNumber | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der Bestellnummer für die Zahlungsmethode. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 31
+
+
+
+
+| Marktplatz | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die den Marktplatz für ein Konto angibt, auf dem Zahlungen erfasst werden. Definierte Werte:
+
+* "netapp"
+* "azure"
+* "aws"
+* "gcp"
+
+
+
+
+| licenseSN | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der Lizenzseriennummer für die Zahlungsmethode. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 31
+
+
+
+
+| Bedingungen | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die die aktuelle Stufe des Kontos angibt. Definierte Werte sind:
+
+* "Testversion"
+* "bezahlt"
+
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den aktuellen Status des Abonnements angibt. Folgende Werte sind definiert:
+
+* "aktiv"
+* "inaktiv"
+
+
+
+
+| appLimit | Nummer | Wahr  a| 
+JSON-Zahl, die das Anwendungslimit für dieses Abonnement angibt. Der Wert -1 gibt an, dass kein Limit besteht.
+
+
+
+| namespaceLimit | Nummer | Wahr  a| 
+JSON-Zahl, die das Namespace-Limit für dieses Abonnement angibt. Der Wert -1 bedeutet, dass kein Limit gilt.
+
+
+
+| subscriptionPeriod | Nummer | Wahr  a| 
+JSON-Zahl, die den Abonnementzeitraum angibt. Der Wert -1 bedeutet keine Begrenzung. Einheit: Tage
+
+
+
+| gracePeriod | Nummer | Wahr  a| 
+JSON-Zahl, die die Kulanzfrist nach Ablauf des Probeabonnements oder nach Kündigung eines kostenpflichtigen Abonnements angibt. Einheit: Tage
+
+
+
+| reminderBeforePeriod | Nummer | Wahr  a| 
+Eine JSON-Zahl, die angibt, wie viele Tage vor Ablauf des Testabonnements die Kundenbenachrichtigungen beginnen. Der Wert wird in Tagen angegeben, wobei -1 bedeutet, dass dies nicht zutrifft.
+
+
+
+| onboardStatus | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den aktuellen Status des Kunden-Onboardings angibt. Gültige Werte sind „nicht gestartet“, „in Bearbeitung“, „erfolgreich“, „fehlgeschlagen“. Definierte Werte sind:
+
+* "nicht gestartet"
+* "im Gange"
+* "Erfolg"
+* "fehlgeschlagen"
+
+
+
+
+| costPerAppUnit | Nummer | Wahr  a| 
+JSON-Zahl, die die Kosten pro App-Einheit angibt. Bei einer Testversion ist der Wert 0. Einheit: US-Dollar
+
+
+
+| costPerNamespaceUnit | Nummer | Wahr  a| 
+JSON-Zahl, die die Kosten pro Namespace-Einheit angibt. In der Testversion ist der Wert 0. Einheit: US-Dollar
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-subscription",
+  "version": "1.2",
+  "id": "40b4106f-b743-5d83-95c7-d539b2b45f63",
+  "customerProfileID": "2157047189",
+  "paymentProfileID": "E7CEB0A9F1BECA32A02493E1B31D5955",
+  "paymentExpiry": "2022-02-01T00:00:00Z",
+  "purchaseOrderNumber": "72384632",
+  "marketplace": "netapp",
+  "licenseSN": "278343",
+  "terms": "trial",
+  "status": "active",
+  "onboardStatus": "success",
+  "costPerAppUnit": 0,
+  "costPerNamespaceUnit": 0.005,
+  "appLimit": 0,
+  "namespaceLimit": 10,
+  "subscriptionPeriod": 90,
+  "gracePeriod": 7,
+  "reminderBeforePeriod": 30,
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

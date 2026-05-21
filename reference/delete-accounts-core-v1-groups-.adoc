@@ -1,0 +1,210 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/delete-accounts-core-v1-groups-.html 
+summary: Gruppe löschen 
+---
+= Gruppe löschen
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}`#
+
+Entfernt die angegebene Group-API-Ressource.
+
+*Nebenwirkungen*
+
+* Die folgenden Ressourcen, die der Gruppe zugeordnet sind, werden gelöscht:
+* Rollenbindungen, die sich auf die Gruppe beziehen
+
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Gruppen-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der aufzulistenden Gruppensammlung
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 204, Indicates if the group resource was deleted.
+----
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/12",
+  "title": "Invalid headers",
+  "detail": "The request headers are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 500, Internal server error
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/34",
+  "title": "Internal server error",
+  "detail": "The server was unable to process this request.",
+  "status": "500"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

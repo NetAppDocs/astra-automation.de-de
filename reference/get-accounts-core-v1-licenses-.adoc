@@ -1,0 +1,537 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-licenses-.html 
+summary: Lizenz abrufen 
+---
+= Lizenz abrufen
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses/{license_id}`#
+
+Gibt die gespeicherte License-API-Ressource im JSON-Antworttext zurück.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Lizenz-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der aufzulistenden Lizenzsammlung
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns the stored License API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-license"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Zuweisung | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit einer ID, die angibt, wem die Lizenz zugeordnet ist. Nur vorhanden, wenn die Lizenz zugeordnet ist. Bei Astra Control Center-Lizenzen muss dieses Feld die Konto-ID enthalten und mit der in der POST-URI angegebenen Konto-ID übereinstimmen. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Host-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer Host-Kennung, an die eine Lizenz gebunden ist. Nur vorhanden, wenn die Lizenz host-locked ist. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| Geräte-Anmeldeinformationen-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit der Kennung der deviceCredential, die mit der Credential API verknüpft ist. Nur für Astra Data Store-Lizenzen vorhanden. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| isEvaluation | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die angibt, ob es sich um eine Evaluierungslizenz handelt. Folgende Werte sind definiert:
+
+* "true"
+* "false"
+
+
+
+
+| licenseProtocol | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem aus der Lizenz extrahierten Lizenzprotokoll. Definierte Werte sind:
+
+* Zeichenketteninhalte wurden vom Schema nicht validiert
+
+
+
+
+| licenseText | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einer Base64-kodierten Darstellung der Lizenz-JSON-Datei, wie sie vom NetApp Lizenzsystem abgerufen wurde. Diese muss in der ursprünglichen Byte-Reihenfolge angegeben werden, um die Signaturprüfung zu ermöglichen. Folgende Werte sind definiert:
+
+* Entspricht dem Base64-kodierten Datenschema
+
+
+
+
+| validFromTimestamp | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Zeitstempel, der angibt, wann die Lizenz gültig wird. Definierte Werte sind:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| validUntilTimestamp | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Zeitstempel, der angibt, wann die Lizenz nicht mehr gültig ist. Definierte Werte sind:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| Produkt | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der aus der Lizenz extrahierten Produktzeichenkette. Definierte Werte sind:
+
+* Zeichenketteninhalte wurden vom Schema nicht validiert
+
+
+
+
+| productVersion | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der aus der Lizenz extrahierten Versionszeichenkette. Definierte Werte sind:
+
+* Zeichenketteninhalte wurden vom Schema nicht validiert
+
+
+
+
+| Produkt-SN | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der aus der Lizenz extrahierten Seriennummer. Definierte Werte sind:
+
+* Zeichenketteninhalte wurden vom Schema nicht validiert
+
+
+
+
+| Merkmale | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem aus der Lizenz extrahierten Paketwert. Definierte Werte sind:
+
+* Zeichenketteninhalte wurden vom Schema nicht validiert
+
+
+
+
+| Kapazität | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der aus der Lizenz extrahierten Kapazität.
+
+
+
+| capacity2 | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die die aus der Lizenz extrahierte Sekundärkapazität enthält.
+
+
+
+| Add-ons | Array[link:#addons["Add-ons"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, das die Liste der Add-ons aus der Lizenz enthält. Ein Add-on ist eine Lizenzänderung, die zu einem möglichen zukünftigen Zeitpunkt in Kraft tritt.
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-license",
+  "version": "1.0",
+  "id": "6db53b32-8417-5d3c-8ef0-552fc602c78f",
+  "allocation": "4185d09b-6687-4801-a832-c005a9d94f41",
+  "hostID": "99132549-e0c2-4203-9d1e-598628b4ff9b",
+  "isEvaluation": "false",
+  "licenseProtocol": "ASTRASDS-ENT-SUBS",
+  "licenseText": "ewogICAic3RhdHVzUmVzcCI6ewogMTYwNzAwIgp9",
+  "validFromTimestamp": "2020-08-06T00:00:00.000000Z",
+  "validUntilTimestamp": "2021-08-06T00:00:00.000000Z",
+  "product": "Astra Control Center",
+  "productVersion": "1.0",
+  "productSN": "320000046",
+  "features": "ASTRA-ENT-STD",
+  "capacity": "4000",
+  "capacity2": "0",
+  "addons": [
+    {
+      "startDate": "2020-08-06T00:00:00.000000Z",
+      "endDate": "2021-08-06T00:00:00.000000Z",
+      "capacity": "4000",
+      "licenseProtocol": "ASTRA-ENT-STD",
+      "features": "p-nfs,dm-storage-policy-based-pvs-for-k8s,dm-spbm-based-vvols-for-vms,dm-storage-efficiency,dm-data-at-rest-encryption"
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+Add-ons
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| startDate | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Zeitstempel, der angibt, wann dieses Add-on gültig wird. Definierte Werte sind:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| endDate | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Zeitstempel, der angibt, wann dieses Add-on nicht mehr gültig ist. Definierte Werte sind:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| Merkmale | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der Liste der Funktionen, die diesem Add-on zugeordnet sind. Folgende Werte sind definiert:
+
+* Der Zeichenketteninhalt wurde vom Schema nicht validiert.
+
+
+
+
+| Kapazität | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der aus dem Add-on extrahierten Kapazität. Definierte Werte sind:
+
+* Zeichenketteninhalte wurden vom Schema nicht validiert
+
+
+
+
+| licenseProtocol | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit dem Lizenzprotokoll dieses Add-ons. Folgende Werte sind definiert:
+
+* Zeichenketteninhalte wurden vom Schema nicht validiert
+
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

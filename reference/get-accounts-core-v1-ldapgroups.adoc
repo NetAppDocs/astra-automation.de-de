@@ -1,0 +1,519 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-ldapgroups.html 
+summary: Alle LDAP-Gruppen auflisten 
+---
+= Alle LDAP-Gruppen auflisten
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/ldapGroups`#
+
+Gibt ein JSON-Array von JSON-Objekten zurück, das die Ergebnisse der Anfrage-URL enthält.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Einschließlich | Zeichenkette | Abfrage | Falsch  a| 
+Gibt an, welche Felder beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "include=id", "include=id,name"
+
+OpenAPI-Beispiele: "id"
+
+* Beispiel: id,cn,dn
+
+
+
+
+| Grenze | Zeichenkette | Abfrage | Falsch  a| 
+Gibt die maximale Anzahl der Ressourcen an, die beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "limit=2"
+
+OpenAPI-Beispiele: "2"
+
+
+
+| Filtern | Zeichenkette | Abfrage | Falsch  a| 
+Gibt an, welche Felder übereinstimmen müssen, um beim Auflisten einer Sammlung eine Ressource zurückzugeben.
+
+Unterstützte Operatoren sind:
+
+* eq – Gleichheit
+* lt/gt – Kleiner als/Größer als
+* lte/gte – Kleiner oder gleich/Größer oder gleich
+
+
+URL-Beispiel: "filter=field%20eq%20%27value%27"
+
+OpenAPI-Beispiele: "field eq 'value'"
+
+
+
+| fortfahren |  | Abfrage | Falsch  a| 
+Gibt das Token an, von dem aus die Auflistung fortgesetzt werden soll.
+
+URL-Beispiele: "continue=+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++
+
+OpenAPI-Beispiele: "+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++</continue>
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns a JSON array of JSON objects containing the results of the request URL.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Elemente | array[Beliebig aus: link:#ldapGroup_1_0_get_response_body["ldapGroup_1.0_get_response_body"], array[]] | Wahr  a| 
+
+
+
+| Metadaten | link:#type_astra_metadata_list["type_astra_metadata_list"] | Wahr  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-ldapGroups",
+  "version": "1.0",
+  "items": [
+    [
+      "4a461f57-70e6-5732-882e-8d5f684f15a1",
+      "boulder_sysadmins",
+      "cn=boulder_sysadmins,ou=groups,dc=example,dc=com"
+    ],
+    [
+      "da4bbb6f-8f2c-57eb-a9cf-6eeffbf9e35d",
+      "rtp_sysadmins",
+      "cn=rtp_sysadmins,ou=groups,dc=example,dc=com"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/14",
+  "title": "Unauthorized access",
+  "detail": "The user isn't enabled.",
+  "status": "403"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 406, Not acceptable
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/32",
+  "title": "Unsupported content type",
+  "detail": "The response can't be returned in the requested format.",
+  "status": "406"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 500, Internal server error
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/34",
+  "title": "Internal server error",
+  "detail": "The server was unable to process this request.",
+  "status": "500"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Wahr  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Erstellt von | Zeichenkette | Wahr  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+ldapGroup_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-ldapGroup"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| cn | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die den LDAP-Gruppennamen darstellt. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| individueller Name | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die den individuellen Namen der LDAP-Gruppe darstellt. Definierte Werte sind:
+
+* Entspricht RFC 4514
+
+
+
+
+| Metadaten | link:#type_astra_metadata["type_astra_metadata"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| fortfahren | Zeichenkette | Falsch  a| 
+
+
+
+| Zählen | Nummer | Falsch  a| 
+
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

@@ -1,0 +1,568 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: true 
+permalink: reference/get-accounts-topology-v1-appbackups-appassets.html 
+summary: Listen Sie die Anwendungsressourcen für eine Anwendungssicherung auf 
+---
+= Listen Sie die Anwendungsressourcen für eine Anwendungssicherung auf
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}/appAssets`#
+
+Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| appBackup_id | Zeichenkette | Pfad | Wahr  a| 
+ID der enthaltenden appBackup-Ressource
+
+
+
+| Einschließlich | Zeichenkette | Abfrage | Falsch  a| 
+Gibt an, welche Felder beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "include=id", "include=id,name"
+
+OpenAPI-Beispiele: "id"
+
+* Beispiel: assetType,assetName
+
+
+
+
+| Grenze | Zeichenkette | Abfrage | Falsch  a| 
+Gibt die maximale Anzahl der Ressourcen an, die beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "limit=2"
+
+OpenAPI-Beispiele: "2"
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Elemente | array[Beliebig aus: link:#appAsset_1_1_get_response_body["appAsset_1.1_get_response_body"], array[]] | Wahr  a| 
+
+
+
+| Metadaten | link:#type_astra_metadata_list["type_astra_metadata_list"] | Wahr  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appAssets",
+  "version": "1.1",
+  "items": [
+    [
+      "Pod",
+      "mediawiki-69c6fcf864-2wx6l"
+    ],
+    [
+      "ReplicaSet",
+      "mediawiki-69c6fcf864"
+    ],
+    [
+      "Service",
+      "mediawiki"
+    ],
+    [
+      "Deployment",
+      "mediawiki"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+GVK
+
+JSON-Objekt, das eine Kubernetes-Gruppe/Version/Kind enthält.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Gruppe | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer von Kubernetes zugewiesenen Gruppenkennung. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| Art | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer von Kubernetes zugewiesenen Kindkennung. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| Version | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer von Kubernetes zugewiesenen Versionskennung. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_json
+
+JSON-Objekt, das den gesamten Inhalt der Kubernetes-Ressourcendefinition enthält.
+
+[role="api-collapsible-fifth-title"]
+Etiketten
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Labelnamen Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Der definierte reguläre Ausdruck lautet: "^([\S.]{1,253}\/)?([a-z0-9A-Z_.-]){1,63}$"
+
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den Label-Wert enthält. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Der definierte reguläre Ausdruck lautet: "^([a-z0-9A-Z_.-]){1,63}$"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Wahr  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Erstellt von | Zeichenkette | Wahr  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+appAsset_1.1_get_response_body
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-appAsset"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| assetType | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der angibt, welcher Asset-Typ von Kubernetes beschrieben wird. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| CreationZeitstempel | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Zeitstempel, der angibt, wann die Kubernetes-Metadaten erstellt wurden. Definierte Werte sind:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| GVK | link:#GVK["GVK"] | Wahr  a| 
+JSON-Objekt, das eine Kubernetes-Gruppe/Version/Kind enthält.
+
+
+
+| Ressource | link:#type_json["type_json"] | Falsch  a| 
+JSON-Objekt, das den gesamten Inhalt der Kubernetes-Ressourcendefinition enthält.
+
+
+
+| Asset-ID | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einer von Kubernetes zugewiesenen Kennung. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Etiketten | Array[link:#labels["Etiketten"]] | Wahr  a| 
+JSON-Array von JSON-Objekten, die jeweils ein dem Asset zugeordnetes Kubernetes-Label enthalten. Wenn keine Details verfügbar sind, ist dieses Array leer.
+
+* Mindestanzahl: 0
+
+
+
+
+| assetName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem von Kubernetes zugewiesenen Namen. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| Namensraum | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem von Kubernetes zugewiesenen Namespace. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| Metadaten | link:#type_astra_metadata["type_astra_metadata"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| fortfahren | Zeichenkette | Falsch  a| 
+
+
+
+| Zählen | Nummer | Falsch  a| 
+
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

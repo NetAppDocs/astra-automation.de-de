@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/setting_endpoints.html 
+summary: 'Astra API (ACC) Einstellungsendpunkte' 
+---
+= Astra API (ACC) Einstellungsendpunkte
+:allow-uri-read: 
+
+
+Eine Kontoeinstellung ist eine Sammlung von Schlüssel/Wert-Paaren, die für eine bekannte Funktion in einem Astra-Konto wichtig sind. Die Setting API bietet Zugriff auf wichtige Informationen zu einer Kontoeinstellung.

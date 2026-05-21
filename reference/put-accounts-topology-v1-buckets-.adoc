@@ -1,0 +1,601 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-topology-v1-buckets-.html 
+summary: Einen Bucket ändern 
+---
+= Einen Bucket ändern
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
+
+Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| bucket_id | Zeichenkette | Pfad | Wahr  a| 
+ID der Bucket-Sammlung, die aufgelistet werden soll
+
+|===
+
+
+== Anfragetext
+
+Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-bucket"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| id | Zeichenkette | Falsch  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Name | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem benutzerdefinierten Namen für den Bucket. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 256
+
+
+
+
+| Anmeldeinformations-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit der Kennung der Anmeldeinformationen für den Zugriff auf den Bucket. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Zustand | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der den Betriebszustand des Buckets angibt. Folgende Werte sind definiert:
+
+* „pending“ – Der Bucket ist zur Erkennung vorgesehen
+* "verfügbar" – Der Bucket steht zur Benutzung bereit
+* „failed“ – Der Bucket befindet sich in einem permanenten Fehlerzustand
+* „removed“ – Der Bucket ist derzeit nicht zugänglich
+* "unbekannt" – Der Bucket-Status kann nicht ermittelt werden
+
+
+
+
+| stateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falsch  a| 
+Ein JSON-Array mit JSON-Objekten, das zusätzliche Details darüber auflistet, warum der "state" zu "removed" oder "failed" gewechselt hat. Sind keine Details verfügbar, ist dieses Array leer.
+
+* Mindestanzahl: 0
+
+
+
+
+| Anbieter | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die das Bucket-Protokoll angibt, über das auf den Bucket zugegriffen werden kann. Folgende Werte sind definiert:
+
+* "ontap-s3"
+* "storagegrid-s3"
+* "generic-s3"
+* "gcp"
+* "azure"
+* "aws"
+
+
+
+
+| bucketParameters | link:#bucketParameters["bucketParameters"] | Falsch  a| 
+Ein JSON-Objekt, das die für den Zugriff auf den Bucket erforderlichen bucket-anbieterspezifischen Informationen enthält. Die spezifischen Werte in diesem Bucket variieren je nach Anbieter.
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Falsch  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielanfrage
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-bucket",
+  "version": "1.2",
+  "name": "New Bucket Name"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 204, Indicates if the bucket resource was updated.
+----
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+s3
+
+JSON-Objekt, das die Protokollparameter für Simple Storage Service (S3) bereitstellt. (Verwenden Sie dieses Objekt für alle S3-Typ-Anbieter).
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| serverURL | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit einer URL zum Basispfad des Buckets. Folgende Werte sind definiert:
+
+* Mindestlänge: 0
+* Maximale Länge: 1023
+
+
+
+
+| bucketName | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit dem Namen des S3-Buckets. Folgende Werte sind definiert:
+
+* Mindestlänge: 0
+* Maximale Länge: 63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+gcp
+
+JSON-Objekt, das Google Cloud-Protokollparameter bereitstellt.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| bucketName | Zeichenkette | Falsch  a| 
+JSON-String mit dem Namen des zugrunde liegenden Google Cloud-Bucket-Namens. Folgende Werte sind definiert:
+
+* Mindestlänge: 0
+* Maximale Länge: 63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+azure
+
+JSON-Objekt, das Azure-Protokollparameter bereitstellt.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| storageAccount | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit dem Namen des Azure-Speicherkontos. Folgende Werte sind definiert:
+
+* Mindestlänge: 0
+* Maximale Länge: 63
+
+
+
+
+| bucketName | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit dem Namen des zugrunde liegenden Azure-Blobs. Folgende Werte sind definiert:
+
+* Mindestlänge: 0
+* Maximale Länge: 63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+bucketParameters
+
+Ein JSON-Objekt, das die für den Zugriff auf den Bucket erforderlichen bucket-anbieterspezifischen Informationen enthält. Die spezifischen Werte in diesem Bucket variieren je nach Anbieter.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| s3 | link:#s3["s3"] | Falsch  a| 
+JSON-Objekt, das die Protokollparameter für Simple Storage Service (S3) bereitstellt. (Verwenden Sie dieses Objekt für alle S3-Typ-Anbieter).
+
+
+
+| gcp | link:#gcp["gcp"] | Falsch  a| 
+JSON-Objekt, das Google Cloud-Protokollparameter bereitstellt.
+
+
+
+| azure | link:#azure["azure"] | Falsch  a| 
+JSON-Objekt, das Azure-Protokollparameter bereitstellt.
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Anfragetextfelds
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum das Anfragekörperfeld ungültig ist
+
+|===
+====

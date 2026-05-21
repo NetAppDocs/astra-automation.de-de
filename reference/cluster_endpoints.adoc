@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cluster_endpoints.html 
+summary: 'Astra API (ACC) Cluster-Endpunkte' 
+---
+= Astra API (ACC) Cluster-Endpunkte
+:allow-uri-read: 
+
+
+Die Cluster-API repräsentiert nicht verwaltete Kubernetes-Cluster.

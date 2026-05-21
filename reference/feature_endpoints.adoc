@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/feature_endpoints.html 
+summary: 'Astra API (ACC) Funktionsendpunkte' 
+---
+= Astra API (ACC) Funktionsendpunkte
+:allow-uri-read: 
+
+
+Die Feature-API bietet Lesezugriff auf Feature-Flag-Ressourcen, um festzustellen, welche Features im System aktiviert oder deaktiviert sind.

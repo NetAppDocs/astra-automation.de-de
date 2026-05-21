@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/subscription_endpoints.html 
+summary: 'Astra API (ACC) Abonnement-Endpunkte' 
+---
+= Astra API (ACC) Abonnement-Endpunkte
+:allow-uri-read: 
+
+
+Die Subscription API ermöglicht den Zugriff auf Abonnementressourcen, um aktive Abonnements darzustellen.

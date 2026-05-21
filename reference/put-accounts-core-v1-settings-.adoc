@@ -1,0 +1,559 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-settings-.html 
+summary: Eine Einstellung ändern 
+---
+= Eine Einstellung ändern
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Einstellungs-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der aufzulistenden Einstellungssammlung
+
+|===
+
+
+== Anfragetext
+
+Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-setting"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | Zeichenkette | Falsch  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Name | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Namen für die Einstellung in hierarchischer Punktnotation (.). Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Diese Zeichenkette wird intern validiert, um XSS-, Unicode-, Directory-Traversal- und SQL-Injection-Angriffe zu verhindern. Dieser Wert wird durch die zur Laufzeit geladene configmap festgelegt und kann vom Benutzer nicht geändert werden.
+
+
+
+
+| currentConfig | link:#type_json["type_json"] | Falsch  a| 
+Ein JSON-Objekt mit Schlüsseln und Werten, die die aktuelle Konfiguration für diese Einstellung bilden. Der Inhalt dieses Objekts muss dem im configSchema-Feld enthaltenen JSON-Schema entsprechen. Standardwerte werden von der configmap bereitgestellt. Nachdem die Standardwerte vom Benutzer geändert wurden, werden sie nicht überschrieben.
+
+
+
+| desiredConfig | link:#type_json["type_json"] | Falsch  a| 
+Ein JSON-Objekt mit Schlüsseln und Werten, die die angeforderte Konfiguration für diese Einstellung bilden. Der Inhalt dieses Objekts muss dem im configSchema-Feld enthaltenen JSON-Schema entsprechen. Das Objekt existiert erst, wenn es angegeben wurde. Wenn angegeben, veranlasst dies den Feature-Service, den entsprechenden Service zu benachrichtigen, damit die gewünschte Konfiguration angefordert werden kann. Der entsprechende Service kann dann die Validierung durchführen und die gewünschte Konfiguration auf die aktuelle Konfiguration anwenden.
+
+
+
+| configSchema | link:#type_json_schema["type_json_schema"] | Falsch  a| 
+JSON-Objekt, das das JSON-Schema für die config-Eigenschaft in dieser Ressource enthält. Muss JSON Schema Draft 7 entsprechen. Wenn config-Werte in der Ressource vorhanden sind, ist die Validierung gegen das angegebene configSchema obligatorisch. Als allgemeine Konvention wird empfohlen, dass Konfigurationen ein "isEnabled"-Feld haben, wenn angemessen. Das "isEnabled"-Feld enthält einen Wert, der angibt, ob die Einstellung eingeschaltet ("true") oder ausgeschaltet ("false") ist.
+
+
+
+| Zustand | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der den Betriebszustand der Anwendung angibt. Folgende Werte sind definiert:
+
+* "gültig" - Die aktuelle Konfiguration entspricht der gewünschten Konfiguration.
+* "Ausstehend" - Die gewünschte Konfiguration wird angewendet.
+* "Fehler" - Die gewünschte Konfiguration kann nicht angewendet werden.
+
+
+
+
+| stateUnready | Array[string] | Falsch  a| 
+JSON-Array von JSON-Zeichenketten, die jeweils einen Grund dafür angeben, warum die Einstellung nicht erfolgreich angewendet wurde. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 127
+
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Falsch  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Falls beim Aktualisieren nichts anderes angegeben wird, werden die Bezeichnungen, creationTimestamp und createdBy des Metadatenobjekts unverändert beibehalten.
+
+
+|===
+.Beispielanfrage
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.1",
+  "desiredConfig": {
+    "credential": "e3d2ea77-398e-49be-85fd-ec66d9426a06",
+    "port": 587,
+    "relayServer": "link:http://smtp.sendgrid.net[smtp.sendgrid.net]",
+    "isEnabled": "true"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 204, Indicates if the setting resource was updated.
+----
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_json
+
+Ein JSON-Objekt mit Schlüsseln und Werten, die die aktuelle Konfiguration für diese Einstellung bilden. Der Inhalt dieses Objekts muss dem im configSchema-Feld enthaltenen JSON-Schema entsprechen. Standardwerte werden von der configmap bereitgestellt. Nachdem die Standardwerte vom Benutzer geändert wurden, werden sie nicht überschrieben.
+
+[role="api-collapsible-fifth-title"]
+type_json
+
+Ein JSON-Objekt mit Schlüsseln und Werten, die die angeforderte Konfiguration für diese Einstellung bilden. Der Inhalt dieses Objekts muss dem im configSchema-Feld enthaltenen JSON-Schema entsprechen. Das Objekt existiert erst, wenn es angegeben wurde. Wenn angegeben, veranlasst dies den Feature-Service, den entsprechenden Service zu benachrichtigen, damit die gewünschte Konfiguration angefordert werden kann. Der entsprechende Service kann dann die Validierung durchführen und die gewünschte Konfiguration auf die aktuelle Konfiguration anwenden.
+
+[role="api-collapsible-fifth-title"]
+Eigenschaften
+
+[role="api-collapsible-fifth-title"]
+type_json_schema
+
+JSON-Objekt, das das JSON-Schema für die config-Eigenschaft in dieser Ressource enthält. Muss JSON Schema Draft 7 entsprechen. Wenn config-Werte in der Ressource vorhanden sind, ist die Validierung gegen das angegebene configSchema obligatorisch. Als allgemeine Konvention wird empfohlen, dass Konfigurationen ein "isEnabled"-Feld haben, wenn angemessen. Das "isEnabled"-Feld enthält einen Wert, der angibt, ob die Einstellung eingeschaltet ("true") oder ausgeschaltet ("false") ist.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| $schema | Zeichenkette | Wahr  a| 
+
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Eigenschaften | link:#properties["Eigenschaften"] | Wahr  a| 
+
+
+
+| additionalProperties | boolescher Wert | Wahr  a| 
+
+
+
+| erforderlich | Array[string] | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Falls beim Aktualisieren nichts anderes angegeben wird, werden die Bezeichnungen, creationTimestamp und createdBy des Metadatenobjekts unverändert beibehalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Anfragetextfelds
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum das Anfragekörperfeld ungültig ist
+
+|===
+====

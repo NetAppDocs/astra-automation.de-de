@@ -1,0 +1,767 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts-core-v1-executionhooks.html 
+summary: Einen neuen Ausführungs-Hook erstellen 
+---
+= Einen neuen Ausführungs-Hook erstellen
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks`#
+
+Gibt die gewünschten Werte für die zu erstellende Execution Hook API-Ressource an.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+|===
+
+
+== Anfragetext
+
+Gibt die gewünschten Werte für die zu erstellende Execution Hook API-Ressource an.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-executionHook"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem benutzerdefinierten Namen für die Ressource. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63 Name muss über alle Ausführungs-Hook-Ressourcen hinweg eindeutig sein.
+
+
+
+
+| hookType | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den Hook-Typ definiert. Definierte Werte sind:
+
+* "netapp" - NetApp bereitgestellter Ausführungs-Hook.
+* „custom“ – An eine bestimmte App-ID gebunden. Ausführungshook-Ressourcen mit hookType „netapp“ sind schreibgeschützt.
+
+
+
+
+| matchingCriteria | Array[link:#matchingCriteria["matchingCriteria"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, die die Übereinstimmungskriterien für den Ausführungs-Hook beschreiben. Wenn mehrere matchingCriteria angegeben werden, wird eine logische UND-Verknüpfung auf die Kriterien angewendet. Definierte Werte sind:
+
+* Mindestanzahl: 0
+* Maximale Elemente: 10
+
+
+
+
+| Aktion | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die angibt, welche Aktion der Ausführungs-Hook ausführt, sofern die Übereinstimmungskriterien erfüllt sind. Definierte Werte sind:
+
+* "Schnappschuss"
+* "Backup"
+* "wiederherstellen"
+* "Failover"
+
+
+
+
+| Bühne | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die die Phase der Aktion angibt, in der der Hook ausgeführt wird. Definierte Werte sind:
+
+* "pre" - Der Ausführungs-Hook wird vor der angegebenen Aktion ausgeführt.
+* „post“ – Der Ausführungs-Hook wird nach der angegebenen Aktion ausgeführt. Die Werte für die Aktion „snapshot“ sind „pre“ und „post“. Die Werte für die Aktion „backup“ sind „pre“ und „post“. Der Wert für die Aktion „restore“ ist „post“. Der Wert für die Aktion „failover“ ist „post“.
+
+
+
+
+| hookSourceID | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der Hook-Quell-ID, die über diesen Ausführungs-Hook ausgeführt wird. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Argumente | Array[string] | Falsch  a| 
+JSON-Array von JSON-Zeichenketten für die Argumente der Quelle. Definierte Werte sind:
+
+* Mindestanzahl: 0
+* Maximale Elemente: 16
+* Mindestlänge: 0
+* Maximale Länge: 127
+
+
+
+
+| App-ID | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der zugehörigen ID der Anwendung, mit der dieser Hook verknüpft ist. Im Wesentlichen weitere festgelegte Übereinstimmungskriterien, falls festgelegt. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| aktiviert | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die angibt, ob der Ausführungs-Hook aktiviert ist. Folgende Werte sind definiert:
+
+* "true" - Der Ausführungshook ist aktiviert und wird wie angegeben ausgeführt.
+* "false" - Der Ausführungshook ist deaktiviert und wird niemals ausgeführt. Der Standardwert ist "true".
+
+
+
+
+| description | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer benutzerdefinierten Beschreibung der Hook-Quelle. Definierte Werte sind:
+
+* Mindestlänge: 0
+* Maximale Länge: 511
+
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Falsch  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielanfrage
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-executionHook",
+  "version": "1.3",
+  "name": "Payroll",
+  "hookType": "custom",
+  "action": "snapshot",
+  "stage": "pre",
+  "hookSourceID": "50e89023-ba84-435d-bb47-1833f4c250ff",
+  "arguments": [
+    "freeze"
+  ],
+  "appID": "7be5ae7c-151d-4230-ac39-ac1d0b33c2a9",
+  "enabled": "true",
+  "description": "Payroll production hook"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 201, Returns the newly created executionHook resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-executionHook"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem benutzerdefinierten Namen für die Ressource. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63 Name muss über alle Ausführungs-Hook-Ressourcen hinweg eindeutig sein.
+
+
+
+
+| hookType | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den Hook-Typ definiert. Definierte Werte sind:
+
+* "netapp" - NetApp bereitgestellter Ausführungs-Hook.
+* „custom“ – An eine bestimmte App-ID gebunden. Ausführungshook-Ressourcen mit hookType „netapp“ sind schreibgeschützt.
+
+
+
+
+| matchingCriteria | Array[link:#matchingCriteria["matchingCriteria"]] | Wahr  a| 
+JSON-Array von JSON-Objekten, die die Übereinstimmungskriterien für den Ausführungs-Hook beschreiben. Wenn mehrere matchingCriteria angegeben werden, wird eine logische UND-Verknüpfung auf die Kriterien angewendet. Definierte Werte sind:
+
+* Mindestanzahl: 0
+* Maximale Elemente: 10
+
+
+
+
+| matchingContainers | Array[link:#matchingContainers["matchingContainers"]] | Falsch  a| 
+JSON-Array von JSON-Objekten jedes Containers, der den konfigurierten Abgleichskriterien innerhalb der definierten App entspricht.
+
+
+
+| matchingImages | Array[string] | Falsch  a| 
+JSON-Array mit JSON-Strings für die passenden Container-Images. Definierte Werte sind:
+
+* Mindestanzahl: 0
+* Maximale Anzahl: 4095
+* Mindestlänge: 1
+* Maximale Länge: 255
+
+
+
+
+| Aktion | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die angibt, welche Aktion der Ausführungs-Hook ausführt, sofern die Übereinstimmungskriterien erfüllt sind. Definierte Werte sind:
+
+* "Schnappschuss"
+* "Backup"
+* "wiederherstellen"
+* "Failover"
+
+
+
+
+| Bühne | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die die Phase der Aktion angibt, in der der Hook ausgeführt wird. Definierte Werte sind:
+
+* "pre" - Der Ausführungs-Hook wird vor der angegebenen Aktion ausgeführt.
+* „post“ – Der Ausführungs-Hook wird nach der angegebenen Aktion ausgeführt. Die Werte für die Aktion „snapshot“ sind „pre“ und „post“. Die Werte für die Aktion „backup“ sind „pre“ und „post“. Der Wert für die Aktion „restore“ ist „post“. Der Wert für die Aktion „failover“ ist „post“.
+
+
+
+
+| hookSourceID | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der Hook-Quell-ID, die über diesen Ausführungs-Hook ausgeführt wird. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Argumente | Array[string] | Falsch  a| 
+JSON-Array von JSON-Zeichenketten für die Argumente der Quelle. Definierte Werte sind:
+
+* Mindestanzahl: 0
+* Maximale Elemente: 16
+* Mindestlänge: 0
+* Maximale Länge: 127
+
+
+
+
+| App-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der zugehörigen ID der Anwendung, mit der dieser Hook verknüpft ist. Im Wesentlichen weitere festgelegte Übereinstimmungskriterien, falls festgelegt. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| aktiviert | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die angibt, ob der Ausführungs-Hook aktiviert ist. Folgende Werte sind definiert:
+
+* "true" - Der Ausführungshook ist aktiviert und wird wie angegeben ausgeführt.
+* "false" - Der Ausführungshook ist deaktiviert und wird niemals ausgeführt. Der Standardwert ist "true".
+
+
+
+
+| description | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer benutzerdefinierten Beschreibung der Hook-Quelle. Definierte Werte sind:
+
+* Mindestlänge: 0
+* Maximale Länge: 511
+
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-executionHook",
+  "version": "1.3",
+  "id": "5f7e2e31-280d-5984-a28b-2d19ab5b77c0",
+  "name": "Payroll",
+  "hookType": "custom",
+  "matchingCriteria": [],
+  "action": "snapshot",
+  "stage": "pre",
+  "hookSourceID": "50e89023-ba84-435d-bb47-1833f4c250ff",
+  "arguments": [
+    "freeze"
+  ],
+  "appID": "7be5ae7c-151d-4230-ac39-ac1d0b33c2a9",
+  "enabled": "true",
+  "description": "Payroll production hook",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+matchingCriteria
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die den Typ der Übereinstimmungskriterien identifiziert.
+
+
+
+| Wert | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem regulären Ausdruck für den angegebenen Übereinstimmungstyp. Regex-Syntax: https://github.com/google/re2/wiki/Syntax[]
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+matchingCriteria
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den Typ der Übereinstimmungskriterien identifiziert.
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem regulären Ausdruck für den angegebenen Übereinstimmungstyp. Regex-Syntax: https://github.com/google/re2/wiki/Syntax[]
+
+|===
+[role="api-collapsible-fifth-title"]
+type_k8s_label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+matchingContainers
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| podName | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette des übereinstimmenden Container-Pod-Namens.
+
+
+
+| podLabels | Array[link:#type_k8s_label["type_k8s_label"]] | Falsch  a| 
+JSON-Array von Label-Objekten der Labels des passenden Containers-Pods.
+
+
+
+| containerImage | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette des passenden Container-Images.
+
+
+
+| containerName | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit dem Namen des übereinstimmenden Containers.
+
+
+
+| namespaceName | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette des Namespace-Namens des übereinstimmenden Containers-Pods.
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Anfragetextfelds
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum das Anfragekörperfeld ungültig ist
+
+|===
+====

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/storage_class_endpoints.html 
+summary: 'Astra API (ACC) Speicherklassen-Endpunkte' 
+---
+= Astra API (ACC) Speicherklassen-Endpunkte
+:allow-uri-read: 
+
+
+Die Storage Class API beschreibt Speicherklassen, die einem bestimmten Cluster bekannt sind.

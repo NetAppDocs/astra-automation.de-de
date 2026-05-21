@@ -1,0 +1,825 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-packages-.html 
+summary: Paket abrufen 
+---
+= Paket abrufen
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages/{package_id}`#
+
+Gibt die gespeicherte Package-API-Ressource im JSON-Antworttext zurück.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Paket-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der aufzulistenden Paketsammlung
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns the stored Package API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-package"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| packageName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Paketnamen. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 31 Beispielwerte sind:
+* "acc"
+* "acs"
+* "Trident"
+
+
+
+
+| packageVersion | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der SemVer des Pakets. Definierte Werte sind:
+
+* Entspricht dem SemVer Schema
+
+
+
+
+| packageType | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Pakettyp, die angibt, ob es sich um ein vollständiges Installationspaket oder einen Patch handelt. Folgende Werte sind definiert:
+
+* "installieren"
+* "Patch"
+
+
+
+
+| bundleName | Array[string] | Falsch  a| 
+JSON-Array von JSON-Zeichenketten, die den Namen des Bundles enthalten, in dem das Paket enthalten ist.
+
+
+
+| severityLevel | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den Schweregrad dieser Patch- oder Installationsversion beschreibt. Definierte Werte sind:
+
+* "empfohlen" - Installation wird empfohlen - Standardwert
+* "kritisch" – Die Installation wird dringend empfohlen, um kritische Fehlerbehebungen und/oder Sicherheitspatches zu adressieren.
+
+
+
+
+| packageState | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Betriebsstatus des Pakets angibt. Nach der Überprüfung des Pakets und nach dem Import lautet der Status „complete“. Andernfalls lautet der Status „incomplete“. Folgende Werte sind definiert:
+
+* „Überprüfung“ – Das Paket wird validiert
+* „corrupt“ – Das Paket ist beschädigt
+* "unvollständig" - Dem Paket fehlen Elemente
+* „available“ – Alle zum Paket gehörenden Elemente sind verfügbar und das Paket ist einsatzbereit
+
+
+
+
+| packageStateTransitions | Array[link:#type_astra_stateTransition["type_astra_stateTransition"]] | Wahr  a| 
+JSON-Array von JSON-Objekten, die jeweils die Menge der zulässigen Zustandsübergänge von einem definierten Zustand aus darstellen. Jedes JSON-Objekt enthält die Felder "from" und "to", wobei der Wert von "from" der Name eines Zustands ist und der Wert von "to" ein Array zulässiger Zielzustände ist. Definierte Werte sind:
+
+* Entspricht dem Zustandsübergangsschema
+
+
+
+
+| packageStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Wahr  a| 
+Ein JSON-Array mit JSON-Objekten, das zusätzliche Details zum aktuellen „Zustand“ auflistet. Sind keine Details verfügbar, ist dieses Array leer.
+
+* Mindestanzahl: 0
+
+
+
+
+| Bilder | Array[link:#images["Bilder"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, die jeweils ein Docker-Image enthalten, das Teil des Pakets ist.
+
+
+
+| Artefakte | Array[link:#artifacts["Artefakte"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, die die zusätzlichen Artefakte (Binärdateien und andere) beschreiben, die mit diesem Paket verknüpft sind.
+
+
+
+| Dateien | Array[link:#files["Dateien"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, die jeweils ein Nicht-Bild-Artefakt darstellen, das mit diesem Paket verknüpft ist.
+
+
+
+| upgradableVersions | link:#upgradableVersions["upgradableVersions"] | Falsch  a| 
+JSON-Objekt, das die minimale und maximale Version enthält, die auf die Paketversion aktualisiert werden können.
+
+
+
+| Abhängigkeiten | Array[link:#dependencies["Abhängigkeiten"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, die beschreiben, welche Mindestversion einer bestimmten Abhängigkeit für die Installation dieses Pakets erforderlich ist
+
+
+
+| Metadaten | link:#type_astra_metadata["type_astra_metadata"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Falls beim Erstellen keine Bezeichnung angegeben wird, wird ein Metadatenobjekt ohne Bezeichnungen erstellt.
+
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-package",
+  "version": "1.0",
+  "id": "54edc2b3-18c5-5371-904b-ebcd04d88bdc",
+  "packageName": "acc",
+  "packageVersion": "22.09.1",
+  "packageType": "patch",
+  "packageState": "available",
+  "packageStateTransitions": [
+    {
+      "from": "verifying",
+      "to": [
+        "corrupt",
+        "incomplete",
+        "available"
+      ]
+    },
+    {
+      "from": "corrupt",
+      "to": [
+        "incomplete",
+        "available"
+      ]
+    },
+    {
+      "from": "incomplete",
+      "to": [
+        "corrupt",
+        "available"
+      ]
+    },
+    {
+      "from": "available",
+      "to": [
+        "corrupt",
+        "available"
+      ]
+    }
+  ],
+  "packageStateDetails": [],
+  "severityLevel": "recommended",
+  "images": [
+    {
+      "imagePath": "/globalcicd/acc",
+      "imageName": "storage-provider",
+      "imageTag": "1.3.116",
+      "imageDigest": "sha256:2e04d178815537b0ad8c3224e8754e33642da781a161f1be239853dae33deafc"
+    },
+    {
+      "imagePath": "/globalcicd/acc",
+      "imageName": "storage-backend-metrics",
+      "imageTag": "1.3.45",
+      "imageDigest": "sha256:2e04d178815537b0ad8c3224e8754e33642da781a161f1be239853dae33deafc"
+    },
+    {
+      "imagePath": "/globalcicd/acc",
+      "imageName": "credentials",
+      "imageTag": "1.3.45",
+      "imageDigest": "sha256:2e04d178815537b0ad8c3224e8754e33642da781a161f1be239853dae33deafc"
+    }
+  ],
+  "files": [
+    {
+      "fileName": "astra_control_center_min.yaml",
+      "fileIdentifier": "astra_min",
+      "fileMediaType": "application/x-yaml",
+      "fileContents": "VGhpcyBpcyBzdXBwb3NlZCB0byBiZSBhIGNvbXByZXNzZWQgZmlsZSBjb250ZW50"
+    }
+  ],
+  "dependencies": [
+    {
+      "componentName": "acc",
+      "componentMinVersion": "22.04.29"
+    },
+    {
+      "componentName": "kubernetes",
+      "componentMinVersion": "v1.19.7",
+      "componentMaxVersion": "v1.20"
+    },
+    {
+      "componentName": "trident",
+      "componentMinVersion": "v21.01.1"
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| aus | Zeichenkette | Wahr  a| 
+
+
+
+| : | Array[string] | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+dependsOnImages
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| imagePath | Zeichenkette | Wahr  a| 
+JSON-String mit dem Pfad zu diesem Docker-Image. Er darf nicht den Namen der Registry enthalten, sondern nur den absoluten Pfad vom Stammverzeichnis zum Image. Beispiel: /globalcicd/acc Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 1023
+
+
+
+
+| imageName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Namen des Docker-Images. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| imageTag | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die das Tag/die Version dieses Bildes darstellt. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 31
+
+
+|===
+[role="api-collapsible-fifth-title"]
+Bilder
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| imageName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Namen des Docker-Images. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| imagePath | Zeichenkette | Wahr  a| 
+JSON-String mit dem Pfad zu diesem Docker-Image. Er darf nicht den Namen der Registry enthalten, sondern nur den absoluten Pfad vom Stammverzeichnis zum Image. Beispiel: /globalcicd/acc Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 1023
+
+
+
+
+| imageTag | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die das Tag/die Version dieses Bildes darstellt. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 31
+
+
+
+
+| imageDigest | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den Digest dieses Bildes darstellt. Definierte Werte sind:
+
+* Der definierte reguläre Ausdruck lautet: "^(sha256:)[0-9a-f]{64}$"
+
+
+
+
+| dependsOnImages | Array[link:#dependsOnImages["dependsOnImages"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, die die zum Installieren oder Aktualisieren des aktuellen Images erforderlichen Images beschreiben.
+
+|===
+[role="api-collapsible-fifth-title"]
+dependsOnComponents
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| componentName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den Namen der Komponente beschreibt. Definierte Werte sind:
+
+* "acc"
+* "acs"
+* "Trident"
+* "kubernetes"
+
+
+
+
+| Versionen | Array[string] | Wahr  a| 
+JSON-Array von JSON-Zeichenketten, die die für die Installation des aktuellen Images erforderliche Komponentenversion definieren.
+
+|===
+[role="api-collapsible-fifth-title"]
+Artefakte
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| artifactName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Dateinamen. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| artifactIdentifier | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einer Kennung für diese Datei. Zwischen verschiedenen Versionen desselben Pakettyps kann sich der Dateiname ändern, die Kennung bleibt jedoch in der Regel gleich. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 511
+
+
+
+
+| artifactPath | Zeichenkette | Wahr  a| 
+JSON-Zeichenfolge mit dem Pfad zu diesem Artefakt vom Stammverzeichnis eines bekannten Astra Control Center Data Store/Standorts. Beispiel: /vmware/1.0/ Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 1023
+
+
+
+
+| artifactVersion | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der Versionsnummer des Artefakts, sofern angegeben. Folgende Werte sind definiert:
+
+* Entspricht dem SemVer Schema
+* Mindestlänge: 1
+* Maximale Länge: 31
+
+
+
+
+| dependsOnComponents | Array[link:#dependsOnComponents["dependsOnComponents"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, die die installierten Komponenten beschreiben, die zum Installieren/Aktualisieren des aktuellen Images erforderlich sind.
+
+|===
+[role="api-collapsible-fifth-title"]
+Dateien
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| fileName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Dateinamen. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| fileIdentifier | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der Kennung dieser Datei. Zwischen verschiedenen Versionen desselben Pakettyps kann sich der Dateiname ändern, die Kennung bleibt jedoch in der Regel gleich. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 511
+
+
+
+
+| fileMediaType | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Dateimedientyp. Definierte Werte sind alle Medientypen, die durch  https://www.iana.org/assignments/media-types/media-types.xhtml["IANA"] definiert sind. Zusätzlich werden application/x-yaml oder application/x-yaml für YAML-Dateien unterstützt.
+
+* Mindestlänge: 1
+* Maximale Länge: 211
+
+
+
+
+| fileContents | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Dateiinhalt. Definierte Werte sind:
+
+* Entspricht dem Base64-Schema FIXME – Wie geben wir an, dass es komprimiert ist? Welcher Algorithmus usw.?
+
+
+|===
+[role="api-collapsible-fifth-title"]
+upgradableVersions
+
+JSON-Objekt, das die minimale und maximale Version enthält, die auf die Paketversion aktualisiert werden können.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| minVersion | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die die Mindestversion beschreibt, die auf die Paketversion aktualisiert werden kann. Definierte Werte sind:
+
+* Entspricht dem SemVer Schema
+
+
+
+
+| maxVersion | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die die maximale Version beschreibt, die auf die Paketversion aktualisiert werden kann. Definierte Werte sind:
+
+* Entspricht dem SemVer Schema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+Abhängigkeiten
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| componentName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den Namen der Komponente beschreibt. Definierte Werte sind:
+
+* "acc"
+* "acs"
+* "Trident"
+* "kubernetes"
+
+
+
+
+| componentMinVersion | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die die erforderliche Mindestversion der jeweiligen Komponente beschreibt. Folgende Werte sind definiert:
+
+* Entspricht dem SemVer Schema
+
+
+
+
+| componentMaxVersion | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die die maximal erforderliche Version dieser Komponente beschreibt. Definierte Werte sind:
+
+* Entspricht dem SemVer Schema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Falls beim Erstellen keine Bezeichnung angegeben wird, wird ein Metadatenobjekt ohne Bezeichnungen erstellt.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Wahr  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Erstellt von | Zeichenkette | Wahr  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

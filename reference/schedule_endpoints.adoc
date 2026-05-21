@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/schedule_endpoints.html 
+summary: 'Astra API (ACC) Zeitplan-Endpunkte' 
+---
+= Astra API (ACC) Zeitplan-Endpunkte
+:allow-uri-read: 
+
+
+Die Schedule API ermöglicht die Definition verschiedener geplanter Datenschutzoperationen.

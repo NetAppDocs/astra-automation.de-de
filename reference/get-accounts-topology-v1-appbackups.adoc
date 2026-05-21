@@ -1,0 +1,611 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-appbackups.html 
+summary: Alle Anwendungssicherungen auflisten 
+---
+= Alle Anwendungssicherungen auflisten
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups`#
+
+Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Einschließlich | Zeichenkette | Abfrage | Falsch  a| 
+Gibt an, welche Felder beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "include=id", "include=id,name"
+
+OpenAPI-Beispiele: "id"
+
+* Beispiel: id,name,state
+
+
+
+
+| Grenze | Zeichenkette | Abfrage | Falsch  a| 
+Gibt die maximale Anzahl der Ressourcen an, die beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "limit=2"
+
+OpenAPI-Beispiele: "2"
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Elemente | array[Beliebig aus: link:#appBackup_1_2_get_response_body["appBackup_1.2_get_response_body"], array[]] | Wahr  a| 
+
+
+
+| Metadaten | link:#type_astra_metadata_list["type_astra_metadata_list"] | Wahr  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appBackups",
+  "version": "1.2",
+  "items": [
+    [
+      "5cb608f9-571b-492e-a520-5bfb900a9b9c",
+      "app-name-245",
+      "pending"
+    ],
+    [
+      "f8faa690-7e09-48a4-b33c-7965712acd0c",
+      "app-name-244",
+      "completed"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 500, Internal server error
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/96",
+  "title": "Backups not listed",
+  "detail": "The backups didn't list because of an internal server issue.",
+  "status": "500"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Falls beim Erstellen keine Bezeichnung angegeben wird, wird ein Metadatenobjekt ohne Bezeichnungen erstellt.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Wahr  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Erstellt von | Zeichenkette | Wahr  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+appBackup_1.2_get_response_body
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-appBackup"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+* "1,2"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem vom Benutzer festgelegten Namen für die Sicherung. Wenn kein Name angegeben wird oder Sicherungen durch einen Zeitplan initiiert werden, vergibt das System einen Namen für die Sicherung. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Entspricht dem DNS 1123 Label Schema
+
+
+
+
+| bucketID | Zeichenkette | Wahr  a| 
+JSON-Zeichenfolge mit einer optionalen Bucket-ID, die angibt, wo das Backup beim Erstellen gespeichert wird. Wird keine Bucket-ID angegeben, wird ein vom System ausgewählter Bucket verwendet. Sind keine Buckets verfügbar, wird beim Erstellen ein Fehler zurückgegeben. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Snapshot-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit dem Snapshot, der zur Erstellung des Backups verwendet wurde. Um das Backup zu erstellen, kann beim Erstellen eine Snapshot-ID angegeben werden, die der zu sichernden Anwendung zugeordnet ist. Wenn keine angegeben wird, wird ein neuer Snapshot für das Backup erstellt. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Zeitplan-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer optionalen Zeitplan-ID, die angibt, dass die Sicherung durch einen Zeitplan ausgelöst wurde und welcher Zeitplan die Sicherung ausgelöst hat. Nur für durch einen Zeitplan initiierte Sicherungen vorhanden. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Zustand | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Betriebsstatus der Sicherung angibt. Folgende Werte sind definiert:
+
+* „pending“ – Die Sicherung der Anwendung ist zur Erkennung geplant
+* „Erkennung“ – Die Anwendungssicherung wird gerade erkannt.
+* "wird ausgeführt" – Die Anwendungssicherung läuft normal
+* „completed“ – Die Sicherung der Anwendung wurde erfolgreich abgeschlossen
+* „failed“ – Die Anwendungssicherung befindet sich in einem permanenten Fehlerzustand
+* „removed“ – Die Anwendungssicherung ist derzeit nicht zugänglich
+* "unbekannt" – Der Sicherungsstatus der Anwendung kann nicht ermittelt werden
+* "Löschen" – Die Sicherung der Anwendung ist zur Löschung geplant
+
+
+
+
+| stateUnready | Array[string] | Wahr  a| 
+JSON-Array von JSON-Zeichenketten, die jeweils einen Grund dafür angeben, warum eine Anwendungssicherung nicht in den Status „Wird ausgeführt“ übergehen kann oder warum sie in den Status „Fehlgeschlagen“ oder „Entfernt“ übergegangen ist. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 127
+
+
+
+
+| stateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falsch  a| 
+Ein JSON-Array mit JSON-Objekten, das zusätzliche Details zum aktuellen Zustand auflistet, einschließlich der Gründe, warum der aktuelle Zustand erreicht wurde. Sind keine Details verfügbar, ist dieses Array leer. Definierte Werte sind:
+
+* Mindestanzahl: 0
+
+
+
+
+| hookState | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der den Status aller im Rahmen eines Snapshots ausgeführten Ausführungs-Hooks angibt. Definierte Werte sind:
+
+* "fehlgeschlagen" – Mindestens ein Ausführungs-Hook ist fehlgeschlagen
+* „success“ – Es gab null oder mehrere passende Hooks, und alle waren erfolgreich
+
+
+
+
+| hookStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, das zusätzliche Details darüber auflistet, warum „hookState“ in „failed“ übergegangen ist. Falls keine Details verfügbar sind, ist dieses Array leer.
+
+* Mindestanzahl: 0
+
+
+
+
+| backupCreationTimestamp | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Zeitstempel, der angibt, wann die Sicherung erstellt wurde. Definierte Werte sind:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| totalBytes | Nummer | Falsch  a| 
+JSON-Zahl, die die Gesamtanzahl der Bytes im Backup enthält.
+
+
+
+| bytesDone | Nummer | Falsch  a| 
+Eine JSON-Zahl, die die Anzahl der für eine laufende Sicherung gesicherten Bytes enthält. Nach Abschluss der Sicherung entspricht sie dem totalBytes-Feld.
+
+
+
+| percentDone | Nummer | Falsch  a| 
+Eine JSON-Zahl, die den prozentualen Fortschritt einer laufenden Datensicherung angibt. Nach Abschluss der Datensicherung wird der Wert auf "100" gesetzt.
+
+
+
+| Metadaten | link:#type_astra_metadata["type_astra_metadata"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Falls beim Erstellen keine Bezeichnung angegeben wird, wird ein Metadatenobjekt ohne Bezeichnungen erstellt.
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| fortfahren | Zeichenkette | Falsch  a| 
+
+
+
+| Zählen | Nummer | Falsch  a| 
+
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

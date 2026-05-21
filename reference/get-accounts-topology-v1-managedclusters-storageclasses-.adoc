@@ -1,0 +1,474 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-managedclusters-storageclasses-.html 
+summary: Eine Speicherklasse für einen verwalteten Cluster abrufen 
+---
+= Eine Speicherklasse für einen verwalteten Cluster abrufen
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/storageClasses/{storageClass_id}`#
+
+Gibt die gespeicherte Storage Class API-Ressource im JSON-Antworttext zurück.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| managedCluster_id | Zeichenkette | Pfad | Wahr  a| 
+ID der enthaltenden managedCluster-Ressource
+
+
+
+| Speicherklassen-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der storageClass-Sammlung, die aufgelistet werden soll
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns the stored Storage Class API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-storageClass"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Namen der Speicherklasse angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 255
+
+
+
+
+| Provisioner | Zeichenkette | Wahr  a| 
+JSON-Zeichenfolge mit einem Wert, der den der Speicherklasse zugeordneten Provisioner angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 255
+
+
+
+
+| verfügbar | Zeichenkette | Wahr  a| 
+JSON-Zeichenfolge, die angibt, ob die Speicherklasse für den Cluster verfügbar ist oder ob sie dem Cluster während der Verwaltung hinzugefügt werden kann. Definierte Werte sind:
+
+* "verfügbar" – Die Speicherklasse ist zur Nutzung verfügbar
+* „eligible“ – Die Speicherklasse kann vom Cluster verwendet werden, wenn dieser verwaltet wird.
+* "nicht berechtigt" - Die Speicherklasse ist nicht berechtigt, vom Cluster verwendet zu werden, wenn sie unter Verwaltung steht
+
+
+
+
+| allowVolumeExpansion | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die angibt, ob die Speicherklasse eine Volumenerweiterung zulässt. Folgende Werte sind definiert:
+
+* "wahr" - Die Speicherklasse ermöglicht die Volumenerweiterung
+* "false" - Die Speicherklasse erlaubt keine Volumenerweiterung
+* „Nicht verfügbar“ – Es ist nicht bekannt, ob die Speicherklasse eine Volumenerweiterung zulässt
+
+
+
+
+| reclaimPolicy | Zeichenkette | Wahr  a| 
+JSON-Zeichenfolge mit einem Cloud-spezifischen Wert, der die Aufbewahrungsrichtlinie der Speicherklasse angibt. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 255
+
+
+
+
+| volumeBindingMode | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Cloud-spezifischen Wert, der den Bindungsmodus für die Speicherklasse angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 255
+
+
+
+
+| isDefault | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die angibt, ob die Speicherklasse die Standardannotation enthält. Definierte Werte sind:
+
+* "true" - Die Speicherklasse enthält die Standardannotation
+
+
+
+
+| maxSnapshotCount | Nummer | Falsch  a| 
+JSON-Zahl, die angibt, wie viele Snapshots unterstützt werden. Diese Information ist den von NetApp bereitgestellten Speicherklassen zugeordnet.
+
+
+
+| maxBackupCount | Nummer | Falsch  a| 
+JSON-Zahl, die angibt, wie viele Backups unterstützt werden. Diese Information ist den von NetApp bereitgestellten Speicherklassen zugeordnet.
+
+
+
+| Preis | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die die Währungseinheiten pro Zeiteinheit für die Speicherklasse angibt. Diese Information ist den von NetApp bereitgestellten Speicherklassen zugeordnet. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| Währung | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die den dreistelligen ISO-4217-Code für die Währung angibt, in der der Preis gemessen wird. Diese Information ist den von NetApp bereitgestellten Speicherklassen zugeordnet. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 255
+
+
+
+
+| Leistung | Nummer | Falsch  a| 
+JSON-Zahl, die das Leistungsziel (Service Level Objective, SLO) in MBps angibt. Diese Information ist den von NetApp bereitgestellten Speicherklassen zugeordnet.
+
+
+
+| Widerstandsfähigkeit | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die die Resilienzkonfiguration für den Speicher angibt. Diese Informationen sind den von NetApp bereitgestellten Speicherklassen zugeordnet. Definierte Werte sind:
+
+* „regional“ – Das Volume ist nicht verfügbar, wenn eine bestimmte Region nicht verfügbar ist.
+* „multisite“ – Das Volume bleibt auch dann verfügbar, wenn eine bestimmte Region nicht erreichbar ist.
+
+
+
+
+| Metadaten | link:#type_astra_metadata["type_astra_metadata"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-storageClass",
+  "version": "1.1",
+  "id": "ad9be22b-53c7-540c-8647-76afe2878952",
+  "name": "my-storage-class",
+  "provisioner": "csi.trident.netapp.io",
+  "available": "eligible",
+  "allowVolumeExpansion": "true",
+  "reclaimPolicy": "recycle",
+  "volumeBindingMode": "immediate",
+  "isDefault": "true",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Wahr  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Erstellt von | Zeichenkette | Wahr  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/notification_endpoints.html 
+summary: 'Astra API (ACC) Benachrichtigungsendpunkte' 
+---
+= Astra API (ACC) Benachrichtigungsendpunkte
+:allow-uri-read: 
+
+
+Die Notification API bietet pro Benutzer Zugriff auf Ereignisse mit einem Benachrichtigungsziel.

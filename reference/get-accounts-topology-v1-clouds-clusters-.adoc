@@ -1,0 +1,751 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clouds-clusters-.html 
+summary: Einen Cluster für eine Cloud abrufen 
+---
+= Einen Cluster für eine Cloud abrufen
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}`#
+
+Gibt die gespeicherte Cluster-API-Ressource im JSON-Antworttext zurück.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| cloud_id | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Cloud-Ressource
+
+
+
+| Cluster-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der aufzulistenden Cluster-Sammlung
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns the stored Cluster API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-cluster"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+* "1,4"
+* "1,5"
+* "1,6"
+* "1,7"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Namen für den Cluster. Falls kein Name angegeben wird, wird der Kubernetes-Name des Clusters verwendet. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Diese Zeichenkette wird intern validiert, um XSS-, Unicode-, Directory-Traversal- und SQL-Injection-Angriffe zu verhindern
+
+
+
+
+| Zustand | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Betriebszustand des Clusters angibt. Folgende Werte sind definiert:
+
+* „pending“ – Der Cluster ist zur Erkennung geplant.
+* „discovering“ – Der Cluster befindet sich im Entdeckungsprozess
+* „Bereitstellung“ – Der Cluster wird gerade bereitgestellt
+* "läuft" - Der Cluster läuft normal
+* „Fehlgeschlagen“ – Der Cluster befindet sich in einem permanenten Fehlerzustand
+* „Entfernt“ – Der Cluster ist derzeit nicht erreichbar
+* "unbekannt" – Der Clusterstatus kann nicht ermittelt werden
+
+
+
+
+| stateUnready | Array[string] | Wahr  a| 
+JSON-Array mit JSON-Strings, die jeweils einen Grund dafür angeben, warum der Cluster nicht in den Status „running“ wechseln kann, warum im Status „running“ Probleme auftreten oder warum er in den Status „failed“ oder „removed“ gewechselt ist. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 127
+
+
+
+
+| managedState | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Verwaltungsstatus des Clusters angibt. Folgende Werte sind definiert:
+
+* „pending“ – Der Cluster ist zur Entdeckung oder zum Hinzufügen geplant
+* „ineligible“ – Der Cluster befindet sich im Status „running“, wird nicht verwaltet und ist nicht für die Verwaltung geeignet. Die Gründe für diese Nichtberechtigung sind im Wert des Schlüssels unready angegeben.
+* "Löschen" – Der Cluster wird gerade gelöscht
+* „Nicht verwaltet“ – Der Cluster befindet sich im Status „Läuft“ oder „Fehlgeschlagen“, wird nicht verwaltet und ist für die Verwaltung geeignet.
+* „Verwaltet“ – Der Cluster befindet sich im Status „Wird ausgeführt“ und wird gerade verwaltet
+* „Verwaltet“ – Der Cluster befindet sich im Status „Wird ausgeführt“, „Fehlgeschlagen“ oder „Entfernt“ und steht unter Verwaltung
+
+
+
+
+| managedStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falsch  a| 
+Ein JSON-Array mit JSON-Objekten, das zusätzliche Details zum aktuellen Zustand auflistet, einschließlich der Gründe, warum der aktuelle Zustand erreicht wurde. Sind keine Details verfügbar, ist dieses Array leer. Definierte Werte sind:
+
+* Mindestanzahl: 0
+
+
+
+
+| protectionState | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Schutzstatus des Clusters angibt. Folgende Werte sind definiert:
+
+* „full“ – Die Standard-Speicherklasse des Clusters unterstützt Snapshots
+* "partiell" – Der Cluster verfügt nur über storageClasses, die keine Snapshots unterstützen
+* "atRisk" - Die Standard-Speicherklasse des Clusters unterstützt keine Snapshots
+
+
+
+
+| protectionStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Wahr  a| 
+JSON-Array von JSON-Objekten, das zusätzliche Details zum aktuellen Schutzstatus auflistet, einschließlich der Gründe, warum der aktuelle Status erreicht wurde. Wenn keine Details verfügbar sind, ist dieses Array leer. Definierte Werte sind:
+
+* Mindestanzahl: 0
+
+
+
+
+| restoreTargetSupported | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der angibt, ob der Cluster als Ziel für Anwendungsdatenverwaltungsoperationen geeignet ist. Definierte Werte sind:
+
+* "true" – Cluster ist ein geeignetes Ziel für App-Datenverwaltungsoperationen.
+* "false" - Cluster ist _kein_ geeignetes Ziel für App-Datenverwaltungsoperationen.
+
+
+
+
+| snapshotSupported | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der die Fähigkeit des Clusters zur Durchführung von Backup-ähnlichen Operationen im Bereich der Anwendungsdatenverwaltung angibt. Definierte Werte sind:
+
+* "true" - Cluster ist berechtigt, Anwendungsdatenverwaltungsoperationen durchzuführen.
+* "false" - Cluster ist _nicht_ berechtigt, App-Datenverwaltungsoperationen durchzuführen.
+
+
+
+
+| managedStateUnready | Array[string] | Wahr  a| 
+JSON-Array mit JSON-Zeichenketten, die jeweils einen Grund dafür angeben, warum der Cluster nicht verwaltet werden kann, oder dass der Cluster verwaltet wird, aber nicht schwerwiegende Fehler bei der Verwaltung des Clusters aufgetreten sind. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 127
+
+
+
+
+| managedTimestamp | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit dem Zeitstempel, der angibt, wann der Cluster unter Verwaltung gestellt wurde. Definierte Werte sind:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema. Dieser Schlüssel wird nur zurückgegeben, wenn ein Cluster einen managedState von „managed“ hat.
+
+
+
+
+| tridentVersion | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der auf dem Cluster installierten Trident-Version. Folgende Werte sind definiert:
+
+* Entspricht dem Softwareversionsschema
+
+
+
+
+| acpVersion | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der Version von Astra Control Provisioner, die auf dem Cluster installiert ist. Folgende Werte sind definiert:
+
+* Entspricht dem Softwareversionsschema
+
+
+
+
+| tridentManagedState | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die einen von mehreren aufgezählten Werten enthält und den Verwaltungsstatus von Trident auf diesem Cluster angibt. Folgende Werte sind definiert:
+
+* „Verwaltet“ – Trident Instanz im Cluster wird von Astra verwaltet
+* „Nicht verwaltet“ – Trident Instanz im Cluster wird nicht von Astra verwaltet
+
+
+
+
+| tridentManagedStateDesired | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der den gewünschten Verwaltungsstatus für Trident angibt. Definierte Werte sind:
+
+* "verwaltet" – Trident auf diesem Cluster verwalten
+* „Nicht verwaltet“ – Trident auf diesem Cluster nicht verwalten
+
+
+
+
+| tridentManagedStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falsch  a| 
+JSON-Array mit JSON-Objekten, das zusätzliche Details darüber auflistet, warum der Status zu „verwaltet“ oder „nicht verwaltet“ gewechselt hat. + Wenn keine Details verfügbar sind, ist dieses Array leer.
+
+* Mindestanzahl: 0
+
+
+
+
+| tridentManagedStateAllowed | Array[string] | Falsch  a| 
+Zustände, die in einem gegebenen tridentManagedState angefordert werden können. Die folgenden Zustände können in jedem definierten Zustand angefordert werden:
+
+* "verwaltet": "verwaltet"
+* "unmanaged": "unverwaltet"
+
+
+
+
+| inUse | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der angibt, ob der Cluster verwaltete Anwendungen enthält und daher nicht gelöscht werden kann. Folgende Werte sind definiert:
+
+* „false“ – Der Cluster wird nicht verwaltet oder er wird zwar verwaltet, aber es sind keine verwalteten Anwendungen damit verknüpft
+* „true“ – Der Cluster wird verwaltet und hat verwaltete Anwendungen, die ihm zugeordnet sind
+
+
+
+
+| accHost | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die angibt, dass dieser Cluster die Instanz von Astra Control Center hostet, auf die derzeit zugegriffen wird. Definierte Werte sind:
+
+* "true" - Dieser Cluster hostet die Instanz des Astra Control Center, auf die aktuell zugegriffen wird.
+
+
+
+
+| clusterType | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Clustertyp angibt. Folgende Werte sind definiert:
+
+* "gke" - Kubernetes, gehostet auf der Google Kubernetes Engine
+* "aks" - Kubernetes, gehostet auf Microsoft Azure Kubernetes Service
+* "eks" - Kubernetes, gehostet auf Amazon Elastic Kubernetes Service
+* "rke" – Der Cluster ist vom Typ Rancher
+* "tanzu" - Der Cluster ist vom Typ Tanzu Kubernetes Grid
+* "openshift" - Der Cluster ist vom Typ OpenShift
+* "anthos" - Der Cluster ist vom Typ GKE Anthos
+* "kubernetes" - Der Cluster ist ein generisches Kubernetes
+
+
+
+
+| clusterVersion | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der die semantische Versionsdarstellung der Clusterumgebung angibt. Bei Kubernetes-Clustern ist dies die Kubernetes-Version. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 31
+
+
+
+
+| clusterVersionString | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der die erweiterten Versionsinformationen für die Clusterumgebung angibt. Bei Kubernetes-Clustern ist dies die vollständige Kubernetes-Version. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 31
+
+
+
+
+| clusterCreationTimestamp | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit dem Zeitstempel, der angibt, wann der Cluster ursprünglich erstellt wurde. Folgende Werte sind definiert:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| Namensräume | Array[string] | Falsch  a| 
+JSON-Array von JSON-Zeichenketten, die jeweils einen Namespace innerhalb des Clusters angeben. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 253
+
+
+
+
+| defaultStorageClass | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer Speicherklassen-ID, die der in Kubernetes festgelegten Standard-Speicherklasse entspricht. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| cloudID | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der die ID der Cloud angibt, auf der der Cluster ausgeführt wird. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Anmeldeinformations-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der die ID der Anmeldeinformation angibt, die die kubeconfig-Datei für den Cluster enthält. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema. Wenn privateRouteID und connectorCapabilities mit der Option connectorV2 angegeben sind, ist credentialID optional. Wenn sie nicht angegeben sind, ist credentialID erforderlich, andernfalls wird ein Fehler generiert. Wenn credentialID und ein Relay-fähiger Connector angegeben sind, wird ein Fehler generiert.
+
+
+
+
+| Standort | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der von der Cloud bereitgestellt wird, auf der der Cluster ausgeführt wird und den cloudspezifischen Standort des Clusters angibt. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| isMultizonal | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der von der Cloud bereitgestellt wird, auf der der Cluster ausgeführt wird und angibt, ob sich der Cluster über zwei oder mehr Verfügbarkeitszonen erstreckt. Definierte Werte sind:
+
+* "wahr" - Der Cluster erstreckt sich über zwei oder mehr Verfügbarkeitszonen
+* "falsch" - Der Cluster befindet sich vollständig innerhalb einer einzigen Verfügbarkeitszone
+
+
+
+
+| privateRouteID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der Standort-ID für private Cluster.
+
+* Mindestlänge: 1
+* Maximale Länge: 255
+
+
+
+
+| connectorCapabilities | Array[string] | Falsch  a| 
+Funktionen des mit diesem Cluster verknüpften Konnektors. Optional aus Gründen der Abwärtskompatibilität. Falls nicht vorhanden, wird proxy als Fähigkeit angenommen.
+
+
+
+| apiServiceID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der UUID des Kubernetes (k8s) API-Service-Objekts. Wird zur eindeutigen Identifizierung eines Clusters verwendet.
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-cluster",
+  "version": "1.7",
+  "id": "dd95ce34-55ce-5f74-bb49-2f734fe5da30",
+  "name": "GKE-22",
+  "state": "running",
+  "stateUnready": [],
+  "managedState": "unmanaged",
+  "managedStateUnready": [],
+  "protectionState": "full",
+  "protectionStateDetails": [],
+  "tridentVersion": "23.10.0",
+  "acpVersion": "23.10.0",
+  "tridentManagedState": "managed",
+  "tridentManagedStateDetails": [],
+  "inUse": "false",
+  "clusterType": "kubernetes",
+  "clusterVersion": "1.91.1",
+  "clusterVersionString": "1.19.1",
+  "clusterCreationTimestamp": "2020-08-06T12:24:52.256624Z",
+  "namespaces": [
+    "kube-system",
+    "kube-public",
+    "my-app-1"
+  ],
+  "defaultStorageClass": "31c95aba-99d9-4987-b1bb-000dfce5952c",
+  "cloudID": "548bdc1f-f00e-4a23-a062-83265d224d46",
+  "credentialID": "6fa2f917-f730-41b8-9c15-17f531843b31",
+  "location": "europe-west4",
+  "isMultizonal": "false",
+  "apiServiceID": "6bf33af2-872a-4553-a891-26b510c3edbe",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 500, Internal server error
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/65",
+  "title": "Cluster GET not performed",
+  "detail": "The cluster GET call didn't perform the lookup operation on the cluster.",
+  "status": "500"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

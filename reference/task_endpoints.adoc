@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/task_endpoints.html 
+summary: 'Astra API (ACC) Aufgabenendpunkte' 
+---
+= Astra API (ACC) Aufgabenendpunkte
+:allow-uri-read: 
+
+
+Die Task App API ermöglicht den Zugriff auf verwaltete Aufgabenressourcen, um langlaufende Aufgaben darzustellen.

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/token_endpoints.html 
+summary: 'Astra API (ACC) Token-Endpunkte' 
+---
+= Astra API (ACC) Token-Endpunkte
+:allow-uri-read: 
+
+
+Die Token-API ermöglicht es Benutzern, API-Zugriffstoken zu erstellen und zu verwalten.

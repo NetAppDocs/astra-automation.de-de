@@ -1,0 +1,628 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts.html 
+summary: Neues Konto erstellen 
+---
+= Neues Konto erstellen
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts`#
+
+Gibt die gewünschten Werte für die zu erstellende Account-API-Ressource an.
+
+
+
+== Anfragetext
+
+Gibt die gewünschten Werte für die zu erstellende Account-API-Ressource an.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-account"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Namen für das Konto. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Diese Zeichenkette wird intern validiert, um XSS-, Unicode-, Directory-Traversal- und SQL-Injection-Angriffe zu verhindern.
+
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Falsch  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielanfrage
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-account",
+  "version": "1.0",
+  "name": "Testing 123"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 201, Returns the newly created account resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-account"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Namen für das Konto. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Diese Zeichenkette wird intern validiert, um XSS-, Unicode-, Directory-Traversal- und SQL-Injection-Angriffe zu verhindern.
+
+
+
+
+| Zustand | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Betriebsstatus des Kontos angibt. Folgende Werte sind definiert:
+
+* "ausstehend" - Änderungen können nur an Benutzer- und Rollenressourcen unter dem Konto vorgenommen werden (Standardwert)
+* „aktiv“ – Änderungen können an allen Ressourcen unter dem Konto vorgenommen werden
+* "deletePending" - Benutzer können sich nicht anmelden, Datenschutzmaßnahmen werden ausgesetzt, Gebühren fallen nicht mehr an
+
+
+
+
+| isEnabled | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die angibt, dass das Konto aktiviert ist. Definierte Werte sind:
+
+* "falsch" - Benutzern ist die Nutzung dieses Kontos nicht gestattet
+* "true" - Benutzer dürfen dieses Konto verwenden
+
+
+
+
+| enabledTimestamp | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit dem Zeitstempel, der angibt, wann das Konto zuletzt aktiviert wurde. Wenn das Konto noch nie aktiviert wurde, ist dieses Feld nicht vorhanden. Definierte Werte sind:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| accountContact | link:#accountContact["accountContact"] | Falsch  a| 
+JSON-Objekt mit Benutzerkontaktinformationen zur Erstellung eines Inhaberbenutzers bei der Kontoaktivierung.
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-account",
+  "version": "1.0",
+  "id": "666a3f38-d4fa-5b62-a391-a69029758d32",
+  "name": "fraught-pines",
+  "state": "pending",
+  "isEnabled": "false",
+  "enabledTimestamp": "2020-08-06T12:24:52.256624Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+postalAddress
+
+JSON-Objekt mit einer Sammlung von JSON-Zeichenketten, die eine Adresse angeben. Wenn dieser Schlüssel nicht existiert, bedeutet dies, dass keine Adresse angegeben wurde. Wenn dieser Schlüssel existiert, sind alle sechs enthaltenen JSON-Zeichenketten vorhanden. Wenn Sie nichts angeben, ist die Zeichenkette leer.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| addressCountry | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Ländernamen oder Ländercode, der der Postanschrift gemäß ISO 3166 Alpha-2 zugeordnet ist. Definierte Werte sind:
+
+* Mindestlänge: 2
+* Maximale Länge: 2
+
+
+
+
+| addressLocality | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Ort (z. B. Stadt) zur Postanschrift. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| addressRegion | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der Region (z. B. Bundesland), die der Postanschrift zugeordnet ist. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| postalCode | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der Postleitzahl, die der Postanschrift zugeordnet ist. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 31
+
+
+
+
+| streetAddress1 | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit der Straßenadresse, die der Postanschrift zugeordnet ist. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| streetAddress2 | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit optionalen zusätzlichen Adressinformationen, Postfach und mehr. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+accountContact
+
+JSON-Objekt mit Benutzerkontaktinformationen zur Erstellung eines Inhaberbenutzers bei der Kontoaktivierung.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| firstName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem vom Benutzer angegebenen Vornamen in Langform. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Diese Zeichenkette wird intern validiert, um XSS-, Unicode-, Directory-Traversal- und SQL-Injection-Angriffe zu verhindern.
+
+
+
+
+| lastName | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem vom Benutzer angegebenen, ausgeschriebenen Nachnamen. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Diese Zeichenkette wird intern validiert, um XSS-, Unicode-, Directory-Traversal- und SQL-Injection-Angriffe zu verhindern.
+
+
+
+
+| companyName | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit dem dem Benutzer zugeordneten Firmennamen. Existiert dieser Schlüssel nicht, wurde kein Firmenname angegeben. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Diese Zeichenkette wird intern validiert, um XSS-, Unicode-, Directory-Traversal- und SQL-Injection-Angriffe zu verhindern.
+
+
+
+
+| E-Mail | Zeichenkette | Wahr  a| 
+JSON-Zeichenketten, die eine vom Benutzer angegebene E-Mail-Adresse enthalten. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| Telefon | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit der Telefonnummer des Benutzers. Existiert dieser Schlüssel nicht, bedeutet dies, dass keine Telefonnummer angegeben wurde. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 31
+
+
+
+
+| postalAddress | link:#postalAddress["postalAddress"] | Wahr  a| 
+JSON-Objekt mit einer Sammlung von JSON-Zeichenketten, die eine Adresse angeben. Wenn dieser Schlüssel nicht existiert, bedeutet dies, dass keine Adresse angegeben wurde. Wenn dieser Schlüssel existiert, sind alle sechs enthaltenen JSON-Zeichenketten vorhanden. Wenn Sie nichts angeben, ist die Zeichenkette leer.
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Anfragetextfelds
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum das Anfragekörperfeld ungültig ist
+
+|===
+====

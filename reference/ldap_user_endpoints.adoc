@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/ldap_user_endpoints.html 
+summary: 'Astra API (ACC) LDAP-Benutzerendpunkte' 
+---
+= Astra API (ACC) LDAP-Benutzerendpunkte
+:allow-uri-read: 
+
+
+Die LDAP-Benutzer-API ermöglicht den Lesezugriff auf LDAP-Benutzer innerhalb des konfigurierten LDAP-Servers.

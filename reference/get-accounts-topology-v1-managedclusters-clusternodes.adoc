@@ -1,0 +1,598 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-managedclusters-clusternodes.html 
+summary: Listen Sie die Clusterknoten für einen verwalteten Cluster auf 
+---
+= Listen Sie die Clusterknoten für einen verwalteten Cluster auf
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/clusterNodes`#
+
+Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| managedCluster_id | Zeichenkette | Pfad | Wahr  a| 
+ID der enthaltenden managedCluster-Ressource
+
+
+
+| Einschließlich | Zeichenkette | Abfrage | Falsch  a| 
+Gibt an, welche Felder beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "include=id", "include=id,name"
+
+OpenAPI-Beispiele: "id"
+
+* Beispiel: Name,instanceType
+
+
+
+
+| Grenze | Zeichenkette | Abfrage | Falsch  a| 
+Gibt die maximale Anzahl der Ressourcen an, die beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "limit=2"
+
+OpenAPI-Beispiele: "2"
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Elemente | array[Beliebig aus: link:#clusterNode_1_0_get_response_body["clusterNode_1.0_get_response_body"], array[]] | Wahr  a| 
+
+
+
+| Metadaten | link:#type_astra_metadata_list["type_astra_metadata_list"] | Wahr  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-clusterNodes",
+  "version": "1.0",
+  "items": [
+    [
+      "test-0",
+      "e2-medium"
+    ],
+    [
+      "test-1",
+      "e2-medium"
+    ],
+    [
+      "test-2",
+      "e2-medium"
+    ],
+    [
+      "test-3",
+      "e2-micro"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+Etiketten
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit dem Labelnamen Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Der definierte reguläre Ausdruck lautet: "^([\S.]{1,253}\/)?([a-z0-9A-Z_.-]){1,63}$"
+
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die den Label-Wert enthält. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Der definierte reguläre Ausdruck lautet: "^([a-z0-9A-Z_.-]){1,63}$"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Wahr  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Erstellt von | Zeichenkette | Wahr  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+clusterNode_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-clusterNode"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Kubernetes-Namen des Knotens angibt. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| Rolle | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der die Kubernetes-Rolle des Knotens angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| Etiketten | Array[link:#labels["Etiketten"]] | Wahr  a| 
+Ein JSON-Array mit JSON-Objekten, die jeweils die dem Knoten zugeordneten Kubernetes-Labels enthalten. Sind keine Details verfügbar, ist dieses Array leer.
+
+* Mindestanzahl: 0
+
+
+
+
+| creationTime | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem ISO-8601-Zeitstempel, der angibt, wann der Knoten erstellt wurde. Definierte Werte sind:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| externeIP | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der die interne IP-Adresse des Knotens angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| internalIP | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der die externe IP-Adresse des Knotens angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+
+
+
+
+| Zone | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der die Kubernetes-Zone für den Knoten angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| Region | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der die Kubernetes-Region für den Knoten angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| instanceType | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Kubernetes-Instanztyp für den Knoten angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| kernelVersion | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der die vom Knoten verwendete Kernelversion angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| osImage | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der das vom Knoten verwendete Betriebssystem-Image angibt. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| numCpus | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der die Anzahl der dem Knoten zugewiesenen CPUs angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| Speicher | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der die dem Knoten zugewiesene Speichermenge angibt. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 254
+
+
+
+
+| Zustand | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Betriebszustand des Knotens angibt. Folgende Werte sind definiert:
+
+* "läuft" - Der Knoten läuft normal
+* „Bereitstellung“ – Der Knoten wird gerade bereitgestellt
+* „Entdeckung“ – Aspekte des Knotens werden gerade entdeckt
+* „pending“ – Der Node ist zur Erkennung vorgesehen
+* "fehlgeschlagen" - Der Knoten befindet sich in einem Fehlerzustand
+* "unbekannt" – Der Zustand des Knotens kann nicht bestimmt werden
+
+
+
+
+| Metadaten | link:#type_astra_metadata["type_astra_metadata"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra Metadatenschema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| fortfahren | Zeichenkette | Falsch  a| 
+
+
+
+| Zählen | Nummer | Falsch  a| 
+
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

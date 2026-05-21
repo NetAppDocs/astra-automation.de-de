@@ -1,0 +1,477 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-k8s-v1-apps-appsnaps-.html 
+summary: Einen Anwendungs-Snapshot abrufen 
+---
+= Einen Anwendungs-Snapshot abrufen
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}`#
+
+Gibt die gespeicherte Application Snapshot API-Ressource im JSON-Antworttext zurück.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| App-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten App-Ressource
+
+
+
+| appSnap_id | Zeichenkette | Pfad | Wahr  a| 
+ID der appSnap-Sammlung, die aufgelistet werden soll
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns the stored Application Snapshot API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-appSnap"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+* "1,2"
+* "1,3"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Name | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem vom Benutzer festgelegten Namen für den Snapshot. Falls kein Name angegeben wird oder Snapshots durch einen Zeitplan ausgelöst werden, vergibt das System einen Namen für den Snapshot. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Entspricht dem DNS 1123 Label Schema
+
+
+
+
+| bucketID | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit einer optionalen Bucket-ID, die angibt, wo der Snapshot beim Erstellen gespeichert wird. Wird keine Bucket-ID angegeben, wird ein Standard-Bucket im Cluster verwendet. Ist kein Standard-Bucket im Cluster angegeben, wird der entsprechende Cloud-Standard-Bucket verwendet. Ist der Cloud-Standard-Bucket nicht verfügbar, wird beim Erstellen ein Fehler zurückgegeben. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Zeitplan-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer optionalen Zeitplan-ID, die angibt, dass der Snapshot durch einen Zeitplan ausgelöst wurde und den auslösenden Zeitplan spezifiziert. Nur für Snapshots vorhanden, die durch einen Zeitplan initiiert wurden. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| snapshotAppAsset | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit der ID des Anwendungs-Assets, das dem Snapshot entspricht. Dieses Feld wird zurückgegeben, wenn der Status des Anwendungs-Snapshots "abgeschlossen" ist. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Zustand | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette mit einem Wert, der den Betriebszustand des Snapshots angibt. Definierte Werte sind:
+
+* „pending“ – Der Anwendungssnapshot ist zur Erkennung geplant
+* „discovering“ – Der Anwendungs-Snapshot wird gerade ermittelt.
+* "wird ausgeführt" - Der Anwendungs-Snapshot läuft normal
+* „completed“ – Der Anwendungs-Snapshot wurde abgeschlossen
+* „Fehlgeschlagen“ – Der Anwendungs-Snapshot befindet sich in einem permanenten Fehlerzustand
+* „removed“ – Der Anwendungs-Snapshot ist derzeit nicht zugänglich
+* "Löschen" – Der Anwendungssnapshot wird gelöscht
+* "unbekannt" – Der Status des Anwendungs-Snapshots kann nicht ermittelt werden
+
+
+
+
+| stateUnready | Array[string] | Wahr  a| 
+JSON-Array von JSON-Zeichenketten, die jeweils einen Grund dafür angeben, warum ein Anwendungs-Snapshot nicht in den Status „running“ übergehen kann oder warum er in den Status „failed“ übergegangen ist. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 127
+
+
+
+
+| stateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falsch  a| 
+Ein JSON-Array mit JSON-Objekten, das zusätzliche Details zum aktuellen Zustand auflistet, einschließlich der Gründe, warum der aktuelle Zustand erreicht wurde. Sind keine Details verfügbar, ist dieses Array leer. Definierte Werte sind:
+
+* Mindestanzahl: 0
+
+
+
+
+| hookState | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der den Status eines oder mehrerer im Rahmen eines Snapshots ausgeführter Ausführungshooks angibt. Folgende Werte sind definiert:
+
+* "fehlgeschlagen" – Mindestens ein Ausführungs-Hook ist fehlgeschlagen
+* „success“ – Es gab null oder mehrere passende Hooks, und alle waren erfolgreich
+
+
+
+
+| hookStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falsch  a| 
+JSON-Array von JSON-Objekten, das zusätzliche Details darüber auflistet, warum „hookState“ in „failed“ übergegangen ist. Falls keine Details verfügbar sind, ist dieses Array leer.
+
+* Mindestanzahl: 0
+
+
+
+
+| Metadaten | link:#type_astra_metadata["type_astra_metadata"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Falls beim Erstellen keine Bezeichnung angegeben wird, wird ein Metadatenobjekt ohne Bezeichnungen erstellt.
+
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appSnap",
+  "version": "1.3",
+  "id": "c2cc5c22-ed0e-5c2b-8b7e-0fb81727f617",
+  "name": "app-name-245",
+  "bucketID": "0afbe357-a717-4c7a-8b3d-d0368959c8de",
+  "scheduleID": "1fe83650-9b3c-41ef-bb25-a2910c19c33e",
+  "state": "pending",
+  "stateUnready": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Falls beim Erstellen keine Bezeichnung angegeben wird, wird ein Metadatenobjekt ohne Bezeichnungen erstellt.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Wahr  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Wahr  a| 
+
+
+
+| Erstellt von | Zeichenkette | Wahr  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

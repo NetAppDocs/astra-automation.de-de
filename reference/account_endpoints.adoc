@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/account_endpoints.html 
+summary: 'Astra API (ACC) Konto-Endpunkte' 
+---
+= Astra API (ACC) Konto-Endpunkte
+:allow-uri-read: 
+
+
+Die Account-API repräsentiert isolierte Mandanten in einem mandantenfähigen System.

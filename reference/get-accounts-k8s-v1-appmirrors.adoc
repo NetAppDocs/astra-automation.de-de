@@ -1,0 +1,945 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-k8s-v1-appmirrors.html 
+summary: Alle AppMirror-Ressourcen auflisten 
+---
+= Alle AppMirror-Ressourcen auflisten
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/appMirrors`#
+
+Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Einschließlich | Zeichenkette | Abfrage | Falsch  a| 
+Gibt an, welche Felder beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "include=id", "include=id,name"
+
+OpenAPI-Beispiele: "id"
+
+
+
+| Grenze | Zeichenkette | Abfrage | Falsch  a| 
+Gibt die maximale Anzahl der Ressourcen an, die beim Auflisten einer Sammlung zurückgegeben werden sollen.
+
+URL-Beispiele: "limit=2"
+
+OpenAPI-Beispiele: "2"
+
+
+
+| Filtern | Zeichenkette | Abfrage | Falsch  a| 
+Gibt an, welche Felder übereinstimmen müssen, um beim Auflisten einer Sammlung eine Ressource zurückzugeben.
+
+Unterstützte Operatoren sind:
+
+* eq – Gleichheit
+* lt/gt – Kleiner als/Größer als
+* lte/gte – Kleiner oder gleich/Größer oder gleich
+
+
+URL-Beispiel: "filter=field%20eq%20%27value%27"
+
+OpenAPI-Beispiele: "field eq 'value'"
+
+|===
+
+
+== Antwort
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Elemente | array[Beliebig aus: link:#appMirror_1_1_get_response_body["appMirror_1.1_get_response_body"], array[]] | Wahr  a| 
+
+
+
+| Metadaten | link:#type_astra_metadata_list["type_astra_metadata_list"] | Wahr  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appMirrors",
+  "version": "1.1",
+  "items": [
+    {
+      "type": "application/astra-appMirror",
+      "version": "1.1",
+      "id": "f1c98c2e-6391-42d3-8b21-3e75dac048a3",
+      "sourceAppID": "efd639b6-fc92-4112-8841-0c0ab7890ae0",
+      "sourceClusterID": "5789e026-c2e2-41e9-ab00-9766bcfa8951",
+      "destinationAppID": "cd7b6d91-fc19-4983-a754-9a7bb4d80a7b",
+      "destinationClusterID": "c5d023a9-4061-4a8a-bfbf-3be11ff06226",
+      "namespaceMapping": [
+        {
+          "clusterID": "5789e026-c2e2-41e9-ab00-9766bcfa8951",
+          "namespaces": [
+            "ns1-src",
+            "ns2-src"
+          ]
+        },
+        {
+          "clusterID": "c5d023a9-4061-4a8a-bfbf-3be11ff06226",
+          "namespaces": [
+            "ns1-dest",
+            "ns2-dest"
+          ]
+        }
+      ],
+      "state": "established",
+      "stateTransitions": [
+        {
+          "from": "establishing",
+          "to": [
+            "established",
+            "deleting"
+          ]
+        },
+        {
+          "from": "established",
+          "to": [
+            "failingOver",
+            "deleting"
+          ]
+        },
+        {
+          "from": "failingOver",
+          "to": [
+            "failedOver",
+            "deleting"
+          ]
+        },
+        {
+          "from": "failedOver",
+          "to": [
+            "establishing",
+            "deleting"
+          ]
+        },
+        {
+          "from": "deleting",
+          "to": [
+            "deleted"
+          ]
+        }
+      ],
+      "stateDesired": "established",
+      "stateAllowed": [
+        "failedOver",
+        "deleted"
+      ],
+      "stateDetails": [
+        {
+          "type": "https://astra.netapp.io/stateDetails/1",
+          "title": "AppMirror relationship established",
+          "detail": "The AppMirror relationship has been successfully established."
+        }
+      ],
+      "healthState": "normal",
+      "healthStateTransitions": [
+        {
+          "from": "indeterminate",
+          "to": [
+            "normal",
+            "warning",
+            "critical"
+          ]
+        },
+        {
+          "from": "normal",
+          "to": [
+            "indeterminate",
+            "warning",
+            "critical"
+          ]
+        },
+        {
+          "from": "warning",
+          "to": [
+            "indeterminate",
+            "normal",
+            "critical"
+          ]
+        },
+        {
+          "from": "critical",
+          "to": [
+            "indeterminate",
+            "normal",
+            "warning"
+          ]
+        }
+      ],
+      "healthStateDetails": [
+        {
+          "type": "https://astra.netapp.io/stateDetails/2",
+          "title": "SnapMirror syncing successfully",
+          "detail": "All SnapMirror relationships are synchronizing as expected."
+        }
+      ],
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "11c0cfa1-4f27-4ef7-a21c-cb452fc5c9aa"
+      }
+    },
+    {
+      "type": "application/astra-appMirror",
+      "version": "1.1",
+      "id": "114633f0-5b59-4bd7-adce-a9ba4423a1bd",
+      "sourceAppID": "eaf8b854-211d-460a-ac18-d093d8e2ac70",
+      "sourceClusterID": "fcb27b51-ebb7-40ca-b8f1-1d23ebd06889",
+      "destinationAppID": "e829c5e0-750f-44ad-a684-aee85be2c2bb",
+      "destinationClusterID": "fcb27b51-ebb7-40ca-b8f1-1d23ebd06889",
+      "namespaceMapping": [
+        {
+          "clusterID": "fcb27b51-ebb7-40ca-b8f1-1d23ebd06889",
+          "namespaces": [
+            "app-namespace"
+          ],
+          "role": "source"
+        },
+        {
+          "clusterID": "fcb27b51-ebb7-40ca-b8f1-1d23ebd06889",
+          "namespaces": [
+            "destination-app-namespace"
+          ],
+          "role": "destination"
+        }
+      ],
+      "storageClasses": [
+        {
+          "storageClassName": "destination-sc",
+          "clusterID": "fcb27b51-ebb7-40ca-b8f1-1d23ebd06889",
+          "role": "destination"
+        }
+      ],
+      "state": "established",
+      "stateTransitions": [
+        {
+          "from": "establishing",
+          "to": [
+            "established",
+            "deleting"
+          ]
+        },
+        {
+          "from": "established",
+          "to": [
+            "failingOver",
+            "deleting"
+          ]
+        },
+        {
+          "from": "failingOver",
+          "to": [
+            "failedOver",
+            "deleting"
+          ]
+        },
+        {
+          "from": "failedOver",
+          "to": [
+            "establishing",
+            "deleting"
+          ]
+        }
+      ],
+      "stateDesired": "established",
+      "stateAllowed": [
+        "failedOver",
+        "deleted"
+      ],
+      "stateDetails": [],
+      "transferState": "idle",
+      "transferStateTransitions": [
+        {
+          "from": "transferring",
+          "to": [
+            "idle"
+          ]
+        },
+        {
+          "from": "idle",
+          "to": [
+            "transferring"
+          ]
+        }
+      ],
+      "transferStateDetails": [
+        {
+          "type": "https://astra.netapp.io/stateDetails/24",
+          "title": "Snapshot replication completed",
+          "detail": "A snapshot was replicated to the destination.",
+          "additionalDetails": {
+            "completionTime": "2023-07-06T22:46:39Z",
+            "snapshotID": "ae60820d-e963-4eab-8bb3-9159e9f012f0",
+            "startTime": "2023-07-06T22:46:08Z"
+          }
+        }
+      ],
+      "healthState": "normal",
+      "healthStateTransitions": [],
+      "healthStateDetails": [
+        {
+          "type": "https://astra.netapp.io/stateDetails/24",
+          "title": "Snapshot replication completed",
+          "detail": "A snapshot was replicated to the destination.",
+          "additionalDetails": {
+            "completionTime": "2023-07-06T22:46:39Z",
+            "snapshotID": "ae60820d-e963-4eab-8bb3-9159e9f012f0",
+            "startTime": "2023-07-06T22:46:08Z"
+          }
+        }
+      ],
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2023-07-06T22:45:24Z",
+        "modificationTimestamp": "2023-07-06T22:45:24Z",
+        "createdBy": "cc420827-f968-4da7-9e72-df8a0fd52f94"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidParams | Array[link:#invalidParams["invalidParams"]] | Falsch  a| 
+Liste ungültiger Abfrageparameter
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+namespaceMapping
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Cluster-ID | Zeichenkette | Falsch  a| 
+Kennung des Clusters, für den die Namensräume angegeben sind. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Namensräume | Array[string] | Falsch  a| 
+Liste der im Cluster zu verwendenden Namensräume. Korreliert mit der anderen Namensraumliste des Clusters über den Index. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 63
+* Entspricht dem DNS 1123 Label Schema
+
+
+
+
+| Rolle | Zeichenkette | Falsch  a| 
+Die anfängliche Rolle für diese Namespace-Definition. Dieser Parameter ist optional, außer bei Verwendung einer Replikationskonfiguration innerhalb desselben Clusters. Folgende Werte sind definiert:
+
+* "Quelle"
+* "Ziel"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+storageClasses
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Cluster-ID | Zeichenkette | Falsch  a| 
+Kennung des Clusters, für den die Speicherklasse angegeben ist. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| storageClassName | Zeichenkette | Falsch  a| 
+Name der Speicherklasse, die beim Erstellen von PVCs auf dem in „clusterID“ angegebenen Cluster verwendet werden soll. Folgende Werte sind definiert:
+
+* Mindestlänge: 1
+* Maximale Länge: 255
+
+
+
+
+| Rolle | Zeichenkette | Falsch  a| 
+Die anfängliche Rolle für diese Speicherklassendefinition. Dieser Parameter ist optional, außer bei Verwendung einer Replikationskonfiguration innerhalb desselben Clusters. Folgende Werte sind definiert:
+
+* "Quelle"
+* "Ziel"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| aus | Zeichenkette | Wahr  a| 
+
+
+
+| : | Array[string] | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+appMirror_1.1_get_response_body
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-appMirror"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | Zeichenkette | Wahr  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| sourceAppID | Zeichenkette | Wahr  a| 
+Kennung der Quellanwendung. Wird nur aktualisiert, wenn die sourceAppID mit der destinationAppID ausgetauscht wird. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Quell-Cluster-ID | Zeichenkette | Wahr  a| 
+Kennung des verwalteten Clusters, auf dem die Quellanwendung gehostet wird. Dieses Feld ist schreibgeschützt und wird anhand des Host-Clusters der Quellanwendung ermittelt. Wird es bei einem Update angegeben, muss es mit der Cluster-ID der Quellanwendung übereinstimmen, daher kann es sich nur ändern, wenn die sourceAppID mit der destinationAppID vertauscht wird. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| ZielAppID | Zeichenkette | Falsch  a| 
+Kennung der Zielanwendung. Kann beim Erstellen nicht angegeben werden, da im Rahmen der Beziehungsinitialisierung eine neue App-ID generiert wird. Kann nur aktualisiert werden, wenn die sourceAppID mit der destinationAppID ausgetauscht wird. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Ziel-Cluster-ID | Zeichenkette | Wahr  a| 
+Kennung des verwalteten Clusters, der die Zielanwendung hostet. Muss beim Erstellen angegeben werden, da sie bestimmt, auf welchem Cluster die Zielanwendung erstellt wird. Wird sie beim Aktualisieren angegeben, muss sie mit der Cluster-ID der Zielanwendung übereinstimmen, daher kann sie sich nur ändern, wenn sourceAppID mit destinationAppID vertauscht wird. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| namespaceMapping | Array[link:#namespaceMapping["namespaceMapping"]] | Falsch  a| 
+Der oder die Namespaces, die beim Erstellen der Zielanwendung verwendet werden sollen, entsprechend den Namespaces der Quellanwendung. Jedes JSON-Objekt enthält die Felder „clusterID“ und „namespaces“, wobei der Wert von „clusterID“ die JSON-String-ID des Quell- oder Ziel-Cluster ist und der Wert von „namespaces“ ein JSON-Array von JSON-Strings ist. Für jeden Cluster muss genau ein JSON-Objekt vorhanden sein, und die Namespaces werden über ihren Index korreliert. Falls nicht angegeben, wird derselbe Namespace vom Quell-Cluster auch im Ziel-Cluster verwendet. Folgende Werte sind definiert:
+
+* Mindestlänge: 0
+* Maximale Länge: 2
+
+
+
+
+| storageClasses | Array[link:#storageClasses["storageClasses"]] | Falsch  a| 
+Die Speicherklasse, die auf dem Ziel-Cluster beim Erstellen neuer Persistent Volume Claims (PVCs) verwendet werden soll. Jedes JSON-Objekt enthält die Felder „clusterID“ und „storageClassName“, wobei der Wert von „clusterID“ die JSON-String-ID des Quell- oder Ziel-Cluster ist und „storageClassName“ die Speicherklasse ist, die beim Erstellen von PVCs auf diesem Cluster verwendet werden soll. Wenn kein Wert angegeben wird oder der Wert für einen Cluster fehlt, wird die Standard-Speicherklasse für diesen Cluster verwendet. Folgende Werte sind definiert:
+
+* Mindestlänge: 0
+* Maximale Länge: 2
+
+
+
+
+| Zustand | Zeichenkette | Wahr  a| 
+Der Status der Beziehung. Definierte Werte sind:
+
+* „establishing“ – Die Beziehung wird gerade hergestellt.
+* „Etabliert“ – Die Beziehung ist hergestellt.
+* "failingOver" - Das Failover der Anwendung auf den Ziel-Cluster wird durchgeführt.
+* "failedOver" - Das Failover der Anwendung auf den Ziel-Cluster wurde abgeschlossen.
+* "Löschen" – Die durch die Beziehung erstellten Ressourcen werden bereinigt.
+* "gelöscht" - Die Beziehung wurde bereinigt und gelöscht.
+
+
+
+
+| stateTransitions | Array[link:#type_astra_stateTransition["type_astra_stateTransition"]] | Falsch  a| 
+Zulässige Zustandsübergänge. Für diese Ressource sind folgende Zustandsübergänge möglich:
+
+* "establishing": "established", "deleting"
+* "established": "failingOver", "deleting"
+* "failingOver": "failedOver", "Löschen"
+* "failedOver": "einrichten", "löschen"
+* "Löschen": "gelöscht"
+* "gelöscht":
+
+
+
+
+| stateDesired | Zeichenkette | Wahr  a| 
+Der gewünschte Zustand der Beziehung. Bei der Erstellung ist nur der Wert „etabliert“ gültig. Folgende Werte sind definiert:
+
+* „Etabliert“ – Die Beziehung ist hergestellt.
+* "failedOver" - Das Failover der Anwendung auf den Ziel-Cluster wurde abgeschlossen.
+* "gelöscht" - Die Beziehung wurde erfolgreich bereinigt und gelöscht.
+
+
+
+
+| stateAllowed | Array[string] | Falsch  a| 
+Zustände, die in einem bestimmten Zustand angefordert werden können. Die folgenden Zustände können in jedem definierten Zustand angefordert werden:
+
+* "establishing": "etabliert", "gelöscht"
+* "established": "failedOver", "deleted"
+* "failingOver": "failedOver", "gelöscht"
+* "failedOver": "etabliert", "gelöscht"
+* "Löschen": "gelöscht"
+* "gelöscht": "gelöscht"
+
+
+
+
+| stateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Wahr  a| 
+Zusätzliche Details zum aktuellen Zustand, einschließlich der Gründe für dessen Erreichen. Sind keine Details verfügbar, ist dieses Array leer. Folgende Werte sind definiert:
+
+* Mindestanzahl: 0
+
+
+
+
+| transferState | Zeichenkette | Falsch  a| 
+Status der aktuellen oder letzten Snapshot-Übertragung. Folgende Werte sind definiert:
+
+* „Übertragung läuft“ – Ein neuer Snapshot wurde erstellt und wird nun in den Ziel-Cluster repliziert. Dieser Status umfasst auch Übertragungen, die bei vorherigen Versuchen fehlgeschlagen sind und nun wiederholt werden.
+* "Leerlauf" - Derzeit findet keine Übertragung statt.
+
+
+
+
+| transferStateTransitions | Array[link:#type_astra_stateTransition["type_astra_stateTransition"]] | Falsch  a| 
+Zulässige Zustandsübergänge von einem vorgegebenen Zustand aus. Für diese Ressource sind folgende Zustandsübergänge möglich:
+
+* "transferring": "Leerlauf"
+* "idle": "transferring"
+
+
+
+
+| transferStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falsch  a| 
+Zusätzliche Details zum aktuellen Zustand, einschließlich der Gründe für dessen Erreichen. Sind keine Details verfügbar, ist dieses Array leer. Folgende Werte sind definiert:
+
+* Mindestanzahl: 0
+
+
+
+
+| healthState | Zeichenkette | Wahr  a| 
+Gesundheitszustand der Ressource. Definierte Werte sind:
+
+* „unbestimmt“ – Der Zustand der Ressource kann nicht bestimmt werden (z. B. aufgrund fehlender Verbindung)
+* „normal“ – Die Ressource weist keine bekannten Probleme auf und kann Dienste gemäß der Schnittstellenspezifikation bereitstellen.
+* "Warnung" – Die Ressource weist bekannte Probleme auf, die sie jedoch nicht daran hindern, Dienste gemäß der Schnittstellenspezifikation bereitzustellen.
+* "kritisch" – Die Ressource weist bekannte Probleme auf, die sie daran hindern, Dienste gemäß der Schnittstellenspezifikation bereitzustellen.
+
+
+
+
+| healthStateTransitions | Array[link:#type_astra_stateTransition["type_astra_stateTransition"]] | Wahr  a| 
+Zulässige Zustandsübergänge von einem vorgegebenen Zustand aus. Für diese Ressource sind folgende Zustandsübergänge möglich:
+
+* "indeterminate": "normal", "Warnung", "kritisch"
+* "normal": "unbestimmt", "Warnung", "kritisch"
+* "Warnung": "unbestimmt", "normal", "kritisch"
+* "kritisch": "unbestimmt", "normal", "Warnung"
+
+
+
+
+| healthStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Wahr  a| 
+Zusätzliche Details zum aktuellen Zustand, einschließlich der Gründe für dessen Erreichen. Sind keine Details verfügbar, ist dieses Array leer. Folgende Werte sind definiert:
+
+* Mindestanzahl: 0
+
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Wahr  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| fortfahren | Zeichenkette | Falsch  a| 
+
+
+
+| Zählen | Nummer | Falsch  a| 
+
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+====

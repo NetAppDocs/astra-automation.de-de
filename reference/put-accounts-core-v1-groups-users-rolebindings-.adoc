@@ -1,0 +1,507 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: true 
+permalink: reference/put-accounts-core-v1-groups-users-rolebindings-.html 
+summary: Ändern einer Rollenbindung für einen Benutzer in einer Gruppe 
+---
+= Ändern einer Rollenbindung für einen Benutzer in einer Gruppe
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Gruppen-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Gruppenressource
+
+
+
+| Benutzer-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Benutzerressource
+
+
+
+| roleBinding_id | Zeichenkette | Pfad | Wahr  a| 
+ID der roleBinding-Sammlung, die aufgelistet werden soll
+
+|===
+
+
+== Anfragetext
+
+Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-roleBinding"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | Zeichenkette | Falsch  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| Benutzer-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer Benutzerressourcen-ID. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema. Falls beim Erstellen keine UUID angegeben wird, wird eine leere UUID verwendet. Beim Erstellen kann nur userID oder groupID angegeben werden.
+
+
+
+
+| Gruppen-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einer Gruppenressourcen-ID. Definierte Werte sind:
+
+* Entspricht dem Astra-Identifikatorschema. Falls beim Erstellen keine UUID angegeben wird, wird eine leere UUID verwendet. Beim Erstellen kann nur userID oder groupID angegeben werden.
+
+
+
+
+| Konto-ID | Zeichenkette | Falsch  a| 
+JSON-Zeichenfolge mit der ID einer Kontoressource. Beim Erstellen muss diese mit der Konto-ID in der Anfrage-URI übereinstimmen. Folgende Werte sind definiert:
+
+* Entspricht dem Astra-Identifikatorschema
+
+
+
+
+| Rolle | Zeichenkette | Wahr  a| 
+JSON-Zeichenkette, die eine der vier definierten Rollen enthält. Definierte Werte sind:
+
+* "Viewer"
+* "Mitglied"
+* "admin"
+* "Eigentümer"
+
+
+
+
+| roleConstraints | Array[string] | Falsch  a| 
+JSON-Array von JSON-Zeichenketten, die den Umfang der Rollenzuweisung festlegen. Definierte Werte sind:
+
+* Entspricht dem Astra-Rollenbeschränkungsschema. Wird beim Erstellen kein Wert angegeben, wird dieser auf ein Array der Größe 1 gesetzt, das die Zeichenkette „*“ für „vollständigen Gültigkeitsbereich“ enthält. Wird beim Aktualisieren kein Wert angegeben, bleibt der Wert unverändert erhalten. Ein leeres Array bedeutet „kein Gültigkeitsbereich“. Beispiele:
+* 
++
+= Zugriff auf beliebige Ressourcen erlauben: "roleConstraints": ["*"]
+
+* 
++
+= Zugriff auf alle Ressourcen verweigern: "roleConstraints": []
+
+* 
++
+= Nur Zugriff auf eine bestimmte Namespace-Ressource erlauben: "roleConstraints": [ "namespaces:id='6fa2f917-f730-41b8-9c15-17f531843b31'" ]
+
+* 
++
+= Zugriff auf einen bestimmten Namensraum und alles darunter erlauben: "roleConstraints": [ "namespaces:id='6fa2f917-f730-41b8-9c15-17f531843b31'.*" ]
+
+* 
++
+= Zugriff auf alle mit "dev" gekennzeichneten Namespaces in jedem Cluster in jeder Cloud und auf alles darunter erlauben: "roleConstraints": [ "namespaces:kubernetesLabels='http://dev.example.com/appname=dev["dev.example.com/appname=dev'.*"]" ]
+
+* 
++
+= Nur Zugriff auf alle Namespace-Ressourcen erlauben: "roleConstraints": [ "namespaces:*" ]
+
+* 
++
+= Zugriff auf alle Namespace-Ressourcen und alles, was sich darunter befindet, erlauben: "roleConstraints": [ "namespaces:__.__" ]
+
+
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Falsch  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielanfrage
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-roleBinding",
+  "version": "1.1",
+  "role": "member",
+  "roleConstraints": [
+    "namespaces:id='c832e1dc-d7c3-464e-9c62-47bf91c46ce8'"
+  ]
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 204, Indicates if the roleBinding resource was updated.
+----
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Anfragetextfelds
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum das Anfragekörperfeld ungültig ist
+
+|===
+====

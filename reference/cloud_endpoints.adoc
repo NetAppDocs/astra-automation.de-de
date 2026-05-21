@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cloud_endpoints.html 
+summary: 'Astra API (ACC) Cloud-Endpunkte' 
+---
+= Astra API (ACC) Cloud-Endpunkte
+:allow-uri-read: 
+
+
+Die Cloud-API ermöglicht den Zugriff auf Cloud-Ressourcen, damit Clients sich mit bestimmten Clouds verbinden können, um Cluster und Anwendungen zu verwalten.

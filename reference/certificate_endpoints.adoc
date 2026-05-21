@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/certificate_endpoints.html 
+summary: 'Astra API (ACC) Zertifikatsendpunkte' 
+---
+= Astra API (ACC) Zertifikatsendpunkte
+:allow-uri-read: 
+
+
+Die Certificate API repräsentiert vom Administrator als vertrauenswürdig eingestufte Zertifikate, die zum Aufbau ausgehender Verbindungen verwendet werden.

@@ -1,0 +1,603 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/put-accounts-core-v1-certificates-.html 
+summary: Ein Zertifikat ändern 
+---
+= Ein Zertifikat ändern
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates/{certificate_id}`#
+
+Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext.
+
+*Nebenwirkungen*
+
+* Ein aktualisiertes CA-Zertifikat wird im Truststore aktualisiert.
+* Wenn ein bestehendes vertrauenswürdiges CA-Zertifikat nicht mehr vertrauenswürdig ist, wird es aus dem Vertrauensspeicher entfernt.
+* Wird der Zertifikatskörper aktualisiert (Feld „cert“), muss der Indikator „isSelfSigned“ angegeben werden, um den Status des neuen Zertifikats zu kennzeichnen. Wird der „isSelfSigned“-Indikator in diesem Fall nicht angegeben, wird der Wert auf „false“ gesetzt.
+* Wenn ein Update den Zertifikatstext ("cert"-Feld) nicht ändert, ist der Indikator "isSelfSigned" optional und der bestehende Wert wird beibehalten, wenn er nicht angegeben wird.
+
+
+
+
+== Parameter
+
+[cols="5*"]
+|===
+| Name | Typ | In | Erforderlich | Beschreibung 
+
+
+| Konto-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der übergeordneten Kontoressource
+
+* Beispiel: {{.Account}}
+
+
+
+
+| Zertifikats-ID | Zeichenkette | Pfad | Wahr  a| 
+ID der aufzulistenden Zertifikatssammlung
+
+|===
+
+
+== Anfragetext
+
+Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext.
+
+*Nebenwirkungen*
+
+* Ein aktualisiertes CA-Zertifikat wird im Truststore aktualisiert.
+* Wenn ein bestehendes vertrauenswürdiges CA-Zertifikat nicht mehr vertrauenswürdig ist, wird es aus dem Vertrauensspeicher entfernt.
+* Wird der Zertifikatskörper aktualisiert (Feld „cert“), muss der Indikator „isSelfSigned“ angegeben werden, um den Status des neuen Zertifikats zu kennzeichnen. Wird der „isSelfSigned“-Indikator in diesem Fall nicht angegeben, wird der Wert auf „false“ gesetzt.
+* Wenn ein Update den Zertifikatstext ("cert"-Feld) nicht ändert, ist der Indikator "isSelfSigned" optional und der bestehende Wert wird beibehalten, wenn er nicht angegeben wird.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+Medientyp der Ressource. Definierte Werte sind:
+
+* "application/astra-certificate"
+
+
+
+
+| Version | Zeichenkette | Wahr  a| 
+Version der Ressource. Definierte Werte sind:
+
+* "1,0"
+* "1,1"
+
+
+
+
+| id | Zeichenkette | Falsch  a| 
+Weltweit eindeutiger Bezeichner der Ressource. Definierte Werte sind:
+
+* Entspricht dem UUIDv4-Schema
+
+
+
+
+| certUse | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die die Verwendung des Zertifikats angibt. Falls nicht angegeben, wird standardmäßig „rootCA“ verwendet. Folgende Werte sind definiert:
+
+* "rootCA" – Bei diesem Zertifikat handelt es sich um ein Zertifizierungsstellenzertifikat (CA-Zertifikat), das dazu dient, jedem von dieser CA signierten Zertifikat zu vertrauen.
+* "intermediateCA" - Das Zertifikat ist ein Zwischenzertifizierungsstellenzertifikat, das von einer Stammzertifizierungsstelle ausgestellt wurde.
+
+
+
+
+| Zertifikat | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Base64-kodierten, PKCS-11-formatierten Zertifikat (PEM). Definierte Werte sind:
+
+* Entspricht dem Base64-kodierten Datenschema
+
+
+
+
+| cn | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem aus dem Zertifikat extrahierten allgemeinen Namen. Definierte Werte sind:
+
+* Mindestlänge: 1
+* Maximale Länge: 511
+
+
+
+
+| expiryTimestamp | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Zeitstempel, der das Ablaufdatum des Zertifikats angibt. Folgende Werte sind definiert:
+
+* Entspricht dem ISO-8601 Datums- und Zeitschema
+
+
+
+
+| isSelfSigned | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die angibt, ob das Zertifikat selbstsigniert ist. Wird beim Erstellen kein Wert angegeben, ist der Standardwert "false". Beim Aktualisieren:
+
+* Wenn ein Wert angegeben wird, wird dieser Wert verwendet.
+* Wird kein Wert angegeben und das Feld „cert“ in die Aktualisierung einbezogen, wird der Wert auf „false“ gesetzt.
+* Wird kein Wert angegeben und das Feld „cert“ nicht in die Aktualisierung einbezogen, bleibt der bestehende Wert erhalten. Definierte Werte sind:
+* "true" - Das Zertifikat ist selbstsigniert.
+* "false" - Das Zertifikat ist nicht selbstsigniert.
+
+
+
+
+| trustState | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette, die einen von mehreren definierten Werten enthält und angibt, ob das Zertifikat als vertrauenswürdig eingestuft wird. Folgende Werte sind definiert:
+
+* "nicht vertrauenswürdig" - Das Zertifikat ist nicht vertrauenswürdig.
+* "vertrauenswürdig" - Das Zertifikat ist als vertrauenswürdig gekennzeichnet.
+* „abgelaufen“ – Das Zertifikat ist abgelaufen und daher weder vertrauenswürdig noch nicht vertrauenswürdig.
+
+
+
+
+| trustStateTransitions | Array[link:#type_astra_stateTransition["type_astra_stateTransition"]] | Falsch  a| 
+Ein JSON-Array mit JSON-Objekten, die jeweils die Menge der zulässigen Zustandsübergänge von einem definierten Zustand aus darstellen. Jedes JSON-Objekt enthält die Felder "from" und "to", wobei der Wert von "from" der Name eines Zustands ist und der Wert von "to" ein Array zulässiger Zielzustände ist.
+
+
+
+| trustStateDesired | Zeichenkette | Falsch  a| 
+JSON-Zeichenkette mit einem Wert, der angibt, ob das Zertifikat vertrauenswürdig ist. Wenn beim Erstellen kein Wert angegeben wird, ist der Standardwert "trusted". Folgende Werte sind definiert:
+
+* "nicht vertrauenswürdig" - Das Zertifikat ist nicht vertrauenswürdig.
+* "vertrauenswürdig" - Das Zertifikat ist als vertrauenswürdig gekennzeichnet.
+
+
+
+
+| trustStateDetails | Array[link:#type_astra_stateDetail["type_astra_stateDetail"]] | Falsch  a| 
+Ein JSON-Array mit JSON-Objekten, das zusätzliche Details zum Vertrauensstatus des Zertifikats auflistet. Sind keine Details verfügbar, ist dieses Array leer.
+
+* Mindestanzahl: 0
+
+
+
+
+| Metadaten | link:#type_astra_metadata_update["type_astra_metadata_update"] | Falsch  a| 
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+|===
+.Beispielanfrage
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-certificate",
+  "version": "1.1",
+  "trustStateDesired": "trusted"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 204, Indicates if the certificate resource was updated.
+----
+
+
+== Antwort
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+
+
+| invalidFields | Array[link:#invalidFields["invalidFields"]] | Falsch  a| 
+Liste ungültiger Anfragetextfelder
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== Antwort
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispielantwort
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== Fehler
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| Status | Zeichenkette | Wahr  a| 
+
+
+
+| Korrelations-ID | Zeichenkette | Falsch  a| 
+
+|===
+.Beispiel-Fehlermeldung
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== Definitionen
+
+.Siehe Definitionen
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| aus | Zeichenkette | Wahr  a| 
+
+
+
+| : | Array[string] | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Typ | Zeichenkette | Wahr  a| 
+
+
+
+| Titel | Zeichenkette | Wahr  a| 
+
+
+
+| Detail | Zeichenkette | Wahr  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+Typ_Astra_Label
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+
+
+
+| Wert | Zeichenkette | Wahr  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Definierte Werte sind:
+
+* Entspricht dem Astra-Metadatenschema. Wird beim Erstellen kein Label angegeben, wird ein Metadatenobjekt ohne Labels erstellt. Wird beim Aktualisieren kein Label angegeben, bleiben die Labels, creationTimestamp und createdBy, des Metadatenobjekts unverändert erhalten.
+
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Etiketten | Array[link:#type_astra_label["Typ_Astra_Label"]] | Falsch  a| 
+
+
+
+| CreationZeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Änderungszeitstempel | Zeichenkette | Falsch  a| 
+
+
+
+| Erstellt von | Zeichenkette | Falsch  a| 
+
+
+
+| modifiedBy | Zeichenkette | Falsch  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Abfrageparameters
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum der Abfrageparameter ungültig ist
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | Typ | Erforderlich | Beschreibung 
+
+
+| Name | Zeichenkette | Wahr  a| 
+Name des ungültigen Anfragetextfelds
+
+
+
+| Grund | Zeichenkette | Wahr  a| 
+Grund, warum das Anfragekörperfeld ungültig ist
+
+|===
+====

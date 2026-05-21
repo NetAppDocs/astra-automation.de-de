@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/bucket_endpoints.html 
+summary: 'Astra API (ACC) Bucket-Endpunkte' 
+---
+= Astra API (ACC) Bucket-Endpunkte
+:allow-uri-read: 
+
+
+Die Bucket-API ermöglicht den Zugriff auf Buckets, die zum Speichern von Anwendungs-Backups in Astra verwendet werden.

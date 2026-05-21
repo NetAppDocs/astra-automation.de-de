@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/upgrade_endpoints.html 
+summary: 'Astra API (ACC) Upgrade-Endpunkte' 
+---
+= Astra API (ACC) Upgrade-Endpunkte
+:allow-uri-read: 
+
+
+Die Upgrade App API ermöglicht den Zugriff auf Softwarekomponenten, die für ein Upgrade in Frage kommen, und die Initiierung von Upgrades. Die Verfügbarkeit von Upgrades wird anhand der bei der Packages API registrierten Pakete ermittelt.
