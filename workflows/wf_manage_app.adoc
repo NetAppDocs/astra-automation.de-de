@@ -18,18 +18,21 @@ Sie können eine gemanagte Applikation auf Basis einer Applikation erstellen, di
 
 
 
+[[step-1-select-the-namespace]]
 == Schritt 1: Wählen Sie den Namespace
 
 Führen Sie den Workflow aus link:../workflows/wf_list_namespaces.html["Listen Sie die Namespaces auf"] Und wählen Sie den Namespace aus.
 
 
 
+[[step-2-select-the-cluster]]
 == Schritt 2: Wählen Sie den Cluster aus
 
 Führen Sie den Workflow aus link:../workflows_infra/wf_list_clusters.html["Listen Sie die Cluster auf"] Und wählen Sie den Cluster aus.
 
 
 
+[[step-3-manage-the-application]]
 == Schritt 3: Verwalten der Anwendung
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die Anwendung zu verwalten.

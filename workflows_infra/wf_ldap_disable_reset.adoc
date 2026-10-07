@@ -24,6 +24,7 @@ Beide Workflow-Aufgaben erfordern die id für den `astra.account.ldap` Astra-Ein
 
 
 
+[[disable-ldap-authentication]]
 == Deaktivieren Sie die LDAP-Authentifizierung
 
 Sie können den folgenden REST-API-Aufruf durchführen, um die LDAP-Authentifizierung für eine bestimmte Astra-Implementierung global zu deaktivieren. Der Anruf aktualisiert den `astra.account.ldap` Einstellung und das `isEnabled` Wert ist gesetzt auf `false`.
@@ -71,6 +72,7 @@ Wenn der Anruf erfolgreich ist, wird der angezeigt `HTTP 204` Die Antwort wird z
 
 
 
+[[reset-the-ldap-authentication-configuration]]
 == LDAP-Authentifizierungskonfiguration zurücksetzen
 
 Sie können den folgenden REST-API-Aufruf ausführen, um Astra vom LDAP-Server zu trennen und die LDAP-Konfiguration in Astra zurückzusetzen. Der Anruf aktualisiert den `astra.account.ldap` Einstellung und der Wert von `connectionHost` Wird gelöscht.

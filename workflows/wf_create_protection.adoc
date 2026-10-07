@@ -18,12 +18,14 @@ Sie können eine Datensicherungsrichtlinien auf der Grundlage eines oder mehrere
 
 
 
+[[step-1-select-the-app]]
 == Schritt 1: Wählen Sie die App aus
 
 Führen Sie den Workflow aus link:../workflows/wf_list_man_apps.html["Listen Sie die Apps auf"] Und wählen Sie die gewünschte Anwendung aus.
 
 
 
+[[step-2-create-the-protection]]
 == Schritt 2: Erstellen Sie den Schutz
 
 Führen Sie den folgenden REST-API-Aufruf durch, um eine Sicherungsrichtlinie für eine bestimmte Anwendung zu erstellen.

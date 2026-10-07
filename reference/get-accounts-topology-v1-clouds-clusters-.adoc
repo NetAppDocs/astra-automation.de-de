@@ -7,6 +7,7 @@ summary: Einen Cluster für eine Cloud abrufen
 ---
 = Einen Cluster für eine Cloud abrufen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}`#
@@ -15,6 +16,7 @@ Gibt die gespeicherte Cluster-API-Ressource im JSON-Antworttext zurück.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID der aufzulistenden Cluster-Sammlung
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -423,6 +426,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -468,6 +472,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -518,6 +523,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -563,6 +569,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -608,6 +615,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -653,14 +661,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -684,6 +695,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -699,6 +711,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -731,6 +744,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

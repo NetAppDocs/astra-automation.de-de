@@ -7,6 +7,7 @@ summary: Neues Konto erstellen
 ---
 = Neues Konto erstellen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts`#
@@ -15,6 +16,7 @@ Gibt die gewünschten Werte für die zu erstellende Account-API-Ressource an.
 
 
 
+[[request-body]]
 == Anfragetext
 
 Gibt die gewünschten Werte für die zu erstellende Account-API-Ressource an.
@@ -71,6 +73,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -179,6 +182,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -224,6 +228,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -274,6 +279,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -324,6 +330,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -369,6 +376,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -414,11 +422,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -434,6 +444,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -466,6 +477,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[postalAddress]]
 [role="api-collapsible-fifth-title"]
 postalAddress
 
@@ -529,6 +541,7 @@ JSON-Zeichenkette mit optionalen zusätzlichen Adressinformationen, Postfach und
 
 
 |===
+[[accountContact]]
 [role="api-collapsible-fifth-title"]
 accountContact
 
@@ -591,6 +604,7 @@ JSON-Zeichenkette mit der Telefonnummer des Benutzers. Existiert dieser Schlüss
 JSON-Objekt mit einer Sammlung von JSON-Zeichenketten, die eine Adresse angeben. Wenn dieser Schlüssel nicht existiert, bedeutet dies, dass keine Adresse angegeben wurde. Wenn dieser Schlüssel existiert, sind alle sechs enthaltenen JSON-Zeichenketten vorhanden. Wenn Sie nichts angeben, ist die Zeichenkette leer.
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -608,6 +622,7 @@ Name des ungültigen Abfrageparameters
 Grund, warum der Abfrageparameter ungültig ist
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

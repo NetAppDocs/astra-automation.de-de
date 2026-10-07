@@ -21,6 +21,7 @@ NOTE: Zur Einfachheit wird das NetApp Astra Control Python SDK durchgehend auf d
 
 
 
+[[two-related-software-tools]]
 == Zwei verwandte Softwaretools
 
 Das SDK enthält zwei verschiedene, wenn auch verwandte Tools, die auf verschiedenen Ebenen der Abstraktion beim Zugriff auf die Astra Control REST API arbeiten.
@@ -38,6 +39,7 @@ Neben der Astra SDK-Datei, die `toolkit.py` Skript ist ebenfalls verfügbar. Die
 
 
 
+[[how-to-access]]
 == Zugang zu
 
 Sie haben folgende Möglichkeiten, auf das SDK zuzugreifen:
@@ -63,6 +65,7 @@ Sie können die klonen https://github.com/NetApp/netapp-astra-toolkits["GitHub: 
 
 
 
+[[installation-and-basic-requirements]]
 == Installation und grundlegende Anforderungen
 
 Es gibt verschiedene Optionen und Anforderungen, die bei der Installation des Pakets und bei der Vorbereitung der Verwendung berücksichtigt werden müssen.
@@ -85,6 +88,7 @@ Das SDK verfügt über mehrere Voraussetzungen für die lokale Python-Umgebung. 
 
 
 
+[[summary-of-helpful-resources]]
 == Zusammenfassung hilfreicher Ressourcen
 
 Im Folgenden finden Sie einige Ressourcen, die Sie für den Einstieg benötigen.

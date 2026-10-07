@@ -18,6 +18,7 @@ Sie können einen Snapshot löschen, der einer Anwendung zugeordnet ist.
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie müssen Folgendes haben:
@@ -28,6 +29,7 @@ Sie müssen Folgendes haben:
 
 
 
+[[delete-the-snapshot]]
 == Löschen Sie den Snapshot
 
 Führen Sie den folgenden REST-API-Aufruf aus.

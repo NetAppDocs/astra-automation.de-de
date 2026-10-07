@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Namespace-Endpunkte'
 ---
 = Astra API (ACC) Namespace-Endpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Namespace-API bietet schreibgeschützten Zugriff auf Namespace-Ressourcen, um Namespaces zu beschreiben, die einem bestimmten Cluster zugeordnet sind.

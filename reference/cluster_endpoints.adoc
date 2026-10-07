@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Cluster-Endpunkte'
 ---
 = Astra API (ACC) Cluster-Endpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Cluster-API repräsentiert nicht verwaltete Kubernetes-Cluster.

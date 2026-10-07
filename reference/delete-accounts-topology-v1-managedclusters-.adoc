@@ -7,6 +7,7 @@ summary: Einen verwalteten Cluster löschen
 ---
 = Einen verwalteten Cluster löschen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}`#
@@ -20,6 +21,7 @@ Entfernt die angegebene Managed Cluster API-Ressource.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID der managedCluster-Sammlung, die aufgelistet werden soll
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -49,6 +52,7 @@ Status: 204, Indicates if the managedCluster resource was deleted.
 ----
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -94,6 +98,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -144,6 +149,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -189,6 +195,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -234,11 +241,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

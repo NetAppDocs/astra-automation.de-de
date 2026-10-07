@@ -7,6 +7,7 @@ summary: Ein Ereignis abrufen
 ---
 = Ein Ereignis abrufen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/events/{event_id}`#
@@ -15,6 +16,7 @@ Gibt die gespeicherte Event-API-Ressource im JSON-Antworttext zurück.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID der aufzulistenden Ereignissammlung
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -336,6 +339,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -381,6 +385,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -431,6 +436,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -476,6 +482,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -521,11 +528,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[data]]
 [role="api-collapsible-fifth-title"]
 Daten
 
@@ -549,6 +558,7 @@ JSON-Zeichenkette, die angibt, ob das Banner ausgeblendet werden kann. Folgende 
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -564,6 +574,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -596,6 +607,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

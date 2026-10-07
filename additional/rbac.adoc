@@ -18,6 +18,7 @@ Die Astra REST API unterstützt die rollenbasierte Zugriffssteuerung (RBAC), um 
 
 
 
+[[astra-roles]]
 == Astra Rollen
 
 Jeder Astra-Benutzer wird einer einzigen Rolle zugewiesen, die die Aktionen bestimmt, die durchgeführt werden können. Die Rollen sind in einer Hierarchie angeordnet, wie in der folgenden Tabelle beschrieben.
@@ -40,6 +41,7 @@ Jeder Astra-Benutzer wird einer einzigen Rolle zugewiesen, die die Aktionen best
 |===
 
 
+[[enhanced-rbac-with-namespace-granularity]]
 == Erweiterte RBAC mit Namespace-Granularität
 
 

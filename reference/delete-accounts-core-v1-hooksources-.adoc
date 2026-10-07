@@ -7,6 +7,7 @@ summary: Eine Hook-Quelle löschen
 ---
 = Eine Hook-Quelle löschen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources/{hookSource_id}`#
@@ -15,6 +16,7 @@ Entfernt die angegebene Hook Source API-Ressource.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID der hookSource Sammlung, die aufgelistet werden soll
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -44,6 +47,7 @@ Status: 204, Indicates if the hookSource resource was deleted.
 ----
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -89,6 +93,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -139,6 +144,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -184,6 +190,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -229,11 +236,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

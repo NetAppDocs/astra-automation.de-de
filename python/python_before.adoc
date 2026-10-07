@@ -21,6 +21,7 @@ NOTE: NetApp hat nicht nur direkt mit Python auf die Astra Control REST API zuge
 
 
 
+[[prepare-the-environment]]
 == Bereiten Sie die Umgebung vor
 
 Im Folgenden werden die grundlegenden Konfigurationsanforderungen für die Ausführung der Python-Skripte beschrieben.
@@ -39,6 +40,7 @@ Sie benötigen ein gültiges Astra-Konto mit der Account-ID und dem API-Token. S
 
 
 
+[[create-the-json-input-files]]
 == Erstellen Sie die JSON-Eingabedateien
 
 Die Python-Skripte basieren auf Konfigurationsinformationen in JSON-Eingabedateien. Im Folgenden finden Sie Beispieldateien.

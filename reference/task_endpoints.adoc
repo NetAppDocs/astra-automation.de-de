@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Aufgabenendpunkte'
 ---
 = Astra API (ACC) Aufgabenendpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Task App API ermöglicht den Zugriff auf verwaltete Aufgabenressourcen, um langlaufende Aufgaben darzustellen.

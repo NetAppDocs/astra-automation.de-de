@@ -7,6 +7,7 @@ summary: Neue Lizenz erstellen
 ---
 = Neue Lizenz erstellen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses`#
@@ -15,6 +16,7 @@ Gibt die gewünschten Werte für die zu erstellende License-API-Ressource an.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID der übergeordneten Kontoressource
 |===
 
 
+[[request-body]]
 == Anfragetext
 
 Gibt die gewünschten Werte für die zu erstellende License-API-Ressource an.
@@ -102,6 +105,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -299,6 +303,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -344,6 +349,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -389,6 +395,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -439,6 +446,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -484,6 +492,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -529,11 +538,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -549,6 +560,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -581,6 +593,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[addons]]
 [role="api-collapsible-fifth-title"]
 Add-ons
 
@@ -628,6 +641,7 @@ JSON-Zeichenkette mit dem Lizenzprotokoll dieses Add-ons. Folgende Werte sind de
 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -645,6 +659,7 @@ Name des ungültigen Abfrageparameters
 Grund, warum der Abfrageparameter ungültig ist
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

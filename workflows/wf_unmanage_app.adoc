@@ -18,6 +18,7 @@ Sie können eine verwaltete Anwendung entfernen, wenn sie nicht mehr benötigt w
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie müssen über die ID der App verfügen, die Sie verwalten möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
@@ -26,6 +27,7 @@ Backups und Snapshots der Applikation werden nicht automatisch entfernt, wenn si
 
 
 
+[[unmanage-the-app]]
 == App-Verwaltung aufheben
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die App zu entfernen.

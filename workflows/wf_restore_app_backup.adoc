@@ -18,18 +18,21 @@ Sie können eine Applikation wiederherstellen, indem Sie eine neue Applikation a
 
 
 
+[[step-1-select-the-app-to-restore]]
 == Schritt 1: Wählen Sie die App, die wiederhergestellt werden soll
 
 Führen Sie den Workflow aus link:wf_list_man_apps.html["Listen Sie die Apps auf"] Und wählen Sie die Anwendung aus, die Sie klonen möchten. Für DEN REST-Aufruf, der zur Wiederherstellung der App verwendet wird, sind mehrere Ressourcenwerte erforderlich.
 
 
 
+[[step-2-select-the-backup-to-use]]
 == Schritt 2: Wählen Sie das zu verwendende Backup aus
 
 Führen Sie den Workflow aus link:wf_list_backups.html["Listen Sie die Backups auf"] Und wählen Sie das gewünschte Backup aus.
 
 
 
+[[step-3-restore-the-app]]
 == Schritt 3: Wiederherstellung der App
 
 Führen Sie den folgenden REST-API-Aufruf aus. Sie müssen die ID für ein Backup (wie unten gezeigt) oder einen Snapshot angeben.

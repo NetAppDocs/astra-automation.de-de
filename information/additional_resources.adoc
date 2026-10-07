@@ -18,6 +18,7 @@ Auf weitere Ressourcen erhalten Sie Zugriff. Dort erhalten Sie weitere Informati
 
 
 
+[[astra]]
 == Astra
 
 * https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center-Dokumentation"^]
@@ -44,6 +45,7 @@ Community-Support für Astra Control und andere NetApp Produkte.
 
 
 
+[[netapp-cloud-resources]]
 == NetApp Cloud-Ressourcen
 
 * https://bluexp.netapp.com/["NetApp BlueXP"^]
@@ -62,6 +64,7 @@ Sie erhalten Zugriff auf Tools für die Fehlerbehebung, Dokumentation und techni
 
 
 
+[[rest-and-cloud-concepts]]
 == REST- und Cloud-Konzepte
 
 * PhD https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["Dissertation"^] Von Roy Fielding

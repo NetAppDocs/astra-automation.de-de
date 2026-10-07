@@ -7,6 +7,7 @@ summary: Paket abrufen
 ---
 = Paket abrufen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages/{package_id}`#
@@ -15,6 +16,7 @@ Gibt die gespeicherte Package-API-Ressource im JSON-Antworttext zurück.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID der aufzulistenden Paketsammlung
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -273,6 +276,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -318,6 +322,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -368,6 +373,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -413,6 +419,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -458,11 +465,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -478,9 +487,11 @@ type_astra_stateTransition
 | : | Array[string] | Wahr  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -504,6 +515,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
 
 |===
+[[dependsOnImages]]
 [role="api-collapsible-fifth-title"]
 dependsOnImages
 
@@ -538,6 +550,7 @@ JSON-Zeichenkette, die das Tag/die Version dieses Bildes darstellt. Definierte W
 
 
 |===
+[[images]]
 [role="api-collapsible-fifth-title"]
 Bilder
 
@@ -585,6 +598,7 @@ JSON-Zeichenkette, die den Digest dieses Bildes darstellt. Definierte Werte sind
 JSON-Array von JSON-Objekten, die die zum Installieren oder Aktualisieren des aktuellen Images erforderlichen Images beschreiben.
 
 |===
+[[dependsOnComponents]]
 [role="api-collapsible-fifth-title"]
 dependsOnComponents
 
@@ -608,6 +622,7 @@ JSON-Zeichenkette, die den Namen der Komponente beschreibt. Definierte Werte sin
 JSON-Array von JSON-Zeichenketten, die die für die Installation des aktuellen Images erforderliche Komponentenversion definieren.
 
 |===
+[[artifacts]]
 [role="api-collapsible-fifth-title"]
 Artefakte
 
@@ -657,6 +672,7 @@ JSON-Zeichenkette mit der Versionsnummer des Artefakts, sofern angegeben. Folgen
 JSON-Array von JSON-Objekten, die die installierten Komponenten beschreiben, die zum Installieren/Aktualisieren des aktuellen Images erforderlich sind.
 
 |===
+[[files]]
 [role="api-collapsible-fifth-title"]
 Dateien
 
@@ -699,6 +715,7 @@ JSON-Zeichenkette mit dem Dateiinhalt. Definierte Werte sind:
 
 
 |===
+[[upgradableVersions]]
 [role="api-collapsible-fifth-title"]
 upgradableVersions
 
@@ -724,6 +741,7 @@ JSON-Zeichenkette, die die maximale Version beschreibt, die auf die Paketversion
 
 
 |===
+[[dependencies]]
 [role="api-collapsible-fifth-title"]
 Abhängigkeiten
 
@@ -758,6 +776,7 @@ JSON-Zeichenkette, die die maximal erforderliche Version dieser Komponente besch
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -773,6 +792,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -805,6 +825,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

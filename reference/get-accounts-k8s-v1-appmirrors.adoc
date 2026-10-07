@@ -7,6 +7,7 @@ summary: Alle AppMirror-Ressourcen auflisten
 ---
 = Alle AppMirror-Ressourcen auflisten
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/appMirrors`#
@@ -15,6 +16,7 @@ Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -65,6 +67,7 @@ OpenAPI-Beispiele: "field eq 'value'"
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -342,6 +345,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -387,6 +391,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -437,6 +442,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -482,6 +488,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -527,11 +534,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[namespaceMapping]]
 [role="api-collapsible-fifth-title"]
 namespaceMapping
 
@@ -566,6 +575,7 @@ Die anfängliche Rolle für diese Namespace-Definition. Dieser Parameter ist opt
 
 
 |===
+[[storageClasses]]
 [role="api-collapsible-fifth-title"]
 storageClasses
 
@@ -599,6 +609,7 @@ Die anfängliche Rolle für diese Speicherklassendefinition. Dieser Parameter is
 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -614,9 +625,11 @@ type_astra_stateTransition
 | : | Array[string] | Wahr  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -640,6 +653,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -655,6 +669,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -687,6 +702,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[appMirror_1_1_get_response_body]]
 [role="api-collapsible-fifth-title"]
 appMirror_1.1_get_response_body
 
@@ -890,6 +906,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -925,6 +942,7 @@ type_astra_metadata_list
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -18,12 +18,14 @@ Sie können alle Ressourcenvariablen abrufen, die eine einzelne Anwendung beschr
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie müssen die ID der App haben, die Sie abrufen möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
 
 
 
+[[step-1-get-the-application]]
 == Schritt 1: Holen Sie sich die Anwendung
 
 Führen Sie den folgenden REST-API-Aufruf aus.

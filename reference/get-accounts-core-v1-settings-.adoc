@@ -7,6 +7,7 @@ summary: Eine Einstellung abrufen
 ---
 = Eine Einstellung abrufen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
@@ -15,6 +16,7 @@ Gibt die gespeicherte Setting-API-Ressource im JSON-Antworttext zurück.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID der aufzulistenden Einstellungssammlung
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -181,6 +184,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -226,6 +230,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -276,6 +281,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -321,6 +327,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -366,6 +373,7 @@ Status: 503, Service unavailable
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -411,24 +419,29 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 type_json
 
 Ein JSON-Objekt mit Schlüsseln und Werten, die die aktuelle Konfiguration für diese Einstellung bilden. Der Inhalt dieses Objekts muss dem im configSchema-Feld enthaltenen JSON-Schema entsprechen. Standardwerte werden von der configmap bereitgestellt. Nachdem die Standardwerte vom Benutzer geändert wurden, werden sie nicht überschrieben.
 
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 type_json
 
 Ein JSON-Objekt mit Schlüsseln und Werten, die die angeforderte Konfiguration für diese Einstellung bilden. Der Inhalt dieses Objekts muss dem im configSchema-Feld enthaltenen JSON-Schema entsprechen. Das Objekt existiert erst, wenn es angegeben wurde. Wenn angegeben, veranlasst dies den Feature-Service, den entsprechenden Service zu benachrichtigen, damit die gewünschte Konfiguration angefordert werden kann. Der entsprechende Service kann dann die Validierung durchführen und die gewünschte Konfiguration auf die aktuelle Konfiguration anwenden.
 
+[[properties]]
 [role="api-collapsible-fifth-title"]
 Eigenschaften
 
+[[type_json_schema]]
 [role="api-collapsible-fifth-title"]
 type_json_schema
 
@@ -458,6 +471,7 @@ JSON-Objekt, das das JSON-Schema für die config-Eigenschaft in dieser Ressource
 | erforderlich | Array[string] | Wahr  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -473,6 +487,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -505,6 +520,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

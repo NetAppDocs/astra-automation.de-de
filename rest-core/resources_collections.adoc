@@ -21,6 +21,7 @@ NOTE: Konzeptionell ist eine REST *Ressource* ähnlich wie ein *Objekt* wie mit 
 
 
 
+[[attributes-of-the-astra-resources]]
 == Eigenschaften der Astra-Ressourcen
 
 Die Astra Control REST API entspricht den Prinzipien des RESTful Designs. Jede Astra-Ressourceninstanz wird auf Basis eines klar definierten Ressourcentyps erstellt. Eine Reihe von Ressourceninstanzen desselben Typs wird als *Sammlung* bezeichnet. Die API-Aufrufe wirken sich auf einzelne Ressourcen oder Ressourcensammlungen aus.
@@ -58,6 +59,7 @@ NOTE: Die Ressourcen-ID ist der primäre Schlüssel, der für Sammlungen verwend
 
 
 
+[[common-structure-for-astra-resources]]
 == Gemeinsame Struktur für Astra-Ressourcen
 
 Jede Astra Control-Ressource ist mit einer gemeinsamen Struktur definiert.

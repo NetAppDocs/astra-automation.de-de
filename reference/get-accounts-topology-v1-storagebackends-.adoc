@@ -7,6 +7,7 @@ summary: Ein Speicher-Backend abrufen
 ---
 = Ein Speicher-Backend abrufen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}`#
@@ -15,6 +16,7 @@ Gibt die gespeicherte Storage Backend API-Ressource im JSON-Antworttext zurück.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID der storageBackend Sammlung, die aufgelistet werden soll
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -275,6 +278,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -320,6 +324,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -370,6 +375,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -415,6 +421,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -460,11 +467,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[capabilities]]
 [role="api-collapsible-fifth-title"]
 Fähigkeiten
 
@@ -489,6 +498,7 @@ JSON-Zeichenkette, die angibt, ob dieses Storage Backend SnapMirror unterstützt
 JSON-Zeichenkette, die angibt, ob dieses Storage Backend S3 unterstützt.
 
 |===
+[[ontap]]
 [role="api-collapsible-fifth-title"]
 ONTAP
 
@@ -522,6 +532,7 @@ Ein JSON-Array mit JSON-Strings, das die Liste aller möglichen Management-IPs e
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -537,6 +548,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -569,6 +581,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

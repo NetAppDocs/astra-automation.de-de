@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Anwendungs-Snapshot-Endpunkte'
 ---
 = Astra API (ACC) Anwendungs-Snapshot-Endpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Application Snapshot API ermöglicht es einem Benutzer, Snapshots einer verwalteten Anwendung zu erstellen und anzuzeigen.

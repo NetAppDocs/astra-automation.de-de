@@ -7,6 +7,7 @@ summary: Einen Benutzer löschen
 ---
 = Einen Benutzer löschen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}`#
@@ -21,6 +22,7 @@ Entfernt die angegebene User-API-Ressource.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -42,6 +44,7 @@ ID der aufzulistenden Benutzersammlung
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -50,6 +53,7 @@ Status: 204, Indicates if the user resource was deleted.
 ----
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -95,6 +99,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -145,6 +150,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -190,6 +196,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -235,11 +242,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

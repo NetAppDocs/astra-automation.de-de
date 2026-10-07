@@ -7,6 +7,7 @@ summary: Löschen einer Anwendungssicherung für eine App
 ---
 = Löschen einer Anwendungssicherung für eine App
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}`#
@@ -20,6 +21,7 @@ Entfernt die angegebene Ressource der Application Backup API. Laufende Backups w
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -46,6 +48,7 @@ ID der appBackup-Sammlung, die aufgelistet werden soll
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -54,6 +57,7 @@ Status: 204, Indicates if the appBackup resource was deleted.
 ----
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -99,6 +103,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -149,6 +154,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -194,6 +200,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -239,6 +246,7 @@ Status: 500, Internal server error
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -284,6 +292,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -329,11 +338,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -7,6 +7,7 @@ summary: Erstellen Sie ein neues Speicher-Backend
 ---
 = Erstellen Sie ein neues Speicher-Backend
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends`#
@@ -15,6 +16,7 @@ Gibt die gewünschten Werte für die zu erstellende Storage Backend API-Ressourc
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID der übergeordneten Kontoressource
 |===
 
 
+[[request-body]]
 == Anfragetext
 
 Gibt die gewünschten Werte für die zu erstellende Storage Backend API-Ressource an.
@@ -119,6 +122,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -358,6 +362,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -403,6 +408,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -453,6 +459,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -503,6 +510,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -548,6 +556,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -593,11 +602,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -613,6 +624,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -645,6 +657,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[capabilities]]
 [role="api-collapsible-fifth-title"]
 Fähigkeiten
 
@@ -669,6 +682,7 @@ JSON-Zeichenkette, die angibt, ob dieses Storage Backend SnapMirror unterstützt
 JSON-Zeichenkette, die angibt, ob dieses Storage Backend S3 unterstützt.
 
 |===
+[[ontap]]
 [role="api-collapsible-fifth-title"]
 ONTAP
 
@@ -702,6 +716,7 @@ Ein JSON-Array mit JSON-Strings, das die Liste aller möglichen Management-IPs e
 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -719,6 +734,7 @@ Name des ungültigen Abfrageparameters
 Grund, warum der Abfrageparameter ungültig ist
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

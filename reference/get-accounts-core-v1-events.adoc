@@ -7,6 +7,7 @@ summary: Alle Ereignisse auflisten
 ---
 = Alle Ereignisse auflisten
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/events`#
@@ -15,6 +16,7 @@ Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -104,6 +106,7 @@ OpenAPI-Beispiele: "+++<continue token="" from="" collection="" metadata="">+++"
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -159,6 +162,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -204,6 +208,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -254,6 +259,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -299,6 +305,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -344,11 +351,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[data]]
 [role="api-collapsible-fifth-title"]
 Daten
 
@@ -372,6 +381,7 @@ JSON-Zeichenkette, die angibt, ob das Banner ausgeblendet werden kann. Folgende 
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -387,6 +397,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -419,6 +430,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[event_1_4_get_response_body]]
 [role="api-collapsible-fifth-title"]
 event_1.4_get_response_body
 
@@ -674,6 +686,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -709,6 +722,7 @@ type_astra_metadata_list
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -18,6 +18,7 @@ Vor der Live-Implementierung sollten Sie sich mit der Organisation und dem Forma
 
 
 
+[[introduction]]
 == Einführung
 
 Ein _Workflow_ ist eine Sequenz aus einem oder mehreren Schritten, die zum Erreichen einer bestimmten administrativen Aufgabe oder eines bestimmten Ziels erforderlich sind. Jeder Schritt in einem Astra Control Workflow ist einer der folgenden:
@@ -34,6 +35,7 @@ NOTE: Ein Workflow kann nur einen Schritt enthalten. Diese einstufigen Workflows
 
 
 
+[[workflow-categories]]
 == Workflow-Kategorien
 
 Je nach Ihrem Implementierungsmodell stehen Ihnen zwei weit gefassten Kategorien von Astra-Workflows zur Verfügung. Wenn Sie Astra Control Center nutzen, sollten Sie mit den Infrastruktur-Workflows beginnen und anschließend mit den Management-Workflows fortfahren. Mit dem Astra Control Service können Sie in der Regel direkt zu den Management-Workflows wechseln.
@@ -43,18 +45,21 @@ NOTE: Die Curl-Beispiele in den Workflows verwenden die URL für Astra Control S
 
 
 
+[[infrastructure-workflows]]
 === Infrastruktur-Workflows
 
 Diese Workflows befassen sich mit der Astra-Infrastruktur, einschließlich Referenzen, Buckets und Storage-Back-Ends. Sie werden mit dem Astra Control Center benötigt, können aber in den meisten Fällen auch mit dem Astra Control Service verwendet werden. Die Workflows konzentrieren sich auf die Aufgaben, die für die Einrichtung und Wartung eines von Astra gemanagten Clusters erforderlich sind.
 
 
 
+[[management-workflows]]
 === Management-Workflows
 
 Sie können diese Workflows verwenden, nachdem Sie ein gemanagtes Cluster eingerichtet haben. Management-Workflows konzentrieren sich auf den Schutz von Applikationen und unterstützen Vorgänge wie Backup, Wiederherstellung und Klonen von Applikationen.
 
 
 
+[[common-input-parameters]]
 == Allgemeine Eingabeparameter
 
 Die unten beschriebenen Eingabeparameter sind für alle Curl-Proben, die zur Veranschaulichung eines REST-API-Aufrufs verwendet werden, üblich.
@@ -64,6 +69,7 @@ NOTE: Da diese Eingabeparameter universell erforderlich sind, werden sie in den 
 
 
 
+[[path-parameters]]
 === Pfadparameter
 
 Der bei jedem REST-API-Aufruf verwendete Endpunkt-Pfad umfasst die folgenden Parameter. Siehe auch link:../rest-core/url_format.html["URL-Format"] Finden Sie weitere Informationen.
@@ -73,6 +79,7 @@ Konto-ID:: Dies ist der UUIDv4-Wert, der das Astra-Konto identifiziert, auf dem 
 
 
 
+[[request-headers]]
 === Anfragekopfzeilen
 
 Je nach REST-API-Aufruf müssen Sie möglicherweise mehrere Anforderungsheader einbeziehen.
@@ -84,6 +91,7 @@ Akzeptieren:: Sie können den spezifischen Medientyp des Inhalts, den Sie in der
 
 
 
+[[presentation-of-tokens-and-identifiers]]
 == Darstellung von Token und Identifikatoren
 
 Das API-Token und andere ID-Werte, die mit den Curl-Beispielen verwendet werden, sind undurchsichtig und haben keine erkennbare Bedeutung. Um die Lesbarkeit der Proben zu verbessern, werden die tatsächlichen Token- und ID-Werte nicht verwendet. Stattdessen werden kleinere reservierte Schlüsselwörter verwendet, die mehrere Vorteile haben:
@@ -112,6 +120,7 @@ Hier sind einige der in den Curl-Beispielen verwendeten allgemein reservierten S
 |===
 
 
+[[using-the-examples-with-bash]]
 == Verwenden der Beispiele mit Bash
 
 Wenn Sie die Workflow-Curl-Beispiele direkt verwenden, müssen Sie die darin enthaltenen Variablen mit Werten aktualisieren, die für Ihre Umgebung geeignet sind. Sie können die Beispiele manuell bearbeiten oder sich darauf verlassen, dass die Bash-Shell die Ersetzung für Sie vornimmt, wie unten beschrieben.

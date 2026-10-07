@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) App-Endpunkte'
 ---
 = Astra API (ACC) App-Endpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die App-API repräsentiert Kubernetes-Anwendungen, einschließlich solcher, die nicht von Astra verwaltet werden.

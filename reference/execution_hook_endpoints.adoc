@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Ausführungs-Hook-Endpunkte'
 ---
 = Astra API (ACC) Ausführungs-Hook-Endpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Execution Hook API ermöglicht die einfache Verwaltung von Ausführungshooks. Ausführungshooks enthalten zusätzliche Konfiguration und Verweise auf eine Hook-Quellressource.

@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Zertifikatsendpunkte'
 ---
 = Astra API (ACC) Zertifikatsendpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Certificate API repräsentiert vom Administrator als vertrauenswürdig eingestufte Zertifikate, die zum Aufbau ausgehender Verbindungen verwendet werden.

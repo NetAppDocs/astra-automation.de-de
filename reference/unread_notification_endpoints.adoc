@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Endpunkte für ungelesene Benachrichtigungen'
 ---
 = Astra API (ACC) Endpunkte für ungelesene Benachrichtigungen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Unread Notification API liefert Informationen über Benachrichtigungen, die von einem bestimmten Benutzer noch nicht gelesen wurden, und ermöglicht es, diese als gelesen zu markieren.

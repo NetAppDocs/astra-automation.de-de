@@ -7,6 +7,7 @@ summary: Neue App erstellen
 ---
 = Neue App erstellen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps`#
@@ -15,6 +16,7 @@ Gibt die gewünschten Werte für die zu erstellende App-API-Ressource an.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID der übergeordneten Kontoressource
 |===
 
 
+[[request-body]]
 == Anfragetext
 
 Gibt die gewünschten Werte für die zu erstellende App-API-Ressource an.
@@ -167,6 +170,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -441,6 +445,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -486,6 +491,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -531,6 +537,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -576,6 +583,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -621,6 +629,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -666,11 +675,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[GVK]]
 [role="api-collapsible-fifth-title"]
 GVK
 
@@ -707,6 +718,7 @@ JSON-Zeichenkette mit einer von Kubernetes zugewiesenen Versionskennung.
 
 
 |===
+[[clusterScopedResources]]
 [role="api-collapsible-fifth-title"]
 clusterScopedResources
 
@@ -730,6 +742,7 @@ JSON-Array von JSON-Strings, das einen Label-Selektor für die clusterweiten Gro
 
 
 |===
+[[namespaceScopedResources]]
 [role="api-collapsible-fifth-title"]
 namespaceScopedResources
 
@@ -761,6 +774,7 @@ JSON-Array von JSON-Strings, das einen Label-Selektor innerhalb des Namespace da
 
 
 |===
+[[namespaceMapping]]
 [role="api-collapsible-fifth-title"]
 namespaceMapping
 
@@ -788,6 +802,7 @@ JSON-Zeichenkette mit dem Namen des Namespace im Ziel-Cluster. Folgende Werte si
 
 
 |===
+[[storageClassMapping]]
 [role="api-collapsible-fifth-title"]
 storageClassMapping
 
@@ -816,6 +831,7 @@ JSON-Zeichenkette mit dem Namen der Zielspeicherklasse. Folgende Werte sind defi
 
 
 |===
+[[GVKN]]
 [role="api-collapsible-fifth-title"]
 GVKN
 
@@ -875,6 +891,7 @@ JSON-Array mit JSON-Strings, die Kubernetes-Label-Selektoren beschreiben, welche
 
 
 |===
+[[restoreFilter]]
 [role="api-collapsible-fifth-title"]
 restoreFilter
 
@@ -894,6 +911,7 @@ JSON-Zeichenkette mit einem Wert, der angibt, wie Ressourcenfilter Ressourcen au
 Ein JSON-Array von JSON-Objekten beschreibt Ressourcen, die bei einer selektiven Wiederherstellung gefiltert werden sollen. Eine Ressource entspricht einem einzelnen GVKN-Filterelement, wenn alle angegebenen Filterfelder mit dem entsprechenden Ressourcenfeld übereinstimmen. Filterfelder, die Arrays sind (z. B. Namespaces und Namen), entsprechen einem Feld, wenn mindestens eines ihrer Elemente mit dem entsprechenden Ressourcenfeld übereinstimmt. Das Feld labelSelectors erfordert, dass alle Selektoren übereinstimmen. Eine Ressource, die einem Filter im Array von GVKN-Filterobjekten entspricht, wird je nach resourceSelectionCriteria-Wert in die Wiederherstellung einbezogen oder ausgeschlossen. Leere GVKN-Objekte führen zu einem Validierungsfehler.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -909,6 +927,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -941,15 +960,19 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[targetSchema]]
 [role="api-collapsible-fifth-title"]
 targetSchema
 
+[[accept-post]]
 [role="api-collapsible-fifth-title"]
 accept-post
 
+[[accept-put]]
 [role="api-collapsible-fifth-title"]
 accept-put
 
+[[hints]]
 [role="api-collapsible-fifth-title"]
 Hinweise
 
@@ -977,6 +1000,7 @@ Hinweise
 | accept-put | link:#accept-put["accept-put"] | Falsch  a| 
 
 |===
+[[type_astra_link]]
 [role="api-collapsible-fifth-title"]
 type_astra_link
 
@@ -1008,6 +1032,7 @@ type_astra_link
 | Hinweise | link:#hints["Hinweise"] | Falsch  a| 
 
 |===
+[[namespaceScopedResources]]
 [role="api-collapsible-fifth-title"]
 namespaceScopedResources
 
@@ -1039,6 +1064,7 @@ JSON-Array von JSON-Strings, das einen Label-Selektor innerhalb des Namespace da
 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -1054,9 +1080,11 @@ type_astra_stateTransition
 | : | Array[string] | Wahr  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -1080,6 +1108,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
 
 |===
+[[restoreFilter]]
 [role="api-collapsible-fifth-title"]
 restoreFilter
 
@@ -1099,6 +1128,7 @@ JSON-Zeichenkette mit einem Wert, der angibt, wie Ressourcenfilter Ressourcen au
 Ein JSON-Array von JSON-Objekten beschreibt Ressourcen, die bei einer selektiven Wiederherstellung gefiltert werden sollen. Eine Ressource entspricht einem einzelnen GVKN-Filterelement, wenn alle angegebenen Filterfelder mit dem entsprechenden Ressourcenfeld übereinstimmen. Filterfelder, die Arrays sind (z. B. Namespaces und Namen), entsprechen einem Feld, wenn mindestens eines ihrer Elemente mit dem entsprechenden Ressourcenfeld übereinstimmt. Das Feld labelSelectors erfordert, dass alle Selektoren übereinstimmen. Eine Ressource, die einem Filter im Array von GVKN-Filterobjekten entspricht, wird je nach resourceSelectionCriteria-Wert in die Wiederherstellung einbezogen oder ausgeschlossen. Leere GVKN-Objekte führen zu einem Validierungsfehler.
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -1116,6 +1146,7 @@ Name des ungültigen Abfrageparameters
 Grund, warum der Abfrageparameter ungültig ist
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

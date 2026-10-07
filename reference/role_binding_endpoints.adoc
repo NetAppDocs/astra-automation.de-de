@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Rollenbindungs-Endpunkte'
 ---
 = Astra API (ACC) Rollenbindungs-Endpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Role Binding API beschreibt die Beziehungen zwischen den Benutzer-Konto-Paaren bzw. Gruppen-Konto-Paaren sowie die ihnen zugewiesenen Berechtigungen (Rollen).

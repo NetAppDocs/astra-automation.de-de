@@ -27,12 +27,14 @@ NOTE: Die LDAP-Anmeldedaten bestehen in Form eines Benutzernamens als E-Mail-Adr
 
 
 
+[[add-and-bind-an-individual-user]]
 == Hinzufügen und Binden eines einzelnen Benutzers
 
 Sie können jedem Astra-Benutzer eine Rolle zuweisen, die nach der LDAP-Authentifizierung verwendet wird. Dies ist angemessen, wenn es eine kleine Anzahl von Benutzern gibt und jeder über unterschiedliche administrative Merkmale verfügt.
 
 
 
+[[step-1-add-a-user]]
 === Schritt 1: Benutzer hinzufügen
 
 Führen Sie den folgenden REST-API-Aufruf durch, um einen Benutzer zu Astra hinzuzufügen und anzugeben, dass LDAP der Authentifizierungsanbieter ist.
@@ -123,6 +125,7 @@ Wenn der `email` Der Wert ist nicht eindeutig, es tritt ein Fehler auf und ein H
 ----
 
 
+[[step-2-add-a-role-binding-for-the-user]]
 === Schritt 2: Fügen Sie eine Rollenbindung für den Benutzer hinzu
 
 Führen Sie den folgenden REST-API-Aufruf durch, um den Benutzer an eine bestimmte Rolle zu binden. Sie müssen die UUID des Benutzers im vorherigen Schritt erstellen lassen.
@@ -193,12 +196,14 @@ Beachten Sie folgende Hinweise zu den Antwortparametern:
 
 
 
+[[add-and-bind-a-group]]
 == Fügen Sie eine Gruppe hinzu und binden Sie sie
 
 Sie können einer Astra-Gruppe eine Rolle zuweisen, die nach der LDAP-Authentifizierung verwendet wird. Dies ist angemessen, wenn es eine große Anzahl von Benutzern gibt und jeder über ähnliche administrative Merkmale verfügt.
 
 
 
+[[step-1-add-a-group]]
 === Schritt 1: Eine Gruppe hinzufügen
 
 Führen Sie den folgenden REST-API-Aufruf durch, um eine Gruppe zu Astra hinzuzufügen und anzugeben, dass LDAP der Authentifizierungsanbieter ist.
@@ -265,6 +270,7 @@ Beachten Sie folgende Informationen zu den Eingabeparametern:
 ----
 
 
+[[step-2-add-a-role-binding-for-the-group]]
 === Schritt 2: Fügen Sie eine Rollenbindung für die Gruppe hinzu
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die Gruppe an eine bestimmte Rolle zu binden. Sie müssen die UUID der Gruppe im vorherigen Schritt erstellen lassen. Benutzer, die Mitglieder der Gruppe sind, können sich bei Astra anmelden, nachdem LDAP die Authentifizierung durchgeführt hat.

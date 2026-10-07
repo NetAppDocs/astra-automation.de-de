@@ -7,6 +7,7 @@ summary: Ändern einer Rollenbindung für einen Benutzer
 ---
 = Ändern einer Rollenbindung für einen Benutzer
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings/{roleBinding_id}`#
@@ -15,6 +16,7 @@ Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfra
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID der roleBinding-Sammlung, die aufgelistet werden soll
 |===
 
 
+[[request-body]]
 == Anfragetext
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
@@ -132,7 +135,7 @@ JSON-Array von JSON-Zeichenketten, die den Umfang der Rollenzuweisung festlegen.
 
 * 
 +
-= Zugriff auf alle mit "dev" gekennzeichneten Namespaces in jedem Cluster in jeder Cloud und auf alles darunter erlauben: "roleConstraints": [ "namespaces:kubernetesLabels='http://dev.example.com/appname=dev["dev.example.com/appname=dev'.*"]" ]
+= Zugriff auf alle mit "dev" gekennzeichneten Namespaces in jedem Cluster in jeder Cloud und auf alles darunter zulassen: "roleConstraints": [ "namespaces:kubernetesLabels='dev.example.com/appname=dev'.*" ]
 
 * 
 +
@@ -170,6 +173,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -178,6 +182,7 @@ Status: 204, Indicates if the roleBinding resource was updated.
 ----
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -223,6 +228,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -273,6 +279,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -323,6 +330,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -368,6 +376,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -413,11 +422,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -433,6 +444,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -465,6 +477,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -482,6 +495,7 @@ Name des ungültigen Abfrageparameters
 Grund, warum der Abfrageparameter ungültig ist
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

@@ -7,6 +7,7 @@ summary: Token löschen
 ---
 = Token löschen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens/{token_id}`#
@@ -20,6 +21,7 @@ Entfernt die angegebene Token-API-Ressource.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -46,6 +48,7 @@ ID der aufzulistenden Token-Sammlung
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -54,6 +57,7 @@ Status: 204, Indicates if the token resource was deleted.
 ----
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -99,6 +103,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -149,6 +154,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -194,6 +200,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -239,11 +246,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

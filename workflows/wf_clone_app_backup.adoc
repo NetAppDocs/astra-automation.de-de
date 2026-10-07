@@ -18,6 +18,7 @@ Sie können eine neue Applikation erstellen, indem Sie sie aus einem Backup klon
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Beachten Sie Folgendes zu diesem Workflow:
@@ -31,18 +32,21 @@ NOTE: Zum Klonen einer App auf einem anderen Cluster müssen Sie den aktualisier
 
 
 
+[[step-1-select-the-app-to-clone]]
 == Schritt 1: Wählen Sie die App aus, die geklont werden soll
 
 Führen Sie den Workflow aus link:wf_list_man_apps.html["Listen Sie die Apps auf"] Und wählen Sie die Anwendung aus, die Sie klonen möchten. Für DEN REST-Aufruf, der zum Klonen der App verwendet wird, sind mehrere Ressourcenwerte erforderlich.
 
 
 
+[[step-2-select-the-backup-to-use]]
 == Schritt 2: Wählen Sie das zu verwendende Backup aus
 
 Führen Sie den Workflow aus link:wf_list_backups.html["Listen Sie die Backups auf"] Und wählen Sie das gewünschte Backup aus.
 
 
 
+[[step-3-clone-the-app]]
 == Schritt 3: App klonen
 
 Führen Sie den folgenden REST-API-Aufruf aus.

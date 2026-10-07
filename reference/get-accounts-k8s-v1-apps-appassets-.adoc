@@ -7,6 +7,7 @@ summary: Eine Anwendungsressource für eine App abrufen
 ---
 = Eine Anwendungsressource für eine App abrufen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appAssets/{appAsset_id}`#
@@ -15,6 +16,7 @@ Gibt die gespeicherte Application Asset API-Ressource im JSON-Antworttext zurüc
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -41,6 +43,7 @@ ID der appAsset-Sammlung, die aufgelistet werden soll
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -185,6 +188,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -230,6 +234,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -280,6 +285,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -325,6 +331,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -370,11 +377,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[GVK]]
 [role="api-collapsible-fifth-title"]
 GVK
 
@@ -411,11 +420,13 @@ JSON-Zeichenkette mit einer von Kubernetes zugewiesenen Versionskennung. Folgend
 
 
 |===
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 type_json
 
 JSON-Objekt, das den gesamten Inhalt der Kubernetes-Ressourcendefinition enthält.
 
+[[labels]]
 [role="api-collapsible-fifth-title"]
 Etiketten
 
@@ -443,6 +454,7 @@ JSON-Zeichenkette, die den Label-Wert enthält. Definierte Werte sind:
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -458,6 +470,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -490,6 +503,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

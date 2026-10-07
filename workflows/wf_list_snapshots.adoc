@@ -18,12 +18,14 @@ Sie können die Snapshots auflisten, die für eine bestimmte Anwendung erstellt 
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie müssen über die ID der App verfügen, für die Sie die Snapshots auflisten möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
 
 
 
+[[list-the-snapshots]]
 == Listen Sie die Snapshots auf
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die Snapshots aufzulisten.

@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Funktionsendpunkte'
 ---
 = Astra API (ACC) Funktionsendpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Feature-API bietet Lesezugriff auf Feature-Flag-Ressourcen, um festzustellen, welche Features im System aktiviert oder deaktiviert sind.

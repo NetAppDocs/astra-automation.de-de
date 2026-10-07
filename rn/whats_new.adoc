@@ -18,60 +18,70 @@ NetApp aktualisiert regelmäßig die Astra Control REST API und bietet Ihnen neu
 
 
 
+[[14-march-2024-24-02]]
 == 14. März 2024 (24.02)
 
 Sowohl Astra Control Service als auch Astra Control Center wurden mit Version 24.02 aktualisiert.
 
 
 
+[[minor-bug-fixes]]
 === Kleinere Fehlerbehebungen
 
 Die Version 24.02 konzentriert sich in erster Linie auf die Behebung einer Reihe von kleineren Fehlern. Es wurden keine neuen Ressourcentypen zur Astra Control API hinzugefügt.
 
 
 
+[[tech-preview-declarative-kubernetes-workflows]]
 === Tech Preview: Deklarative Kubernetes-Workflows
 
 Astra Control Center 24.02 enthält deklarative Kubernetes-Funktionen, mit denen Sie das Datenmanagement über eine native benutzerdefinierte Kubernetes-Ressource (Custom Resource, CR) ausführen können. Diese Funktion ist noch nicht allgemein verfügbar. Siehe https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center: Was ist neu"^] Wenn Sie weitere Informationen benötigen.
 
 
 
+[[7-november-2023-23-10]]
 == 7. November 2023 (23.10)
 
 Sowohl Astra Control Service als auch Astra Control Center wurden mit Version 23.10 aktualisiert. Die REST-API bietet ausgewählte Verbesserungen zur Unterstützung der neuen Funktionen.
 
 
 
+[[expanded-storage-backends]]
 === Erweiterte Storage-Back-Ends
 
 Sie können Backup- und Wiederherstellungsvorgänge für aktivieren `ontap-nas-economy` Storage-Back-Ends.
 
 
 
+[[immutable-backups]]
 === Unveränderliche Backups
 
 Astra Control unterstützt jetzt unveränderbare, schreibgeschützte Backups als zusätzliche Sicherheitsschicht gegen Malware und andere Bedrohungen.
 
 
 
+[[enhanced-control-over-execution-hooks]]
 === Verbesserte Kontrolle über Ausführungshaken
 
 Ab dieser Version können die Ausführungshaken-Funktionen aktiviert oder deaktiviert werden, um zusätzliche Sicherheit zu gewährleisten (standardmäßig ist sie deaktiviert). Wenn Sie noch keine Ausführungshaken für die Verwendung mit Astra Control erstellt haben, müssen Sie die Ausführungshaken-Funktion aktivieren, um mit dem Erstellen von Hooks zu beginnen. Wenn Sie vor diesem Release Testsuitehaoks erstellt haben, bleibt die Funktionalität „Ausführungshaken“ aktiviert und Sie können Hooks wie gewohnt verwenden.
 
 
 
+[[27-july-2023-23-07]]
 == 27. Juli 2023 (23.07)
 
 Diese Version enthält selektive Verbesserungen an der REST-API. Sowohl Astra Control Service als auch Astra Control Center wurden mit Version 23.07 aktualisiert.
 
 
 
+[[clone-and-replication-operations]]
 === Klon- und Replizierungsvorgänge
 
 Der Klonvorgang unterstützt jetzt nur Live Clones (den aktuellen Status der verwalteten Anwendung). Um aus einem Snapshot oder Backup zu klonen, müssen Sie den Wiederherstellungsvorgang verwenden. Außerdem können Applikationen jetzt zwischen ONTAP Storage-Back-Ends innerhalb desselben Kubernetes-Clusters repliziert werden.
 
 
 
+[[expanded-storage-backends]]
 === Erweiterte Storage-Back-Ends
 
 Zusätzliche Storage Back-Ends können nun mit Astra Control Center verwendet werden, darunter:
@@ -82,108 +92,126 @@ Zusätzliche Storage Back-Ends können nun mit Astra Control Center verwendet we
 
 
 
+[[new-execution-hook-type]]
 === Neuer Hook-Typ für die Ausführung
 
 Der neue Ausführungs-Hook Typ *Post-Failover* ist mit Astra Control Center verfügbar.
 
 
 
+[[27-june-2023-23-06]]
 == 27. Juni 2023 (23.06)
 
 Diese Version enthält selektive Updates für DIE REST-API.
 
 
 
+[[azure-marketplace]]
 === Azure Marketplace
 
 Die Abrechnung der Azure Marketplace Abonnements erfolgt jetzt pro Stunde statt pro Minute. Siehe auch https://docs.netapp.com/us-en/astra-control-service/use/set-up-billing.html["Abrechnung einrichten"^].
 
 
 
+[[restic-optimization]]
 === Restic-Optimierung
 
 Mit dem Flag können Sie die Performance-Optimierung für rektische Backups aktivieren `useResticParallel` Im neuen `astra.datamover` API-Ressource für Einstellungen. Wenn eingestellt auf `true`, Die Anzahl von `backendConnections` Diese Restic-Nutzung wird beim Backup großer Volumes in einen Azure-Container erhöht. Für die Volumes von 1 TB bis 4 TB werden 128 Verbindungen verwendet. Für Volumes mit mehr als 4 TB werden 512 Back-End-Verbindungen verwendet.
 
 
 
+[[30-may-2023-23-05]]
 == 30. Mai 2023 (23.05)
 
 Diese Version enthält selektive Updates für DIE REST-API.
 
 
 
+[[selective-restore-operations]]
 === Selektive Wiederherstellungsvorgänge
 
 Sie können die Ziel-Storage-Klasse während der Wiederherstellung oder Klonvorgänge auswählen.
 
 
 
+[[enable-dynamic-anf-pools-for-self-managed-clusters]]
 === Aktivieren Sie dynamische ANF-Pools für selbst gemanagte Cluster
 
 Wenn Sie eine gemanagte App in einem privaten On-Premises-Cluster mit einem ANF-Storage-Back-End sichern, können Sie die Funktion „Dynamic ANF Pools“ jetzt über eine Abonnement-ID aktivieren. Siehe link:../workflows_infra/wf_enable_anf_dyn_pools.html["Aktivieren Sie dynamische ANF-Pools"] Finden Sie weitere Informationen.
 
 
 
+[[25-april-2023-23-04]]
 == 25. April 2023 (23.04)
 
 Diese Version enthält selektive Updates für DIE REST-API.
 
 
 
+[[selective-restore-operations]]
 === Selektive Wiederherstellungsvorgänge
 
 Sie können Anwendungsressourcen während der Wiederherstellung selektiv ein- oder ausschließen. Dies geschieht mithilfe einer Filterregel, die auf einem bestimmten Namespace, Namen, Label oder GroupVersionRind-Wert basiert.
 
 
 
+[[support-for-data-only-applications]]
 === Unterstützung von ausschließlich datenbasierten Applikationen
 
 Die Unterstützung für das Applikationsmanagement wurde für rein datengeschützte Applikationen erweitert.
 
 
 
+[[17-january-2023-23-01]]
 == 17. Januar 2023 (23.01)
 
 Diese Version enthält eine kleine Aktualisierung der REST-API.
 
 
 
+[[enhanced-execution-hooks-functionality-with-filters]]
 === Verbesserte Funktionalität der Testausführungshaken mit Filtern
 
 Bei der Verwendung von Testsuiten können Sie jetzt Filter hinzufügen, um zu steuern, mit welchen Containern ein Haken übereinstimmt. Wenn Sie mehrere Filter für einen einzelnen Testausführungshaken erstellen, werden diese mit einem logischen UND einem Operator kombiniert. Pro Testsuite können Sie bis zu 10 aktive Filter definieren.
 
 
 
+[[22-november-2022-22-11]]
 == 22. November 2022 (22.11)
 
 Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie eine erweiterte Namespace- und LDAP-Unterstützung.
 
 
 
+[[new-and-enhanced-astra-resources]]
 === Neue und verbesserte Astra-Ressourcen
 
 Es wurden vier neue Ressourcentypen hinzugefügt: *ApiResource*, *ldapGroup*, *ldapUser* und *Task*. Außerdem wurden mehrere vorhandene Ressourcen und Endpunkte verbessert.
 
 
 
+[[monitoring-support-for-long-running-tasks]]
 === Überwachung des Supports für lang laufende Aufgaben
 
 Die neuen Task-Endpunkte bieten Zugriff auf verwaltete Task-Ressourcen und können zum Anzeigen des Status interner, lang laufender Aufgaben verwendet werden.
 
 
 
+[[enhanced-namespace-usage-scenarios]]
 === Verbesserte Namespace-Nutzungsszenarien
 
 Es wurde Unterstützung für Apps hinzugefügt, die mehrere Namespaces umfassen, sowie für Cluster-Ressourcen, die für Namespace-qualifizierte Ressourcen zugewiesen sind.
 
 
 
+[[expanded-cloud-subscriptions]]
 === Erweiterte Cloud-Abonnements
 
 Für jeden Cloud-Provider können jetzt mehrere Kontoabonnements hinzugefügt werden.
 
 
 
+[[additional-workflows]]
 === Weitere Workflows
 
 Weitere Workflows, die die Astra Control REST API veranschaulichen, wurden hinzugefügt. Siehe link:../workflows_infra/workflows_infra_before.html["Infrastruktur-Workflows"] Und link:../workflows/workflows_before.html["Management-Workflows"] Finden Sie weitere Informationen.
@@ -194,24 +222,28 @@ Weitere Workflows, die die Astra Control REST API veranschaulichen, wurden hinzu
 
 
 
+[[10-august-2022-22-08]]
 == August 10 2022 (22.08)
 
 Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie erweiterte Sicherheits- und Administrationsfunktionen.
 
 
 
+[[new-and-enhanced-astra-resources]]
 === Neue und verbesserte Astra-Ressourcen
 
 Es wurden drei neue Ressourcen-Typen hinzugefügt: *Zertifikat*, *Gruppe* und *AppMirror*. Darüber hinaus wurden die Versionen verschiedener vorhandener Ressourcen aktualisiert.
 
 
 
+[[ldap-authentication]]
 === LDAP-Authentifizierung
 
 Optional können Sie Astra Control Center so konfigurieren, dass sie sich in einen LDAP-Server integrieren lassen, um ausgewählte Astra-Benutzer zu authentifizieren. Siehe link:../workflows_infra/ldap_prepare.html["LDAP-Konfiguration"] Finden Sie weitere Informationen.
 
 
 
+[[enhanced-execution-hook]]
 === Verbesserter Execution Hook
 
 Die Astra Control 21.12 Version bietet zusätzliche Unterstützung für die Testdurchführung. Zusätzlich zu den vorhandenen Hooks für die vor- und NachSnapshot-Ausführung können Sie nun mit der Version 22.08 die folgenden Testausführungshaken konfigurieren:
@@ -225,6 +257,7 @@ Astra Control ermöglicht jetzt auch die Verwendung desselben Skripts für mehre
 
 
 
+[[application-replication-using-snapmirror]]
 === Applikationsreplizierung mit SnapMirror
 
 Daten und Applikationsänderungen lassen sich nun mithilfe der NetApp SnapMirror Technologie auf Clustern replizieren. Diese Verbesserung kann auch zur Verbesserung Ihrer Business Continuity- und Recovery-Funktionen eingesetzt werden.
@@ -235,36 +268,42 @@ Daten und Applikationsänderungen lassen sich nun mithilfe der NetApp SnapMirror
 
 
 
+[[26-april-2022-22-04]]
 == 26. April 2022 (22.04)
 
 Diese Version umfasst eine Erweiterung und Aktualisierung der REST-API sowie erweiterte Sicherheits- und Administrationsfunktionen.
 
 
 
+[[new-and-enhanced-astra-resources]]
 === Neue und verbesserte Astra-Ressourcen
 
 Es wurden zwei neue Ressourcen-Typen hinzugefügt: *Paket* und *Upgrade*. Außerdem wurden die Versionen verschiedener vorhandener Ressourcen aktualisiert.
 
 
 
+[[enhanced-rbac-with-namespace-granularity]]
 === Erweiterte RBAC mit Namespace-Granularität
 
 Wenn Sie eine Rolle einem zugeordneten Benutzer zuweisen, können Sie die Namespaces beschränken, auf die der Benutzer Zugriff hat. Siehe * Role Binding API* Referenz und link:../additional/rbac.html["RBAC-Sicherheit"] Finden Sie weitere Informationen.
 
 
 
+[[bucket-removal]]
 === Entfernen des Buckets
 
 Sie können einen Eimer entfernen, wenn er nicht mehr benötigt wird oder nicht ordnungsgemäß funktioniert.
 
 
 
+[[support-for-cloud-volumes-ontap]]
 === Unterstützung von Cloud Volumes ONTAP
 
 Cloud Volumes ONTAP wird nun als Storage Back-End unterstützt.
 
 
 
+[[additional-product-enhancements]]
 === Zusätzliche Produktverbesserungen
 
 Die beiden Astra Control-Produktimplementierungen sind mit einigen zusätzlichen Verbesserungen vertraut:
@@ -283,24 +322,28 @@ Sehen Sie sich die Seite *Was ist neu* auf den Dokumentationsseite des Astra Con
 
 
 
+[[14-december-2021-21-12]]
 == Bis 14. Dezember 2021 (21.12)
 
 Dieses Release enthält eine Erweiterung der REST API sowie eine Änderung der Dokumentationsstruktur, um die Entwicklung von Astra Control durch zukünftige Release-Updates besser zu unterstützen.
 
 
 
+[[separate-astra-automation-documentation-for-each-release-of-astra-control]]
 === Separate Dokumentation für Astra Automation für jede Version von Astra Control
 
 Jede Version von Astra Control verfügt über eine eigene REST-API, die auf die Funktionen der spezifischen Version zugeschnitten wurde. Die Dokumentation für jede Version der Astra Control REST API ist jetzt auf einer eigenen dedizierten Website zusammen mit dem zugehörigen GitHub Content Repository verfügbar. Die Hauptdoktorandseite https://docs.netapp.com/us-en/astra-automation/["Astra Control Automation"^] Enthält immer die Dokumentation für die aktuellste Version. Siehe link:../aa-earlier-versions.html["Frühere Versionen der Dokumentation Astra Control Automation"] Weitere Informationen zu vorherigen Releases.
 
 
 
+[[expansion-of-the-rest-resource-types]]
 === Erweiterung der REST-Ressourcentypen
 
 Die Anzahl DER REST-Ressourcentypen hat sich mit Schwerpunkt auf Ausführungs-Hooks und Storage-Back-Ends weiter erweitert. Die neuen Ressourcen umfassen: Konto, Testsuite, Hook Source, Execution Hook Override, Cluster Node, Managed Storage Back-End, Namespace, Storage-Gerät und Storage-Node. Siehe link:../endpoints/resources.html["Ressourcen"] Finden Sie weitere Informationen.
 
 
 
+[[netapp-astra-control-python-sdk]]
 === NetApp Astra Control Python SDK
 
 NetApp Astra Control Python SDK ist ein Open-Source-Paket, mit dem sich der Automatisierungscode für Ihre Astra Control Umgebung leichter entwickeln lässt. Der Kern ist das Astra SDK, das eine Reihe von Klassen umfasst, um die Komplexität der REST API Aufrufe zu abstrahieren. Es gibt auch ein Toolkit-Skript zur Ausführung spezifischer administrativer Aufgaben durch Zusammenfassung und Abstrahierung der Python-Klassen. Siehe link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] Finden Sie weitere Informationen.
@@ -311,24 +354,28 @@ NetApp Astra Control Python SDK ist ein Open-Source-Paket, mit dem sich der Auto
 
 
 
+[[5-august-2021-21-08]]
 == August 5 2021 (21.08)
 
 Diese Version umfasst die Einführung eines neuen Astra Implementierungsmodells und eine wesentliche Erweiterung der REST-API.
 
 
 
+[[astra-control-center-deployment-model]]
 === Astra Control Center-Implementierungsmodell
 
 Neben dem vorhandenen Astra Control Service, der als Public Cloud-Service bereitgestellt wird, umfasst diese Version auch das On-Premises-Implementierungsmodell von Astra Control Center. Sie können Astra Control Center an Ihrem Standort installieren und so Ihre lokale Kubernetes-Umgebung managen. Die beiden Astra Control Implementierungsmodelle nutzen dieselbe REST-API, wobei in der Dokumentation nur geringfügige Unterschiede zu berücksichtigen sind.
 
 
 
+[[expansion-of-the-rest-resource-types]]
 === Erweiterung der REST-Ressourcentypen
 
 Die Zahl der Ressourcen, auf die über die Astra Control REST-API zugegriffen werden kann, ist enorm erweitert. Viele der neuen Ressourcen bilden die Grundlage für das On-Premises Astra Control Center-Angebot. Die neuen Ressourcen umfassen: ASUP, Berechtigung, Funktion, Lizenz, Einstellung, Abonnement, Bucket, Cloud, Cluster, gemanagtes Cluster, Back-End-Storage und Storage-Klasse. Siehe link:../endpoints/resources.html["Ressourcen"] Finden Sie weitere Informationen.
 
 
 
+[[additional-endpoints-supporting-an-astra-deployment]]
 === Zusätzliche Endpunkte unterstützen eine Astra Implementierung
 
 Neben den erweiterten REST-Ressourcen stehen noch mehrere weitere neue API-Endpunkte zur Unterstützung einer Astra Control Implementierung zur Verfügung.
@@ -343,12 +390,14 @@ Unterstützung von OpenMetrics:: Die OpenMetrics-Endpunkte bieten über die Open
 
 
 
+[[15-april-2021-21-04]]
 == 15. April 2021 (21.04)
 
 Diese Version umfasst die folgenden neuen Funktionen und Verbesserungen.
 
 
 
+[[introduction-of-the-rest-api]]
 === Einführung DER REST API
 
 Die Astra Control REST API ist für den Astra Control Service verfügbar. Das System wurde auf Basis VON REST-Technologien und aktuellen Best Practices erstellt. Die API ist die Grundlage für die Automatisierung Ihrer Astra-Implementierungen und umfasst die folgenden Funktionen und Vorteile.

@@ -18,6 +18,7 @@ Die Astra Control REST-API verwendet HTTP und zugehörige Parameter, um auf die 
 
 
 
+[[api-transactions-and-the-crud-model]]
 == API-Transaktionen und das CRUD-Modell
 
 Die Astra Control REST API implementiert ein transaktionsorientiertes Modell mit klar definierten Abläufen und Zustandsübergängen.
@@ -38,6 +39,7 @@ Bei einigen der Astra-Ressourcen wird nur ein Teil dieser Vorgänge unterstützt
 
 
 
+[[http-methods]]
 == HTTP-Methoden
 
 Die von der API unterstützten HTTP-Methoden oder Verben werden in der folgenden Tabelle dargestellt.
@@ -60,6 +62,7 @@ Die von der API unterstützten HTTP-Methoden oder Verben werden in der folgenden
 |===
 
 
+[[request-and-response-headers]]
 == Header für Anfragen und Antworten
 
 Die folgende Tabelle fasst die HTTP-Header zusammen, die mit der Astra Control REST API verwendet werden.
@@ -97,6 +100,7 @@ NOTE: Siehe https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232"^] Und https://
 |===
 
 
+[[query-parameters]]
 == Abfrageparameter
 
 Die folgenden Abfrageparameter stehen zur Verwendung mit Ressourcensammlungen zur Verfügung. Siehe link:../additional/work_with_collections.html["Arbeit mit Sammlungen"] Finden Sie weitere Informationen.
@@ -125,6 +129,7 @@ Die folgenden Abfrageparameter stehen zur Verwendung mit Ressourcensammlungen zu
 |===
 
 
+[[http-status-codes]]
 == HTTP-Statuscodes
 
 Im Folgenden werden die HTTP-Statuscodes beschrieben, die von der REST-API von Astra Control verwendet werden.

@@ -18,18 +18,21 @@ Sie können die verfügbaren Speicherklassen auflisten.
 
 
 
+[[step-1-select-the-cloud]]
 == Schritt 1: Wählen Sie die Cloud
 
 Führen Sie den Workflow aus link:../workflows_infra/wf_list_clouds.html["Clouds auflisten"] Und wählen Sie die Cloud aus, in der Sie arbeiten werden.
 
 
 
+[[step-2-select-the-cluster]]
 == Schritt 2: Wählen Sie den Cluster aus
 
 Führen Sie den Workflow aus link:../workflows_infra/wf_list_clusters.html["Listen Sie die Cluster auf"] Und wählen Sie den Cluster aus.
 
 
 
+[[step-3-list-the-storage-classes-for-a-specific-cluster]]
 == Schritt 3: Listen Sie die Storage-Klassen für einen bestimmten Cluster auf
 
 Führen Sie den folgenden REST-API-Aufruf durch, um die Storage-Klassen für einen bestimmten Cluster und die Cloud aufzulisten.

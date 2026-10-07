@@ -7,6 +7,7 @@ summary: Eine Cloud löschen
 ---
 = Eine Cloud löschen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
@@ -15,6 +16,7 @@ Löscht die angeforderte Cloud-Instanz sowie alle nicht verwalteten Cluster und 
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -36,6 +38,7 @@ ID der aufzulistenden Cloud-Sammlung
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -44,6 +47,7 @@ Status: 204, Indicates if the cloud resource was deleted.
 ----
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -89,6 +93,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -139,6 +144,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -184,6 +190,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -229,6 +236,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -274,11 +282,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -296,6 +306,7 @@ Name des ungültigen Abfrageparameters
 Grund, warum der Abfrageparameter ungültig ist
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

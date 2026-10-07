@@ -18,12 +18,14 @@ Sie können einen Snapshot für eine bestimmte Anwendung erstellen.
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie müssen über die ID der App verfügen, für die Sie einen Snapshot erstellen möchten. Bei Bedarf können Sie den Workflow verwenden link:wf_list_man_apps.html["Listen Sie die Apps auf"] Zum Auffinden der Anwendung.
 
 
 
+[[create-a-snapshot]]
 == Erstellen Sie einen Snapshot
 
 Führen Sie den folgenden REST-API-Aufruf aus.

@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Anwendungssicherungsendpunkte'
 ---
 = Astra API (ACC) Anwendungssicherungsendpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Application Backup API ermöglicht es einem Benutzer, Backups einer verwalteten Anwendung zu erstellen und anzuzeigen.

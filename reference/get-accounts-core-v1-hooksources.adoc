@@ -7,6 +7,7 @@ summary: Alle Hook-Quellen auflisten
 ---
 = Alle Hook-Quellen auflisten
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
@@ -15,6 +16,7 @@ Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -65,6 +67,7 @@ OpenAPI-Beispiele: "field eq 'value'"
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -156,6 +159,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -201,6 +205,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -251,6 +256,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -296,6 +302,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -341,11 +348,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -361,6 +370,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -393,6 +403,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[hookSource_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 hookSource_1.0_get_response_body
 
@@ -494,6 +505,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -529,6 +541,7 @@ type_astra_metadata_list
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -18,12 +18,14 @@ Sie können ein Kubernetes-Cluster so managen, dass die Datensicherung durchgef�
 
 
 
+[[step-1-select-the-cluster-to-manage]]
 == Schritt 1: Wählen Sie den zu verwaltenden Cluster aus
 
 Führen Sie den Workflow aus link:../workflows_infra/wf_list_clusters.html["Listen Sie Cluster auf"] Und wählen Sie das gewünschte Cluster aus. Das Hotel `managedState` Des Clusters muss sein `unmanaged`.
 
 
 
+[[step-2-optionally-select-the-storage-class]]
 == Schritt 2: Wählen Sie optional die Storage-Klasse aus
 
 Führen Sie optional den Workflow aus link:../workflows_infra/wf_list_storage_classes.html["Auflisten von Speicherklassen"] Und wählen Sie die gewünschte Storage-Klasse aus.
@@ -33,6 +35,7 @@ NOTE: Wenn Sie beim Aufruf zum Verwalten des Clusters keine Storage-Klasse anbie
 
 
 
+[[step-3-manage-the-cluster]]
 == Schritt 3: Verwalten des Clusters
 
 Führen Sie den folgenden REST-API-Aufruf durch, um das Cluster zu verwalten.

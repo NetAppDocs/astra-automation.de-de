@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) Ausführungs-Hook-Überschreibungs-Endpunkte'
 ---
 = Astra API (ACC) Ausführungs-Hook-Überschreibungs-Endpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die Execution Hook Override API ermöglicht es einem Benutzer, die vorinstallierten „netapp“-Ausführungshooks für eine bestimmte Anwendung zu deaktivieren. (*HINWEIS UNTEN: API-AUßERBETRIEBNAHMEN*)

@@ -7,6 +7,7 @@ summary: Neues Paket erstellen
 ---
 = Neues Paket erstellen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
@@ -15,6 +16,7 @@ Gibt die gewünschten Werte für die zu erstellende Package-API-Ressource an.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID der übergeordneten Kontoressource
 |===
 
 
+[[request-body]]
 == Anfragetext
 
 Gibt die gewünschten Werte für die zu erstellende Package-API-Ressource an.
@@ -191,6 +194,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -428,6 +432,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -473,6 +478,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -523,6 +529,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -573,6 +580,7 @@ Liste ungültiger Anfragetextfelder
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -618,6 +626,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -663,11 +672,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[dependsOnImages]]
 [role="api-collapsible-fifth-title"]
 dependsOnImages
 
@@ -702,6 +713,7 @@ JSON-Zeichenkette, die das Tag/die Version dieses Bildes darstellt. Definierte W
 
 
 |===
+[[images]]
 [role="api-collapsible-fifth-title"]
 Bilder
 
@@ -749,6 +761,7 @@ JSON-Zeichenkette, die den Digest dieses Bildes darstellt. Definierte Werte sind
 JSON-Array von JSON-Objekten, die die zum Installieren oder Aktualisieren des aktuellen Images erforderlichen Images beschreiben.
 
 |===
+[[dependsOnComponents]]
 [role="api-collapsible-fifth-title"]
 dependsOnComponents
 
@@ -772,6 +785,7 @@ JSON-Zeichenkette, die den Namen der Komponente beschreibt. Definierte Werte sin
 JSON-Array von JSON-Zeichenketten, die die für die Installation des aktuellen Images erforderliche Komponentenversion definieren.
 
 |===
+[[artifacts]]
 [role="api-collapsible-fifth-title"]
 Artefakte
 
@@ -821,6 +835,7 @@ JSON-Zeichenkette mit der Versionsnummer des Artefakts, sofern angegeben. Folgen
 JSON-Array von JSON-Objekten, die die installierten Komponenten beschreiben, die zum Installieren/Aktualisieren des aktuellen Images erforderlich sind.
 
 |===
+[[files]]
 [role="api-collapsible-fifth-title"]
 Dateien
 
@@ -863,6 +878,7 @@ JSON-Zeichenkette mit dem Dateiinhalt. Definierte Werte sind:
 
 
 |===
+[[upgradableVersions]]
 [role="api-collapsible-fifth-title"]
 upgradableVersions
 
@@ -888,6 +904,7 @@ JSON-Zeichenkette, die die maximale Version beschreibt, die auf die Paketversion
 
 
 |===
+[[dependencies]]
 [role="api-collapsible-fifth-title"]
 Abhängigkeiten
 
@@ -922,6 +939,7 @@ JSON-Zeichenkette, die die maximal erforderliche Version dieser Komponente besch
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -937,6 +955,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -969,6 +988,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -984,9 +1004,11 @@ type_astra_stateTransition
 | : | Array[string] | Wahr  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -1010,6 +1032,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -1027,6 +1050,7 @@ Name des ungültigen Abfrageparameters
 Grund, warum der Abfrageparameter ungültig ist
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

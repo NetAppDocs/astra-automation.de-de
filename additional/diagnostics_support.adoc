@@ -18,6 +18,7 @@ Mit der Astra Control REST API stehen verschiedene Supportfunktionen zur Verfüg
 
 
 
+[[api-resources]]
 == API-Ressourcen
 
 Verschiedene Astra-Funktionen sind über API-Ressourcen zugänglich und bieten diagnostische Informationen und Support.

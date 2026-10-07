@@ -21,6 +21,7 @@ NOTE: Das Format des Pfads und der vollständigen URL für den Zugriff auf die A
 
 
 
+[[summary-of-astra-control-rest-resources]]
 == Zusammenfassung der Astra Control REST-Ressourcen
 
 Die primären Ressourcenendpunkte in der Astra Control REST API sind in drei Kategorien unterteilt. Auf jede Ressource kann mit allen CRUD-Vorgängen (Erstellen, Lesen, Aktualisieren, Löschen) zugegriffen werden, sofern nicht anders angegeben.
@@ -29,6 +30,7 @@ Die Spalte *Release* zeigt den Astra-Release an, als die Ressource zum ersten Ma
 
 
 
+[[core-resources]]
 === Kernressourcen
 
 Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau und zur Wartung der Astra-Laufzeitumgebung erforderlich sind.
@@ -114,6 +116,7 @@ Die Kernressourcenendpunkte bieten die grundlegenden Services, die zum Aufbau un
 |===
 
 
+[[managed-application-resources]]
 === Gemanagte Applikationsressourcen
 
 Die Endpunkte der gemanagten Applikationsressourcen bieten Zugriff auf die gemanagten Kubernetes-Applikationen.
@@ -139,6 +142,7 @@ Die Endpunkte der gemanagten Applikationsressourcen bieten Zugriff auf die geman
 |===
 
 
+[[topology-resources]]
 === Topologieressourcen
 
 Die Endpunkte der Topologieressourcen bieten Zugriff auf nicht verwaltete Applikationen und Storage-Ressourcen.
@@ -185,6 +189,7 @@ Die Endpunkte der Topologieressourcen bieten Zugriff auf nicht verwaltete Applik
 |===
 
 
+[[additional-resources-and-endpoints]]
 == Zusätzliche Ressourcen und Endpunkte
 
 Zur Unterstützung einer Astra-Implementierung stehen mehrere zusätzliche Ressourcen und Endpunkte zur Verfügung.

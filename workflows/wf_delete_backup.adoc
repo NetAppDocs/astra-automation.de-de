@@ -18,6 +18,7 @@ Sie können ein Backup einer Anwendung löschen.
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 Sie müssen Folgendes haben:
@@ -28,6 +29,7 @@ Sie müssen Folgendes haben:
 
 
 
+[[delete-the-backup]]
 == Löschen Sie das Backup
 
 Führen Sie den folgenden REST-API-Aufruf aus.

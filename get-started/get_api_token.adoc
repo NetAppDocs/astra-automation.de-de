@@ -18,6 +18,7 @@ Sie müssen ein Astra API Token erhalten, um die Astra Control REST API zu verwe
 
 
 
+[[overview]]
 == Überblick
 
 Ein API-Token identifiziert den Anrufer an Astra und muss bei jedem REST-API-Aufruf enthalten sein.
@@ -36,6 +37,7 @@ Ein API-Token identifiziert den Anrufer an Astra und muss bei jedem REST-API-Auf
 
 
 
+[[create-an-astra-api-token]]
 == Erstellen Sie ein Astra API-Token
 
 In den folgenden Schritten wird beschrieben, wie ein Astra API Token erstellt wird.

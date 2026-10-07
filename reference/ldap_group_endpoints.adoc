@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) LDAP-Gruppenendpunkte'
 ---
 = Astra API (ACC) LDAP-Gruppenendpunkte
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Die LDAP-Gruppen-API ermöglicht den Lesezugriff auf LDAP-Gruppen innerhalb des konfigurierten LDAP-Servers.

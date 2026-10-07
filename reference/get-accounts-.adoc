@@ -7,6 +7,7 @@ summary: Konto abrufen
 ---
 = Konto abrufen
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}`#
@@ -15,6 +16,7 @@ Gibt die gespeicherte Account-API-Ressource im JSON-Antworttext zurück.
 
 
 
+[[parameters]]
 == Parameter
 
 [cols="5*"]
@@ -31,6 +33,7 @@ ID der aufzulistenden Kontensammlung
 |===
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -139,6 +142,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -184,6 +188,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -234,6 +239,7 @@ Liste ungültiger Abfrageparameter
 ====
 
 
+[[response]]
 == Antwort
 
 [source]
@@ -279,6 +285,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == Fehler
 
 [source]
@@ -324,11 +331,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == Definitionen
 
 .Siehe Definitionen
 [%collapsible]
 ====
+[[postalAddress]]
 [role="api-collapsible-fifth-title"]
 postalAddress
 
@@ -392,6 +401,7 @@ JSON-Zeichenkette mit optionalen zusätzlichen Adressinformationen, Postfach und
 
 
 |===
+[[accountContact]]
 [role="api-collapsible-fifth-title"]
 accountContact
 
@@ -454,6 +464,7 @@ JSON-Zeichenkette mit der Telefonnummer des Benutzers. Existiert dieser Schlüss
 JSON-Objekt mit einer Sammlung von JSON-Zeichenketten, die eine Adresse angeben. Wenn dieser Schlüssel nicht existiert, bedeutet dies, dass keine Adresse angegeben wurde. Wenn dieser Schlüssel existiert, sind alle sechs enthaltenen JSON-Zeichenketten vorhanden. Wenn Sie nichts angeben, ist die Zeichenkette leer.
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 Typ_Astra_Label
 
@@ -469,6 +480,7 @@ Typ_Astra_Label
 | Wert | Zeichenkette | Wahr  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -501,6 +513,7 @@ Client- und dienstspezifische Metadaten, die der Ressource zugeordnet sind. Defi
 | modifiedBy | Zeichenkette | Falsch  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
