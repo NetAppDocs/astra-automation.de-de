@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/subscription_endpoints.html 
+keywords: subscriptions,active subscriptions,account subscriptions,subscription resources,licensing 
 summary: 'Astra API (ACC) Abonnement-Endpunkte' 
 ---
 = Astra API (ACC) Abonnement-Endpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Die aktiven Abonnements für Ihr Astra Control Konto werden angezeigt.
 
 Die Subscription API ermöglicht den Zugriff auf Abonnementressourcen, um aktive Abonnements darzustellen.

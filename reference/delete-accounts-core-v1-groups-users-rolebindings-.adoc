@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-groups-users-rolebindings-.html 
+keywords: role binding,remove role,delete user,group resource,user role,account role 
 summary: Eine Rollenbindung für einen Benutzer in einer Gruppe löschen 
 ---
 = Eine Rollenbindung für einen Benutzer in einer Gruppe löschen
@@ -10,7 +11,20 @@ summary: Eine Rollenbindung für einen Benutzer in einer Gruppe löschen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Entfernt eine Rollenbindung für einen Benutzer in einer Gruppe und damit die angegebene Rollenbindungszuordnung aus der Gruppe.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Entfernt die angegebene Role Binding API-Ressource.
 

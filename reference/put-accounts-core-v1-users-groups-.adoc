@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/put-accounts-core-v1-users-groups-.html 
+keywords: replace resource,group management,user groups,user resource,account resource,modify group 
 summary: Eine Gruppe für einen Benutzer ändern 
 ---
 = Eine Gruppe für einen Benutzer ändern
@@ -10,7 +11,20 @@ summary: Eine Gruppe für einen Benutzer ändern
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ändert eine Gruppe für einen Benutzer und aktualisiert die Gruppenkonfiguration anhand des bereitgestellten JSON-Request-Body.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
 

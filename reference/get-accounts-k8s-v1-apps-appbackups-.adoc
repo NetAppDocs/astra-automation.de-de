@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appbackups-.html 
+keywords: application backup,kubernetes apps,account resource,app collection,stored resource 
 summary: Eine Anwendungssicherung für eine App abrufen 
 ---
 = Eine Anwendungssicherung für eine App abrufen
@@ -10,7 +11,20 @@ summary: Eine Anwendungssicherung für eine App abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Applikationsbackup für eine App ab und stellt die Informationen zur gespeicherten Backup-Ressource im JSON-Antworttext bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Application Backup API-Ressource im JSON-Antworttext zurück.
 

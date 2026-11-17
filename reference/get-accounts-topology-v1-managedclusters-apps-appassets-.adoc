@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-apps-appassets-.html 
+keywords: application asset,managed cluster,app assets,stored resource,json response 
 summary: Abrufen einer Anwendungsressource für einen verwalteten Cluster 
 ---
 = Abrufen einer Anwendungsressource für einen verwalteten Cluster
@@ -10,7 +11,20 @@ summary: Abrufen einer Anwendungsressource für einen verwalteten Cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Applikation Asset für einen verwalteten Cluster ab und ermöglicht damit den Zugriff auf gespeicherte Ressourcendetails für Managementaufgaben.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/apps/{app_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Application Asset API-Ressource im JSON-Antworttext zurück.
 

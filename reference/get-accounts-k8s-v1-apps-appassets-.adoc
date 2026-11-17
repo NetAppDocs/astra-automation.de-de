@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appassets-.html 
+keywords: application asset,stored asset,app resource,account resource,asset collection 
 summary: Eine Anwendungsressource für eine App abrufen 
 ---
 = Eine Anwendungsressource für eine App abrufen
@@ -10,7 +11,20 @@ summary: Eine Anwendungsressource für eine App abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Asset einer Applikation für eine App ab und stellt die gespeicherten Asset-Details zur weiteren Verarbeitung oder Analyse bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Application Asset API-Ressource im JSON-Antworttext zurück.
 

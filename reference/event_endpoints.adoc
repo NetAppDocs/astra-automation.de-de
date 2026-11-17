@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/event_endpoints.html 
+keywords: events,system events,event monitoring,activity tracking,event retrieval 
 summary: 'Astra API (ACC) Ereignisendpunkte' 
 ---
 = Astra API (ACC) Ereignisendpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Die in Astra Control auftretenden Ereignisse ermöglichen die Nachverfolgung der Systemaktivität.
 
 Die Event-API ermöglicht den Zugriff auf Ereignisse, die im System auftreten.

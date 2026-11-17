@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-namespaces.html 
+keywords: account topology,managed cluster,namespaces list,resource collection,field filter 
 summary: Listen Sie die Namespaces für einen verwalteten Cluster auf 
 ---
 = Listen Sie die Namespaces für einen verwalteten Cluster auf
@@ -10,7 +11,20 @@ summary: Listen Sie die Namespaces für einen verwalteten Cluster auf
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft die Namespaces eines verwalteten Clusters ab. Damit können die dem Cluster zugeordneten Namespaces angezeigt und effektiv gemanagt werden.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/namespaces`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

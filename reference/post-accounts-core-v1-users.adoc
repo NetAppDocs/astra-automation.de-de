@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-users.html 
+keywords: user creation,user resource,account user,create user,account management 
 summary: Neuen Benutzer erstellen 
 ---
 = Neuen Benutzer erstellen
@@ -10,7 +11,20 @@ summary: Neuen Benutzer erstellen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt einen neuen Benutzer in Astra API und legt die gewünschten Werte für die Benutzer API Ressource fest. Dies dient dazu, Benutzerzugriffe und Berechtigungen in Ihrer Astra Umgebung zu managen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Benutzer-API-Ressource an.
 

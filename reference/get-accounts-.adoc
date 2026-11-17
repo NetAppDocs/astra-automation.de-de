@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-.html 
+keywords: account id,account resource,stored account,account collection,json response 
 summary: Konto abrufen 
 ---
 = Konto abrufen
@@ -10,7 +11,20 @@ summary: Konto abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Konto ab und gibt die Details der gespeicherten Kontoressource in der Antwort zurück. Dies ermöglicht den Zugriff auf Kontoinformationen für Verwaltungs- oder Überprüfungszwecke.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Account-API-Ressource im JSON-Antworttext zurück.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/post-accounts-core-v1-users-groups.html 
+keywords: create group,user groups,group resource,user account,group creation 
 summary: Erstellen Sie eine neue Gruppe für einen Benutzer 
 ---
 = Erstellen Sie eine neue Gruppe für einen Benutzer
@@ -10,7 +11,20 @@ summary: Erstellen Sie eine neue Gruppe für einen Benutzer
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt eine neue Gruppe für einen Benutzer und legt die gewünschten Werte für die Gruppenressource fest. Dieser Endpunkt dient dazu, Benutzer für eine bessere Verwaltung und Zugriffskontrolle in Gruppen zu organisieren.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Group-API-Ressource an.
 

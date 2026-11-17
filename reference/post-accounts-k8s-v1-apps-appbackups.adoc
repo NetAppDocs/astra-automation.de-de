@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-appbackups.html 
+keywords: application backup,account resource,app resource,k8s apps,kubernetes backup 
 summary: Erstellen Sie eine neue Anwendungssicherung für eine App 
 ---
 = Erstellen Sie eine neue Anwendungssicherung für eine App
@@ -10,7 +11,20 @@ summary: Erstellen Sie eine neue Anwendungssicherung für eine App
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt eine Applikationssicherung für eine Applikation und legt die gewünschte Konfiguration für die Sicherungsressource fest. Dies dient dazu, den aktuellen Zustand Ihrer Applikation für eine spätere Wiederherstellung oder Analyse zu bewahren.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Application Backup API-Ressource an.
 

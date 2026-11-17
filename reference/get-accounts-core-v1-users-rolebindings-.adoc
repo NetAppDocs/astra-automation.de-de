@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-rolebindings-.html 
+keywords: role binding,role permissions,user role,group role,account role,user permissions 
 summary: Eine Rollenbindung für einen Benutzer abrufen 
 ---
 = Eine Rollenbindung für einen Benutzer abrufen
@@ -10,7 +11,20 @@ summary: Eine Rollenbindung für einen Benutzer abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft die Rollenzuordnung eines Benutzers ab und zeigt die spezifischen Berechtigungen an, die den Rollen des Benutzers zugeordnet sind. Damit lassen sich die Rollenzuweisungen anzeigen, die den Zugriff auf Ressourcen innerhalb Ihres Kontos oder Ihrer Gruppe regeln.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Role Binding API-Ressource im JSON-Antworttext zurück. Wenn die Anfrage an /accounts/{account_id}/core/v1/users/{user_id}/roleBindings gestellt wird, dürfen nur roleBinding-Ressourcen gelesen werden, bei denen die Benutzer-ID mit der Benutzer-ID in der Anfrage-URL übereinstimmt. Wenn die Anfrage an /accounts/{account_id}/core/v1/groups/{group_id}/roleBindings gestellt wird, dürfen nur roleBinding-Ressourcen gelesen werden, bei denen die Gruppen-ID mit der Gruppen-ID in der Anfrage-URL übereinstimmt.
 

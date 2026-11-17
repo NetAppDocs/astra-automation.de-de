@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-clusternodes-.html 
+keywords: cluster node,cluster topology,account cluster,cluster details,node resource,cluster node list 
 summary: Einen Clusterknoten für einen Cluster abrufen 
 ---
 = Einen Clusterknoten für einen Cluster abrufen
@@ -10,7 +11,20 @@ summary: Einen Clusterknoten für einen Cluster abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Clusterknoten für einen Cluster ab und liefert Details zur Konfiguration und zum Status des Knotens innerhalb des angegebenen Clusters.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/clusterNodes/{clusterNode_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Cluster Node API-Ressource im JSON-Antworttext zurück.
 

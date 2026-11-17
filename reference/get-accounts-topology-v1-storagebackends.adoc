@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-storagebackends.html 
+keywords: account topology,storage backends,collection fields,matching resources,resource limit 
 summary: Alle Speicher-Backends auflisten 
 ---
 = Alle Speicher-Backends auflisten
@@ -10,7 +11,20 @@ summary: Alle Speicher-Backends auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Liste der Storage Backends ab. Dies dient zur Anzeige aller verfügbaren Storage Ressourcen für Management- und Konfigurationszwecke.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

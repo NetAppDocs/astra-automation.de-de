@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-executionhooks-.html 
+keywords: execution hook,execution hook resource,matching containers,matching images,matching criteria,execution hook collection 
 summary: Einen Ausführungs-Hook abrufen 
 ---
 = Einen Ausführungs-Hook abrufen
@@ -10,7 +11,20 @@ summary: Einen Ausführungs-Hook abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Ausführungs-Hook ab, der gespeicherte Ressourcendetails sowie passende Container- und Image-Informationen basierend auf den aktuellen Kriterien bereitstellt.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Execution Hook API-Ressource im JSON-Antworttext zurück. Füllt außerdem matchingContainers und matchingImages basierend auf der aktuellen matchingCriteria und der definierten App aus.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-namespaces-.html 
+keywords: namespace resource,stored namespace,namespace collection,cloud resource,cluster resource 
 summary: Einen Namespace für eine Cloud abrufen 
 ---
 = Einen Namespace für eine Cloud abrufen
@@ -10,7 +11,20 @@ summary: Einen Namespace für eine Cloud abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Namespace für eine Cloud ab und stellt die gespeicherte Namespace API-Ressource für Cloud-Operationen bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/namespaces/{namespace_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Namespace-API-Ressource im JSON-Antworttext zurück.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-storagebackends-volumes-.html 
+keywords: volume resource,storage backend,account volume,volume collection,stored volume,volume details 
 summary: Ein Volume für ein Storage-Backend abrufen 
 ---
 = Ein Volume für ein Storage-Backend abrufen
@@ -10,7 +11,20 @@ summary: Ein Volume für ein Storage-Backend abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Volume für ein Storage-Backend ab und stellt die gespeicherte Volume API-Ressource zur weiteren Prüfung oder Verwaltung bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}/volumes/{volume_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Volume-API-Ressource im JSON-Antworttext zurück.
 

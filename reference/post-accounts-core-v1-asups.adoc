@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-asups.html 
+keywords: asup creation,account resource,core v1,account id,netapp ontap 
 summary: Erstellen Sie eine neue ASUP-Ressource 
 ---
 = Erstellen Sie eine neue ASUP-Ressource
@@ -10,7 +11,20 @@ summary: Erstellen Sie eine neue ASUP-Ressource
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt eine ASUP-Ressource zum Festlegen der gewünschten Werte für automatisierte Support-Uploads.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende ASUP-API-Ressource an.
 

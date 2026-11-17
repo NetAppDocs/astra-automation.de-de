@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-entitlements.html 
+keywords: entitlements,account resources,field selection,resource collection,collection filtering,resource sorting 
 summary: Alle Berechtigungen auflisten 
 ---
 = Alle Berechtigungen auflisten
@@ -10,7 +11,20 @@ summary: Alle Berechtigungen auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Liste der Berechtigungen ab und liefert Informationen zu allen passenden Ressourcen in der Sammlung. Dies dient dem Zugriff auf spezifische Ressourcendetails auf Grundlage Ihrer Anfragekriterien.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

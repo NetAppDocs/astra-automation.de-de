@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/namespace_endpoints.html 
+keywords: namespaces,kubernetes namespaces,cluster namespaces,namespace details,read-only access 
 summary: 'Astra API (ACC) Namespace-Endpunkte' 
 ---
 = Astra API (ACC) Namespace-Endpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Anzeige der Namespaces, die zu einem Cluster gehören. Diese Endpunkte sind schreibgeschützt.
 
 Die Namespace-API bietet schreibgeschützten Zugriff auf Namespace-Ressourcen, um Namespaces zu beschreiben, die einem bestimmten Cluster zugeordnet sind.

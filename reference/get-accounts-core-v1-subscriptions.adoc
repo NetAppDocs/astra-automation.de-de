@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-subscriptions.html 
+keywords: subscriptions,matching resources,collection fields,account id,resource listing,sort order 
 summary: Alle Abonnements auflisten 
 ---
 = Alle Abonnements auflisten
@@ -10,7 +11,20 @@ summary: Alle Abonnements auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Liste der Abonnements ab und liefert Details zu jedem Abonnement in der Sammlung. Dies ermöglicht die effiziente Anzeige und das Managen Ihrer Abonnements.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

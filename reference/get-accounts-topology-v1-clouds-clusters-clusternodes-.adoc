@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-clusternodes-.html 
+keywords: cluster node,cloud cluster,account resource,cloud resource,cluster resource,stored resource 
 summary: Einen Clusterknoten für eine Cloud abrufen 
 ---
 = Einen Clusterknoten für eine Cloud abrufen
@@ -10,7 +11,20 @@ summary: Einen Clusterknoten für eine Cloud abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Clusterknoten für eine Cloud ab und ermöglicht so den Zugriff auf die gespeicherte Knotenkonfiguration für das Ressourcenmanagement in der Cloud.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/clusterNodes/{clusterNode_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Cluster Node API-Ressource im JSON-Antworttext zurück.
 

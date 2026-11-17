@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-licenses.html 
+keywords: licenses,account licenses,license list,resource collection,license fields,account resources 
 summary: Alle Lizenzen auflisten 
 ---
 = Alle Lizenzen auflisten
@@ -10,7 +11,20 @@ summary: Alle Lizenzen auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft alle Lizenzen in der Sammlung ab und gibt ein JSON-Array der entsprechenden Ressourcen zurück. Sie können einzelne Felder in der Anfrage angeben, um die für jede Lizenz zurückgegebenen Informationen anzupassen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

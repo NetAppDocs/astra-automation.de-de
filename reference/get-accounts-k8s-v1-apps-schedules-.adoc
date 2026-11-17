@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-schedules-.html 
+keywords: account schedule,k8s schedule,app schedule,stored schedule,schedule listing 
 summary: Einen Zeitplan abrufen 
 ---
 = Einen Zeitplan abrufen
@@ -10,7 +11,20 @@ summary: Einen Zeitplan abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen gespeicherten Zeitplan ab. Dient zum Zugriff auf die Konfigurationsdetails des Zeitplans und zu deren Überprüfung.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Schedule-API-Ressource im JSON-Antworttext zurück.
 

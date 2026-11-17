@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-rolebindings-.html 
+keywords: replace resource,role binding,resource modification,account role,role management 
 summary: Eine Rollenbindung modifizieren 
 ---
 = Eine Rollenbindung modifizieren
@@ -10,7 +11,20 @@ summary: Eine Rollenbindung modifizieren
 :imagesdir: ../media/
 
 
+[role="lead"]
+Modifiziert eine Rollenbindung, um ihre Konfiguration auf Grundlage des bereitgestellten JSON-Request-Body zu aktualisieren.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
 

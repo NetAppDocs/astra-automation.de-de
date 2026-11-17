@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-tokens-.html 
+keywords: account resource,group resource,user resource,token collection,stored token 
 summary: Ein Token für einen Benutzer in einer Gruppe abrufen 
 ---
 = Ein Token für einen Benutzer in einer Gruppe abrufen
@@ -10,7 +11,20 @@ summary: Ein Token für einen Benutzer in einer Gruppe abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Token für einen Benutzer in einer Gruppe ab und gibt die gespeicherte API-Token-Ressource zurück. Dies dient zur Authentifizierung und zum sicheren Zugriff auf gruppenspezifische Ressourcen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Token-API-Ressource im JSON-Antworttext zurück.
 

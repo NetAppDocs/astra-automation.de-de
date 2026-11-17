@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-asups-.html 
+keywords: autosupport download,asup resource,autosupport bundle,creation state,asup collection 
 summary: Eine ASUP-Ressource abrufen 
 ---
 = Eine ASUP-Ressource abrufen
@@ -10,7 +11,20 @@ summary: Eine ASUP-Ressource abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine ASUP Ressource ab und ermöglicht so den Zugriff auf die gespeicherten AutoSupport Daten zu Überwachungs- und Diagnosezwecken.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups/{asup_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte ASUP-API-Ressource im JSON-Antworttext zurück. Wenn das AutoSupport-Bundle "creationState" "completed" oder "partial" ist, kann das AutoSupport-Bundle durch Angabe eines Accept-Headers mit "_/_" oder "application/gzip" heruntergeladen werden.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/post-accounts-core-v1-groups-users-tokens.html 
+keywords: token creation,account token,user token,group token,user management 
 summary: Erstellen Sie ein neues Token für einen Benutzer in einer Gruppe 
 ---
 = Erstellen Sie ein neues Token für einen Benutzer in einer Gruppe
@@ -10,7 +11,20 @@ summary: Erstellen Sie ein neues Token für einen Benutzer in einer Gruppe
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellung eines neuen Tokens für einen Benutzer in einer Gruppe mit Angabe der gewünschten Werte zur Authentifizierung und Autorisierung von Gruppenaktionen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Token-API-Ressource an.
 

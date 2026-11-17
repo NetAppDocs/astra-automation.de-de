@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/kubernetes_api_resource_endpoints.html 
+keywords: kubernetes api resources,supported resources,cluster resources,resource filtering,read-only api 
 summary: 'Astra API (ACC) Kubernetes API-Ressourcenendpunkte' 
 ---
 = Astra API (ACC) Kubernetes API-Ressourcenendpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+An den Kubernetes-API-Ressourcen eines Clusters lässt sich erkennen, welche von Astra Control unterstützt werden. Diese Endpunkte sind schreibgeschützt.
 
 Die Kubernetes API Resource API bietet Lesezugriff auf Kubernetes API-Ressourcen, um diejenigen zu filtern, die von Astra auf einem bestimmten Cluster unterstützt werden.

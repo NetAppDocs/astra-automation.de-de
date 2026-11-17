@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/notification_endpoints.html 
+keywords: notifications,user notifications,notification destinations,event notifications,notification management 
 summary: 'Astra API (ACC) Benachrichtigungsendpunkte' 
 ---
 = Astra API (ACC) Benachrichtigungsendpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Für jeden Benutzer lassen sich die Ereignisse anzeigen, die an ein Benachrichtigungsziel weitergeleitet werden.
 
 Die Notification API bietet pro Benutzer Zugriff auf Ereignisse mit einem Benachrichtigungsziel.

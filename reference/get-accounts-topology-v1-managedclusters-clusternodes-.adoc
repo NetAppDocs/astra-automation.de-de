@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-clusternodes-.html 
+keywords: cluster node,managed cluster,cluster topology,account resource,stored resource 
 summary: Einen Clusterknoten für einen verwalteten Cluster abrufen 
 ---
 = Einen Clusterknoten für einen verwalteten Cluster abrufen
@@ -10,7 +11,20 @@ summary: Einen Clusterknoten für einen verwalteten Cluster abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Clusterknoten für einen gemanagten Cluster ab und liefert Details zur Konfiguration und zum Status des Knotens innerhalb des Clusters.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/clusterNodes/{clusterNode_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Cluster Node API-Ressource im JSON-Antworttext zurück.
 

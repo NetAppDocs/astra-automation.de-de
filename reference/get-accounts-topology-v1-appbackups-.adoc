@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-appbackups-.html 
+keywords: account topology,application backup,stored backup,backup resource,app backup collection 
 summary: Wiederherstellen einer Anwendungssicherung 
 ---
 = Wiederherstellen einer Anwendungssicherung
@@ -10,7 +11,20 @@ summary: Wiederherstellen einer Anwendungssicherung
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Applikationsbackup ab und ermöglicht so den Zugriff auf die gespeicherte Sicherungsressource zur weiteren Überprüfung oder Wiederherstellung.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Application Backup API-Ressource im JSON-Antworttext zurück.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-unreadnotifications.html 
+keywords: unread notifications,user notifications,notification list,resource collection,field filtering 
 summary: Liste die ungelesenen Benachrichtigungen eines Benutzers in einer Gruppe auf 
 ---
 = Liste die ungelesenen Benachrichtigungen eines Benutzers in einer Gruppe auf
@@ -10,7 +11,20 @@ summary: Liste die ungelesenen Benachrichtigungen eines Benutzers in einer Grupp
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ungelesene Benachrichtigungen für einen Benutzer in einer Gruppe ab und stellt ein JSON-Array der entsprechenden Ressourcen bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/unreadNotifications`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

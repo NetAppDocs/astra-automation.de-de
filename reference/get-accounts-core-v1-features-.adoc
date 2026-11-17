@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-features-.html 
+keywords: feature resource,feature collection,account id,feature id,stored feature 
 summary: Ein Merkmal abrufen 
 ---
 = Ein Merkmal abrufen
@@ -10,7 +11,20 @@ summary: Ein Merkmal abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Feature ab und stellt die gespeicherte Feature API Ressource zur Prüfung oder zu Integrationszwecken bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/features/{feature_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Feature-API-Ressource im JSON-Antworttext zurück.
 

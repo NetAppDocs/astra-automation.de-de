@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-appbackups.html 
+keywords: account topology,backup resources,collection fields,resource limit,account data 
 summary: Alle Anwendungssicherungen auflisten 
 ---
 = Alle Anwendungssicherungen auflisten
@@ -10,7 +11,20 @@ summary: Alle Anwendungssicherungen auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft alle Applikations-Backups ab und liefert eine umfassende Liste der in der Sammlung verfügbaren Backup-Ressourcen. Sie können einzelne Felder in Ihrer Anfrage angeben, um die zurückgegebenen Informationen anzupassen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

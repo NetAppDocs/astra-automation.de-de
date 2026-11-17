@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cloud_endpoints.html 
+keywords: cloud resources,cloud connections,cloud management,managed clusters,cloud configuration 
 summary: 'Astra API (ACC) Cloud-Endpunkte' 
 ---
 = Astra API (ACC) Cloud-Endpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Cloud-Ressourcen managen, damit Verbindungen zu bestimmten Clouds hergestellt und Cluster sowie Applikationen darin gemanagt werden können.
 
 Die Cloud-API ermöglicht den Zugriff auf Cloud-Ressourcen, damit Clients sich mit bestimmten Clouds verbinden können, um Cluster und Anwendungen zu verwalten.

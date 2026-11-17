@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/put-accounts-core-v1-users-groups-rolebindings-.html 
+keywords: replace resource,user groups,role bindings,group roles,resource modification 
 summary: Ändern einer Rollenbindung für eine Gruppe, die einem Benutzer zugeordnet ist 
 ---
 = Ändern einer Rollenbindung für eine Gruppe, die einem Benutzer zugeordnet ist
@@ -10,7 +11,20 @@ summary: Ändern einer Rollenbindung für eine Gruppe, die einem Benutzer zugeor
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ändert eine Rollenbindung für eine Gruppe, die einem Benutzer zugeordnet ist. Dies dient zum Aktualisieren von Zugriffsberechtigungen für bestimmte Benutzergruppen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-namespaces-.html 
+keywords: cluster namespace,namespace resource,stored namespace,cluster resource,namespace collection 
 summary: Einen Namespace für einen Cluster abrufen 
 ---
 = Einen Namespace für einen Cluster abrufen
@@ -10,7 +11,20 @@ summary: Einen Namespace für einen Cluster abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Namespace für einen Cluster ab und stellt die Details der gespeicherten Namespace API-Ressource bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/namespaces/{namespace_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Namespace-API-Ressource im JSON-Antworttext zurück.
 

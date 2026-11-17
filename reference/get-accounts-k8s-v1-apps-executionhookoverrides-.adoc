@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhookoverrides-.html 
+keywords: execution hook,execution override,execution hook override,k8s apps,account resource,app resource 
 summary: Eine Ressource zum Überschreiben des Execution Hook abrufen 
 ---
 = Eine Ressource zum Überschreiben des Execution Hook abrufen
@@ -10,7 +11,20 @@ summary: Eine Ressource zum Überschreiben des Execution Hook abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Ressource zur Überschreibung eines Ausführungshooks ab und stellt die gespeicherten Konfigurationsdetails für Integrations- und Automatisierungsworkflows bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Execution Hook Override API-Ressource im JSON-Antworttext zurück.
 

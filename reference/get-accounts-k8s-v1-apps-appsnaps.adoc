@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appsnaps.html 
+keywords: account resources,k8s apps,app snapshots,collection fields,resource limit 
 summary: Liste die Anwendungssnapshots für eine App auf 
 ---
 = Liste die Anwendungssnapshots für eine App auf
@@ -10,7 +11,20 @@ summary: Liste die Anwendungssnapshots für eine App auf
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft die Applikations-Snapshots für eine App ab und bietet damit einen umfassenden Überblick über die für Ihre Applikationen verfügbaren Snapshots.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

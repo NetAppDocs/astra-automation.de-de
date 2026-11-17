@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v1-clouds-clusters.html 
+keywords: cluster creation,cloud clusters,account clusters,cloud resource,cluster resource 
 summary: Erstellen Sie einen neuen Cluster für eine Cloud 
 ---
 = Erstellen Sie einen neuen Cluster für eine Cloud
@@ -10,7 +11,20 @@ summary: Erstellen Sie einen neuen Cluster für eine Cloud
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellung eines Clusters für eine Cloud-Umgebung unter Angabe der gewünschten Konfiguration für die Cluster API Ressource.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Cluster-API-Ressource an.
 

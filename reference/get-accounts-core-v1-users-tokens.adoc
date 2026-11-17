@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-tokens.html 
+keywords: account tokens,user tokens,resource collection,field filtering,resource sorting,resource pagination 
 summary: Die Tokens für einen Benutzer auflisten 
 ---
 = Die Tokens für einen Benutzer auflisten
@@ -10,7 +11,20 @@ summary: Die Tokens für einen Benutzer auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Liste der Token für einen Benutzer ab und zeigt die verfügbaren Token an, die mit dem Benutzerkonto verknüpft sind.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/role_binding_endpoints.html 
+keywords: role bindings,roles,permissions,access control,user permissions,group permissions 
 summary: 'Astra API (ACC) Rollenbindungs-Endpunkte' 
 ---
 = Astra API (ACC) Rollenbindungs-Endpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Verwaltung der Rollenbindungen, die Benutzern oder Gruppen in einem Konto Berechtigungen erteilen. Eine Rollenbindung verknüpft einen Benutzer oder eine Gruppe mit einer Rolle.
 
 Die Role Binding API beschreibt die Beziehungen zwischen den Benutzer-Konto-Paaren bzw. Gruppen-Konto-Paaren sowie die ihnen zugewiesenen Berechtigungen (Rollen).

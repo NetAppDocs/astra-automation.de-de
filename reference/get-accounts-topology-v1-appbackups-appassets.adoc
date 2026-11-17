@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-topology-v1-appbackups-appassets.html 
+keywords: topology resources,account resources,app assets,app backup,id fields,collection limit 
 summary: Listen Sie die Anwendungsressourcen für eine Anwendungssicherung auf 
 ---
 = Listen Sie die Anwendungsressourcen für eine Anwendungssicherung auf
@@ -10,7 +11,20 @@ summary: Listen Sie die Anwendungsressourcen für eine Anwendungssicherung auf
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft Applikation Assets für ein Applikation Backup ab und stellt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung bereit. Dies dient zur Anzeige bestimmter Felder für jede Ressource in der angegebenen Reihenfolge.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}/appAssets`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-.html 
+keywords: managed cluster,cluster resource,account resource,cluster topology,cluster collection 
 summary: Einen verwalteten Cluster abrufen 
 ---
 = Einen verwalteten Cluster abrufen
@@ -10,7 +11,20 @@ summary: Einen verwalteten Cluster abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen verwalteten Cluster ab und liefert die in der Managed Cluster API-Ressource gespeicherten Details. Diese Informationen dienen dem Verständnis der aktuellen Konfiguration und des Status Ihres Clusters.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Managed Cluster API-Ressource im JSON-Antworttext zurück.
 

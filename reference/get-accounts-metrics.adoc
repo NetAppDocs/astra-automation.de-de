@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-metrics.html 
+keywords: account metrics,metrics retrieval,account performance,account data,performance metrics 
 summary: Alle Kennzahlen für ein Konto abrufen 
 ---
 = Alle Kennzahlen für ein Konto abrufen
@@ -10,7 +11,20 @@ summary: Alle Kennzahlen für ein Konto abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft alle Kennzahlen für ein Konto ab und bietet Einblicke in Performance und Auslastung.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/metrics`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt alle Kennzahlen für das Konto zurück
 

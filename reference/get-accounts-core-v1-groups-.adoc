@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups-.html 
+keywords: account resource,group collection,stored group,group resource,json response,account id 
 summary: Gruppe abrufen 
 ---
 = Gruppe abrufen
@@ -10,7 +11,20 @@ summary: Gruppe abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Gruppe ab und stellt die gespeicherten Details der Gruppenressource zur Überprüfung oder zu Integrationszwecken bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Group-API-Ressource im JSON-Antworttext zurück.
 

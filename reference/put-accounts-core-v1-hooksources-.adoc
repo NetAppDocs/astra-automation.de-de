@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-hooksources-.html 
+keywords: replace resource,source hook,snapshot impact,md5 checksum,execution hooks 
 summary: Ändern einer Hook-Quelle 
 ---
 = Ändern einer Hook-Quelle
@@ -10,7 +11,20 @@ summary: Ändern einer Hook-Quelle
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ändert eine Hook-Quelle in Astra API. Mit diesem Endpunkt lässt sich der Quellcode für Ausführungs Hooks aktualisieren, die Applikations-Snapshots zugeordnet sind.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources/{hookSource_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
 

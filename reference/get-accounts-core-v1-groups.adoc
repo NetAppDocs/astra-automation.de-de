@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups.html 
+keywords: account groups,resource collection,field filter,sort order,count resources 
 summary: Alle Gruppen auflisten 
 ---
 = Alle Gruppen auflisten
@@ -10,7 +11,20 @@ summary: Alle Gruppen auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft alle Gruppen in der Astra API ab und liefert ein JSON-Array mit den entsprechenden Ressourcen in der Sammlung.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

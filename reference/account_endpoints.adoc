@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/account_endpoints.html 
+keywords: astra accounts,tenant accounts,multitenant,account management,account creation 
 summary: 'Astra API (ACC) Konto-Endpunkte' 
 ---
 = Astra API (ACC) Konto-Endpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Verwaltung der Konten, die Mandanten in einer mandantenfähigen Astra Control Umgebung isolieren.
 
 Die Account-API repräsentiert isolierte Mandanten in einem mandantenfähigen System.

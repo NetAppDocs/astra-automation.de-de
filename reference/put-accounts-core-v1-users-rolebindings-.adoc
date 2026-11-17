@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-users-rolebindings-.html 
+keywords: update role,role binding,replace resource,user role,account resource,user management 
 summary: Ändern einer Rollenbindung für einen Benutzer 
 ---
 = Ändern einer Rollenbindung für einen Benutzer
@@ -10,7 +11,20 @@ summary: Ändern einer Rollenbindung für einen Benutzer
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ändert die Rollenbindung eines Benutzers und aktualisiert die gespeicherte Ressource gemäß den angegebenen Spezifikationen. Dieser Endpunkt dient zum Anpassen von Benutzerberechtigungen in der Astra API Umgebung.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-schedules.html 
+keywords: account schedule,kubernetes app,app schedule,create schedule,account resource 
 summary: Erstellen Sie einen neuen Zeitplan für eine App 
 ---
 = Erstellen Sie einen neuen Zeitplan für eine App
@@ -10,7 +11,20 @@ summary: Erstellen Sie einen neuen Zeitplan für eine App
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt einen neuen Zeitplan für eine App und legt die gewünschten Parameter für die Planung von Aufgaben oder Ereignissen fest. Damit lassen sich App-Vorgänge gemäß dem definierten Zeitplan automatisieren.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Schedule-API-Ressource an.
 

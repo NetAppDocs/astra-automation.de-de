@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-users-groups-rolebindings.html 
+keywords: account resources,role bindings,user groups,resource collection,matching resources 
 summary: Listen Sie die Rollenbindungen für eine Gruppe auf, die einem Benutzer zugeordnet ist 
 ---
 = Listen Sie die Rollenbindungen für eine Gruppe auf, die einem Benutzer zugeordnet ist
@@ -10,7 +11,20 @@ summary: Listen Sie die Rollenbindungen für eine Gruppe auf, die einem Benutzer
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft die Rollenbindungen für eine Gruppe ab, die einem Benutzer zugeordnet ist, und hilft Ihnen so, die dieser Gruppe zugewiesenen Zugriffsberechtigungen zu verstehen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

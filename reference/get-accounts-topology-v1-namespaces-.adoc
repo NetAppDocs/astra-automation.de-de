@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-namespaces-.html 
+keywords: namespace resource,namespace collection,stored namespace,account id,namespace id 
 summary: Einen Namensraum abrufen 
 ---
 = Einen Namensraum abrufen
@@ -10,7 +11,20 @@ summary: Einen Namensraum abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Namespace ab und ermöglicht so den Zugriff auf die gespeicherte Namespace API Ressource zum Managen von Applikationsdaten.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/namespaces/{namespace_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Namespace-API-Ressource im JSON-Antworttext zurück.
 

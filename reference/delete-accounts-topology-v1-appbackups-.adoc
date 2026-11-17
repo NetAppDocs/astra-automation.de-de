@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-appbackups-.html 
+keywords: application backup,delete backup,backup removal,backup data delete,delete app backup 
 summary: Löschen einer Anwendungssicherung 
 ---
 = Löschen einer Anwendungssicherung
@@ -10,7 +11,20 @@ summary: Löschen einer Anwendungssicherung
 :imagesdir: ../media/
 
 
+[role="lead"]
+Löscht ein Applikations-Backup und entfernt die angegebene Backup-Ressource sowie die zugehörigen Daten. Dies dient zum Managen von Storageplatz oder zum Entfernen veralteter Backups aus Ihren Applikationsressourcen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Entfernt die angegebene Ressource der Application Backup API. Laufende Backups werden abgebrochen und anschließend gelöscht.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-k8s-v1-apps-schedules-.html 
+keywords: replace resource,schedule update,account management,app scheduling,modify schedule 
 summary: Einen Zeitplan ändern 
 ---
 = Einen Zeitplan ändern
@@ -10,7 +11,20 @@ summary: Einen Zeitplan ändern
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ändert einen Zeitplan, indem die gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext ersetzt wird, wobei Schlüsselwerte beibehalten werden, die vom Benutzer nicht geändert werden können.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
 

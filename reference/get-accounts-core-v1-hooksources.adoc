@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-hooksources.html 
+keywords: hook sources,resource collection,field filter,field limit,account resource 
 summary: Alle Hook-Quellen auflisten 
 ---
 = Alle Hook-Quellen auflisten
@@ -10,7 +11,20 @@ summary: Alle Hook-Quellen auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft alle Hook-Quellen in der Sammlung ab. Dies dient dazu, die verfügbaren Felder für jede Ressource gemäß Ihrer Anfrage anzuzeigen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-subscriptions-.html 
+keywords: subscription resource,subscription id,account resource,account id,subscription collection 
 summary: Abonnement abrufen 
 ---
 = Abonnement abrufen
@@ -10,7 +11,20 @@ summary: Abonnement abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Abonnement ab und gibt die gespeicherte Subscription API Ressource für Monitoring- oder Managementzwecke zurück.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Subscription-API-Ressource im JSON-Antworttext zurück.
 

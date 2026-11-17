@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-clouds-.html 
+keywords: replace resource,cloud topology,update rediscovery,sa cluster,stored resource 
 summary: Eine Cloud ändern 
 ---
 = Eine Cloud ändern
@@ -10,7 +11,20 @@ summary: Eine Cloud ändern
 :imagesdir: ../media/
 
 
+[role="lead"]
+Diese Funktion modifiziert eine Cloud-Ressource, indem sie die bestehende Konfiguration durch den bereitgestellten JSON-Anfragetext ersetzt, wobei nicht modifizierbare Schlüsselwerte beibehalten werden. Damit wird eine erneute Erkennung von Storage Arrays und Clustern initiiert.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
 

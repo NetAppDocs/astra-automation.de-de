@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users.html 
+keywords: account resource,group resource,collection fields,json array,resource listing,metadata object 
 summary: Liste die Benutzer einer Gruppe auf 
 ---
 = Liste die Benutzer einer Gruppe auf
@@ -10,7 +11,20 @@ summary: Liste die Benutzer einer Gruppe auf
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft die Benutzer einer Gruppe ab und liefert ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

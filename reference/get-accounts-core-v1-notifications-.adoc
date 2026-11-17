@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-notifications-.html 
+keywords: notification resource,stored notification,notification retrieval,account notification,notification collection 
 summary: Benachrichtigung abrufen 
 ---
 = Benachrichtigung abrufen
@@ -10,7 +11,20 @@ summary: Benachrichtigung abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Benachrichtigung ab und stellt die gespeicherte Benachrichtigungsressource im Antworttext bereit. Dies ermöglicht den Zugriff auf detaillierte Informationen zu bestimmten Benachrichtigungen innerhalb des Systems.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/notifications/{notification_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Notification API-Ressource im JSON-Antworttext zurück.
 

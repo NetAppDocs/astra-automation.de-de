@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/feature_endpoints.html 
+keywords: feature flags,enabled features,disabled features,feature status,feature check 
 summary: 'Astra API (ACC) Funktionsendpunkte' 
 ---
 = Astra API (ACC) Funktionsendpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Anhand der Feature-Flags lässt sich prüfen, welche Astra Control-Funktionen aktiviert oder deaktiviert sind.
 
 Die Feature-API bietet Lesezugriff auf Feature-Flag-Ressourcen, um festzustellen, welche Features im System aktiviert oder deaktiviert sind.

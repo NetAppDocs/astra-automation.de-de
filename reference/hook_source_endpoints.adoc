@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/hook_source_endpoints.html 
+keywords: hook sources,shared hook source,execution hooks,hook management,reusable hooks 
 summary: 'Astra API (ACC) Hook-Quellendpunkte' 
 ---
 = Astra API (ACC) Hook-Quellendpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Hook-Quellen lassen sich getrennt von Ausführungs-Hooks managen, sodass mehrere Hooks eine gemeinsame Quelle nutzen können. Wenn eine gemeinsame Quelle aktualisiert wird, gilt die Änderung überall, wo sie verwendet wird.
 
 Die Hook Source API ermöglicht die einfache Verwaltung von Hook-Quellen getrennt von der Verwaltung der Ausführungs-Hook-Ressourcen. So kann beispielsweise eine einzelne Hook-Quelle von mehreren Ausführungs-Hooks referenziert werden, um doppelte Hook-Quellen zu vermeiden und die Aktualisierung einer Hook-Quelle mit einem einzigen API-Aufruf zu ermöglichen, selbst wenn diese von mehreren Ausführungs-Hook-Ressourcen verwendet wird.

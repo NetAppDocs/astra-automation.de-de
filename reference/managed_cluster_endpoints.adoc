@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/managed_cluster_endpoints.html 
+keywords: managed clusters,kubernetes clusters,cluster management,cluster onboarding,cluster removal 
 summary: 'Astra API (ACC) verwaltete Cluster-Endpunkte' 
 ---
 = Astra API (ACC) verwaltete Cluster-Endpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Management der Kubernetes Cluster, die Astra Control managt.
 
 Die Managed Cluster API repräsentiert verwaltete Kubernetes-Cluster.

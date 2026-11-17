@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-rolebindings.html 
+keywords: role bindings,account id,user id,collection fields,resource filtering,sort order 
 summary: Listen Sie die Rollenbindungen für einen Benutzer auf 
 ---
 = Listen Sie die Rollenbindungen für einen Benutzer auf
@@ -10,7 +11,20 @@ summary: Listen Sie die Rollenbindungen für einen Benutzer auf
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft Rollenbindungen für einen Benutzer ab und stellt Ihnen so die notwendigen Informationen zur Verfügung, um Benutzerberechtigungen effektiv zu managen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

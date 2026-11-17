@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-upgrades.html 
+keywords: account upgrades,collection resources,matching resources,resource fields,field order 
 summary: Alle Upgrades auflisten 
 ---
 = Alle Upgrades auflisten
@@ -10,7 +11,20 @@ summary: Alle Upgrades auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Liste der Aktualisierungen ab und liefert Details zu allen übereinstimmenden Ressourcen in der Sammlung. Dies ermöglicht den Zugriff auf bestimmte Felder jeder Ressource in der angegebenen Reihenfolge.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

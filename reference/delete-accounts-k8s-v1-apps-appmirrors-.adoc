@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v1-apps-appmirrors-.html 
+keywords: appMirror removal,appMirror delete,resource deletion,source cluster,mirror relationship 
 summary: Eine AppMirror-Ressource für eine App löschen 
 ---
 = Eine AppMirror-Ressource für eine App löschen
@@ -10,7 +11,20 @@ summary: Eine AppMirror-Ressource für eine App löschen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Zum Löschen einer AppMirror Ressource für eine App und zum Initiieren der Entfernung der zugehörigen Ressourcen sowohl auf dem Quell- als auch auf dem Zielcluster, basierend auf dem aktuellen Beziehungsstatus.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appMirrors/{appMirror_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Entfernt die angegebene AppMirror API-Ressource. Startet einen Prozess, um die AppMirror-Ressource asynchron zu entfernen, zusammen mit allen Ressourcen auf den Quell- und Zielclustern, die als Ergebnis der AppMirror-Beziehung erstellt wurden. Die entfernten Ressourcen hängen vom Status der Beziehung zum Zeitpunkt der Löschung ab.
 

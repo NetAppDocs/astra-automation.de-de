@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-packages-.html 
+keywords: stored package,package resource,package collection,account resource,account id 
 summary: Paket abrufen 
 ---
 = Paket abrufen
@@ -10,7 +11,20 @@ summary: Paket abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein gespeichertes Paket ab und ermöglicht so den Zugriff auf die API-Ressourcendetails des Pakets.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages/{package_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Package-API-Ressource im JSON-Antworttext zurück.
 

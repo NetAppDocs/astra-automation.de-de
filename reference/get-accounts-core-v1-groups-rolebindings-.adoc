@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups-rolebindings-.html 
+keywords: role binding,group role,account role,role permissions,stored role bindings 
 summary: Eine Rollenbindung für eine Gruppe abrufen 
 ---
 = Eine Rollenbindung für eine Gruppe abrufen
@@ -10,7 +11,20 @@ summary: Eine Rollenbindung für eine Gruppe abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Rollenbindung für eine Gruppe ab und liefert die Details der Rollenbindung, die der angegebenen Gruppen-ID zugeordnet ist. Damit lassen sich die für die Gruppe in der Astra API konfigurierten Berechtigungen und Zuordnungen untersuchen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Role Binding API-Ressource im JSON-Antworttext zurück. Wenn die Anfrage an /accounts/{account_id}/core/v1/users/{user_id}/roleBindings gestellt wird, dürfen nur roleBinding-Ressourcen gelesen werden, bei denen die Benutzer-ID mit der Benutzer-ID in der Anfrage-URL übereinstimmt. Wenn die Anfrage an /accounts/{account_id}/core/v1/groups/{group_id}/roleBindings gestellt wird, dürfen nur roleBinding-Ressourcen gelesen werden, bei denen die Gruppen-ID mit der Gruppen-ID in der Anfrage-URL übereinstimmt.
 

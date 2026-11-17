@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-packages-.html 
+keywords: remove package,package resource,delete package,account id,package id 
 summary: Ein Paket löschen 
 ---
 = Ein Paket löschen
@@ -10,7 +11,20 @@ summary: Ein Paket löschen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Löscht ein Paket und entfernt dabei die angegebene Package API-Ressource aus dem System.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages/{package_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Entfernt die angegebene Package-API-Ressource.
 

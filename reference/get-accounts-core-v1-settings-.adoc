@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-settings-.html 
+keywords: settings retrieval,account settings,stored settings,setting collection,resource settings 
 summary: Eine Einstellung abrufen 
 ---
 = Eine Einstellung abrufen
@@ -10,7 +11,20 @@ summary: Eine Einstellung abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Einstellung ab und stellt die gespeicherten Konfigurationsdetails zum Nachschlagen oder Ändern bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Setting-API-Ressource im JSON-Antworttext zurück.
 

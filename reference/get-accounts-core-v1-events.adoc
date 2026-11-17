@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-events.html 
+keywords: events collection,resource fields,account events,resource limit,resource filter,sort order 
 summary: Alle Ereignisse auflisten 
 ---
 = Alle Ereignisse auflisten
@@ -10,7 +11,20 @@ summary: Alle Ereignisse auflisten
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Liste von Ereignissen ab. Dies ermöglicht die Anzeige aller passenden Ressourcen in der Sammlung anhand der angegebenen Kriterien.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/events`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

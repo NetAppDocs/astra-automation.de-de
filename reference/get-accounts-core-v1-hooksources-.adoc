@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-hooksources-.html 
+keywords: hook source,hook collection,account resource,stored resource,json response 
 summary: Eine Hook-Quelle abrufen 
 ---
 = Eine Hook-Quelle abrufen
@@ -10,7 +11,20 @@ summary: Eine Hook-Quelle abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Hook-Quelle ab und gibt die gespeicherte Hook Source API-Ressource in der Antwort zurück. Dies ermöglicht den Zugriff auf spezifische Hook Source Konfigurationen für Integrationsaufgaben.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources/{hookSource_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Hook Source API-Ressource im JSON-Antworttext zurück.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-executionhooks-.html 
+keywords: execution hook,execution removal,delete execution,remove execution hook,account resource,execution collection 
 summary: Einen Ausführungshook löschen 
 ---
 = Einen Ausführungshook löschen
@@ -10,7 +11,20 @@ summary: Einen Ausführungshook löschen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Löscht einen Ausführungs-Hook und verhindert so, dass dieser in zukünftigen Aktionen ausgeführt wird.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Entfernt die angegebene Execution Hook API-Ressource.
 

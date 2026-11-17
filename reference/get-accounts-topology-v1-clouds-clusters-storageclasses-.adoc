@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-storageclasses-.html 
+keywords: account storage class,cloud storage class,cluster storage class,storage class topology,storage class resource,storage class list 
 summary: Eine Speicherklasse für eine Cloud abrufen 
 ---
 = Eine Speicherklasse für eine Cloud abrufen
@@ -10,7 +11,20 @@ summary: Eine Speicherklasse für eine Cloud abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Storage-Klasse für eine Cloud ab und stellt die verfügbare Klassenkonfiguration für Storage-Ressourcen bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/storageClasses/{storageClass_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Storage Class API-Ressource im JSON-Antworttext zurück.
 

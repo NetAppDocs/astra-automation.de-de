@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-namespaces-.html 
+keywords: namespace resource,managed cluster,namespaces list,stored namespace,account id 
 summary: Einen Namespace für einen verwalteten Cluster abrufen 
 ---
 = Einen Namespace für einen verwalteten Cluster abrufen
@@ -10,7 +11,20 @@ summary: Einen Namespace für einen verwalteten Cluster abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Namespace für einen verwalteten Cluster ab und stellt die gespeicherten Konfigurationsdetails für Namespace-Ressourcen innerhalb des Clusters bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/namespaces/{namespace_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Namespace-API-Ressource im JSON-Antworttext zurück.
 

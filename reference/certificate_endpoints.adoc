@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/certificate_endpoints.html 
+keywords: trusted certificates,certificate management,outgoing connections,admin-trusted certificates,secure connections 
 summary: 'Astra API (ACC) Zertifikatsendpunkte' 
 ---
 = Astra API (ACC) Zertifikatsendpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Das Managen der vom Administrator als vertrauenswürdig eingestuften Zertifikate, die Astra Control verwendet, um ausgehende Verbindungen herzustellen.
 
 Die Certificate API repräsentiert vom Administrator als vertrauenswürdig eingestufte Zertifikate, die zum Aufbau ausgehender Verbindungen verwendet werden.

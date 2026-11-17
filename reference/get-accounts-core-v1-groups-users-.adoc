@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-.html 
+keywords: account user,group user,user resource,account group,user collection 
 summary: Einen Benutzer für eine Gruppe abrufen 
 ---
 = Einen Benutzer für eine Gruppe abrufen
@@ -10,7 +11,20 @@ summary: Einen Benutzer für eine Gruppe abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Benutzer für eine Gruppe ab und ermöglicht den Zugriff auf die gespeicherten Details der User API-Ressource.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Benutzer-API-Ressource im JSON-Antworttext zurück.
 

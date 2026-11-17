@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-storagebackends-.html 
+keywords: storage backend,account resource,topology storage,backend collection,storage resource 
 summary: Ein Speicher-Backend abrufen 
 ---
 = Ein Speicher-Backend abrufen
@@ -10,7 +11,20 @@ summary: Ein Speicher-Backend abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Storage Backend ab und stellt die gespeicherten Konfigurationsdetails für Backend-Ressourcen bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Storage Backend API-Ressource im JSON-Antworttext zurück.
 

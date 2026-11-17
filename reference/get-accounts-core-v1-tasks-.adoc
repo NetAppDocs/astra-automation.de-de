@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-tasks-.html 
+keywords: tasks,task resource,account task,task collection,task details 
 summary: Aufgabe abrufen 
 ---
 = Aufgabe abrufen
@@ -10,7 +11,20 @@ summary: Aufgabe abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Dient zum Abrufen einer Aufgabe und stellt Details zur gespeicherten Task API Ressource für Überwachungs- und Verwaltungszwecke bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/tasks/{task_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Task-API-Ressource im JSON-Antworttext zurück.
 

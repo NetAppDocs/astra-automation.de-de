@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-users-rolebindings.html 
+keywords: role binding,create role,account role,user role,role management,assign role 
 summary: Erstellen Sie eine neue Rollenbindung für einen Benutzer 
 ---
 = Erstellen Sie eine neue Rollenbindung für einen Benutzer
@@ -10,7 +11,20 @@ summary: Erstellen Sie eine neue Rollenbindung für einen Benutzer
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt eine Rollenbindung für einen Benutzer und legt die gewünschten Werte für die API-Ressource „Rollenbindung“ fest. Dies dient dazu, Benutzern innerhalb Ihrer Applikation spezifische Rollen und Berechtigungen zuzuweisen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Role Binding API-Ressource an.
 

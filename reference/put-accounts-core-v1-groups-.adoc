@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-groups-.html 
+keywords: replace resource,preserve values,group collection,account resource,stored resource 
 summary: Eine Gruppe ändern 
 ---
 = Eine Gruppe ändern
@@ -10,7 +11,20 @@ summary: Eine Gruppe ändern
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ändert eine Gruppe, indem ihre gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext ersetzt wird, wobei sichergestellt wird, dass Schlüsselwerte, die von Ihnen nicht geändert werden können, erhalten bleiben.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
 

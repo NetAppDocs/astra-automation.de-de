@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhooks.html 
+keywords: execution hooks,k8s apps,collection resources,app resource,account resource 
 summary: Listen Sie die Ausführungs-Hooks für eine App auf 
 ---
 = Listen Sie die Ausführungs-Hooks für eine App auf
@@ -10,7 +11,20 @@ summary: Listen Sie die Ausführungs-Hooks für eine App auf
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft die Ausführungs-Hooks einer App ab und liefert ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung. Dies dient bei Bedarf zur Anzeige bestimmter Felder für jede übereinstimmende Ressource.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

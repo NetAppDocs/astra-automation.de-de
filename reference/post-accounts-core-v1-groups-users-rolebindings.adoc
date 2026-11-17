@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/post-accounts-core-v1-groups-users-rolebindings.html 
+keywords: role binding,group roles,user roles,account role binding,user role binding 
 summary: Erstellen Sie eine neue Rollenbindung für einen Benutzer in einer Gruppe 
 ---
 = Erstellen Sie eine neue Rollenbindung für einen Benutzer in einer Gruppe
@@ -10,7 +11,20 @@ summary: Erstellen Sie eine neue Rollenbindung für einen Benutzer in einer Grup
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt eine neue Rollenbindung für einen Benutzer in einer Gruppe und legt damit die Berechtigungen fest, die der Benutzer zum Ausführen von Aktionen innerhalb des angegebenen Gruppenkontexts benötigt.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Role Binding API-Ressource an.
 

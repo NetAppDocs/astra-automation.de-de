@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-entitlements-.html 
+keywords: account entitlement,entitlement resource,entitlement collection,account information,stored entitlement 
 summary: Berechtigung abrufen 
 ---
 = Berechtigung abrufen
@@ -10,7 +11,20 @@ summary: Berechtigung abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Entitlement ab und stellt die gespeicherte Entitlement API-Ressource im JSON-Antworttext bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements/{entitlement_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Entitlement-API-Ressource im JSON-Antworttext zurück.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-k8s-v1-apps-appbackups-appassets.html 
+keywords: account resources,k8s apps,app backups,collection fields,resource limit 
 summary: Listen Sie die Anwendungsressourcen aus einer Anwendungssicherung für eine App auf 
 ---
 = Listen Sie die Anwendungsressourcen aus einer Anwendungssicherung für eine App auf
@@ -10,7 +11,20 @@ summary: Listen Sie die Anwendungsressourcen aus einer Anwendungssicherung für 
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft Applikations-Assets aus einem Applikations-Backup ab. Dies ermöglicht den Zugriff auf die Details der im Backup enthaltenen Ressourcen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}/appAssets`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

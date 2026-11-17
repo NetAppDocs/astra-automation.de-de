@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-namespaces.html 
+keywords: cluster topology,namespaces list,resource collection,account cluster,namespaces fields 
 summary: Listen Sie die Namespaces für einen Cluster auf 
 ---
 = Listen Sie die Namespaces für einen Cluster auf
@@ -10,7 +11,20 @@ summary: Listen Sie die Namespaces für einen Cluster auf
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft die Namespaces eines Clusters ab und liefert eine Liste aller übereinstimmenden Ressourcen in der Sammlung. Dies dient bei Bedarf zur Anzeige spezifischer Felder für jede Ressource.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/namespaces`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

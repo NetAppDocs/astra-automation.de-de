@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/ldap_group_endpoints.html 
+keywords: ldap groups,directory groups,ldap server,read-only access,group lookup 
 summary: 'Astra API (ACC) LDAP-Gruppenendpunkte' 
 ---
 = Astra API (ACC) LDAP-Gruppenendpunkte
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+Auf dem konfigurierten Lightweight Directory Access Protocol (LDAP) Server sind die Gruppen einsehbar. Diese Endpunkte sind schreibgeschützt.
 
 Die LDAP-Gruppen-API ermöglicht den Lesezugriff auf LDAP-Gruppen innerhalb des konfigurierten LDAP-Servers.

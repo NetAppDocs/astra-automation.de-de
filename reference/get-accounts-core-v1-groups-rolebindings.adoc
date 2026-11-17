@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-groups-rolebindings.html 
+keywords: role bindings,group roles,account resources,collection filters,resource sorting 
 summary: Listen Sie die Rollenbindungen für eine Gruppe auf 
 ---
 = Listen Sie die Rollenbindungen für eine Gruppe auf
@@ -10,7 +11,20 @@ summary: Listen Sie die Rollenbindungen für eine Gruppe auf
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft die Rollenbindungen einer Gruppe ab und liefert eine Liste der passenden Ressourcen in der Sammlung. Damit sind detaillierte Informationen zu den spezifischen Rollenbindungen der Gruppe zugänglich.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

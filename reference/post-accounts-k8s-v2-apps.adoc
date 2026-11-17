@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v2-apps.html 
+keywords: apps creation,k8s apps,kubernetes apps,account resource,app resource 
 summary: Neue App erstellen 
 ---
 = Neue App erstellen
@@ -10,7 +11,20 @@ summary: Neue App erstellen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt eine neue App in Astra API. Dieser Endpunkt dient dazu, die gewünschten Werte für die App API-Ressource anzugeben, um die Applikationsanforderungen Ihrer Anwendung zu unterstützen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende App-API-Ressource an.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v2-managedclusters-apps-.html 
+keywords: stored app,app resource,managed cluster,app collection,account resource 
 summary: Eine App für einen verwalteten Cluster abrufen 
 ---
 = Eine App für einen verwalteten Cluster abrufen
@@ -10,7 +11,20 @@ summary: Eine App für einen verwalteten Cluster abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine App für einen verwalteten Cluster ab und stellt die gespeicherten App-API-Ressourcendetails im JSON-Antworttext bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte App-API-Ressource im JSON-Antworttext zurück.
 

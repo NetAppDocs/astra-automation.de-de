@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-buckets-.html 
+keywords: bucket resource,stored bucket,account bucket,topology bucket,bucket collection 
 summary: Einen Bucket abrufen 
 ---
 = Einen Bucket abrufen
@@ -10,7 +11,20 @@ summary: Einen Bucket abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen Bucket ab und stellt die gespeicherten Bucket-Konfigurationsdetails in der Antwort bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Bucket-API-Ressource im JSON-Antworttext zurück.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v2-managedclusters-apps.html 
+keywords: managed clusters,app creation,account resource,app resource,cluster management 
 summary: Erstellen Sie eine neue App für einen verwalteten Cluster 
 ---
 = Erstellen Sie eine neue App für einen verwalteten Cluster
@@ -10,7 +11,20 @@ summary: Erstellen Sie eine neue App für einen verwalteten Cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt eine neue App für einen verwalteten Cluster und legt die gewünschten Werte für die App API Ressourcenkonfiguration fest. Dieser Endpunkt dient dazu, Anwendungen in Ihrer verwalteten Clusterumgebung zu initiieren.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende App-API-Ressource an.
 

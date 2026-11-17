@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-managedclusters-.html 
+keywords: remove managed cluster,delete managed cluster,managed cluster removal,clean data structures,account cluster cleanup 
 summary: Einen verwalteten Cluster löschen 
 ---
 = Einen verwalteten Cluster löschen
@@ -10,7 +11,20 @@ summary: Einen verwalteten Cluster löschen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Entfernt einen verwalteten Cluster. Dieser Vorgang dient dazu, die angegebene API-Ressource zu entfernen und zugehörige interne Datenstrukturen zu bereinigen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Entfernt die angegebene Managed Cluster API-Ressource.
 

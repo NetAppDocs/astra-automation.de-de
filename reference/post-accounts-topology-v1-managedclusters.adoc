@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v1-managedclusters.html 
+keywords: managed clusters,create managed cluster,cluster topology,account cluster,cluster resource 
 summary: Erstellen Sie einen neuen verwalteten Cluster 
 ---
 = Erstellen Sie einen neuen verwalteten Cluster
@@ -10,7 +11,20 @@ summary: Erstellen Sie einen neuen verwalteten Cluster
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt einen verwalteten Cluster und legt die gewünschten Werte für die Managed Cluster API-Ressource fest. Mit dieser Funktion lassen sich Cluster konfigurieren und einsetzen, die auf Ihre spezifischen Anforderungen zugeschnitten sind.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Managed Cluster API-Ressource an.
 

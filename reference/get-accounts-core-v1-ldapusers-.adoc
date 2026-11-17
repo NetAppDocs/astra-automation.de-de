@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-ldapusers-.html 
+keywords: ldap users,ldap resource,account id,ldap user collection,stored ldap 
 summary: Einen LDAP-Benutzer abrufen 
 ---
 = Einen LDAP-Benutzer abrufen
@@ -10,7 +11,20 @@ summary: Einen LDAP-Benutzer abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft einen LDAP-Benutzer ab und stellt die gespeicherte Ressourcenkonfiguration für Aufgaben der Benutzerverwaltung und Authentifizierung bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/ldapUsers/{ldapUser_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Objekt zurück, das die gespeicherte LDAP-Ressource repräsentiert.
 

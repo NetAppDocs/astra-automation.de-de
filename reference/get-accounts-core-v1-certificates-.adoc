@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-certificates-.html 
+keywords: certificate resource,certificate collection,stored certificate,account certificate,certificate id 
 summary: Ein Zertifikat abrufen 
 ---
 = Ein Zertifikat abrufen
@@ -10,7 +11,20 @@ summary: Ein Zertifikat abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Zertifikat ab und stellt in der Antwort die gespeicherten Details der Certificate API-Ressource bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates/{certificate_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Certificate-API-Ressource im JSON-Antworttext zurück.
 

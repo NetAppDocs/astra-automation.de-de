@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-clouds-.html 
+keywords: cloud instance,deletion,non-managed clusters,non-managed volumes,cloud id 
 summary: Eine Cloud löschen 
 ---
 = Eine Cloud löschen
@@ -10,7 +11,20 @@ summary: Eine Cloud löschen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Die angeforderte Cloud-Instanz wird zusammen mit allen zugehörigen, nicht verwalteten Clustern und Volumes gelöscht. Dieser Vorgang dient zum Entfernen nicht mehr benötigter Cloud-Ressourcen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Löscht die angeforderte Cloud-Instanz sowie alle nicht verwalteten Cluster und Volumes, die mit dieser spezifischen Cloud verknüpft sind.
 

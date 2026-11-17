@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-unreadnotifications-.html 
+keywords: account notifications,unread notifications,user notifications,notification resource,group notifications 
 summary: Eine ungelesene Benachrichtigung für einen Benutzer in einer Gruppe abrufen 
 ---
 = Eine ungelesene Benachrichtigung für einen Benutzer in einer Gruppe abrufen
@@ -10,7 +11,20 @@ summary: Eine ungelesene Benachrichtigung für einen Benutzer in einer Gruppe ab
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine ungelesene Benachrichtigung für einen Benutzer in einer Gruppe ab und liefert die Details der Benachrichtigungen, die noch nicht bestätigt wurden.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Ressource der Unread Notification API im JSON-Antworttext zurück.
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-settings-.html 
+keywords: account settings,replace resource,modify settings,stored resource,setting collection 
 summary: Eine Einstellung ändern 
 ---
 = Eine Einstellung ändern
@@ -10,7 +11,20 @@ summary: Eine Einstellung ändern
 :imagesdir: ../media/
 
 
+[role="lead"]
+Eine Einstellung wird geändert, indem die gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext ersetzt wird, wobei Schlüsselwerte erhalten bleiben, die nicht vom Benutzer geändert werden können. Dieser Endpunkt ermöglicht die effiziente Aktualisierung von Konfigurationseinstellungen bei gleichzeitiger Beibehaltung wichtiger Systemparameter.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Ersetzt die gesamte gespeicherte Ressource durch den bereitgestellten JSON-Anfragetext, wobei Schlüsselwerte erhalten bleiben, die vom Benutzer nicht geändert werden können.
 

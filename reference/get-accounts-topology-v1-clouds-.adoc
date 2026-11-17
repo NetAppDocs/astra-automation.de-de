@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-.html 
+keywords: cloud resource,cloud topology,stored cloud,cloud collection,account resource 
 summary: Eine Cloud abrufen 
 ---
 = Eine Cloud abrufen
@@ -10,7 +11,20 @@ summary: Eine Cloud abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Cloud-Ressource ab und stellt die gespeicherten Konfigurationsdetails für Cloud-Management-Aufgaben bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Cloud-API-Ressource im JSON-Antworttext zurück.
 

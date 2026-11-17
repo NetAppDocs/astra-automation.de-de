@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-tokens-.html 
+keywords: account resource,token collection,user resource,stored token,json response 
 summary: Token abrufen 
 ---
 = Token abrufen
@@ -10,7 +11,20 @@ summary: Token abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Token ab und gibt die gespeicherte Token API Ressource in der Antwort zurück.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Token-API-Ressource im JSON-Antworttext zurück.
 

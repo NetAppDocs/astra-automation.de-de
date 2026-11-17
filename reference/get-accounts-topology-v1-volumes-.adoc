@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-volumes-.html 
+keywords: volume resource,volume collection,stored volume,account id,topology volumes 
 summary: Ein Volumen abrufen 
 ---
 = Ein Volumen abrufen
@@ -10,7 +11,20 @@ summary: Ein Volumen abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Volume ab und liefert die gespeicherten Konfigurationsdetails für die angegebene Volume Ressource. Damit lässt sich der aktuelle Zustand des Volumes in Ihrer Storage Umgebung prüfen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/volumes/{volume_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Volume-API-Ressource im JSON-Antworttext zurück.
 

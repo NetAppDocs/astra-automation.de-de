@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-groups-users-unreadnotifications-.html 
+keywords: remove notification,unread notification,delete notification,user notification,notification management,notification removal 
 summary: Eine ungelesene Benachrichtigung für einen Benutzer in einer Gruppe löschen 
 ---
 = Eine ungelesene Benachrichtigung für einen Benutzer in einer Gruppe löschen
@@ -10,7 +11,20 @@ summary: Eine ungelesene Benachrichtigung für einen Benutzer in einer Gruppe l�
 :imagesdir: ../media/
 
 
+[role="lead"]
+Löscht eine ungelesene Benachrichtigung für einen Benutzer in einer Gruppe. Dies dient dazu, den Benachrichtigungsstatus innerhalb von Gruppeninteraktionen zu managen und aufrechtzuerhalten.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Entfernt die angegebene Ressource der Unread Notification API.
 

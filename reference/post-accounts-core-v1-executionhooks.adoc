@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-executionhooks.html 
+keywords: execution hook,account resource,execution values,create execution,execution setup 
 summary: Einen neuen Ausführungs-Hook erstellen 
 ---
 = Einen neuen Ausführungs-Hook erstellen
@@ -10,7 +11,20 @@ summary: Einen neuen Ausführungs-Hook erstellen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt einen neuen Ausführungs-Hook und legt die Werte für die API-Ressource „Execution Hook“ fest. Damit lassen sich benutzerdefinierte Automatisierungsaufgaben für Ihre Workflows definieren.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Execution Hook API-Ressource an.
 

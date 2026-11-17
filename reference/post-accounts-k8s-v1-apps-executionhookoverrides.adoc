@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-executionhookoverrides.html 
+keywords: execution hook,hook override,app resource,account resource,k8s app 
 summary: Erstellen Sie eine neue Ausführungshook-Override-Ressource für eine App 
 ---
 = Erstellen Sie eine neue Ausführungshook-Override-Ressource für eine App
@@ -10,7 +11,20 @@ summary: Erstellen Sie eine neue Ausführungshook-Override-Ressource für eine A
 :imagesdir: ../media/
 
 
+[role="lead"]
+Erstellt eine Ressource zum Überschreiben von Ausführungshooks für eine Anwendung und legt die gewünschten Werte für die Anpassung fest. Diese Ressource dient dazu, Ausführungshooks an spezifische Applikationsanforderungen anzupassen.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gewünschten Werte für die zu erstellende Execution Hook Override API-Ressource an.
 

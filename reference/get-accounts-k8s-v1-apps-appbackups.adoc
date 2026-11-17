@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appbackups.html 
+keywords: account backups,kubernetes apps,resource collection,app id,account id 
 summary: Liste die Anwendungssicherungen für eine App auf 
 ---
 = Liste die Anwendungssicherungen für eine App auf
@@ -10,7 +11,20 @@ summary: Liste die Anwendungssicherungen für eine App auf
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft Applikationssicherungen für eine App ab. Dies dient zur Prüfung der mit der Applikation verknüpften Sicherungskonfigurationen und -status.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt ein JSON-Array aller übereinstimmenden Ressourcen in der Sammlung zurück. Wenn in der Anfrage einzelne Felder angegeben werden, enthält das JSON-Array der Elemente die angeforderten Felder für jede übereinstimmende Ressource in der angegebenen Reihenfolge.
 

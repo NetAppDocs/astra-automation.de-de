@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-topology-v1-appbackups-appassets-.html 
+keywords: application asset,app asset,app backup,account resource,app asset collection 
 summary: Abrufen eines Anwendungs-Assets aus einer Anwendungssicherung 
 ---
 = Abrufen eines Anwendungs-Assets aus einer Anwendungssicherung
@@ -10,7 +11,20 @@ summary: Abrufen eines Anwendungs-Assets aus einer Anwendungssicherung
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Applikation Asset aus einem Applikations Backup ab. Dies ermöglicht den Zugriff auf die gespeicherte Asset-Konfiguration für Wiederherstellungs- oder Analysezwecke.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Application Asset API-Ressource im JSON-Antworttext zurück.
 

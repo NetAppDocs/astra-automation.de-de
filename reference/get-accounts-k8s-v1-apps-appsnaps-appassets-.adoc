@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-k8s-v1-apps-appsnaps-appassets-.html 
+keywords: application asset,app resource,app snap,app asset,stored asset,k8s application 
 summary: Abrufen einer Anwendungsressource für einen Anwendungssnapshot und eine App 
 ---
 = Abrufen einer Anwendungsressource für einen Anwendungssnapshot und eine App
@@ -10,7 +11,20 @@ summary: Abrufen einer Anwendungsressource für einen Anwendungssnapshot und ein
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Applikation Asset für einen Applikation Snapshot ab und stellt die gespeicherten Asset-Details im JSON-Antworttext bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Application Asset API-Ressource im JSON-Antworttext zurück.
 

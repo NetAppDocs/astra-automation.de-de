@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v1-apps-schedules-.html 
+keywords: remove schedule,k8s schedule,app schedule delete,delete schedule resource,account schedule removal 
 summary: Einen Zeitplan löschen 
 ---
 = Einen Zeitplan löschen
@@ -10,7 +11,20 @@ summary: Einen Zeitplan löschen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ein Zeitplan wird gelöscht und die angegebene Schedule API-Ressource aus Astra entfernt.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Entfernt die angegebene Schedule-API-Ressource.
 

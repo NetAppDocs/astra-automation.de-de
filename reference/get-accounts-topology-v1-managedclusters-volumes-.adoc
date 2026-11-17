@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-volumes-.html 
+keywords: volume resource,volume collection,managed cluster,account id,stored volume,volume json 
 summary: Ein Volume für einen verwalteten Cluster abrufen 
 ---
 = Ein Volume für einen verwalteten Cluster abrufen
@@ -10,7 +11,20 @@ summary: Ein Volume für einen verwalteten Cluster abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft ein Volume für einen verwalteten Cluster ab und ermöglicht so den Zugriff auf die gespeicherten Volume-Informationen zur weiteren Verwaltung oder Analyse.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/volumes/{volume_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Volume-API-Ressource im JSON-Antworttext zurück.
 

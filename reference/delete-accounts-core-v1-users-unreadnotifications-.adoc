@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-unreadnotifications-.html 
+keywords: remove unread notification,unread notification delete,delete unread notification,user notification remove,account notification delete 
 summary: Eine ungelesene Benachrichtigung löschen 
 ---
 = Eine ungelesene Benachrichtigung löschen
@@ -10,7 +11,20 @@ summary: Eine ungelesene Benachrichtigung löschen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Löscht eine ungelesene Benachrichtigung und entfernt die angegebene Benachrichtigungsressource aus Ihrer Benachrichtigungsliste.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-delete]#LÖSCHEN# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Entfernt die angegebene Ressource der Unread Notification API.
 

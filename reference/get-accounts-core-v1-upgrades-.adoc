@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-upgrades-.html 
+keywords: upgrade resource,upgrade details,upgrade collection,account upgrade,upgrade json 
 summary: Upgrade abrufen 
 ---
 = Upgrade abrufen
@@ -10,7 +11,20 @@ summary: Upgrade abrufen
 :imagesdir: ../media/
 
 
+[role="lead"]
+Ruft eine Upgrade-Ressource ab und stellt die gespeicherte Upgrade-Konfiguration zu Prüf- oder Managementzwecken bereit.
+
+
+
+[[http-method-and-endpoint]]
+== HTTP-Methode und -Endpunkt
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades/{upgrade_id}`#
+
+
+
+[[usage-notes]]
+== Nutzungshinweise
 
 Gibt die gespeicherte Upgrade-API-Ressource im JSON-Antworttext zurück.
 
